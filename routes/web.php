@@ -31,7 +31,10 @@ Route::delete('/user/delete/{uuid}', 'userController@destroy')->name('userDestro
 
 //Golongan Route
 Route::get('/golongan/index', 'golonganController@index')->name('golonganIndex');
-Route::get('/golongan/edit', 'golonganController@edit')->name('golonganEdit');
+Route::post('/golongan/index/create', 'golonganController@store')->name('golonganCreate');
+Route::get('/golongan/edit/{uuid}', 'golonganController@edit')->name('golonganEdit');
+Route::put('/golongan/edit/{uuid}', 'golonganController@update')->name('golonganUpdate');
+Route::delete('/golongan/delete/{uuid}', 'golonganController@destroy')->name('golonganDestroy');
 
 //jabatan Route
 Route::get('/jabatan/index', 'jabatanController@index')->name('jabatanIndex');
