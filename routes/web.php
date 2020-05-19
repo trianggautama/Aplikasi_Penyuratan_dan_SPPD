@@ -36,9 +36,12 @@ Route::get('/golongan/edit/{uuid}', 'golonganController@edit')->name('golonganEd
 Route::put('/golongan/edit/{uuid}', 'golonganController@update')->name('golonganUpdate');
 Route::delete('/golongan/delete/{uuid}', 'golonganController@destroy')->name('golonganDestroy');
 
-//jabatan Route
+//Jabatan Route
 Route::get('/jabatan/index', 'jabatanController@index')->name('jabatanIndex');
-Route::get('/jabatan/edit', 'jabatanController@edit')->name('jabatanEdit');
+Route::post('/jabatan/index/create', 'jabatanController@store')->name('jabatanCreate');
+Route::get('/jabatan/edit/{uuid}', 'jabatanController@edit')->name('jabatanEdit');
+Route::put('/jabatan/edit/{uuid}', 'jabatanController@update')->name('jabatanUpdate');
+Route::delete('/jabatan/delete/{uuid}', 'jabatanController@destroy')->name('jabatanDestroy');
 
 //Unit Kerja Route
 Route::get('/unit/index', 'unitController@index')->name('unitIndex');
