@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,8 +24,10 @@ Route::get('/admin/index', 'adminController@index')->name('index');
 
 //User Route
 Route::get('/user/index', 'userController@index')->name('userIndex');
-Route::get('/user/edit', 'userController@edit')->name('userEdit');
-
+Route::post('/user/index/create', 'userController@store')->name('userCreate');
+Route::get('/user/edit/{uuid}', 'userController@edit')->name('userEdit');
+Route::put('/user/edit/{uuid}', 'userController@update')->name('userUpdate');
+Route::delete('/user/delete/{uuid}', 'userController@destroy')->name('userDestroy');
 
 //Golongan Route
 Route::get('/golongan/index', 'golonganController@index')->name('golonganIndex');
