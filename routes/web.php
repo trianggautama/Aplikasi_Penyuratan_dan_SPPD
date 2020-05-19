@@ -43,9 +43,12 @@ Route::get('/jabatan/edit/{uuid}', 'jabatanController@edit')->name('jabatanEdit'
 Route::put('/jabatan/edit/{uuid}', 'jabatanController@update')->name('jabatanUpdate');
 Route::delete('/jabatan/delete/{uuid}', 'jabatanController@destroy')->name('jabatanDestroy');
 
-//Unit Kerja Route
-Route::get('/unit/index', 'unitController@index')->name('unitIndex');
-Route::get('/unit/edit', 'unitController@edit')->name('unitEdit');
+//Unit kerja Route
+Route::get('/unit-kerja/index', 'unitController@index')->name('unitIndex');
+Route::post('/unit-kerja/index/create', 'unitController@store')->name('unitCreate');
+Route::get('/unit-kerja/edit/{uuid}', 'unitController@edit')->name('unitEdit');
+Route::put('/unit-kerja/edit/{uuid}', 'unitController@update')->name('unitUpdate');
+Route::delete('/unit-kerja/delete/{uuid}', 'unitController@destroy')->name('unitDestroy');
 
 //Kota Route
 Route::get('/kota/index', 'kotaController@index')->name('kotaIndex');
