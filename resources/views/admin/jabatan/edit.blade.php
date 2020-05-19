@@ -8,7 +8,7 @@
 				<!-- Title -->
 				<div class="hk-pg-header align-items-top">
 					<div>
-						<h2 class="hk-pg-title font-weight-600 mb-10">User Edit</h2>
+						<h2 class="hk-pg-title font-weight-600 mb-10">jabatan Edit</h2>
 					</div>
 				</div>
 				<!-- /Title -->
@@ -25,22 +25,12 @@
                                     <div class="table-wrap">
                                     <form>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Nama</label>
-                                                <input type="text" class="form-control" id="nama" placeholder="nama">
+                                                <label for="exampleDropdownFormEmail1">Kode jabatan</label>
+                                                <input type="text" class="form-control" id="kode_jabatan" placeholder="kode_jabatan">
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">NIP</label>
-                                                <input type="text" class="form-control" id="nip" placeholder="nip">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">username</label>
-                                                <input type="text" class="form-control" id="username" placeholder="username">
-                                                <p class="text-danger">Isi jika ingin merubah username</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleDropdownFormPassword1">Password</label>
-                                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                                                <p class="text-danger">Isi jika ingin merubah password</p>
+                                                <label for="exampleDropdownFormEmail1">Nama jabatan</label>
+                                                <input type="text" class="form-control" id="nama_jabatan" placeholder="nama_jabatan">
                                             </div>
                                             <hr>
                                             <div class="text-right">

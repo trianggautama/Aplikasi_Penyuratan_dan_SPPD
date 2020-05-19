@@ -27,8 +27,11 @@ Route::get('/user/index', 'userController@index')->name('userIndex');
 Route::get('/user/edit', 'userController@edit')->name('userEdit');
 
 
-//User Golongan
+//Golongan Route
 Route::get('/golongan/index', 'golonganController@index')->name('golonganIndex');
 Route::get('/golongan/edit', 'golonganController@edit')->name('golonganEdit');
 
+//jabatan Route
+Route::get('/jabatan/index', 'jabatanController@index')->name('jabatanIndex');
+Route::get('/jabatan/edit', 'jabatanController@edit')->name('jabatanEdit');
 
