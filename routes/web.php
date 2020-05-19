@@ -42,3 +42,15 @@ Route::get('/unit/edit', 'unitController@edit')->name('unitEdit');
 //Kota Route
 Route::get('/kota/index', 'kotaController@index')->name('kotaIndex');
 Route::get('/kota/edit', 'kotaController@edit')->name('kotaEdit');
+
+//Transportasi Route
+Route::get('/transportasi/index', 'transportasiController@index')->name('transportasiIndex');
+Route::get('/transportasi/edit', 'transportasiController@edit')->name('transportasiEdit');
+
+//Pegawai Route
+Route::get('/pegawai/index', 'pegawaiController@index')->name('pegawaiIndex');
+Route::get('/pegawai/edit', 'pegawaiController@edit')->name('pegawaiEdit');
+
+//Agenda Route
+Route::get('/agenda/index', 'agendaController@index')->name('agendaIndex');
+Route::get('/agenda/edit', 'agendaController@edit')->name('agendaEdit');
