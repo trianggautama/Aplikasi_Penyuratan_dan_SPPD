@@ -35,3 +35,10 @@ Route::get('/golongan/edit', 'golonganController@edit')->name('golonganEdit');
 Route::get('/jabatan/index', 'jabatanController@index')->name('jabatanIndex');
 Route::get('/jabatan/edit', 'jabatanController@edit')->name('jabatanEdit');
 
+//Unit Kerja Route
+Route::get('/unit/index', 'unitController@index')->name('unitIndex');
+Route::get('/unit/edit', 'unitController@edit')->name('unitEdit');
+
+//Kota Route
+Route::get('/kota/index', 'kotaController@index')->name('kotaIndex');
+Route::get('/kota/edit', 'kotaController@edit')->name('kotaEdit');

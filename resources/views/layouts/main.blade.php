@@ -42,8 +42,8 @@
                             <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
                             <a class="dropdown-item" href="{{Route('golonganIndex')}}">Golongan</a>
                             <a class="dropdown-item" href="{{Route('jabatanIndex')}}">Jabatan</a>
-                            <a class="dropdown-item" href="#">Unit Kerja</a>
-                            <a class="dropdown-item" href="#">Kota</a>
+                            <a class="dropdown-item" href="{{Route('unitIndex')}}">Unit Kerja</a>
+                            <a class="dropdown-item" href="{{Route('kotaIndex')}}">Kota</a>
                             <a class="dropdown-item" href="#">Transportasi</a>
                             <a class="dropdown-item" href="#">Pegawai</a>
                             <a class="dropdown-item" href="#">Nomor Agenda</a>
