@@ -8,7 +8,7 @@
 				<!-- Title -->
 				<div class="hk-pg-header align-items-top">
 					<div>
-						<h2 class="hk-pg-title font-weight-600 mb-10">Halaman User</h2>
+						<h2 class="hk-pg-title font-weight-600 mb-10">Halaman Golongan</h2>
 					</div>
 					<div class="d-flex">
 						<button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print </span></button>
@@ -32,21 +32,19 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama</th>
-                                                    <th>Username</th>
-                                                    <th>NIP</th>
+                                                    <th>Kode Golongan</th>
+                                                    <th>Nama Golongan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>Tiger123</td>
-                                                    <td>12314141676</td>
+                                                    <td>III/b</td>
+                                                    <td>Pembina Utama</td>
                                                     <td>						
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
-                                                        <a href="{{Route('userEdit')}}" class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
+                                                        <a href="{{Route('golonganEdit')}}" class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-trash"></i> </span><span class="btn-text"> </span></button>
                                                     </td>
                                                 </tr>
@@ -54,9 +52,8 @@
                                             <tfoot>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama</th>
-                                                    <th>Username</th>
-                                                    <th>NIP</th>
+                                                    <th>Kode Golongan</th>
+                                                    <th>Nama Golongan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </tfoot>
@@ -89,20 +86,12 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Nama</label>
-                                <input type="text" class="form-control" id="nama" placeholder="nama">
+                                <label for="exampleDropdownFormEmail1">Kode Golongan</label>
+                                <input type="text" class="form-control" id="kode_golongan" placeholder="kode_golongan">
                             </div>
                             <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">NIP</label>
-                                <input type="text" class="form-control" id="nip" placeholder="nip">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">username</label>
-                                <input type="text" class="form-control" id="username" placeholder="username">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                                <label for="exampleDropdownFormEmail1">Nama Golongan</label>
+                                <input type="text" class="form-control" id="nama_golongan" placeholder="nama_golongan">
                             </div>
                             <div class="text-right">
                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>

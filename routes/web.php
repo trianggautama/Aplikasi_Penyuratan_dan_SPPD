@@ -24,5 +24,11 @@ Route::get('/admin/index', 'adminController@index')->name('index');
 
 //User Route
 Route::get('/user/index', 'userController@index')->name('userIndex');
+Route::get('/user/edit', 'userController@edit')->name('userEdit');
+
+
+//User Golongan
+Route::get('/golongan/index', 'golonganController@index')->name('golonganIndex');
+Route::get('/golongan/edit', 'golonganController@edit')->name('golonganEdit');
 
 

@@ -40,7 +40,7 @@
 							</a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
-                            <a class="dropdown-item" href="#">Golongan</a>
+                            <a class="dropdown-item" href="{{Route('golonganIndex')}}">Golongan</a>
                             <a class="dropdown-item" href="#">Jabatan</a>
                             <a class="dropdown-item" href="#">Unit Kerja</a>
                             <a class="dropdown-item" href="#">Kota</a>
