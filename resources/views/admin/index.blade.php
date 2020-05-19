@@ -82,7 +82,53 @@
 								</div>
 							</div>	
 						</div>
-					
+						<div class="hk-row">
+							<div class="col-sm-12">
+								<div class="card-group hk-dash-type-2">
+									<div class="card card-sm">
+										<div class="card-body">
+											<div class="d-flex justify-content-between mb-5">
+												<div>
+													<span class="d-block font-15 text-dark font-weight-500">Surat Permohonan</span>
+												</div>
+											</div>
+											<div>
+												<span class="d-block display-4 text-dark mb-5">60</span>
+												<small class="d-block text-danger">Buah Surat</small>
+											</div>
+										</div>
+									</div>
+								
+									<div class="card card-sm">
+										<div class="card-body">
+											<div class="d-flex justify-content-between mb-5">
+												<div>
+													<span class="d-block font-15 text-dark font-weight-500">Surat Peminjaman</span>
+												</div>
+											</div>
+											<div>
+												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">14</span></span>
+												<small class="d-block text-danger">Buah Surat</small>
+											</div>
+										</div>
+									</div>
+								
+									<div class="card card-sm">
+										<div class="card-body">
+											<div class="d-flex justify-content-between mb-5">
+												<div>
+													<span class="d-block font-15 text-dark font-weight-500">SK</span>
+												</div>
+											</div>
+											<div>
+												<span class="d-block display-4 text-dark mb-5">11</span>
+												<small class="d-block text-danger"></small>Pengajuan SK
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
 						<div class="hk-row">
 							<div class="col-lg-8">
                             <div class="card">

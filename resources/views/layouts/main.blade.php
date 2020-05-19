@@ -39,10 +39,14 @@
 								Master Data
 							</a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <a class="dropdown-item" href="#">User</a>
-                            <a class="dropdown-item" href="#">Pegawai</a>
-                            <a class="dropdown-item" href="#">Pejabat</a>
+                            <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
+                            <a class="dropdown-item" href="#">Golongan</a>
+                            <a class="dropdown-item" href="#">Jabatan</a>
+                            <a class="dropdown-item" href="#">Unit Kerja</a>
+                            <a class="dropdown-item" href="#">Kota</a>
                             <a class="dropdown-item" href="#">Transportasi</a>
+                            <a class="dropdown-item" href="#">Pegawai</a>
+                            <a class="dropdown-item" href="#">Nomor Agenda</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">
@@ -52,7 +56,10 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="#">Surat Masuk</a>
                             <a class="dropdown-item" href="#">Surat Keluar</a>
-							<a class="dropdown-item" href="#">Disposisi Surat</a>
+                            <a class="dropdown-item" href="#">Disposisi Surat</a>
+                            <a class="dropdown-item" href="#">Surat Permohonan</a>
+                            <a class="dropdown-item" href="#">Surat Peminjaman</a>
+							<a class="dropdown-item" href="#">SK</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">
