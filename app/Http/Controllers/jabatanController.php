@@ -44,6 +44,6 @@ class jabatanController extends Controller
     public function destroy($uuid)
     {
         $data = jabatan::where('uuid', $uuid)->first()->delete();
-        return redirect()->route('jabatanIndex');
+        return redirect()->route('jabatanIndex')->with('success', 'Data berhasil dihapus');
     }
 }
