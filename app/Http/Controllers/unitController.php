@@ -44,6 +44,6 @@ class unitController extends Controller
     public function destroy($uuid)
     {
         $data = unit_kerja::where('uuid', $uuid)->first()->delete();
-        return redirect()->route('unitIndex');
+        return redirect()->route('unitIndex')->with('success', 'Data berhasil dihapus');
     }
 }

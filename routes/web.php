@@ -44,14 +44,14 @@ Route::get('/kota/index', 'kotaController@index')->name('kotaIndex');
 Route::post('/kota/index/create', 'kotaController@store')->name('kotaCreate');
 Route::get('/kota/edit/{uuid}', 'kotaController@edit')->name('kotaEdit');
 Route::put('/kota/edit/{uuid}', 'kotaController@update')->name('kotaUpdate');
-Route::delete('/kota/delete/{uuid}', 'kotaController@destroy')->name('kotaDestroy');
+Route::get('/kota/delete/{uuid}', 'kotaController@destroy')->name('kotaDestroy');
 
 //Transportasi Route
 Route::get('/transportasi/index', 'transportasiController@index')->name('transportasiIndex');
 Route::post('/transportasi/index/create', 'transportasiController@store')->name('transportasiCreate');
 Route::get('/transportasi/edit/{uuid}', 'transportasiController@edit')->name('transportasiEdit');
 Route::put('/transportasi/edit/{uuid}', 'transportasiController@update')->name('transportasiUpdate');
-Route::delete('/transportasi/delete/{uuid}', 'transportasiController@destroy')->name('transportasiDestroy');
+Route::get('/transportasi/delete/{uuid}', 'transportasiController@destroy')->name('transportasiDestroy');
 
 //Pegawai Route
 Route::get('/pegawai/index', 'pegawaiController@index')->name('pegawaiIndex');
