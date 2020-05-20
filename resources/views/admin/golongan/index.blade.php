@@ -50,14 +50,15 @@
                                                     <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
                                                         <a href="{{Route('golonganEdit',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  "><span
+                                                            class="btn btn-sm btn-primary  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('golonganDestroy',['uuid' => $d->uuid])}}"
+                                                        <!-- <a href="{{Route('golonganDestroy',['uuid' => $d->uuid])}}"
                                                             class="
                                                             btn btn-sm btn-outline-light "><span class=" icon-label"><i
                                                                     class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></a>
+                                                            </span><span class="btn-text"> </span></a> -->
+                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->kode_golongan}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -126,5 +127,23 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
+
+        function Hapus(uuid, kode) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus User '" + kode ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("golonganDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection

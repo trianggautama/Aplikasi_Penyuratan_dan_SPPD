@@ -23,21 +23,21 @@ Route::get('/golongan/index', 'golonganController@index')->name('golonganIndex')
 Route::post('/golongan/index/create', 'golonganController@store')->name('golonganCreate');
 Route::get('/golongan/edit/{uuid}', 'golonganController@edit')->name('golonganEdit');
 Route::put('/golongan/edit/{uuid}', 'golonganController@update')->name('golonganUpdate');
-Route::delete('/golongan/delete/{uuid}', 'golonganController@destroy')->name('golonganDestroy');
+Route::get('/golongan/delete/{uuid}', 'golonganController@destroy')->name('golonganDestroy');
 
 //Jabatan Route
 Route::get('/jabatan/index', 'jabatanController@index')->name('jabatanIndex');
 Route::post('/jabatan/index/create', 'jabatanController@store')->name('jabatanCreate');
 Route::get('/jabatan/edit/{uuid}', 'jabatanController@edit')->name('jabatanEdit');
 Route::put('/jabatan/edit/{uuid}', 'jabatanController@update')->name('jabatanUpdate');
-Route::delete('/jabatan/delete/{uuid}', 'jabatanController@destroy')->name('jabatanDestroy');
+Route::get('/jabatan/delete/{uuid}', 'jabatanController@destroy')->name('jabatanDestroy');
 
 //Unit kerja Route
 Route::get('/unit-kerja/index', 'unitController@index')->name('unitIndex');
 Route::post('/unit-kerja/index/create', 'unitController@store')->name('unitCreate');
 Route::get('/unit-kerja/edit/{uuid}', 'unitController@edit')->name('unitEdit');
 Route::put('/unit-kerja/edit/{uuid}', 'unitController@update')->name('unitUpdate');
-Route::delete('/unit-kerja/delete/{uuid}', 'unitController@destroy')->name('unitDestroy');
+Route::get('/unit-kerja/delete/{uuid}', 'unitController@destroy')->name('unitDestroy');
 
 //Kota Route
 Route::get('/kota/index', 'kotaController@index')->name('kotaIndex');
