@@ -73,4 +73,7 @@ Route::delete('/pegawai/delete/{uuid}', 'pegawaiController@destroy')->name('pega
 
 //Agenda Route
 Route::get('/agenda/index', 'agendaController@index')->name('agendaIndex');
-Route::get('/agenda/edit', 'agendaController@edit')->name('agendaEdit');
+Route::post('/agenda/index/create', 'agendaController@store')->name('agendaCreate');
+Route::get('/agenda/edit/{uuid}', 'agendaController@edit')->name('agendaEdit');
+Route::put('/agenda/edit/{uuid}', 'agendaController@update')->name('agendaUpdate');
+Route::delete('/agenda/delete/{uuid}', 'agendaController@destroy')->name('agendaDestroy');
