@@ -61,6 +61,6 @@ class pegawaiController extends Controller
     public function destroy($uuid)
     {
         $data = pegawai::where('uuid', $uuid)->first()->delete();
-        return redirect()->route('pegawaiIndex');
+        return redirect()->route('pegawaiIndex')->with('success', 'Data berhasil dihapus');
     }
 }

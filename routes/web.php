@@ -58,11 +58,11 @@ Route::get('/pegawai/index', 'pegawaiController@index')->name('pegawaiIndex');
 Route::post('/pegawai/index/create', 'pegawaiController@store')->name('pegawaiCreate');
 Route::get('/pegawai/edit/{uuid}', 'pegawaiController@edit')->name('pegawaiEdit');
 Route::put('/pegawai/edit/{uuid}', 'pegawaiController@update')->name('pegawaiUpdate');
-Route::delete('/pegawai/delete/{uuid}', 'pegawaiController@destroy')->name('pegawaiDestroy');
+Route::get('/pegawai/delete/{uuid}', 'pegawaiController@destroy')->name('pegawaiDestroy');
 
 //Agenda Route
 Route::get('/agenda/index', 'agendaController@index')->name('agendaIndex');
 Route::post('/agenda/index/create', 'agendaController@store')->name('agendaCreate');
 Route::get('/agenda/edit/{uuid}', 'agendaController@edit')->name('agendaEdit');
 Route::put('/agenda/edit/{uuid}', 'agendaController@update')->name('agendaUpdate');
-Route::delete('/agenda/delete/{uuid}', 'agendaController@destroy')->name('agendaDestroy');
+Route::get('/agenda/delete/{uuid}', 'agendaController@destroy')->name('agendaDestroy');
