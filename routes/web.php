@@ -52,7 +52,10 @@ Route::delete('/unit-kerja/delete/{uuid}', 'unitController@destroy')->name('unit
 
 //Kota Route
 Route::get('/kota/index', 'kotaController@index')->name('kotaIndex');
-Route::get('/kota/edit', 'kotaController@edit')->name('kotaEdit');
+Route::post('/kota/index/create', 'kotaController@store')->name('kotaCreate');
+Route::get('/kota/edit/{uuid}', 'kotaController@edit')->name('kotaEdit');
+Route::put('/kota/edit/{uuid}', 'kotaController@update')->name('kotaUpdate');
+Route::delete('/kota/delete/{uuid}', 'kotaController@destroy')->name('kotaDestroy');
 
 //Transportasi Route
 Route::get('/transportasi/index', 'transportasiController@index')->name('transportasiIndex');
