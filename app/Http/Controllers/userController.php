@@ -53,7 +53,7 @@ class userController extends Controller
     public function destroy($uuid)
     {
         $data = User::where('uuid', $uuid)->first()->delete();
-        return redirect()->route('userIndex');
+        return redirect()->route('userIndex')->with('success', 'Data berhasil dihapus');
 
     }
 }

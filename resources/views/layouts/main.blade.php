@@ -174,6 +174,7 @@
     <!-- Init JavaScript -->
     <script src="{{asset('admin/dist/js/init.js')}}"></script>
     <script src="{{asset('admin/dist/js/dashboard4-data.js')}}"></script>
+    <script src="{{asset('vendor/sweetalert/sweetalert.all.js')}}"></script>
     @yield('scripts')
 </body>
 
