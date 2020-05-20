@@ -44,5 +44,6 @@ class unitController extends Controller
     public function destroy($uuid)
     {
         $data = unit_kerja::where('uuid', $uuid)->first()->delete();
+        return redirect()->route('unitIndex');
     }
 }
