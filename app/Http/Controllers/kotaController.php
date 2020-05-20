@@ -44,6 +44,6 @@ class kotaController extends Controller
     public function destroy($uuid)
     {
         $data = kota::where('uuid', $uuid)->first()->delete();
-        return redirect()->route('kotaIndex');
+        return redirect()->route('kotaIndex')->with('success', 'Data berhasil dihapus');
     }
 }
