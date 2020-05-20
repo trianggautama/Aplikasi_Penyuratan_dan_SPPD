@@ -66,7 +66,10 @@ Route::delete('/transportasi/delete/{uuid}', 'transportasiController@destroy')->
 
 //Pegawai Route
 Route::get('/pegawai/index', 'pegawaiController@index')->name('pegawaiIndex');
-Route::get('/pegawai/edit', 'pegawaiController@edit')->name('pegawaiEdit');
+Route::post('/pegawai/index/create', 'pegawaiController@store')->name('pegawaiCreate');
+Route::get('/pegawai/edit/{uuid}', 'pegawaiController@edit')->name('pegawaiEdit');
+Route::put('/pegawai/edit/{uuid}', 'pegawaiController@update')->name('pegawaiUpdate');
+Route::delete('/pegawai/delete/{uuid}', 'pegawaiController@destroy')->name('pegawaiDestroy');
 
 //Agenda Route
 Route::get('/agenda/index', 'agendaController@index')->name('agendaIndex');
