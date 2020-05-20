@@ -44,5 +44,6 @@ class golonganController extends Controller
     public function destroy($uuid)
     {
         $data = golongan::where('uuid', $uuid)->first()->delete();
+        return redirect()->route('golonganIndex');
     }
 }
