@@ -44,6 +44,6 @@ class agendaController extends Controller
     public function destroy($uuid)
     {
         $data = agenda::where('uuid', $uuid)->first()->delete();
-        return redirect()->route('agendaIndex');
+        return redirect()->route('agendaIndex')->with('success', 'Data berhasil dihapus');
     }
 }
