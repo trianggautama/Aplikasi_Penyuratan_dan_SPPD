@@ -70,7 +70,7 @@
                             <a class="dropdown-item" href="{{Route('suratDisposisiIndex')}}">Disposisi Surat</a>
                             <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Permohonan</a>
                             <a class="dropdown-item" href="{{Route('peminjamanIndex')}}">Data Peminjaman</a>
-                            <a class="dropdown-item" href="#">SK</a>
+                            <a class="dropdown-item" href="{{Route('skIndex')}}">SK</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">

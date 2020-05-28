@@ -106,3 +106,11 @@ Route::post('/peminjaman/index/create', 'peminjamanController@store')->name('pem
 Route::get('/peminjaman/edit/', 'peminjamanController@edit')->name('peminjamanEdit');
 Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
 Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
+
+//SK
+Route::get('/sk/index', 'skController@index')->name('skIndex');
+Route::get('/sk/detail', 'skController@show')->name('skShow');
+Route::post('/sk/index/create', 'skController@store')->name('skCreate');
+Route::get('/sk/edit/', 'skController@edit')->name('skEdit');
+Route::put('/sk/edit/{uuid}', 'skController@update')->name('skUpdate');
+Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');
