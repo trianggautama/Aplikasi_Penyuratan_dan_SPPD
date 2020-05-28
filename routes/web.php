@@ -74,3 +74,11 @@ Route::post('/suratMasuk/index/create', 'suratMasukController@store')->name('sur
 Route::get('/suratMasuk/edit/', 'suratMasukController@edit')->name('suratMasukEdit');
 Route::put('/suratMasuk/edit/{uuid}', 'suratMasukController@update')->name('suratMasukUpdate');
 Route::get('/suratMasuk/delete/{uuid}', 'suratMasukController@destroy')->name('suratMasukDestroy');
+
+//Surat Keluar
+Route::get('/suratKeluar/index', 'suratKeluarController@index')->name('suratKeluarIndex');
+Route::get('/suratKeluar/detail', 'suratKeluarController@show')->name('suratKeluarShow');
+Route::post('/suratKeluar/index/create', 'suratKeluarController@store')->name('suratKeluarCreate');
+Route::get('/suratKeluar/edit/', 'suratKeluarController@edit')->name('suratKeluarEdit');
+Route::put('/suratKeluar/edit/{uuid}', 'suratKeluarController@update')->name('suratKeluarUpdate');
+Route::get('/suratKeluar/delete/{uuid}', 'suratKeluarController@destroy')->name('suratKeluarDestroy');
