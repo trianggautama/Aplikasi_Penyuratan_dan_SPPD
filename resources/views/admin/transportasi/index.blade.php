@@ -8,7 +8,7 @@
 				<!-- Title -->
 				<div class="hk-pg-header align-items-top">
 					<div>
-						<h2 class="hk-pg-title font-weight-600 mb-10">INI KENA AJA DLU DIGAWI</h2>
+						<h2 class="hk-pg-title font-weight-600 mb-10">Data Transportasi</h2>
 					</div>
 					<div class="d-flex">
 						<button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print </span></button>
@@ -32,31 +32,30 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama</th>
-                                                    <th>Username</th>
-                                                    <th>NIP</th>
+                                                    <th>Jenis Transportasi</th>
+                                                    <th>Nama Transportasi</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>Tiger123</td>
-                                                    <td>12314141676</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->jenis_transportasi}}</td>
+                                                    <td>{{$d->nama_transportasi}}</td>
                                                     <td>						
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
-                                                        <a href="{{Route('userEdit')}}" class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
+                                                        <a href="{{Route('transportasiEdit',['uuid'=>$d->uuid])}}" class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-trash"></i> </span><span class="btn-text"> </span></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama</th>
-                                                    <th>Username</th>
-                                                    <th>NIP</th>
+                                                    <th>Jenis Transportasi</th>
+                                                    <th>Nama Transportasi</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </tfoot>
@@ -89,21 +88,15 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Nama</label>
-                                <input type="text" class="form-control" id="nama" placeholder="nama">
+                                <label for="exampleDropdownFormEmail1">Jenis Transportasi</label>
+                                <select name="no_agenda_id" id="jenis_transportasi" class="form-control">
+                                    <option value="">-- Pilih Jenis Transportasi --</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">NIP</label>
-                                <input type="text" class="form-control" id="nip" placeholder="nip">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">username</label>
-                                <input type="text" class="form-control" id="username" placeholder="username">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                            </div>
+                                <label for="exampleDropdownFormEmail1">Nama Transportasi</label>
+                                <input type="text" class="form-control" id="nama_transportasi" placeholder="Nama Transportasi">
+                            </div> 
                             <div class="text-right">
                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
                             </div>
