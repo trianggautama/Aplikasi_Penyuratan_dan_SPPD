@@ -67,7 +67,7 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('suratMasukIndex')}}">Surat Masuk</a>
                             <a class="dropdown-item" href="{{Route('suratKeluarIndex')}}">Surat Keluar</a>
-                            <a class="dropdown-item" href="#">Disposisi Surat</a>
+                            <a class="dropdown-item" href="{{Route('suratDisposisiIndex')}}">Disposisi Surat</a>
                             <a class="dropdown-item" href="#">Surat Permohonan</a>
                             <a class="dropdown-item" href="#">Surat Peminjaman</a>
                             <a class="dropdown-item" href="#">SK</a>

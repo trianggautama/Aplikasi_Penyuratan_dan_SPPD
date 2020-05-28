@@ -82,3 +82,11 @@ Route::post('/suratKeluar/index/create', 'suratKeluarController@store')->name('s
 Route::get('/suratKeluar/edit/', 'suratKeluarController@edit')->name('suratKeluarEdit');
 Route::put('/suratKeluar/edit/{uuid}', 'suratKeluarController@update')->name('suratKeluarUpdate');
 Route::get('/suratKeluar/delete/{uuid}', 'suratKeluarController@destroy')->name('suratKeluarDestroy');
+
+//Surat Disposisi
+Route::get('/suratDisposisi/index', 'suratDisposisiController@index')->name('suratDisposisiIndex');
+Route::get('/suratDisposisi/detail', 'suratDisposisiController@show')->name('suratDisposisiShow');
+Route::post('/suratDisposisi/index/create', 'suratDisposisiController@store')->name('suratDisposisiCreate');
+Route::get('/suratDisposisi/edit/', 'suratDisposisiController@edit')->name('suratDisposisiEdit');
+Route::put('/suratDisposisi/edit/{uuid}', 'suratDisposisiController@update')->name('suratDisposisiUpdate');
+Route::get('/suratDisposisi/delete/{uuid}', 'suratDisposisiController@destroy')->name('suratDisposisiDestroy');
