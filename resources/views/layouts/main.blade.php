@@ -68,8 +68,8 @@
                             <a class="dropdown-item" href="{{Route('suratMasukIndex')}}">Surat Masuk</a>
                             <a class="dropdown-item" href="{{Route('suratKeluarIndex')}}">Surat Keluar</a>
                             <a class="dropdown-item" href="{{Route('suratDisposisiIndex')}}">Disposisi Surat</a>
-                            <a class="dropdown-item" href="#">Surat Permohonan</a>
-                            <a class="dropdown-item" href="#">Surat Peminjaman</a>
+                            <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Permohonan</a>
+                            <a class="dropdown-item" href="{{Route('peminjamanIndex')}}">Data Peminjaman</a>
                             <a class="dropdown-item" href="#">SK</a>
                         </div>
                     </li>

@@ -90,3 +90,19 @@ Route::post('/suratDisposisi/index/create', 'suratDisposisiController@store')->n
 Route::get('/suratDisposisi/edit/', 'suratDisposisiController@edit')->name('suratDisposisiEdit');
 Route::put('/suratDisposisi/edit/{uuid}', 'suratDisposisiController@update')->name('suratDisposisiUpdate');
 Route::get('/suratDisposisi/delete/{uuid}', 'suratDisposisiController@destroy')->name('suratDisposisiDestroy');
+
+//Surat Permohonan
+Route::get('/suratPermohonan/index', 'suratPermohonanController@index')->name('suratPermohonanIndex');
+Route::get('/suratPermohonan/detail', 'suratPermohonanController@show')->name('suratPermohonanShow');
+Route::post('/suratPermohonan/index/create', 'suratPermohonanController@store')->name('suratPermohonanCreate');
+Route::get('/suratPermohonan/edit/', 'suratPermohonanController@edit')->name('suratPermohonanEdit');
+Route::put('/suratPermohonan/edit/{uuid}', 'suratPermohonanController@update')->name('suratPermohonanUpdate');
+Route::get('/suratPermohonan/delete/{uuid}', 'suratPermohonanController@destroy')->name('suratPermohonanDestroy');
+
+//Peminjaman
+Route::get('/peminjaman/index', 'peminjamanController@index')->name('peminjamanIndex');
+Route::get('/peminjaman/detail', 'peminjamanController@show')->name('peminjamanShow');
+Route::post('/peminjaman/index/create', 'peminjamanController@store')->name('peminjamanCreate');
+Route::get('/peminjaman/edit/', 'peminjamanController@edit')->name('peminjamanEdit');
+Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
+Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
