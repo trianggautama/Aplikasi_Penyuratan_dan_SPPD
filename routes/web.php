@@ -66,3 +66,11 @@ Route::post('/agenda/index/create', 'agendaController@store')->name('agendaCreat
 Route::get('/agenda/edit/{uuid}', 'agendaController@edit')->name('agendaEdit');
 Route::put('/agenda/edit/{uuid}', 'agendaController@update')->name('agendaUpdate');
 Route::get('/agenda/delete/{uuid}', 'agendaController@destroy')->name('agendaDestroy');
+
+//Surat Masuk
+Route::get('/suratMasuk/index', 'suratMasukController@index')->name('suratMasukIndex');
+Route::get('/suratMasuk/detail', 'suratMasukController@show')->name('suratMasukShow');
+Route::post('/suratMasuk/index/create', 'suratMasukController@store')->name('suratMasukCreate');
+Route::get('/suratMasuk/edit/', 'suratMasukController@edit')->name('suratMasukEdit');
+Route::put('/suratMasuk/edit/{uuid}', 'suratMasukController@update')->name('suratMasukUpdate');
+Route::get('/suratMasuk/delete/{uuid}', 'suratMasukController@destroy')->name('suratMasukDestroy');
