@@ -102,9 +102,9 @@
                                 <input type="text" class="form-control" id="nomor_surat" placeholder="Nomor Surat">
                             </div>                          
                             <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Jenis SK</label>
-                                <select name="no_agenda_id" id="no_agenda_id" class="form-control">
-                                    <option value="">-- Pilih Jenis sk --</option>
+                                <label for="exampleDropdownFormEmail1">Jenis permohonan</label>
+                                <select name="permohonan_id" id="permohonan_id" class="form-control">
+                                    <option value="">-- Pilih dari jenis permhonan --</option>
                                 </select>
                             </div>
                             <div class="form-group">

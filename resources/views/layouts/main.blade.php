@@ -57,6 +57,7 @@
                             <a class="dropdown-item" href="{{Route('transportasiIndex')}}">Transportasi</a>
                             <a class="dropdown-item" href="{{Route('pegawaiIndex')}}">Pegawai</a>
                             <a class="dropdown-item" href="{{Route('agendaIndex')}}">Nomor Agenda</a>
+                            <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Permohonan</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">
@@ -68,7 +69,6 @@
                             <a class="dropdown-item" href="{{Route('suratMasukIndex')}}">Surat Masuk</a>
                             <a class="dropdown-item" href="{{Route('suratKeluarIndex')}}">Surat Keluar</a>
                             <a class="dropdown-item" href="{{Route('suratDisposisiIndex')}}">Disposisi Surat</a>
-                            <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Permohonan</a>
                             <a class="dropdown-item" href="{{Route('peminjamanIndex')}}">Data Peminjaman</a>
                             <a class="dropdown-item" href="{{Route('skIndex')}}">SK</a>
                         </div>
@@ -80,7 +80,7 @@
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="#">Kategori SPPD</a>
-                            <a class="dropdown-item" href="#">Berkas SPPD SPPD</a>
+                            <a class="dropdown-item" href="#">Berkas SPPD</a>
                             <a class="dropdown-item" href="#">Laporan Perjalanan Dinas </a>
                         </div>
                     </li>
