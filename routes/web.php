@@ -121,9 +121,12 @@ Route::post('/sk/index/create', 'skController@store')->name('skCreate');
 Route::get('/sk/edit/{uuid}', 'skController@edit')->name('skEdit');
 Route::put('/sk/edit/{uuid}', 'skController@update')->name('skUpdate');
 Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');
+Route::get('/sk/filter', 'skController@filter')->name('skFilter');
+
 
 //cetak data 
 Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
 Route::post('/suratKeluar/filter', 'reportController@suratKeluar')->name('suratKeluarFilterCetak');
 Route::post('/suratDisposisi/filter', 'reportController@suratDisposisi')->name('suratDisposisiFilterCetak');
 Route::post('/peminjaman/filter', 'reportController@peminjaman')->name('peminjamanFilterCetak');
+Route::post('/sk/filter', 'reportController@sk')->name('skFilterCetak');

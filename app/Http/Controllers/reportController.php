@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Disposisi_surat;
 use App\Peminjaman;
+use App\Sk;
 use App\Surat_keluar;
 use App\Surat_masuk;
 use Carbon\Carbon;
@@ -54,5 +55,16 @@ class reportController extends Controller
             $pdf =PDF::loadView('formCetak.peminjaman', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
             return $pdf->stream('Laporan data Peminjaman .pdf');
+        }
+
+        //cetak laporan SK
+        public function sk(Request $request){
+            $data = Sk::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
+            $tgl_mulai = $request->tanggal_mulai;
+            $tgl_selesai = $request->tanggal_selesai;
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.sk', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
+            $pdf->setPaper('a4', 'landscape');
+            return $pdf->stream('Laporan data SK .pdf');
         }
 }

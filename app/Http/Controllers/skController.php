@@ -45,4 +45,8 @@ class skController extends Controller
         $data = Sk::where('uuid', $uuid)->first()->delete();
         return redirect()->route('skIndex');
     }
+    public function filter()
+    {     
+        return view('admin.sk.filter');
+    }
 }
