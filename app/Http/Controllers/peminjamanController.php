@@ -53,4 +53,9 @@ class peminjamanController extends Controller
         $data = Peminjaman::where('uuid', $uuid)->first()->delete();
         return redirect()->route('peminjamanIndex');
     }
+
+    public function filter()
+    {     
+        return view('admin.peminjaman.filter');
+    }
 }

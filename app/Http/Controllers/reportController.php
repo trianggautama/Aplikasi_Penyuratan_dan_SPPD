@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Disposisi_surat;
+use App\Peminjaman;
 use App\Surat_keluar;
 use App\Surat_masuk;
 use Carbon\Carbon;
@@ -41,6 +42,17 @@ class reportController extends Controller
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.suratDisposisi', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
-            return $pdf->stream('Laporan data Surat Keluar .pdf');
+            return $pdf->stream('Laporan data Disposisi Surat .pdf');
+        }
+
+        //cetak laporan Peminjaman
+        public function peminjaman(Request $request){
+            $data = Peminjaman::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
+            $tgl_mulai = $request->tanggal_mulai;
+            $tgl_selesai = $request->tanggal_selesai;
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.peminjaman', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
+            $pdf->setPaper('a4', 'landscape');
+            return $pdf->stream('Laporan data Peminjaman .pdf');
         }
 }

@@ -111,6 +111,8 @@ Route::post('/peminjaman/index/create', 'peminjamanController@store')->name('pem
 Route::get('/peminjaman/edit/{uuid}', 'peminjamanController@edit')->name('peminjamanEdit');
 Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
 Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
+Route::get('/peminjaman/filter', 'peminjamanController@filter')->name('peminjamanFilter');
+
 
 //SK
 Route::get('/sk/index', 'skController@index')->name('skIndex');
@@ -124,3 +126,4 @@ Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');
 Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
 Route::post('/suratKeluar/filter', 'reportController@suratKeluar')->name('suratKeluarFilterCetak');
 Route::post('/suratDisposisi/filter', 'reportController@suratDisposisi')->name('suratDisposisiFilterCetak');
+Route::post('/peminjaman/filter', 'reportController@peminjaman')->name('peminjamanFilterCetak');
