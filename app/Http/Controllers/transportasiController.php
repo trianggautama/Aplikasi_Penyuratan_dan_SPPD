@@ -15,11 +15,7 @@ class transportasiController extends Controller
 
     public function store(Request $request)
     {
-        $data = new transportasi;
-        // $data->kode_transportasi = $request->kode_transportasi;
-        // $data->transportasi = $request->transportasi;
-
-        $data->save();
+        $data = Transportasi::create($request->all());
 
         return redirect()->route('transportasiIndex')->with('success', 'Data berhasil disimpan');
     }
@@ -33,8 +29,7 @@ class transportasiController extends Controller
     public function update(Request $request, $uuid)
     {
         $data = transportasi::where('uuid', $uuid)->first();
-        // $data->kode_transportasi = $request->kode_transportasi;
-        // $data->transportasi = $request->transportasi;
+        $data->fill($request->all())->save();
 
         $data->update();
 

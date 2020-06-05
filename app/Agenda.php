@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Agenda extends Model
 {
     use Uuid;
+
+    public function surat_masuk()
+    {
+        return $this->hasMany(Surat_masuk::class);
+    }
+
 }

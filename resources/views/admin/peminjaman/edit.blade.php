@@ -11,8 +11,10 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Peminjaman Edit</h2>
             </div>
             <div class="d-flex">
-				<a href="{{Route('peminjamanIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span class="icon-label"><i class="fa fa-arrow-left" ></i> </span><span class="btn-text">Kembali</span></a>
-			</div>
+                <a href="{{Route('peminjamanIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15"
+                    id="tambah"><span class="icon-label"><i class="fa fa-arrow-left"></i> </span><span
+                        class="btn-text">Kembali</span></a>
+            </div>
         </div>
         <!-- /Title -->
         <!-- Row -->
@@ -31,25 +33,34 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Nomor Surat</label>
-                                                <input type="text" class="form-control" id="nomor_surat" placeholder="Nomor Surat">
-                                            </div>   
+                                                <input type="text" class="form-control" value="{{$data->nomor_surat}}"
+                                                    name="nomor_surat" placeholder="Nomor Surat">
+                                            </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Peminjam</label>
-                                                <select name="no_agenda_id" id="no_agenda_id" class="form-control">
-                                                    <option value="">-- Pilih dari pegawai --</option>
+                                                <select name="pegawai_id" id="pegawai_id" class="form-control">
+                                                    <option value="">-- Pilih pegawai --</option>
+                                                    @foreach ($pegawai as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->pegawai_id ? 'selected' : ''}}>{{$d->NIP}} -
+                                                        {{$d->nama}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tanggal Pinjam</label>
-                                                <input type="date" class="form-control" id="tanggal_pinjam" >
+                                                <input type="date" class="form-control"
+                                                    value="{{$data->tanggal_pinjam}}" name="tanggal_pinjam">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tanggal Kembali</label>
-                                                <input type="date" class="form-control" id="tanggal_pinjam" >
+                                                <input type="date" class="form-control"
+                                                    value="{{$data->tanggal_kembali}}" name="tanggal_kembali">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Keterangan</label>
-                                                <textarea name="isi_ringkas" id="isi_ringkas" class="form-control"></textarea>
+                                                <textarea name="keterangan" id="keterangan"
+                                                    class="form-control">{{$data->keterangan}}</textarea>
                                             </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>

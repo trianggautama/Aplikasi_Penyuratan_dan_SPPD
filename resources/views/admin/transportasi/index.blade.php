@@ -1,28 +1,32 @@
 @extends('layouts.main')
 
 @section('content')
- <!-- Main Content -->
- <div class="hk-pg-wrapper">
-			<!-- Container -->
-            <div class="container mt-xl-50 mt-sm-30 mt-15">
-				<!-- Title -->
-				<div class="hk-pg-header align-items-top">
-					<div>
-						<h2 class="hk-pg-title font-weight-600 mb-10">Data Transportasi</h2>
-					</div>
-					<div class="d-flex">
-						<button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print </span></button>
-						<button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span class="icon-label"><i class="fa fa-plus" ></i> </span><span class="btn-text">Tambah Data </span></button>
-					</div>
-				</div>
-				<!-- /Title -->
-				<!-- Row -->
-                <div class="row">
-                    <div class="col-xl-12">
-						<div class="hk-row">
-							<div class="col-lg-12">
-								
-                            <section class="hk-sec-wrapper">
+<!-- Main Content -->
+<div class="hk-pg-wrapper">
+    <!-- Container -->
+    <div class="container mt-xl-50 mt-sm-30 mt-15">
+        <!-- Title -->
+        <div class="hk-pg-header align-items-top">
+            <div>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Data Transportasi</h2>
+            </div>
+            <div class="d-flex">
+                <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
+                    </span></button>
+                <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
+                        class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
+                    </span></button>
+            </div>
+        </div>
+        <!-- /Title -->
+        <!-- Row -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="hk-row">
+                    <div class="col-lg-12">
+
+                        <section class="hk-sec-wrapper">
                             <h5 class="hk-sec-title">Data Table</h5>
                             <br>
                             <div class="row">
@@ -41,12 +45,26 @@
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->jenis_transportasi}}</td>
+                                                    <td>
+                                                        @if($d->jenis_transportasi == 1)
+                                                        Darat
+                                                        @elseif($d->jenis_transportasi == 2)
+                                                        Laut
+                                                        @else
+                                                        Udara
+                                                        @endif
+
+                                                    </td>
                                                     <td>{{$d->nama_transportasi}}</td>
-                                                    <td>						
+                                                    <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
-                                                        <a href="{{Route('transportasiEdit',['uuid'=>$d->uuid])}}" class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-trash"></i> </span><span class="btn-text"> </span></button>
+                                                        <a href="{{Route('transportasiEdit',['uuid'=>$d->uuid])}}"
+                                                            class="btn btn-sm btn-outline-light  "><span
+                                                                class="icon-label"><i class="fa fa-edit"></i>
+                                                            </span><span class="btn-text"> </span></a>
+                                                        <button class="btn btn-sm btn-outline-light  "><span
+                                                                class="icon-label"><i class="fa fa-trash"></i>
+                                                            </span><span class="btn-text"> </span></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -64,54 +82,60 @@
                                 </div>
                             </div>
                         </section>
-							</div>
-						</div>
-					</div>
-                </div>
-                <!-- /Row -->
-            </div>
-            <!-- /Container -->
-			
-        </div>
-        <!-- /Main Content -->
-
-    <!-- Modal forms-->
-        <div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                     <div class="modal-header">
-                        <h5 class="modal-title" id="status">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
                     </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Jenis Transportasi</label>
-                                <select name="no_agenda_id" id="jenis_transportasi" class="form-control">
-                                    <option value="">-- Pilih Jenis Transportasi --</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Nama Transportasi</label>
-                                <input type="text" class="form-control" id="nama_transportasi" placeholder="Nama Transportasi">
-                            </div> 
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
-                            </div>
-                    </form>
                 </div>
-             </div>
+            </div>
         </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Main Content -->
+
+<!-- Modal forms-->
+<div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="status">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{Route('transportasiCreate')}}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Jenis Transportasi</label>
+                        <select name="jenis_transportasi" id="jenis_transportasi" class="form-control">
+                            <option value="">-- Pilih Jenis Transportasi --</option>
+                            <option value="1">Darat</option>
+                            <option value="2">Laut</option>
+                            <option value="3">Udara</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Nama Transportasi</label>
+                        <input type="text" class="form-control" id="nama_transportasi" name="nama_transportasi"
+                            placeholder="Nama Transportasi">
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
+                    </div>
+                </form>
+            </div>
         </div>
+    </div>
+</div>
 
 @endsection
 @section('scripts')
-    <script>
-       $("#tambah").click(function(){
+<script>
+    $("#tambah").click(function(){
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
-    </script>
+</script>
 @endsection

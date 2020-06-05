@@ -11,8 +11,10 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Disposisi Surat Edit</h2>
             </div>
             <div class="d-flex">
-				<a href="{{Route('suratDisposisiIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span class="icon-label"><i class="fa fa-arrow-left" ></i> </span><span class="btn-text">Kembali</span></a>
-			</div>
+                <a href="{{Route('suratDisposisiIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15"
+                    id="tambah"><span class="icon-label"><i class="fa fa-arrow-left"></i> </span><span
+                        class="btn-text">Kembali</span></a>
+            </div>
         </div>
         <!-- /Title -->
         <!-- Row -->
@@ -31,33 +33,50 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Nomor Surat</label>
-                                                <select name="no_agenda_id" id="no_agenda_id" class="form-control">
+                                                <select name="surat_masuk_id" id="surat_masuk_id" class="form-control">
                                                     <option value="">-- Pilih dari surat Masuk --</option>
+                                                    @foreach ($surat_masuk as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->surat_masuk_id ? 'selected' : ''}}>
+                                                        {{$d->nomor_surat}} - {{$d->asal_surat}}
+                                                    </option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tujuan Disposisi</label>
-                                                <select name="no_agenda_id" id="no_agenda_id" class="form-control">
+                                                <select name="pegawai_id" id="pegawai_id" class="form-control">
                                                     <option value="">-- Pilih dari pegawai --</option>
+                                                    @foreach ($pegawai as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->pegawai_id ? 'selected' : ''}}>
+                                                        {{$d->NIP}} - {{$d->nama}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Isi Disposisi</label>
-                                                <input type="text" class="form-control" id="nomor_surat" placeholder="Nomor Surat">
-                                            </div>                            
+                                                <input type="text" class="form-control" value="{{$data->isi}}"
+                                                    name="isi" placeholder="Isi disposisi">
+                                            </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Sifat</label>
-                                                <select name="no_agenda_id" id="no_agenda_id" class="form-control">
+                                                <select name="sifat" id="sifat" class="form-control">
                                                     <option value="">-- ini kdatau apa isinya --</option>
+                                                    <option value="Contoh sifat"
+                                                        {{$data->sifat == 'Contoh sifat' ? 'selected' : ''}}>Contoh
+                                                        sifat</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Batas Waktu</label>
-                                                <input type="date" class="form-control" id="batas_waktu" >
+                                                <input type="date" class="form-control" value="{{$data->batas_waktu}}"
+                                                    name="batas_waktu">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Catatan</label>
-                                                <textarea name="isi_ringkas" id="isi_ringkas" class="form-control"></textarea>
+                                                <textarea name="catatan" id="catatan"
+                                                    class="form-control">{{$data->catatan}}</textarea>
                                             </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>

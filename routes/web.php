@@ -71,7 +71,8 @@ Route::get('/agenda/delete/{uuid}', 'agendaController@destroy')->name('agendaDes
 Route::get('/suratMasuk/index', 'suratMasukController@index')->name('suratMasukIndex');
 Route::get('/suratMasuk/detail', 'suratMasukController@show')->name('suratMasukShow');
 Route::post('/suratMasuk/index/create', 'suratMasukController@store')->name('suratMasukCreate');
-Route::get('/suratMasuk/edit/', 'suratMasukController@edit')->name('suratMasukEdit');
+Route::get('/suratKeluar/detail/{uuid}', 'suratMasukController@show')->name('suratMasukShow');
+Route::get('/suratMasuk/edit/{uuid}', 'suratMasukController@edit')->name('suratMasukEdit');
 Route::put('/suratMasuk/edit/{uuid}', 'suratMasukController@update')->name('suratMasukUpdate');
 Route::get('/suratMasuk/delete/{uuid}', 'suratMasukController@destroy')->name('suratMasukDestroy');
 
@@ -79,15 +80,16 @@ Route::get('/suratMasuk/delete/{uuid}', 'suratMasukController@destroy')->name('s
 Route::get('/suratKeluar/index', 'suratKeluarController@index')->name('suratKeluarIndex');
 Route::get('/suratKeluar/detail', 'suratKeluarController@show')->name('suratKeluarShow');
 Route::post('/suratKeluar/index/create', 'suratKeluarController@store')->name('suratKeluarCreate');
-Route::get('/suratKeluar/edit/', 'suratKeluarController@edit')->name('suratKeluarEdit');
+Route::get('/suratKeluar/detail/{uuid}', 'suratKeluarController@show')->name('suratKeluarShow');
+Route::get('/suratKeluar/edit/{uuid}', 'suratKeluarController@edit')->name('suratKeluarEdit');
 Route::put('/suratKeluar/edit/{uuid}', 'suratKeluarController@update')->name('suratKeluarUpdate');
 Route::get('/suratKeluar/delete/{uuid}', 'suratKeluarController@destroy')->name('suratKeluarDestroy');
 
 //Surat Disposisi
 Route::get('/suratDisposisi/index', 'suratDisposisiController@index')->name('suratDisposisiIndex');
-Route::get('/suratDisposisi/detail', 'suratDisposisiController@show')->name('suratDisposisiShow');
+Route::get('/suratDisposisi/detail/{uuid}', 'suratDisposisiController@show')->name('suratDisposisiShow');
 Route::post('/suratDisposisi/index/create', 'suratDisposisiController@store')->name('suratDisposisiCreate');
-Route::get('/suratDisposisi/edit/', 'suratDisposisiController@edit')->name('suratDisposisiEdit');
+Route::get('/suratDisposisi/edit/{uuid}', 'suratDisposisiController@edit')->name('suratDisposisiEdit');
 Route::put('/suratDisposisi/edit/{uuid}', 'suratDisposisiController@update')->name('suratDisposisiUpdate');
 Route::get('/suratDisposisi/delete/{uuid}', 'suratDisposisiController@destroy')->name('suratDisposisiDestroy');
 
@@ -95,7 +97,7 @@ Route::get('/suratDisposisi/delete/{uuid}', 'suratDisposisiController@destroy')-
 Route::get('/suratPermohonan/index', 'suratPermohonanController@index')->name('suratPermohonanIndex');
 Route::get('/suratPermohonan/detail', 'suratPermohonanController@show')->name('suratPermohonanShow');
 Route::post('/suratPermohonan/index/create', 'suratPermohonanController@store')->name('suratPermohonanCreate');
-Route::get('/suratPermohonan/edit/', 'suratPermohonanController@edit')->name('suratPermohonanEdit');
+Route::get('/suratPermohonan/edit/{uuid}', 'suratPermohonanController@edit')->name('suratPermohonanEdit');
 Route::put('/suratPermohonan/edit/{uuid}', 'suratPermohonanController@update')->name('suratPermohonanUpdate');
 Route::get('/suratPermohonan/delete/{uuid}', 'suratPermohonanController@destroy')->name('suratPermohonanDestroy');
 
@@ -103,7 +105,7 @@ Route::get('/suratPermohonan/delete/{uuid}', 'suratPermohonanController@destroy'
 Route::get('/peminjaman/index', 'peminjamanController@index')->name('peminjamanIndex');
 Route::get('/peminjaman/detail', 'peminjamanController@show')->name('peminjamanShow');
 Route::post('/peminjaman/index/create', 'peminjamanController@store')->name('peminjamanCreate');
-Route::get('/peminjaman/edit/', 'peminjamanController@edit')->name('peminjamanEdit');
+Route::get('/peminjaman/edit/{uuid}', 'peminjamanController@edit')->name('peminjamanEdit');
 Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
 Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
 
@@ -111,6 +113,6 @@ Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('p
 Route::get('/sk/index', 'skController@index')->name('skIndex');
 Route::get('/sk/detail', 'skController@show')->name('skShow');
 Route::post('/sk/index/create', 'skController@store')->name('skCreate');
-Route::get('/sk/edit/', 'skController@edit')->name('skEdit');
+Route::get('/sk/edit/{uuid}', 'skController@edit')->name('skEdit');
 Route::put('/sk/edit/{uuid}', 'skController@update')->name('skUpdate');
 Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');

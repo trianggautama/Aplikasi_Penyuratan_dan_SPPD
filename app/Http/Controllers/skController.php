@@ -2,25 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Jenis_surat;
+use App\Sk;
 use Illuminate\Http\Request;
 
 class skController extends Controller
 {
     public function index()
     {
-       
-        return view('admin.sk.index');
+        $data = Sk::orderBy('id', 'desc')->get();
+        $jenis_surat = Jenis_surat::orderBy('id', 'desc')->get();
+        return view('admin.sk.index', compact('data', 'jenis_surat'));
     }
 
-    public function show()
+    public function store(Request $request)
     {
-       
-        return view('admin.sk.show');
+        $data = Sk::create($request->all());
+
+        return redirect()->route('skIndex')->with('success', 'Data berhasil disimpan');
     }
-   
-    public function edit()
+
+    public function edit($uuid)
     {
-       
-        return view('admin.sk.edit');
+        $data = Sk::where('uuid', $uuid)->first();
+        $jenis_surat = Jenis_surat::orderBy('id', 'desc')->get();
+
+        return view('admin.sk.edit', compact('data', 'jenis_surat'));
+    }
+
+    public function update(Request $request, $uuid)
+    {
+        $data = Sk::where('uuid', $uuid)->first();
+        $data->fill($request->all())->save();
+
+        $data->update();
+
+        return redirect()->route('skIndex')->with('success', 'Data berhasil diubah');
+    }
+
+    public function destroy($uuid)
+    {
+        $data = Sk::where('uuid', $uuid)->first()->delete();
+        return redirect()->route('skIndex');
     }
 }

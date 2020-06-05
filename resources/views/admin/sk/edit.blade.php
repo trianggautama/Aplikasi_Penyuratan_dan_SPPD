@@ -11,8 +11,10 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Register SK Edit</h2>
             </div>
             <div class="d-flex">
-				<a href="{{Route('skIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span class="icon-label"><i class="fa fa-arrow-left" ></i> </span><span class="btn-text">Kembali</span></a>
-			</div>
+                <a href="{{Route('skIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15"
+                    id="tambah"><span class="icon-label"><i class="fa fa-arrow-left"></i> </span><span
+                        class="btn-text">Kembali</span></a>
+            </div>
         </div>
         <!-- /Title -->
         <!-- Row -->
@@ -31,25 +33,35 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tanggal Register</label>
-                                                <input type="date" class="form-control" id="tanggal_register" >
-                                            </div>  
+                                                <input type="date" class="form-control"
+                                                    value="{{$data->tanggal_register}}" name="tanggal_register">
+                                            </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Nomor Register</label>
-                                                <input type="text" class="form-control" id="nomor_surat" placeholder="Nomor Surat">
-                                            </div>                          
+                                                <input type="text" class="form-control"
+                                                    value="{{$data->nomor_register}}" name="nomor_register"
+                                                    placeholder="Nomor Register">
+                                            </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Jenis SK</label>
-                                                <select name="no_agenda_id" id="no_agenda_id" class="form-control">
-                                                    <option value="">-- Pilih Jenis sk --</option>
+                                                <label for="exampleDropdownFormEmail1">Jenis permohonan</label>
+                                                <select name="jenis_surat_id" id="jenis_surat_id" class="form-control">
+                                                    <option value="">-- Pilih dari jenis surat --</option>
+                                                    @foreach($jenis_surat as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->jenis_surat_id ? 'selected' : ''}}>
+                                                        {{$d->jenis_surat}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pemohon</label>
-                                                <input type="text" class="form-control" id="asal_surat" >
+                                                <input type="text" class="form-control" value="{{$data->pemohon}}"
+                                                    name="pemohon">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Identitas</label>
-                                                <textarea name="isi_ringkas" id="isi_ringkas" class="form-control"></textarea>
+                                                <textarea name="identitas" id="identitas"
+                                                    class="form-control">{{$data->identitas}}</textarea>
                                             </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>

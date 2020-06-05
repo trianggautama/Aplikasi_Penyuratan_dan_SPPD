@@ -11,8 +11,10 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Transportasi Edit</h2>
             </div>
             <div class="d-flex">
-				<a href="{{Route('suratMasukIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span class="icon-label"><i class="fa fa-arrow-left" ></i> </span><span class="btn-text">Kembali</span></a>
-			</div>
+                <a href="{{Route('suratMasukIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15"
+                    id="tambah"><span class="icon-label"><i class="fa fa-arrow-left"></i> </span><span
+                        class="btn-text">Kembali</span></a>
+            </div>
         </div>
         <!-- /Title -->
         <!-- Row -->
@@ -31,14 +33,26 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Jenis Transportasi</label>
-                                                <select name="no_agenda_id" id="jenis_transportasi" class="form-control">
+                                                <select name="jenis_transportasi" id="jenis_transportasi"
+                                                    class="form-control">
                                                     <option value="">-- Pilih Jenis Transportasi --</option>
+                                                    <option value="1"
+                                                        {{$data->jenis_transportasi == 1 ? 'selected' : ''}}>Darat
+                                                    </option>
+                                                    <option value="2"
+                                                        {{$data->jenis_transportasi == 2 ? 'selected' : ''}}>Laut
+                                                    </option>
+                                                    <option value="3"
+                                                        {{$data->jenis_transportasi == 3 ? 'selected' : ''}}>Udara
+                                                    </option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Nama Transportasi</label>
-                                                <input type="text" class="form-control" id="nama_transportasi" placeholder="Nama Transportasi">
-                                            </div> 
+                                                <input type="text" class="form-control" id="nama_transportasi"
+                                                    name="nama_transportasi" value="{{$data->nama_transportasi}}"
+                                                    placeholder="Nama Transportasi">
+                                            </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>
                                                     Ubah Data</button>
