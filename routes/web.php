@@ -113,7 +113,6 @@ Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('pemi
 Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
 Route::get('/peminjaman/filter', 'peminjamanController@filter')->name('peminjamanFilter');
 
-
 //SK
 Route::get('/sk/index', 'skController@index')->name('skIndex');
 Route::get('/sk/detail', 'skController@show')->name('skShow');
@@ -123,6 +122,21 @@ Route::put('/sk/edit/{uuid}', 'skController@update')->name('skUpdate');
 Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');
 Route::get('/sk/filter', 'skController@filter')->name('skFilter');
 
+//Ketegori SPPD
+Route::get('/kategoriSPPD/index', 'kategoriSPPDController@index')->name('kategoriSPPDIndex');
+Route::get('/kategoriSPPD/detail', 'kategoriSPPDController@show')->name('kategoriSPPDShow');
+Route::post('/kategoriSPPD/index/create', 'kategoriSPPDController@store')->name('kategoriSPPDCreate');
+Route::get('/kategoriSPPD/edit/', 'kategoriSPPDController@edit')->name('kategoriSPPDEdit');
+Route::put('/kategoriSPPD/edit/{uuid}', 'kategoriSPPDController@update')->name('kategoriSPPDUpdate');
+Route::get('/kategoriSPPD/delete/{uuid}', 'kategoriSPPDController@destroy')->name('kategoriSPPDDestroy');
+
+// SPPD
+Route::get('/SPPD/index', 'SPPDController@index')->name('SPPDIndex');
+Route::get('/SPPD/detail', 'SPPDController@show')->name('SPPDShow');
+Route::post('/SPPD/index/create', 'SPPDController@store')->name('SPPDCreate');
+Route::get('/SPPD/edit/', 'SPPDController@edit')->name('SPPDEdit');
+Route::put('/SPPD/edit/{uuid}', 'SPPDController@update')->name('SPPDUpdate');
+Route::get('/SPPD/delete/{uuid}', 'SPPDController@destroy')->name('SPPDDestroy');
 
 //cetak data 
 Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');

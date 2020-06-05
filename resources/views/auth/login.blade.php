@@ -28,10 +28,6 @@
 				<a class="d-flex font-24 font-weight-500 auth-brand" href="#">
                     Aplikasi Penyuratan dan SPPD
                 </a>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-outline-secondary">Help</a>
-                    <a href="#" class="btn btn-outline-secondary">About Us</a>
-                </div>
             </header>
             <div class="container-fluid">
                 <div class="row">
@@ -70,8 +66,6 @@
                                     </div>
 
                                     <button class="btn btn-danger btn-block" type="submit">Login</button>
-                                    <p class="font-14 text-center mt-15">Having trouble logging in?</p>
-                                    <p class="text-center">Do have an account yet? <a href="signup.html">Sign Up</a></p>
                                 </form>
                             </div>
                         </div>
