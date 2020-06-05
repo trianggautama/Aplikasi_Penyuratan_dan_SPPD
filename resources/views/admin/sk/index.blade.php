@@ -59,9 +59,7 @@
                                                             class="btn btn-sm btn-outline-light  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-outline-light  "><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></button>
+                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('{{$d->uuid}}','{{$d->nomor_register}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -148,5 +146,23 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
+
+        function Hapus(uuid, nomor) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus Data Peminjaman nomor '" + nomor ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("skDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection

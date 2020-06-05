@@ -57,7 +57,7 @@
                             <a class="dropdown-item" href="{{Route('transportasiIndex')}}">Transportasi</a>
                             <a class="dropdown-item" href="{{Route('pegawaiIndex')}}">Pegawai</a>
                             <a class="dropdown-item" href="{{Route('agendaIndex')}}">Nomor Agenda</a>
-                            <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Permohonan</a>
+                            <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Surat</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">

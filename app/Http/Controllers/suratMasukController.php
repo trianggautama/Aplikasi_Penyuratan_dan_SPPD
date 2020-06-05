@@ -80,4 +80,9 @@ class suratMasukController extends Controller
         return redirect()->route('suratMasukIndex');
     }
 
+    public function filter()
+    {     
+        return view('admin.suratMasuk.filter');
+    }
+
 }

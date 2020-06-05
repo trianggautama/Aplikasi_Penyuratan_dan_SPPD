@@ -11,9 +11,9 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Surat Masuk</h2>
             </div>
             <div class="d-flex">
-                <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                <a href="{{Route('suratMasukFilter')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
-                    </span></button>
+                    </span></a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
@@ -66,10 +66,7 @@
                                                             class="btn btn-sm btn-outline-light  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('suratMasukDestroy',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  "><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></a>
+                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('{{$d->uuid}}','{{$d->nomor_surat}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -121,7 +118,7 @@
                         <select name="agenda_id" id="agenda_id" class="form-control">
                             <option value="">-- Pilih Nomor Agenda --</option>
                             @foreach($agenda as $d)
-                            <option value="{{$d->id}}">{{$d->no_agenda}}</option>
+                            <option value="{{$d->id}}">{{$d->no_agenda}} - {{$d->keterangan}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -181,5 +178,23 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
+
+        function Hapus(uuid, nomor) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus Data Surat Masuk nomor '" + nomor ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("suratMasukDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection

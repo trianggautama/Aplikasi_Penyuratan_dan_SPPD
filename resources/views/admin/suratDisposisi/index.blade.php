@@ -65,9 +65,7 @@
                                                             class="btn btn-sm btn-outline-light  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-outline-light  "><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></button>
+                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('{{$d->uuid}}','{{$d->surat_masuk->nomor_surat}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -128,10 +126,10 @@
                         <select name="pegawai_id" id="pegawai_id" class="form-control">
                             <option value="">-- Pilih dari pegawai --</option>
                             @foreach ($pegawai as $d)
-                            <option value="{{$d->id}}">{{$d->NIP}} - {{$d->nama}}</option>
+                            <option value="{{$d->id}}">{{$d->jabatan->jabatan}} - {{$d->nama}}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div> 
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Isi Disposisi</label>
                         <input type="text" class="form-control" name="isi" placeholder="Isi disposisi">
@@ -139,8 +137,9 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Sifat</label>
                         <select name="sifat" id="sifat" class="form-control">
-                            <option value="">-- ini kdatau apa isinya --</option>
-                            <option value="Contoh sifat">Contoh sifat</option>
+                            <option value="">-- pilih sifat --</option>
+                            <option value="Biasa">Biasa</option>
+                            <option value="Mendesak">Mendesak</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -167,5 +166,23 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
+
+        function Hapus(uuid, nomor) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus Data Disposisi Surat Masuk nomor '" + nomor ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("suratDisposisiDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection

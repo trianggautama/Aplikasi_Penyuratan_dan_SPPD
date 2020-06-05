@@ -79,4 +79,9 @@ class suratKeluarController extends Controller
 
         return redirect()->route('suratKeluarIndex');
     }
+
+    public function filter()
+    {     
+        return view('admin.suratKeluar.filter');
+    }
 }

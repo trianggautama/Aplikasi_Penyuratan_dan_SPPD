@@ -69,12 +69,12 @@ Route::get('/agenda/delete/{uuid}', 'agendaController@destroy')->name('agendaDes
 
 //Surat Masuk
 Route::get('/suratMasuk/index', 'suratMasukController@index')->name('suratMasukIndex');
-Route::get('/suratMasuk/detail', 'suratMasukController@show')->name('suratMasukShow');
+Route::get('/suratMasuk/detail/{uuid}', 'suratMasukController@show')->name('suratMasukShow');
 Route::post('/suratMasuk/index/create', 'suratMasukController@store')->name('suratMasukCreate');
-Route::get('/suratKeluar/detail/{uuid}', 'suratMasukController@show')->name('suratMasukShow');
 Route::get('/suratMasuk/edit/{uuid}', 'suratMasukController@edit')->name('suratMasukEdit');
 Route::put('/suratMasuk/edit/{uuid}', 'suratMasukController@update')->name('suratMasukUpdate');
 Route::get('/suratMasuk/delete/{uuid}', 'suratMasukController@destroy')->name('suratMasukDestroy');
+Route::get('/suratMasuk/filter', 'suratMasukController@filter')->name('suratMasukFilter');
 
 //Surat Keluar
 Route::get('/suratKeluar/index', 'suratKeluarController@index')->name('suratKeluarIndex');
@@ -84,6 +84,7 @@ Route::get('/suratKeluar/detail/{uuid}', 'suratKeluarController@show')->name('su
 Route::get('/suratKeluar/edit/{uuid}', 'suratKeluarController@edit')->name('suratKeluarEdit');
 Route::put('/suratKeluar/edit/{uuid}', 'suratKeluarController@update')->name('suratKeluarUpdate');
 Route::get('/suratKeluar/delete/{uuid}', 'suratKeluarController@destroy')->name('suratKeluarDestroy');
+Route::get('/suratKeluar/filter', 'suratKeluarController@filter')->name('suratKeluarFilter');
 
 //Surat Disposisi
 Route::get('/suratDisposisi/index', 'suratDisposisiController@index')->name('suratDisposisiIndex');
@@ -116,3 +117,7 @@ Route::post('/sk/index/create', 'skController@store')->name('skCreate');
 Route::get('/sk/edit/{uuid}', 'skController@edit')->name('skEdit');
 Route::put('/sk/edit/{uuid}', 'skController@update')->name('skUpdate');
 Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');
+
+//cetak data 
+Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
+Route::post('/suratKeluar/filter', 'reportController@suratKeluar')->name('suratKeluarFilterCetak');

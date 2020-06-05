@@ -60,10 +60,6 @@
                                                             class="btn btn-sm btn-primary  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <!-- <a href="{{Route('kotaDestroy',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  "><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></a> -->
                                                             <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->nama_kota}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>

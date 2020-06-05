@@ -22,6 +22,7 @@
                     <div class="col-lg-12">
                         <section class="hk-sec-wrapper">
                             <h5 class="hk-sec-title">Detail Surat Masuk</h5>
+                            <hr>
                             <br>
                             <div class="row">
                                 <div class="col-sm">
@@ -29,38 +30,38 @@
                                       <div class="row">
                                           <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>Nomor Agenda</b></label>
-                                                <p>Nomor agenda</p>
+                                                <h6 for="exampleDropdownFormEmail1"><b>Nomor Agenda</b></h6>
+                                                <p>{{$data->agenda->no_agenda}}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>Nomor Surat</b></label>
-                                                <p>Nomor Surat</p>
+                                                <h6 for="exampleDropdownFormEmail1"><b>Nomor Surat</b></h6>
+                                                <p>{{$data->nomor_surat}}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>Jenis Surat</b></label>
-                                                <p>Jenis Surat</p>
+                                                <h6 for="exampleDropdownFormEmail1"><b>Jenis Surat</b></h6>
+                                                <p>{{$data->jenis_surat->jenis_surat}}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>Tanggal Surat</b></label>
-                                                <p>Tanggal Surat</p>
+                                                <h6 for="exampleDropdownFormEmail1"><b>Tanggal Surat</b></h6>
+                                                <p>{{$data->tanggal_surat}}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>Tanggal Terima</b></label>
-                                                <p>tanggal Terima</p>
+                                                <h6 for="exampleDropdownFormEmail1"><b>Tanggal Terima</b></h6>
+                                                <p>{{$data->tanggal_terima}}</p>
                                             </div>
                                           </div>
                                           <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>Asal Surat</b></label>
-                                                <p>Asal Surat</p>
+                                                <h6 for="exampleDropdownFormEmail1"><b>Asal Surat</b></h6>
+                                                <p>{{$data->asal_surat}}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>Isi Ringkas</b></label>
-                                                <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet odit eum odio aut ipsa illo sapiente incidunt neque, suscipit temporibus nobis hic totam sed. Aliquam debitis doloremque odit enim iusto? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis qui, vel officiis voluptatem sint quis quisquam at, dicta accusantium facilis delectus repudiandae? Hic non debitis maiores placeat quis. Dolorum, deleniti.</p>
+                                                <h6 for="exampleDropdownFormEmail1"><b>Isi Ringkas</b></h6>
+                                                <p class="text-justify">{{$data->isi}}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>lampiran File</b></label> <br>
-                                                <a href="" class="btn btn-default"><i class="fa fa-file"></i></a>
+                                                <h6 for="exampleDropdownFormEmail1"><b>lampiran File</b></h6> <br>
+                                                <a href="{{asset('suratMasuk/'.$data->file)}}" class="btn btn-default" target="_blank"><i class="fa fa-file"></i></a>
                                             </div>
                                           </div>
                                       </div>
