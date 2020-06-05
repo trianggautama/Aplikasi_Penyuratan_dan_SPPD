@@ -53,6 +53,7 @@
          width: 72%;
          padding-left:0px;
          padding-right:10%;
+         padding-top:20px !important;
      }
      hr{
          margin-top: 10%;
@@ -79,10 +80,9 @@
                     <img  class="pemko" src="logo.png">
             </div>
             <div class="headtext">
-                <h3 style="margin:0px;">KEMENTRIAN AGAMA </h3>
-                <h3 style="margin:0px; text-transform:uppercase;">MADRASAH IBTIDAIYAH NEGERI 3 TANAH LAUT KABUPATEN TANAH LAUT</h3>
-                <p style="margin:0px;">Jl. Padang Raya No. 25 Pabahanan Kec. Pelaihari Kab. Tanah Laut Telp. (0512) 23153</p>
-                <p style="margin:0px;">Email : minpabahanan@yahoo.co.id</p>
+                <h3 style="margin:0px; text-transform:uppercase;">MAHKAMAH AGUNG REPUBLIK INDONESIA PENGADILAN NEGERI MARTAPURA</h3>
+                <p style="margin:0px;">Alamat : Jl. Ahmad Yani No.32 Martapura Kalimantan Selatan</p>
+                <p style="margin:0px;">Website : http://pn-martapura.go.id/, E-mail: pn_martapura@yahoo.co.id</p>
             </div>
     </div>
     <hr style="margin-top:0px;">

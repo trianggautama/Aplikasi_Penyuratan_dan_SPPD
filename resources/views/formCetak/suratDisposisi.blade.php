@@ -88,36 +88,34 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">AGENDA SURAT MASUK DARI TANGGAL {{carbon\carbon::parse($tgl_mulai)->translatedFormat('d F Y')}} SAMPAI TANGGAL {{carbon\carbon::parse($tgl_selesai)->translatedFormat('d F Y')}}</h4>
+            <h4 style="text-align:center;">AGENDA DISPOSISI SURAT DARI TANGGAL {{carbon\carbon::parse($tgl_mulai)->translatedFormat('d F Y')}} SAMPAI TANGGAL {{carbon\carbon::parse($tgl_selesai)->translatedFormat('d F Y')}}</h4>
             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nomor Agenda</th>
                                                     <th>Nomor Surat</th>
                                                     <th>Jenis Surat</th>
-                                                    <th>Tanggal Surat</th>
-                                                    <th>tanggal Terima</th>
-                                                    <th>Asal Surat</th>
+                                                    <th>Tujuan Disposisi</th>
+                                                    <th>Isi Disposisi</th>
+                                                    <th>Sifat</th>
+                                                    <th>Batas Waktu</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($data as $d)
+                                                @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->agenda->no_agenda}}</td>
-                                                    <td>{{$d->nomor_surat}}</td>
-                                                    <td>{{$d->jenis_surat->jenis_surat}}</td>
-                                                    <td>{{carbon\carbon::parse($d->tanggal_surat)->translatedFormat('d F Y')}}
+                                                    <td>{{$d->surat_masuk->nomor_surat}}</td>
+                                                    <td>{{$d->surat_masuk->jenis_surat->jenis_surat}}</td>
+                                                    <td>{{$d->pegawai->nama}}</td>
+                                                    <td>{{$d->isi}}</td>
+                                                    <td>{{$d->sifat}}</td>
+                                                    <td>{{carbon\carbon::parse($d->batas_waktu)->translatedFormat('d F Y')}}
                                                     </td>
-                                                    <td>{{carbon\carbon::parse($d->tanggal_terima)->translatedFormat('d F Y')}}
-                                                    </td>
-                                                    <td>{{$d->asal_surat}}</td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                            
-                                        </table>
+                                            </table>
                       <br>
                       <br>
                       <div class="ttd">

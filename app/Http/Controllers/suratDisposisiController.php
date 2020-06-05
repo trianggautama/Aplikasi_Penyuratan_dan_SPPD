@@ -53,4 +53,9 @@ class suratDisposisiController extends Controller
         $data = Disposisi_surat::where('uuid', $uuid)->first()->delete();
         return redirect()->route('suratDisposisiIndex');
     }
+
+    public function filter()
+    {     
+        return view('admin.suratDisposisi.filter');
+    }
 }

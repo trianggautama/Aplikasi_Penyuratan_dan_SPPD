@@ -93,6 +93,8 @@ Route::post('/suratDisposisi/index/create', 'suratDisposisiController@store')->n
 Route::get('/suratDisposisi/edit/{uuid}', 'suratDisposisiController@edit')->name('suratDisposisiEdit');
 Route::put('/suratDisposisi/edit/{uuid}', 'suratDisposisiController@update')->name('suratDisposisiUpdate');
 Route::get('/suratDisposisi/delete/{uuid}', 'suratDisposisiController@destroy')->name('suratDisposisiDestroy');
+Route::get('/suratDisposisi/filter', 'suratDisposisiController@filter')->name('suratDisposisiFilter');
+
 
 //Surat Permohonan
 Route::get('/suratPermohonan/index', 'suratPermohonanController@index')->name('suratPermohonanIndex');
@@ -121,3 +123,4 @@ Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');
 //cetak data 
 Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
 Route::post('/suratKeluar/filter', 'reportController@suratKeluar')->name('suratKeluarFilterCetak');
+Route::post('/suratDisposisi/filter', 'reportController@suratDisposisi')->name('suratDisposisiFilterCetak');

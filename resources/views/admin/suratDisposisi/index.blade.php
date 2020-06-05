@@ -11,9 +11,9 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Disposisi Surat</h2>
             </div>
             <div class="d-flex">
-                <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                <a href="{{Route('suratDisposisiFilter')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
-                    </span></button>
+                    </span></a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
