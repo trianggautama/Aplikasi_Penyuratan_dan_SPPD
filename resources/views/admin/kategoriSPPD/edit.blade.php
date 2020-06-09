@@ -28,19 +28,31 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pilih Tujuan</label>
-                                                <select name="zona" id="zona" class="form-control">
-                                                    <option value="">-- Pilih dari kota --</option>
+                                                <select name="kota_id" id="kota_id" class="form-control">
+                                                    <option value="">-- Pilih tujuan --</option>
+                                                    @foreach ($kota as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->kota_id ? 'selected' : ''}}>{{$d->nama_kota}}
+                                                    </option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Transport</label>
-                                                <select name="zona" id="zona" class="form-control">
-                                                    <option value="">--Pilih dari transportasi --</option>
+                                                <select name="transportasi_id" id="transportasi_id"
+                                                    class="form-control">
+                                                    <option value="">--Pilih jenis transportasi --</option>
+                                                    @foreach ($transportasi as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->transportasi_id ? 'selected' : ''}}>
+                                                        {{$d->nama_transportasi}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">besaran Pagu / hari</label>
-                                                <input type="text" name="pagu" class="form-control">
+                                                <input type="text" value="{{$data->besar_pagu}}" name="besar_pagu"
+                                                    class="form-control">
                                             </div>
                                             <hr>
                                             <div class="text-right">

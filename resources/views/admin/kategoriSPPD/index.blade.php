@@ -41,24 +41,35 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                               <tr>
-                                                   <td>1</td>
-                                                   <td>Bandung</td>
-                                                   <td>Pesawat Terbang</td>
-                                                   <td>Rp.450.000 / Hari</td>
-                                                   <td>Luar Kota luar Provinsi</td>
+                                                @foreach($data as $d)
+                                                <tr>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->kota->nama_kota}}</td>
+                                                    <td>{{$d->transportasi->nama_transportasi}}</td>
+                                                    <td>Rp.{{$d->besar_pagu}} / Hari</td>
                                                     <td>
-                                                        <a href="{{Route('kategoriSPPDEdit')}}"
-                                                            class="btn btn-sm btn-primary  "><span
-                                                                class="icon-label"><i class="fa fa-edit"></i>
+                                                        @if($d->kota->zona == 1)
+                                                        Luar Kecamatan Dalam Daerah
+                                                        @elseif($d->kota->zona == 2)
+                                                        Luar Kota Dalam Provinsi
+                                                        @else
+                                                        Luar Kota luar Provinsi
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
+                                                            class="btn btn-sm btn-primary  "><span class="icon-label"><i
+                                                                    class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i
+                                                                class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                <th>No</th>
+                                                    <th>No</th>
                                                     <th>Tujuan</th>
                                                     <th>Transportasi</th>
                                                     <th>Besar Pagu</th>
@@ -94,23 +105,29 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST">
+                <form action="{{Route('kategoriSPPDCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Pilih Tujuan</label>
-                        <select name="zona" id="zona" class="form-control">
-                            <option value="">-- Pilih dari kota --</option>
+                        <select name="kota_id" id="kota_id" class="form-control">
+                            <option value="">-- Pilih tujuan --</option>
+                            @foreach ($kota as $d)
+                            <option value="{{$d->id}}">{{$d->nama_kota}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Transport</label>
-                        <select name="zona" id="zona" class="form-control">
-                            <option value="">--Pilih dari transportasi --</option>
+                        <select name="transportasi_id" id="transportasi_id" class="form-control">
+                            <option value="">--Pilih jenis transportasi --</option>
+                            @foreach ($transportasi as $d)
+                            <option value="{{$d->id}}">{{$d->nama_transportasi}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">besaran Pagu / hari</label>
-                        <input type="text" name="pagu" class="form-control">
+                        <input type="text" name="besar_pagu" class="form-control">
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>

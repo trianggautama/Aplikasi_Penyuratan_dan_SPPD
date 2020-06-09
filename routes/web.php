@@ -95,7 +95,6 @@ Route::put('/suratDisposisi/edit/{uuid}', 'suratDisposisiController@update')->na
 Route::get('/suratDisposisi/delete/{uuid}', 'suratDisposisiController@destroy')->name('suratDisposisiDestroy');
 Route::get('/suratDisposisi/filter', 'suratDisposisiController@filter')->name('suratDisposisiFilter');
 
-
 //Surat Permohonan
 Route::get('/suratPermohonan/index', 'suratPermohonanController@index')->name('suratPermohonanIndex');
 Route::get('/suratPermohonan/detail', 'suratPermohonanController@show')->name('suratPermohonanShow');
@@ -126,7 +125,7 @@ Route::get('/sk/filter', 'skController@filter')->name('skFilter');
 Route::get('/kategoriSPPD/index', 'kategoriSPPDController@index')->name('kategoriSPPDIndex');
 Route::get('/kategoriSPPD/detail', 'kategoriSPPDController@show')->name('kategoriSPPDShow');
 Route::post('/kategoriSPPD/index/create', 'kategoriSPPDController@store')->name('kategoriSPPDCreate');
-Route::get('/kategoriSPPD/edit/', 'kategoriSPPDController@edit')->name('kategoriSPPDEdit');
+Route::get('/kategoriSPPD/edit/{uuid}', 'kategoriSPPDController@edit')->name('kategoriSPPDEdit');
 Route::put('/kategoriSPPD/edit/{uuid}', 'kategoriSPPDController@update')->name('kategoriSPPDUpdate');
 Route::get('/kategoriSPPD/delete/{uuid}', 'kategoriSPPDController@destroy')->name('kategoriSPPDDestroy');
 
@@ -138,7 +137,7 @@ Route::get('/SPPD/edit/', 'SPPDController@edit')->name('SPPDEdit');
 Route::put('/SPPD/edit/{uuid}', 'SPPDController@update')->name('SPPDUpdate');
 Route::get('/SPPD/delete/{uuid}', 'SPPDController@destroy')->name('SPPDDestroy');
 
-//cetak data 
+//cetak data
 Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
 Route::post('/suratKeluar/filter', 'reportController@suratKeluar')->name('suratKeluarFilterCetak');
 Route::post('/suratDisposisi/filter', 'reportController@suratDisposisi')->name('suratDisposisiFilterCetak');
