@@ -55,7 +55,7 @@
                                                     <td>{{$d->maksud_tujuan}}</td>
                                                     <td>2 Orang</td>
                                                     <td>
-                                                        <a href="{{Route('SPPDShow')}}"
+                                                        <a href="{{Route('SPPDShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light m-1"><span
                                                                 class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>

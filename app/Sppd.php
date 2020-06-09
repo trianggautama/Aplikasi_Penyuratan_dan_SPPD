@@ -17,4 +17,9 @@ class Sppd extends Model
     {
         return $this->belongsTo(Kategori::class);
     }
+
+    public function rincian_sppd()
+    {
+        return $this->hasMany(Rincian_sppd::class);
+    }
 }

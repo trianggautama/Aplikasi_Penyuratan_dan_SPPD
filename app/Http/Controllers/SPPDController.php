@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Kategori;
+use App\Pegawai;
+use App\Rincian_sppd;
 use App\Sppd;
 use Illuminate\Http\Request;
 
@@ -21,10 +23,26 @@ class SPPDController extends Controller
         return redirect()->route('SPPDIndex')->with('success', 'Data berhasil disimpan');
     }
 
-    public function show()
+    public function show($uuid)
     {
+        $data = Sppd::where('uuid', $uuid)->first();
+        $pegawai = Pegawai::orderBy('nama', 'asc')->get();
+        return view('admin.SPPD.show', compact('data', 'pegawai'));
+    }
 
-        return view('admin.SPPD.show');
+    public function rincianStore(Request $request)
+    {
+        $data = Rincian_sppd::create($request->all());
+
+        return redirect()->back()->with('success', 'Data berhasil disimpan');
+
+    }
+
+    public function rincianDestroy($uuid)
+    {
+        $data = Rincian_sppd::where('uuid', $uuid)->first()->delete();
+
+        return redirect()->back();
     }
 
     public function edit($uuid)

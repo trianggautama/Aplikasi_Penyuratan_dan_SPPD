@@ -131,7 +131,9 @@ Route::get('/kategoriSPPD/delete/{uuid}', 'kategoriSPPDController@destroy')->nam
 
 // SPPD
 Route::get('/SPPD/index', 'SPPDController@index')->name('SPPDIndex');
-Route::get('/SPPD/detail', 'SPPDController@show')->name('SPPDShow');
+Route::get('/SPPD/detail/{uuid}', 'SPPDController@show')->name('SPPDShow');
+Route::post('/SPPD/detail/createRincian', 'SPPDController@rincianStore')->name('rincianStore');
+Route::post('/SPPD/detail/deleteRincian/{uuid}', 'SPPDController@rincianDestroy')->name('rincianDestroy');
 Route::post('/SPPD/index/create', 'SPPDController@store')->name('SPPDCreate');
 Route::get('/SPPD/edit/{uuid}', 'SPPDController@edit')->name('SPPDEdit');
 Route::put('/SPPD/edit/{uuid}', 'SPPDController@update')->name('SPPDUpdate');
