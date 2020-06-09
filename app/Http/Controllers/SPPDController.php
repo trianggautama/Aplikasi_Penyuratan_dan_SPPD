@@ -12,7 +12,13 @@ class SPPDController extends Controller
 {
     public function index()
     {
-        $data = Sppd::orderBy('id', 'desc')->get();
+        $sppd = Sppd::orderBy('id', 'desc')->get();
+        $data = $sppd->map(function ($item) {
+            $jumlah = $item->rincian_sppd->count();
+            $item['jumlah'] = $jumlah;
+
+            return $item;
+        });
         $kategori = Kategori::orderBy('id', 'desc')->get();
         return view('admin.SPPD.index', compact('data', 'kategori'));
     }

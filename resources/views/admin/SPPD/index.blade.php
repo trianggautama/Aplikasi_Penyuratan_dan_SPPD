@@ -39,6 +39,7 @@
                                                     <th>Tanggal Kepulangan</th>
                                                     <th>Maksud Tujuan</th>
                                                     <th>Jumlah Orang</th>
+                                                    <th>Jumlah Biaya</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -53,7 +54,8 @@
                                                     <td>{{carbon\carbon::parse($d->tanggal_kembali)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{$d->maksud_tujuan}}</td>
-                                                    <td>2 Orang</td>
+                                                    <td>{{$d->jumlah}} Orang</td>
+                                                    <td>@currency($d->jumlah * $d->kategori->besar_pagu),-</td>
                                                     <td>
                                                         <a href="{{Route('SPPDShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light m-1"><span
@@ -78,6 +80,7 @@
                                                     <th>Tanggal Kepulangan</th>
                                                     <th>Maksud Tujuan</th>
                                                     <th>Jumlah Orang</th>
+                                                    <th>Jumlah Biaya</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </tfoot>
