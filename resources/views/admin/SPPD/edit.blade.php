@@ -28,22 +28,30 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tujuan</label>
-                                                    <select name="zona" id="zona" class="form-control">
-                                                        <option value="">-- Pilih dari kategori SPPD --</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleDropdownFormEmail1">Tanggal Berangkat</label>
-                                                    <input type="date" name="tanggal_berangkat" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleDropdownFormEmail1">Tanggal kepulangan</label>
-                                                    <input type="date" name="maksud_tujuan" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleDropdownFormEmail1">Maksud Tujuan</label>
-                                                    <input type="text" name="maksud_tujuan" class="form-control">
-                                                </div>
+                                                <select name="kategori_id" id="kategori_id" class="form-control">
+                                                    <option value="">-- Pilih kategori SPPD --</option>
+                                                    @foreach ($kategori as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->kategori_id ? 'selected' : ''}}>
+                                                        {{$d->kota->nama_kota}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Tanggal Berangkat</label>
+                                                <input type="date" name="tanggal_berangkat"
+                                                    value="{{$data->tanggal_berangkat}}" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Tanggal kepulangan</label>
+                                                <input type="date" name="tanggal_kepulangan"
+                                                    value="{{$data->tanggal_kepulangan}}" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Maksud Tujuan</label>
+                                                <input type="text" name="maksud_tujuan" value="{{$data->maksud_tujuan}}"
+                                                    class="form-control">
+                                            </div>
                                             <hr>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>

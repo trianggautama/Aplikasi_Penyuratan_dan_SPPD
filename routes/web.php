@@ -133,7 +133,7 @@ Route::get('/kategoriSPPD/delete/{uuid}', 'kategoriSPPDController@destroy')->nam
 Route::get('/SPPD/index', 'SPPDController@index')->name('SPPDIndex');
 Route::get('/SPPD/detail', 'SPPDController@show')->name('SPPDShow');
 Route::post('/SPPD/index/create', 'SPPDController@store')->name('SPPDCreate');
-Route::get('/SPPD/edit/', 'SPPDController@edit')->name('SPPDEdit');
+Route::get('/SPPD/edit/{uuid}', 'SPPDController@edit')->name('SPPDEdit');
 Route::put('/SPPD/edit/{uuid}', 'SPPDController@update')->name('SPPDUpdate');
 Route::get('/SPPD/delete/{uuid}', 'SPPDController@destroy')->name('SPPDDestroy');
 

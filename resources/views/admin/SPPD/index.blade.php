@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman  SPPD</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman SPPD</h2>
             </div>
             <div class="d-flex">
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
@@ -43,23 +43,31 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                               <tr>
-                                                   <td>1</td>
-                                                   <td>Bandung</td>
-                                                   <td>Pesawat Terbang</td>
-                                                   <td>1 Juli 2020</td>
-                                                   <td>4 Juli 2020</td>
-                                                   <td>Menghadiri Penilaian Kementrian</td>
-                                                   <td>2 Orang</td>
+                                                @foreach ($data as $d)
+                                                <tr>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->kategori->kota->nama_kota}}</td>
+                                                    <td>{{$d->kategori->transportasi->nama_transportasi}}</td>
+                                                    <td>{{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
+                                                    </td>
+                                                    <td>{{carbon\carbon::parse($d->tanggal_kembali)->translatedFormat('d F Y')}}
+                                                    </td>
+                                                    <td>{{$d->maksud_tujuan}}</td>
+                                                    <td>2 Orang</td>
                                                     <td>
-                                                           <a href="{{Route('SPPDShow')}}" class="btn btn-sm btn-outline-light m-1"><span class="icon-label"><i class="fa fa-info-circle"></i> </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('SPPDEdit')}}"
+                                                        <a href="{{Route('SPPDShow')}}"
+                                                            class="btn btn-sm btn-outline-light m-1"><span
+                                                                class="icon-label"><i class="fa fa-info-circle"></i>
+                                                            </span><span class="btn-text"> </span></a>
+                                                        <a href="{{Route('SPPDEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  m-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-danger m-1" onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('')">
+                                                            <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -101,12 +109,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST">
+                <form action="{{Route('SPPDCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tujuan</label>
-                        <select name="zona" id="zona" class="form-control">
-                            <option value="">-- Pilih dari kategori SPPD --</option>
+                        <select name="kategori_id" id="kategori_id" class="form-control">
+                            <option value="">-- Pilih kategori SPPD --</option>
+                            @foreach ($kategori as $d)
+                            <option value="{{$d->id}}">{{$d->kota->nama_kota}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
@@ -115,7 +126,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal kepulangan</label>
-                        <input type="date" name="maksud_tujuan" class="form-control">
+                        <input type="date" name="tanggal_kepulangan" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Maksud Tujuan</label>

@@ -26,7 +26,6 @@ class kategoriSPPDController extends Controller
 
     public function edit($uuid)
     {
-
         $data = Kategori::where('uuid', $uuid)->first();
         $kota = Kota::orderBy('nama_kota', 'asc')->get();
         $transportasi = Transportasi::orderBy('id', 'desc')->get();
