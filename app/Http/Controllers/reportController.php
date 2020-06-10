@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Disposisi_surat;
 use App\Peminjaman;
 use App\Sk;
+use App\Sppd;
 use App\Surat_keluar;
 use App\Surat_masuk;
 use Carbon\Carbon;
@@ -66,5 +67,41 @@ class reportController extends Controller
             $pdf =PDF::loadView('formCetak.sk', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
             return $pdf->stream('Laporan data SK .pdf');
+        }
+
+        //cetak laporan Nota Dinas
+        public function notaDinas($uuid){
+            $data = Sppd::where('uuid',$uuid)->first();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.notaDinas', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('Nota Dinas SK .pdf');
+        }
+
+        //cetak laporan Surat Tugas
+        public function suratTugas($uuid){
+            $data = Sppd::where('uuid',$uuid)->first();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.suratTugas', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('Surat Tugas .pdf');
+        }
+
+        //cetak SPPD
+        public function SPPD($uuid){
+            $data = Sppd::where('uuid',$uuid)->first();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.sppd', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('SPPD.pdf');
+        }
+
+        //cetak SPPD
+        public function kuitansi($uuid){
+            $data = Sppd::where('uuid',$uuid)->first();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.kuitansi', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('kuitansi.pdf');
         }
 }

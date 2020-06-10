@@ -133,7 +133,7 @@ Route::get('/kategoriSPPD/delete/{uuid}', 'kategoriSPPDController@destroy')->nam
 Route::get('/SPPD/index', 'SPPDController@index')->name('SPPDIndex');
 Route::get('/SPPD/detail/{uuid}', 'SPPDController@show')->name('SPPDShow');
 Route::post('/SPPD/detail/createRincian', 'SPPDController@rincianStore')->name('rincianStore');
-Route::post('/SPPD/detail/deleteRincian/{uuid}', 'SPPDController@rincianDestroy')->name('rincianDestroy');
+Route::get('/SPPD/detail/deleteRincian/{uuid}', 'SPPDController@rincianDestroy')->name('rincianDestroy');
 Route::post('/SPPD/index/create', 'SPPDController@store')->name('SPPDCreate');
 Route::get('/SPPD/edit/{uuid}', 'SPPDController@edit')->name('SPPDEdit');
 Route::put('/SPPD/edit/{uuid}', 'SPPDController@update')->name('SPPDUpdate');
@@ -145,3 +145,8 @@ Route::post('/suratKeluar/filter', 'reportController@suratKeluar')->name('suratK
 Route::post('/suratDisposisi/filter', 'reportController@suratDisposisi')->name('suratDisposisiFilterCetak');
 Route::post('/peminjaman/filter', 'reportController@peminjaman')->name('peminjamanFilterCetak');
 Route::post('/sk/filter', 'reportController@sk')->name('skFilterCetak');
+Route::get('/notaDinas/cetak/{uuid}', 'reportController@notaDinas')->name('notaDinasCetak');
+Route::get('/suratTugas/cetak/{uuid}', 'reportController@suratTugas')->name('suratTugasCetak');
+Route::get('/sppd/cetak/{uuid}', 'reportController@sppd')->name('sppdCetak');
+Route::get('/kuitansi/cetak/{uuid}', 'reportController@kuitansi')->name('kuitansiCetak');
+

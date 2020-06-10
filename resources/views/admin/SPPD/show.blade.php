@@ -11,13 +11,12 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman SPPD</h2>
             </div>
             <div class="d-flex">
-                <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15"><span class="icon-label"><i
-                            class="fa fa-print"></i> </span><span class="btn-text">Cetak Kuitansi SPPD
-                    </span></button>
+                <a href="{{Route('notaDinasCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Nota Dinas  </span></a>
+                <a href="{{Route('suratTugasCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Surat Tugas  </span></a>
+                <a href="{{Route('sppdCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Berkas SPPD  </span></a>
+                <a href="{{Route('kuitansiCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak Kuitansi SPPD </span></a>
             </div>
         </div>
-        <!-- /Title -->
-        <!-- Row -->
         <div class="row">
             <div class="col-xl-12">
                 <div class="hk-row">
@@ -33,29 +32,36 @@
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Kategori</h5>
-                                                    <p>Luar Derah luar Provinsi</p>
+                                
+                                                    @if($data->kategori->kota->zona == 1)
+                                                        Luar Kecamatan Dalam Daerah
+                                                    @elseif($data->kategori->kota->zona == 2)
+                                                        Luar Kota Dalam Provinsi
+                                                    @else
+                                                        Luar Kota luar Provinsi
+                                                    @endif
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">tujuan</h5>
-                                                    <p>Bandung</p>
+                                                    <p>{{$data->kategori->kota->nama_kota}}</p>
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Transportasi</h5>
-                                                    <p>Pesawat Terbang</p>
+                                                    <p>{{$data->kategori->transportasi->nama_transportasi}}</p>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Tanggal Berangkat</h5>
-                                                    <p>1 Juli 2020</p>
+                                                    <p>{{carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y')}}</p>
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Tanggal Kepulangan</h5>
-                                                    <p>4 Juli 2020</p>
+                                                    <p>{{carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y')}}</p>
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Maksud Keberangkatan</h5>
-                                                    <p>Menghadiri Penilaian Kementrian</p>
+                                                    <p>{{$data->maksud_tujuan}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -99,10 +105,7 @@
                                     <td>{{$d->pegawai->golongan->golongan}}</td>
                                     <td>{{$d->pegawai->jabatan->jabatan}}</td>
                                     <td>
-                                        <a href="" class="btn btn-sm btn-outline-light m-1"><span class="icon-label"><i
-                                                    class="fa fa-info-circle"></i> </span><span class="btn-text">
-                                            </span></a>
-                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('')"> <i
+                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('{{$d->uuid}}','{{$d->pegawai->nama}}')"> <i
                                                 class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -167,5 +170,23 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
+
+        function Hapus(uuid, nama) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus Data SPPD '" + nama ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("rincianDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection

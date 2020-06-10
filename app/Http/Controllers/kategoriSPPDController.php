@@ -45,6 +45,6 @@ class kategoriSPPDController extends Controller
     {
         $data = Kategori::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->route('kategoriSPPDIndex');
+        return redirect()->route('kategoriSPPDIndex')->with('success', 'Data berhasil dihapus');
     }
 }

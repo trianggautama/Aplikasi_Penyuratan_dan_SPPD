@@ -61,7 +61,7 @@
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->kota->nama_kota}}')"> <i
                                                                 class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -149,7 +149,7 @@
         function Hapus(uuid, nama_kota) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Kota '" + nama_kota ,        
+			text: " Menghapus Data Kategori SPPD Kota '" + nama_kota ,        
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -158,7 +158,7 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("kotaDestroy",'')}}';
+				url = '{{route("kategoriSPPDDestroy",'')}}';
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})
