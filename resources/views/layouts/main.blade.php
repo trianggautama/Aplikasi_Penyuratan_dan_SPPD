@@ -38,7 +38,7 @@
             <a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse"
                 data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
-            <a class="navbar-brand text-red" href="dashboard1.html">
+            <a class="navbar-brand text-red" href="{{Route('index')}}">
                 Aplikasi Penyuratan dan SPPD
             </a>
             <div class="collapse navbar-collapse" id="navbarCollapseAlt">
@@ -81,7 +81,7 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDIndex')}}">Berkas SPPD</a>
-                            <a class="dropdown-item" href="#">Laporan Perjalanan Dinas </a>
+                            <a class="dropdown-item" href="{{Route('LaporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
                         </div>
                     </li>
                 </ul>
@@ -103,7 +103,7 @@
                                 <span class="badge badge-success badge-indicator"></span>
                             </div>
                             <div class="media-body">
-                                <span>Aash Bill<i class="zmdi zmdi-chevron-down"></i></span>
+                                <span>Admin<i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
                     </a>
@@ -134,6 +134,12 @@
 
     <!-- Slimscroll JavaScript -->
     <script src="{{asset('admin/dist/js/jquery.slimscroll.js')}}"></script>
+
+    <!-- Tinymce JavaScript -->
+    <script src="{{asset('admin/vendors/tinymce/tinymce.min.js')}}"></script>
+
+    <!-- Tinymce Wysuhtml5 Init JavaScript -->
+    <script src="{{asset('admin/dist/js/tinymce-data.js')}}"></script>
 
     <!-- FeatherIcons JavaScript -->
     <script src="{{asset('admin/dist/js/feather.min.js')}}"></script>

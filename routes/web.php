@@ -141,6 +141,14 @@ Route::get('/SPPD/delete/{uuid}', 'SPPDController@destroy')->name('SPPDDestroy')
 Route::get('/SPPD/filter/waktu', 'SPPDController@filterWaktu')->name('SPPDFilterWaktu');
 Route::get('/SPPD/filter/tujuan', 'SPPDController@filterTujuan')->name('SPPDFilterTujuan');
 
+// Laporan SPPD
+Route::get('Laporan/SPPD/index', 'laporanSPPDController@index')->name('LaporanSPPDIndex');
+// Route::get('Laporan/SPPD/detail/{uuid}', 'laporanSPPDController@show')->name('LaporanSPPDShow');
+Route::post('Laporan/SPPD/index/create', 'laporanSPPDController@store')->name('LaporanSPPDCreate');
+Route::get('Laporan/SPPD/edit', 'laporanSPPDController@edit')->name('LaporanSPPDEdit');
+Route::put('Laporan/SPPD/edit/{uuid}', 'laporanSPPDController@update')->name('LaporanSPPDUpdate');
+Route::get('Laporan/SPPD/delete/{uuid}', 'laporanSPPDController@destroy')->name('LaporanSPPDDestroy');
+
 
 //cetak data
 Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
