@@ -72,4 +72,16 @@ class SPPDController extends Controller
 
         return redirect()->route('SPPDIndex');
     }
+
+    public function filterWaktu()
+    {
+       
+        return view('admin.SPPD.filterWaktu');
+    }
+
+    public function filterTujuan()
+    {
+        $data = Kategori::all();
+        return view('admin.SPPD.filterTujuan',compact('data'));
+    }
 }

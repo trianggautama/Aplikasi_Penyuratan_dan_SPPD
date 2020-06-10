@@ -3,14 +3,20 @@
 @section('content')
 <!-- Main Content -->
 <div class="hk-pg-wrapper">
-    <!-- Container -->
+    <!-- Container --> 
     <div class="container mt-xl-50 mt-sm-30 mt-15">
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman SPPD</h2>
             </div>
-            <div class="d-flex">
+            <div class="d-flex"> 
+            <a href="{{Route('SPPDFilterTujuan')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Filter Tujuan
+                    </span></a>
+            <a href="{{Route('SPPDFilterWaktu')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Filter Waktu
+                    </span></a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>

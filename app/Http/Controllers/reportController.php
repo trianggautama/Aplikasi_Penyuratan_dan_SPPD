@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Disposisi_surat;
+use App\Kategori;
 use App\Peminjaman;
 use App\Sk;
 use App\Sppd;
@@ -103,5 +104,39 @@ class reportController extends Controller
             $pdf =PDF::loadView('formCetak.kuitansi', ['data'=>$data,'tgl'=>$tgl]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('kuitansi.pdf');
+        }
+
+        //cetak laporan data SPPD
+        public function SPPDFilterWaktu(Request $request){
+            $data = Sppd::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
+            $data = $data->map(function ($item) {
+                $jumlah = $item->rincian_sppd->count();
+                $item['jumlah'] = $jumlah;
+    
+                return $item;
+            });
+            $tgl_mulai = $request->tanggal_mulai;
+            $tgl_selesai = $request->tanggal_selesai;
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.dataSPPD', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
+            $pdf->setPaper('a4', 'landscape');
+            return $pdf->stream('Laporan SPPD .pdf');
+        }
+        //cetak laporan SPPD Filter Tujuan
+        public function SPPDFilterTujuan(Request $request){
+            $tujuan = Kategori::findOrFail($request->kategori_id);
+            $data = SPPD::where('kategori_id',$request->kategori_id)->get();
+            $data = $data->map(function ($item) {
+                $jumlah = $item->rincian_sppd->count();
+                $item['jumlah'] = $jumlah;
+    
+                return $item;
+            });
+            $tgl_mulai = $request->tanggal_mulai;
+            $tgl_selesai = $request->tanggal_selesai;
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.dataSPPDTujuan', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai,'tujuan'=>$tujuan]);
+            $pdf->setPaper('a4', 'landscape');
+            return $pdf->stream('Laporan data SPPD Filter Tujuan .pdf');
         }
 }

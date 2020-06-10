@@ -138,6 +138,9 @@ Route::post('/SPPD/index/create', 'SPPDController@store')->name('SPPDCreate');
 Route::get('/SPPD/edit/{uuid}', 'SPPDController@edit')->name('SPPDEdit');
 Route::put('/SPPD/edit/{uuid}', 'SPPDController@update')->name('SPPDUpdate');
 Route::get('/SPPD/delete/{uuid}', 'SPPDController@destroy')->name('SPPDDestroy');
+Route::get('/SPPD/filter/waktu', 'SPPDController@filterWaktu')->name('SPPDFilterWaktu');
+Route::get('/SPPD/filter/tujuan', 'SPPDController@filterTujuan')->name('SPPDFilterTujuan');
+
 
 //cetak data
 Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
@@ -149,4 +152,7 @@ Route::get('/notaDinas/cetak/{uuid}', 'reportController@notaDinas')->name('notaD
 Route::get('/suratTugas/cetak/{uuid}', 'reportController@suratTugas')->name('suratTugasCetak');
 Route::get('/sppd/cetak/{uuid}', 'reportController@sppd')->name('sppdCetak');
 Route::get('/kuitansi/cetak/{uuid}', 'reportController@kuitansi')->name('kuitansiCetak');
+Route::post('/SPPD/filter/waktu', 'reportController@SPPDFilterWaktu')->name('SPPDFilterWaktuCetak');
+Route::post('/SPPD/filter/tujuan', 'reportController@SPPDFilterTujuan')->name('SPPDFilterTujuanCetak');
+
 
