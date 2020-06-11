@@ -88,7 +88,7 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">AGENDA SPPD TUJUAN {{$tujuan->kota->nama_kota}}</h4>
+            <h4 style="text-align:center;">AGENDA SPPD DARI TANGGAL {{carbon\carbon::parse($tgl_mulai)->translatedFormat('d F Y')}} SAMPAI TANGGAL {{carbon\carbon::parse($tgl_selesai)->translatedFormat('d F Y')}}</h4>
             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
@@ -99,6 +99,7 @@
                                                     <th>Tanggal Kepulangan</th>
                                                     <th>Maksud Tujuan</th>
                                                     <th>Jumlah Orang</th>
+                                                    <th>Jumlah Anggaran</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -112,9 +113,14 @@
                                                     <td>{{carbon\carbon::parse($d->tanggal_kembali)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{$d->maksud_tujuan}}</td>
-                                                    <td>{{$d->jumlah}} Orang</td> 
+                                                    <td>{{$d->jumlah}} Orang</td>
+                                                    <td>@currency($d->jumlah * $d->kategori->besar_pagu),-</td>
                                                 </tr>
                                                 @endforeach
+                                                <tr>
+                                                    <td colspan="7">Total</td>
+                                                    <td colspan="1"></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                       <br>

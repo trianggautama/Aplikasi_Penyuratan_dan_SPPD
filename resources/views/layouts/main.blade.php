@@ -51,12 +51,12 @@
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
+                            <a class="dropdown-item" href="{{Route('pegawaiIndex')}}">Pegawai</a>
                             <a class="dropdown-item" href="{{Route('golonganIndex')}}">Golongan</a>
                             <a class="dropdown-item" href="{{Route('jabatanIndex')}}">Jabatan</a>
                             <a class="dropdown-item" href="{{Route('unitIndex')}}">Unit Kerja</a>
                             <a class="dropdown-item" href="{{Route('kotaIndex')}}">Kota</a>
                             <a class="dropdown-item" href="{{Route('transportasiIndex')}}">Transportasi</a>
-                            <a class="dropdown-item" href="{{Route('pegawaiIndex')}}">Pegawai</a>
                             <a class="dropdown-item" href="{{Route('agendaIndex')}}">Nomor Agenda</a>
                             <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Surat</a>
                         </div>
@@ -83,6 +83,21 @@
                             <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDIndex')}}">Berkas SPPD</a>
                             <a class="dropdown-item" href="{{Route('LaporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown show-on-hover active">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Laporan
+                        </a>
+                        <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Laporan Hasil SPPD</a>
+                            <a class="dropdown-item" href="{{Route('anggaranSPPD')}}">Laporan Anggaran</a>
+                            <a class="dropdown-item" href="{{Route('suratMasukFilter')}}">Laporan Surat Masuk</a>
+                            <a class="dropdown-item" href="{{Route('suratKeluarFilter')}}">Laporan Surat Keluar </a>
+                            <a class="dropdown-item" href="{{Route('suratDisposisiFilter')}}">Laporan Surat Dsiposisi </a>
+                            <a class="dropdown-item" href="{{Route('peminjamanFilter')}}">Laporan Surat Peminjaman </a>
+                            <a class="dropdown-item" href="{{Route('skFilter')}}">Laporan Registrasi SK </a>
                         </div>
                     </li>
                 </ul>

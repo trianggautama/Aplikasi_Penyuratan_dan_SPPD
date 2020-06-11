@@ -140,6 +140,8 @@ Route::put('/SPPD/edit/{uuid}', 'SPPDController@update')->name('SPPDUpdate');
 Route::get('/SPPD/delete/{uuid}', 'SPPDController@destroy')->name('SPPDDestroy');
 Route::get('/SPPD/filter/waktu', 'SPPDController@filterWaktu')->name('SPPDFilterWaktu');
 Route::get('/SPPD/filter/tujuan', 'SPPDController@filterTujuan')->name('SPPDFilterTujuan');
+Route::get('/SPPD/anggaran', 'SPPDController@SPPDAanggaran')->name('anggaranSPPD');
+
 
 // Laporan SPPD
 Route::get('Laporan/SPPD/index', 'laporanSPPDController@index')->name('LaporanSPPDIndex');
@@ -162,5 +164,6 @@ Route::get('/sppd/cetak/{uuid}', 'reportController@sppd')->name('sppdCetak');
 Route::get('/kuitansi/cetak/{uuid}', 'reportController@kuitansi')->name('kuitansiCetak');
 Route::post('/SPPD/filter/waktu', 'reportController@SPPDFilterWaktu')->name('SPPDFilterWaktuCetak');
 Route::post('/SPPD/filter/tujuan', 'reportController@SPPDFilterTujuan')->name('SPPDFilterTujuanCetak');
+Route::post('/SPPD/anggaran', 'reportController@SPPDAanggaran')->name('anggaranSPPDCetak'); 
 
 

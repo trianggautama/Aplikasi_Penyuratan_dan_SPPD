@@ -99,7 +99,6 @@
                                                     <th>Tanggal Kepulangan</th>
                                                     <th>Maksud Tujuan</th>
                                                     <th>Jumlah Orang</th>
-                                                    <th>Jumlah Biaya</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -114,8 +113,6 @@
                                                     </td>
                                                     <td>{{$d->maksud_tujuan}}</td>
                                                     <td>{{$d->jumlah}} Orang</td>
-                                                    <td>@currency($d->jumlah * $d->kategori->besar_pagu),-</td>
-                                                   
                                                 </tr>
                                                 @endforeach
                                             </tbody>
