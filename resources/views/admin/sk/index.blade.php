@@ -14,7 +14,7 @@
                 <a href="{{Route('skFilter')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
                     </span></a>
-                <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
+                <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
             </div>
@@ -56,10 +56,10 @@
                                                     <td>{{$d->identitas}}</td>
                                                     <td>
                                                         <a href="{{Route('skEdit',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  "><span
+                                                            class="btn btn-sm btn-info  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('{{$d->uuid}}','{{$d->nomor_register}}')"> <i class="fa fa-trash"></i></button>
+                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->nomor_register}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -131,7 +131,7 @@
                         <textarea name="identitas" id="identitas" class="form-control"></textarea>
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
                     </div>
                 </form>
             </div>

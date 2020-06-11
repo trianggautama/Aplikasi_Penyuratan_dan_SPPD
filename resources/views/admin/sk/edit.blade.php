@@ -64,7 +64,7 @@
                                                     class="form-control">{{$data->identitas}}</textarea>
                                             </div>
                                             <div class="text-right">
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>
+                                                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
                                                     Ubah Data</button>
                                             </div>
                                         </form>

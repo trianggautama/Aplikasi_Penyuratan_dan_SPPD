@@ -11,10 +11,10 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman SPPD</h2>
             </div>
             <div class="d-flex">
-                <a href="{{Route('notaDinasCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Nota Dinas  </span></a>
-                <a href="{{Route('suratTugasCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Surat Tugas  </span></a>
-                <a href="{{Route('sppdCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Berkas SPPD  </span></a>
-                <a href="{{Route('kuitansiCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak Kuitansi SPPD </span></a>
+                <a href="{{Route('notaDinasCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Nota Dinas  </span></a>
+                <a href="{{Route('suratTugasCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Surat Tugas  </span></a>
+                <a href="{{Route('sppdCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Berkas SPPD  </span></a>
+                <a href="{{Route('kuitansiCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak Kuitansi SPPD </span></a>
             </div>
         </div>
         <div class="row">
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="d-flex">
-            <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
+            <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                     class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Pegawai
                 </span></button>
         </div>
@@ -156,7 +156,7 @@
                         </select>
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
                     </div>
                 </form>
             </div>

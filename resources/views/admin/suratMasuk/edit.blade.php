@@ -90,7 +90,7 @@
                                                 <input type="file" class="form-control" name="file">
                                             </div>
                                             <div class="text-right">
-                                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
+                                                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
                                                     Ubah Data</button>
                                             </div>
                                         </form>

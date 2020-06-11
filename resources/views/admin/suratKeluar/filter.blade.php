@@ -43,7 +43,7 @@
                                             </div>
                                             <div class="text-right">
                                             <a href="{{Route('suratKeluarIndex')}}" class="btn btn-default"id="tambah"><span class="icon-label"><i class="fa fa-arrow-left"></i> </span><span class="btn-text">Kembali</span></a>
-                                                <button type="submit" class="btn btn-dark"><i class="fa fa-print"></i>
+                                                <button type="submit" class="btn btn-success"><i class="fa fa-print"></i>
                                                     Cetak Data</button>
                                             </div>
                                         </form>

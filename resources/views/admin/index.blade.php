@@ -8,7 +8,7 @@
 				<!-- /Title -->
 				<div class="row">
                     <div class="col-xl-12 pa-0">
-                        <div class="faq-search-wrap bg-red-light-2">
+                        <div class="faq-search-wrap bg-green-light-2">
                             <div class="container-fluid">
                                 <h1 class="display-5 text-white mb-20">Selamat Datang Admin</h1>
                             </div>
@@ -29,7 +29,7 @@
 											</div>
 											<div>
 												<span class="d-block display-4 text-dark mb-5">78</span>
-												<small class="d-block text-danger">Buah Surat</small>
+												<small class="d-block text-success">Buah Surat</small>
 											</div>
 										</div>
 									</div>
@@ -43,7 +43,7 @@
 											</div>
 											<div>
 												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">45</span></span>
-												<small class="d-block text-danger">buah surat</small>
+												<small class="d-block text-success">buah surat</small>
 											</div>
 										</div>
 									</div>
@@ -57,7 +57,7 @@
 											</div>
 											<div>
 												<span class="d-block display-4 text-dark mb-5">73</span>
-												<small class="d-block text-danger">Berkas SPPD</small>
+												<small class="d-block text-success">Berkas SPPD</small>
 											</div>
 										</div>
 									</div>
@@ -72,7 +72,7 @@
 											</div>
 											<div>
 												<span class="d-block display-4 text-dark mb-5">35</span>
-												<small class="d-block text-danger">Disposisi</small>
+												<small class="d-block text-success">Disposisi</small>
 											</div>
 										</div>
 									</div>
@@ -91,7 +91,7 @@
 											</div>
 											<div>
 												<span class="d-block display-4 text-dark mb-5">60</span>
-												<small class="d-block text-danger">Buah Surat</small>
+												<small class="d-block text-success">Buah Surat</small>
 											</div>
 										</div>
 									</div>
@@ -105,7 +105,7 @@
 											</div>
 											<div>
 												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">14</span></span>
-												<small class="d-block text-danger">Buah Surat</small>
+												<small class="d-block text-success">Buah Surat</small>
 											</div>
 										</div>
 									</div>
@@ -119,7 +119,7 @@
 											</div>
 											<div>
 												<span class="d-block display-4 text-dark mb-5">11</span>
-												<small class="d-block text-danger"></small>Pengajuan SK
+												<small class="d-block text-success">Pengajuan SK</small>
 											</div>
 										</div>
 									</div>

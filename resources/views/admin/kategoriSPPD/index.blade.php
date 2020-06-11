@@ -11,7 +11,7 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Kategori SPPD</h2>
             </div>
             <div class="d-flex">
-                <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
+                <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
             </div>
@@ -130,7 +130,7 @@
                         <input type="text" name="besar_pagu" class="form-control">
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
                     </div>
                 </form>
             </div>

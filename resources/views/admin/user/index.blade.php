@@ -14,7 +14,7 @@
                 <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
                     </span></button>
-                <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
+                <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
             </div>
@@ -122,7 +122,7 @@
                             placeholder="Password">
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
                     </div>
                 </form>
             </div>

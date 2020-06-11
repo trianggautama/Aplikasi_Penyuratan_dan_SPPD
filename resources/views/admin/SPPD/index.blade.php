@@ -17,7 +17,7 @@
             <a href="{{Route('SPPDFilterWaktu')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Filter Waktu
                     </span></a>
-                <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
+                <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
             </div>
@@ -64,7 +64,7 @@
                                                     <td>@currency($d->jumlah * $d->kategori->besar_pagu),-</td>
                                                     <td>
                                                         <a href="{{Route('SPPDShow',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light m-1"><span
+                                                            class="btn btn-sm btn-info m-1"><span
                                                                 class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <a href="{{Route('SPPDEdit',['uuid' => $d->uuid])}}"
@@ -142,7 +142,7 @@
                         <input type="text" name="maksud_tujuan" class="form-control">
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
                     </div>
                 </form>
             </div>

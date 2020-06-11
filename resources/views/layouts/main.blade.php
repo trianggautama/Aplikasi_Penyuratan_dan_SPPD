@@ -35,10 +35,11 @@
 
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar hk-navbar-alt">
+            <img src="{{asset('logo.png')}}" alt="" width="40px" height="40px">
             <a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse"
                 data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
-            <a class="navbar-brand text-red" href="{{Route('index')}}">
+            <a class="navbar-brand text-green" href="{{Route('index')}}">
                 Aplikasi Penyuratan dan SPPD
             </a>
             <div class="collapse navbar-collapse" id="navbarCollapseAlt">
