@@ -83,7 +83,7 @@
                             <a class="dropdown-item" href="{{Route('anggaranSPPDIndex')}}">Anggaran SPPD</a>
                             <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDIndex')}}">Berkas SPPD</a>
-                            <a class="dropdown-item" href="{{Route('LaporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
+                            <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">

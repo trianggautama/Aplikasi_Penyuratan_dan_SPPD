@@ -150,15 +150,13 @@ Route::get('/SPPD/filter/waktu', 'SPPDController@filterWaktu')->name('SPPDFilter
 Route::get('/SPPD/filter/tujuan', 'SPPDController@filterTujuan')->name('SPPDFilterTujuan');
 Route::get('/SPPD/anggaran', 'SPPDController@SPPDAanggaran')->name('laporanAnggaranSPPD');
 
-
 // Laporan SPPD
-Route::get('Laporan/SPPD/index', 'laporanSPPDController@index')->name('LaporanSPPDIndex');
-// Route::get('Laporan/SPPD/detail/{uuid}', 'laporanSPPDController@show')->name('LaporanSPPDShow');
-Route::post('Laporan/SPPD/index/create', 'laporanSPPDController@store')->name('LaporanSPPDCreate');
-Route::get('Laporan/SPPD/edit', 'laporanSPPDController@edit')->name('LaporanSPPDEdit');
-Route::put('Laporan/SPPD/edit/{uuid}', 'laporanSPPDController@update')->name('LaporanSPPDUpdate');
-Route::get('Laporan/SPPD/delete/{uuid}', 'laporanSPPDController@destroy')->name('LaporanSPPDDestroy');
-
+Route::get('Laporan/SPPD/index', 'laporanSPPDController@index')->name('laporanSPPDIndex');
+// Route::get('Laporan/SPPD/detail/{uuid}', 'laporanSPPDController@show')->name('laporanSPPDShow');
+Route::post('Laporan/SPPD/index/create', 'laporanSPPDController@store')->name('laporanSPPDCreate');
+Route::get('Laporan/SPPD/edit/{uuid}', 'laporanSPPDController@edit')->name('laporanSPPDEdit');
+Route::put('Laporan/SPPD/edit/{uuid}', 'laporanSPPDController@update')->name('laporanSPPDUpdate');
+Route::get('Laporan/SPPD/delete/{uuid}', 'laporanSPPDController@destroy')->name('laporanSPPDDestroy');
 
 //cetak data
 Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
@@ -172,6 +170,4 @@ Route::get('/sppd/cetak/{uuid}', 'reportController@sppd')->name('sppdCetak');
 Route::get('/kuitansi/cetak/{uuid}', 'reportController@kuitansi')->name('kuitansiCetak');
 Route::post('/SPPD/filter/waktu', 'reportController@SPPDFilterWaktu')->name('SPPDFilterWaktuCetak');
 Route::post('/SPPD/filter/tujuan', 'reportController@SPPDFilterTujuan')->name('SPPDFilterTujuanCetak');
-Route::post('/SPPD/anggaran', 'reportController@SPPDAanggaran')->name('laporanAnggaranSPPDCetak'); 
-
-
+Route::post('/SPPD/anggaran', 'reportController@SPPDAanggaran')->name('laporanAnggaranSPPDCetak');

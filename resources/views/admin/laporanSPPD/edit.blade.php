@@ -27,16 +27,24 @@
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
-                                                    <label for="exampleDropdownFormEmail1">SPPD</label>
-                                                    <select name="sppd_id" id="sppd_id" class="form-control">
-                                                        <option value="">-- Pilih  SPPD --</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleDropdownFormEmail1">Maksud Tujuan</label>
-                                                <textarea name="isi" id="isi" rows="10" class="tinymce"></textarea>
-                                                </div>
-                                            <hr>
+                                                <label for="exampleDropdownFormEmail1">SPPD</label>
+                                                <select name="sppd_id" id="sppd_id" class="form-control">
+                                                    <option value="">-- Pilih SPPD --</option>
+                                                    @foreach ($sppd as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->sppd_id ? 'selected' : ''}}>
+                                                        {{$d->maksud_tujuan}},
+                                                        {{$d->kategori->kota->nama_kota}},
+                                                        {{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
+                                                    </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Isi laporan</label>
+                                                <textarea name="isi" id="isi" rows="10"
+                                                    class="tinymce">{{$data->isi}}</textarea>
+                                            </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>
                                                     Ubah Data</button>
