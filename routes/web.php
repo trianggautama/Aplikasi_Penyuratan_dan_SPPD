@@ -122,6 +122,14 @@ Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');
 Route::get('/sk/filter', 'skController@filter')->name('skFilter');
 
 //Ketegori SPPD
+Route::get('/anggaranSPPD/index', 'anggaranSPPDController@index')->name('anggaranSPPDIndex');
+Route::get('/anggaranSPPD/detail', 'anggaranSPPDController@show')->name('anggaranSPPDShow');
+Route::post('/anggaranSPPD/index/create', 'anggaranSPPDController@store')->name('anggaranSPPDCreate');
+Route::get('/anggaranSPPD/edit/', 'anggaranSPPDController@edit')->name('anggaranSPPDEdit');
+Route::put('/anggaranSPPD/edit/{uuid}', 'anggaranSPPDController@update')->name('anggaranSPPDUpdate');
+Route::get('/anggaranSPPD/delete/{uuid}', 'anggaranSPPDController@destroy')->name('anggaranSPPDDestroy');
+
+//Ketegori SPPD
 Route::get('/kategoriSPPD/index', 'kategoriSPPDController@index')->name('kategoriSPPDIndex');
 Route::get('/kategoriSPPD/detail', 'kategoriSPPDController@show')->name('kategoriSPPDShow');
 Route::post('/kategoriSPPD/index/create', 'kategoriSPPDController@store')->name('kategoriSPPDCreate');
@@ -140,6 +148,7 @@ Route::put('/SPPD/edit/{uuid}', 'SPPDController@update')->name('SPPDUpdate');
 Route::get('/SPPD/delete/{uuid}', 'SPPDController@destroy')->name('SPPDDestroy');
 Route::get('/SPPD/filter/waktu', 'SPPDController@filterWaktu')->name('SPPDFilterWaktu');
 Route::get('/SPPD/filter/tujuan', 'SPPDController@filterTujuan')->name('SPPDFilterTujuan');
+Route::get('/SPPD/anggaran', 'SPPDController@SPPDAanggaran')->name('laporanAnggaranSPPD');
 
 // Laporan SPPD
 Route::get('Laporan/SPPD/index', 'laporanSPPDController@index')->name('laporanSPPDIndex');
@@ -161,3 +170,4 @@ Route::get('/sppd/cetak/{uuid}', 'reportController@sppd')->name('sppdCetak');
 Route::get('/kuitansi/cetak/{uuid}', 'reportController@kuitansi')->name('kuitansiCetak');
 Route::post('/SPPD/filter/waktu', 'reportController@SPPDFilterWaktu')->name('SPPDFilterWaktuCetak');
 Route::post('/SPPD/filter/tujuan', 'reportController@SPPDFilterTujuan')->name('SPPDFilterTujuanCetak');
+Route::post('/SPPD/anggaran', 'reportController@SPPDAanggaran')->name('laporanAnggaranSPPDCetak');

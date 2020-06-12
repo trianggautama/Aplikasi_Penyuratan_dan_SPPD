@@ -84,4 +84,10 @@ class SPPDController extends Controller
         $data = Kategori::all();
         return view('admin.SPPD.filterTujuan',compact('data'));
     }
+
+    public function SPPDAanggaran()
+    {
+       
+        return view('admin.SPPD.filterAnggaran');
+    }
 }
