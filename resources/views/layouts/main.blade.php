@@ -93,13 +93,16 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('SPPDFilterWaktu')}}">Laporan SPPD</a>
                             <a class="dropdown-item" href="{{Route('analisisSPPD')}}" target="_blank">Analisis SPPD</a>
-                            <a class="dropdown-item" href="{{Route('analisisSurat')}}" target="_blank">Analisis Surat</a>
+                            <a class="dropdown-item" href="{{Route('analisisSurat')}}" target="_blank">Analisis
+                                Surat</a>
                             <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Anggaran</a>
-                            <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran SPPD</a>
+                            <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran
+                                SPPD</a>
                             <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
                             <a class="dropdown-item" href="{{Route('suratMasukFilter')}}">Laporan Surat Masuk</a>
                             <a class="dropdown-item" href="{{Route('suratKeluarFilter')}}">Laporan Surat Keluar </a>
-                            <a class="dropdown-item" href="{{Route('suratDisposisiFilter')}}">Laporan Surat Dsiposisi </a>
+                            <a class="dropdown-item" href="{{Route('suratDisposisiFilter')}}">Laporan Surat Disposisi
+                            </a>
                             <a class="dropdown-item" href="{{Route('peminjamanFilter')}}">Laporan Surat Peminjaman </a>
                             <a class="dropdown-item" href="{{Route('skFilter')}}">Laporan Registrasi SK </a>
                         </div>
@@ -129,7 +132,8 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
                         data-dropdown-out="flipOutX">
-                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log   out</span></a>
+                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log
+                                out</span></a>
                     </div>
                 </li>
             </ul>

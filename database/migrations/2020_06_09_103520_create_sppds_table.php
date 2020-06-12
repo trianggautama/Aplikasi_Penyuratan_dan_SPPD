@@ -17,9 +17,12 @@ class CreateSppdsTable extends Migration
             $table->id();
             $table->string('uuid', 36);
             $table->foreignId('kategori_id')->onDelete('cascade');
+            $table->foreignId('anggaran_id')->onDelete('cascade');
+            $table->string('tempat', 100);
             $table->date('tanggal_berangkat');
             $table->date('tanggal_kepulangan');
             $table->string('maksud_tujuan', 100);
+            $table->string('jumlah')->nullable();
             $table->timestamps();
         });
     }

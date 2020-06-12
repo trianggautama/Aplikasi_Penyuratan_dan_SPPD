@@ -121,7 +121,7 @@ Route::get('/sk/filter', 'skController@filter')->name('skFilter');
 Route::get('/anggaranSPPD/index', 'anggaranSPPDController@index')->name('anggaranSPPDIndex');
 Route::get('/anggaranSPPD/detail', 'anggaranSPPDController@show')->name('anggaranSPPDShow');
 Route::post('/anggaranSPPD/index/create', 'anggaranSPPDController@store')->name('anggaranSPPDCreate');
-Route::get('/anggaranSPPD/edit/', 'anggaranSPPDController@edit')->name('anggaranSPPDEdit');
+Route::get('/anggaranSPPD/edit/{uuid}', 'anggaranSPPDController@edit')->name('anggaranSPPDEdit');
 Route::put('/anggaranSPPD/edit/{uuid}', 'anggaranSPPDController@update')->name('anggaranSPPDUpdate');
 Route::get('/anggaranSPPD/delete/{uuid}', 'anggaranSPPDController@destroy')->name('anggaranSPPDDestroy');
 
@@ -168,5 +168,5 @@ Route::post('/SPPD/filter/waktu', 'reportController@SPPDFilterWaktu')->name('SPP
 Route::post('/SPPD/filter/tujuan', 'reportController@SPPDFilterTujuan')->name('SPPDFilterTujuanCetak');
 Route::post('/SPPD/anggaran', 'reportController@SPPDAanggaran')->name('laporanAnggaranSPPDCetak');
 Route::get('Laporan/SPPD/cetak/{uuid}', 'reportController@laporanSPPD')->name('laporanSPPDCetak');
-Route::get('/sppd/analisis', 'reportController@analisisSPPD')->name('analisisSPPD'); 
-Route::get('/sppd/surat', 'reportController@analisisSurat')->name('analisisSurat'); 
+Route::get('/sppd/analisis', 'reportController@analisisSPPD')->name('analisisSPPD');
+Route::get('/sppd/surat', 'reportController@analisisSurat')->name('analisisSurat');

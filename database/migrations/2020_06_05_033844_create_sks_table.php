@@ -17,6 +17,7 @@ class CreateSksTable extends Migration
             $table->id();
             $table->string('uuid', 36);
             $table->foreignId('jenis_surat_id')->onDelete('cascade');
+            $table->foreignId('agenda_id')->onDelete('cascade');
             $table->string('nomor_register', 50);
             $table->date('tanggal_register');
             $table->string('pemohon', 50);

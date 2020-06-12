@@ -28,13 +28,15 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Anggaran</label>
-                                                <input type="text" name="kode_golongan" class="form-control" id="kode_golongan"
-                                                    placeholder="kode_golongan">
+                                                <input type="text" name="nama_anggaran" class="form-control"
+                                                    id="nama_anggaran" value="{{$data->nama_anggaran}}"
+                                                    placeholder="nama_anggaran">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Besaran Anggaran</label>
-                                                <input type="text" name="golongan" class="form-control" id="nama_golongan"
-                                                    placeholder="nama golongan">
+                                                <input type="text" name="besaran_anggaran" class="form-control"
+                                                    id="besaran_anggaran" value="{{$data->besaran_anggaran}}"
+                                                    placeholder="besaran_anggaran">
                                             </div>
                                             <hr>
                                             <div class="text-right">

@@ -17,7 +17,6 @@ class CreateSuratMasuksTable extends Migration
             $table->id();
             $table->string('uuid', 36);
             $table->foreignId('agenda_id')->onDelete('cascade');
-            $table->foreignId('jenis_surat_id')->onDelete('cascade');
             $table->string('nomor_surat', 50);
             $table->date('tanggal_surat');
             $table->date('tanggal_terima');

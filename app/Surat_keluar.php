@@ -10,7 +10,7 @@ class Surat_keluar extends Model
     use Uuid;
 
     protected $fillable = [
-        'agenda_id', 'nomor_surat', 'jenis_surat_id', 'tanggal_kirim', 'tujuan', 'isi',
+        'agenda_id', 'nomor_surat', 'tanggal_kirim', 'tujuan', 'isi',
     ];
 
     public function agenda()

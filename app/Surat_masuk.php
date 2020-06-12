@@ -10,7 +10,7 @@ class Surat_masuk extends Model
     use Uuid;
 
     protected $fillable = [
-        'agenda_id', 'nomor_surat', 'jenis_surat_id', 'tanggal_surat', 'tanggal_terima', 'asal_surat', 'isi',
+        'agenda_id', 'nomor_surat', 'tanggal_surat', 'tanggal_terima', 'asal_surat', 'isi',
     ];
 
     public function agenda()
