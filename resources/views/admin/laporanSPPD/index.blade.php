@@ -11,10 +11,6 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Laporan SPPD</h2>
             </div>
             <div class="d-flex">
-                <a href="{{Route('SPPDFilterWaktu')}}"
-                    class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
-                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak
-                    </span></a>
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
@@ -41,7 +37,6 @@
                                                     <th>Tanggal Berangkat</th>
                                                     <th>Tanggal Kepulangan</th>
                                                     <th>Maksud Tujuan</th>
-                                                    <th>Isi Laporan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -55,13 +50,16 @@
                                                     <td>{{carbon\carbon::parse($d->sppd->tanggal_kembali)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{$d->sppd->maksud_tujuan}}</td>
-                                                    <td>{{$d->isi}}</td>
                                                     <td>
+                                                        <a href="{{Route('laporanSPPDCetak',['uuid' => $d->uuid])}}"
+                                                            class="btn btn-sm btn-success  m-1" target="_blank"><span
+                                                                class="icon-label"><i class="fa fa-print"></i>
+                                                            </span><span class="btn-text"> </span></a>
                                                         <a href="{{Route('laporanSPPDEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  m-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('')">
+                                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('{{$d->uuid}}')">
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -74,7 +72,6 @@
                                                     <th>Tanggal Berangkat</th>
                                                     <th>Tanggal Kepulangan</th>
                                                     <th>Maksud Tujuan</th>
-                                                    <th>Isi Laporan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </tfoot>
@@ -140,10 +137,10 @@
             $('#exampleModalForms').modal('show');
         });
 
-        function Hapus(uuid, nama_kota) {
+        function Hapus(uuid) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Kota '" + nama_kota ,        
+			text: " Menghapus Data Laporan SPPD" ,        
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -152,7 +149,7 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("kotaDestroy",'')}}';
+				url = '{{route("laporanSPPDDestroy",'')}}';
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})

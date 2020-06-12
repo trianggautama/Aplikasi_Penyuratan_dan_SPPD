@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Disposisi_surat;
 use App\Kategori;
+use App\Laporan_sppd;
 use App\Peminjaman;
 use App\Sk;
 use App\Sppd;
@@ -104,6 +105,15 @@ class reportController extends Controller
             $pdf =PDF::loadView('formCetak.kuitansi', ['data'=>$data,'tgl'=>$tgl]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('kuitansi.pdf');
+        }
+
+        //cetak SPPD
+        public function laporanSPPD($uuid){
+            $data = Laporan_sppd::where('uuid',$uuid)->first();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.laporanSPPD', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('Laporan SPPD.pdf');
         }
 
         //cetak laporan data SPPD

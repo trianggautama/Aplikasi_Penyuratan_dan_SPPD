@@ -41,7 +41,7 @@ class laporanSPPDController extends Controller
     {
         $data = Laporan_sppd::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->route('laporanSPPDIndex');
+        return redirect()->route('laporanSPPDIndex')->with('success', 'Data berhasil dihapus');;
     }
 
 }
