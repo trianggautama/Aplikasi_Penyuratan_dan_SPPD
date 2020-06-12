@@ -77,50 +77,50 @@
      .page-break { 
          page-break-before: always; 
     }
+    @page { 
+         size: 215 mm 330 mm ; 
+        }
 
     </style>
 </head>
 <body>
-    @foreach($data->rincian_sppd as $d)
-    <div class="header">
-            <div class="logo">
-                    <img  class="pemko" src="logo.png">
-            </div>
-            <div class="headtext">
-                <h3 style="margin:0px; text-transform:uppercase;">MAHKAMAH AGUNG REPUBLIK INDONESIA PENGADILAN NEGERI MARTAPURA</h3>
-                <p style="margin:0px;">Alamat : Jl. Ahmad Yani No.32 Martapura Kalimantan Selatan</p>
-                <p style="margin:0px;">Website : http://pn-martapura.go.id/, E-mail: pn_martapura@yahoo.co.id</p>
-            </div>
-    </div>
-    <hr style="margin-top:0px;">
-    <div class="container">
-     <div class="text-right" style="text-align:right;margin-left:400px;">
-     <table style=" width:70%; border:none; margin-bottom:20px;">
-                <tr style="border:none;">
-                    <td  style="border:none;" width="50%">Lembaran</td>
-                    <td  style="border:none;">:</td>
-                </tr>
-                <tr  style="border:none;">
-                    <td  style="border:none;">Kode Nomor</td>
-                    <td  style="border:none;">:</td>
-                </tr>
-                <tr  style="border:none;">
-                    <td  style="border:none;">Nomor</td>
-                    <td  style="border:none;">:</td>
-                </tr>
-            </table>
+    <div class="text-right" style="text-align:left;margin-left:450px;">
+        <p style="font-size:8px">LAMPIRAN I <br>
+                    PERATURAN MENTERI KEUANGAN REPUBLIK INDONESIA <br>
+                    NOMOR 113/PMK.05/2012 <br>
+                    TENTANG <br>
+                    PERJALANAN DINAS JABATAN DALAM NEGERI BAGI PEJABAT <br>
+                    NEGARA, PEGAWAI NEGERI, DAN PEGAWAI TIDAK TETAP
+                </p>
      </div>
+    <div class="container">
         <div class="isi">
+        <table style="border:none;">
+         <tr style="border:none;">
+             <td style="border:none;">
+                 <p style="border:none;">Pengadilan Negeri Martapura</p>
+             </td>
+             <td style="border:none;">
+                 <p style="border:none;">
+                     Lembaran Ke : - <br>
+                     Kode No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <br>
+                     Nomor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                 </p>
+             </td>
+         </tr>
+     </table>
+     <br>
+     <p style="text-align: center;">SURAT PERJALANAN DINAS (SPD)</p>
             <table >
                 <tr >
                     <td width="5%" class="text-center">1</td>
-                    <td width="45%">Pengguna Anggaran (PA )</td>
-                    <td>: Kepala Pengadilan Negeri Kabupaten Banjar </td>
+                    <td width="45%">Pejabat Pembuat Kometmen  </td>
+                    <td colspan="2"> Kepala Pengadilan Negeri Kabupaten Banjar </td>
                 </tr>
                 <tr>
                     <td class="text-center">2</td>
                     <td>Nama/NIP Pegawai yang melaksanakan Perjalanan Dinas</td>
-                    <td>: {{$d->pegawai->nama}} /NIP.{{$d->pegawai->NIP}}</td>
+                    <td colspan="2"> {{$data->rincian_sppd->first()->pegawai->nama}} /NIP.{{$data->rincian_sppd->first()->pegawai->NIP}}</td>
                 </tr>
                 <tr>
                     <td class="text-center">3</td>
@@ -129,21 +129,21 @@
                         <p style="margin:5px;">b.Jabatan/ Instansi</p>
                         <p style="margin:5px;">c.Tingkat Perjalanan Dinas</p>
                     </td>
-                    <td>
-                        <p style="margin:5px;">a.{{$d->pegawai->golongan->kode_golongan}}</p>
-                        <p style="margin:5px;">b. {{$d->pegawai->jabatan->jabatan}}</p>
+                    <td colspan="2">
+                        <p style="margin:5px;">a.{{$data->rincian_sppd->first()->pegawai->golongan->kode_golongan}}</p>
+                        <p style="margin:5px;">b. {{$data->rincian_sppd->first()->pegawai->jabatan->jabatan}}</p>
                         <p style="margin:5px;">c. -</p>
                     </td>
                 </tr>
                 <tr>
                     <td class="text-center">4</td>
                     <td>Maksud Perjalanan Dinas</td>
-                    <td>: {{$d->sppd->maksud_tujuan}}</td>
+                    <td colspan="2"> {{$data->maksud_tujuan}}</td>
                 </tr>
                 <tr>
                     <td class="text-center">5</td>
                     <td>Alat angkut yang dipergunakan</td>
-                    <td>: {{$d->sppd->kategori->transportasi->nama_transportasi}}</td>
+                    <td colspan="2"> {{$data->kategori->transportasi->nama_transportasi}}</td>
                 </tr>
                 <tr>
                     <td class="text-center">6</td>
@@ -151,9 +151,9 @@
                         <p style="margin:5px;">a.Tempat Berangkat</p>
                         <p style="margin:5px;">b.Tujuan Berangkat</p>
                     </td>
-                    <td>
-                        <p style="margin:5px;">a. Kabupaten Banjar</p>
-                        <p style="margin:5px;">b. {{$d->sppd->kategori->kota->nama_kota}}</p>
+                    <td colspan="2">
+                        <p style="margin:5px;">a. Martapura  (Kal – Sel )</p>
+                        <p style="margin:5px;">b. {{$data->kategori->kota->nama_kota}}</p>
                     </td>
                 </tr>
                 <tr>
@@ -163,31 +163,53 @@
                         <p style="margin:5px;">b.Tanggal Berangkat</p>
                         <p style="margin:5px;">c.Tanggal Harus Kembali/ tiba ditempat baru</p>
                     </td>
-                    <td>
+                    <td colspan="2">
                         @php
-                        $tgl_kepulangan = carbon\carbon::parse($d->sppd->tanggal_kepulangan)->translatedFormat('d F Y');
-                        $tgl_berangkat = carbon\carbon::parse($d->sppd->tanggal_berangkat)->translatedFormat('d F Y');
-                        $lama = carbon\carbon::parse($d->sppd->tanggal_kepulangan)->addDays(1)->diffInDays(carbon\carbon::parse($d->sppd->tanggal_kepulangan));
+                        $tgl_kepulangan = carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y');
+                        $tgl_berangkat = carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y');
+                        $lama = carbon\carbon::parse($data->tanggal_kepulangan)->addDays(1)->diffInDays(carbon\carbon::parse($data->tanggal_kepulangan));
                         @endphp
                         <p style="margin:5px;">a. {{$lama}}/ hari</p>
                         <p style="margin:5px;">b. {{$tgl_berangkat}}</p>
-                        <p style="margin:5px;">c.{{$tgl_kepulangan}}</p>
+                        <p style="margin:5px;">c. {{$tgl_kepulangan}}</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>8</td>
-                    <td>PengikutNama</td>
-                    <td>:</td>
+                    <td style="border:none" class="text-center" >8</td>
+                    <td class="text-center">Pengikut : Nama</td>
+                    <td class="text-center" >Tanggal Lahir</td>
+                    <td class="text-center" >Keterangan</td>
                 </tr>
+                    @foreach($data->rincian_sppd as $d)
+                        @if($loop->iteration != 1)
+                            <tr>
+                                <td style="border:none"></td>
+                                <td>{{$loop->iteration - 1}}. {{$d->pegawai->nama}}</td>
+                                <td >{{$loop->iteration - 1}}. </td>
+                                <td >{{$loop->iteration - 1}}.</td>
+                            </tr>
+                        @endif
+                    @endforeach
                 <tr>
-                    <td>9</td>
+                    <td class="text-center">9</td>
                     <td>
+                        <p>Pembebanan Anggaran</p>
                         <p style="margin:5px;">a.Instansi</p>
                         <p style="margin:5px;">b.Mata Anggaran</p>
                     </td>
-                    <td>
+                    <td  colspan="2">
+                        <p>DIPA Th. Anggaran </p>
                         <p style="margin:5px;">a.Pengadilan Negeri Kabupaten Banjar</p>
                         <p style="margin:5px;">b. DPPA SKPD Tahun Anggaran {{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">10</td>
+                    <td>
+                        Keterangan Lain-lain
+                    </td>
+                    <td colspan="2">
+                    
                     </td>
                 </tr>
             </table>      
@@ -197,16 +219,13 @@
                       <div class="ttd">
                          <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($tgl)->translatedFormat('d F Y')}}</p>
                        <h6 style="margin:0px;">Mengetahui</h6>
-                      <h5 style="margin:0px;">Ketua Pengadilan</h5>
+                      <h5 style="margin:0px;">PEJABAT PEMBUAT KOMITMEN	PENGADILAN NEGERI MARTAPURA</h5>
                       <br>
                       <br>
-                      <h5 style="text-decoration:underline; margin:0px;">MAKMURIN KUSUMASTUTI, S.H,M.H.</h5>
-                      <h5 style="margin:0px;">NIP. 19690306 199103 2 004</h5>
+                      <h5 style="text-decoration:underline; margin:0px;">H. AKHMAD SYIRAJUDDIN, SE</h5>
+                      <h5 style="margin:0px;">  NIP.19701025 199103 1 001</h5>
                       </div>
                     </div>
              </div>
-             <div class="page-break"></div>
-             @endforeach
-
          </body>
 </html>

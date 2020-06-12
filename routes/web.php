@@ -121,7 +121,7 @@ Route::put('/sk/edit/{uuid}', 'skController@update')->name('skUpdate');
 Route::get('/sk/delete/{uuid}', 'skController@destroy')->name('skDestroy');
 Route::get('/sk/filter', 'skController@filter')->name('skFilter');
 
-//Ketegori SPPD
+//Anggaran SPPD
 Route::get('/anggaranSPPD/index', 'anggaranSPPDController@index')->name('anggaranSPPDIndex');
 Route::get('/anggaranSPPD/detail', 'anggaranSPPDController@show')->name('anggaranSPPDShow');
 Route::post('/anggaranSPPD/index/create', 'anggaranSPPDController@store')->name('anggaranSPPDCreate');

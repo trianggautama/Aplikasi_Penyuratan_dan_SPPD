@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    h4,h2{
+    h4,h2,h3{
         font-family:serif;
     }
         body{
@@ -32,11 +32,11 @@
      .header{
          margin-bottom: 0px;
          text-align: center;
-         height: 150px;
+         height: 130px;
          padding: 0px;
      }
      .pemko{
-         width:100px;
+         width:80px;
      }
      .logo{
          float: left;
@@ -67,42 +67,46 @@
      .text-right{
          text-align:right;
      }
+     .text-center{
+         text-align:center;
+     }
      .isi{
          padding:10px;
      }
+     @page { 
+         size: 215 mm 330 mm ; 
+        }
+
     </style>
 </head>
 <body>
     <div class="header">
-            <div class="logo">
-                    <img  class="pemko" src="logo.png">
-            </div>
-            <div class="headtext">
-                <h3 style="margin:0px; text-transform:uppercase;">MAHKAMAH AGUNG REPUBLIK INDONESIA PENGADILAN NEGERI MARTAPURA</h3>
-                <p style="margin:0px;">Alamat : Jl. Ahmad Yani No.32 Martapura Kalimantan Selatan</p>
-                <p style="margin:0px;">Website : http://pn-martapura.go.id/, E-mail: pn_martapura@yahoo.co.id</p>
+            <div class="text-center">
+                <img  class="pemko" src="logo.png">
+                <h3 style="margin:0px; text-transform:uppercase;">PENGADILAN NEGERI MARTAPURA KELAS IB</h3>
             </div>
     </div>
-    <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h2 style="text-align:center; text-decoration:underline;margin:0px;">SURAT PERINTAH TUGAS</h2>
-            <p style="text-align:center; margin:0px;">Nomor : &nbsp;&nbsp; &nbsp;&nbsp;/  &nbsp;&nbsp;&nbsp;&nbsp;/ PENGADILAN-NEGERI/{{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p>
+            <h3 style="text-align:center; text-decoration:underline;margin:0px;">SURAT TUGAS</h3>
+            <h3 style="text-align:center; margin:0px;">Nomor  W15.U3/&nbsp;&nbsp;&nbsp;&nbsp;/UM.03.02/III/{{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p>
             <br>
             <br>
+            <p style="text-align:center; margin:0px;">SEKRETARIS  PENGADILAN NEGERI MARTAPURA KELAS IB</p>
+            <p>Yang bertanda tangan di bawah ini :</p>
             <table>
                 <tr>
                     <td>Dasar :</td>
                     <td>  <ol>
-                            <li<p style="text-align:justify; margin-bottom:5px;">Dokumen Pelaksanaan Perubahan Anggaran Satuan Kerja Perangkat Daerah DPPA-SKPD)Tahun Anggaran {{carbon\carbon::parse($tgl)->translatedFormat('Y')}} Kegiatan  Rpat-rapat Koordinasi dan Konsultasi,No.DPPA-2.05.01.2.05.01.00.01.82.5.2P</p></li>
+                            <li<p style="text-align:justify; margin-bottom:5px;">Bahwa dalam rangka tertib administrasi Pelaksanaan Anggaran Pendapatan dan Belanja Negara tahun anggaran {{carbon\carbon::parse($tgl)->translatedFormat('Y')}} di lingkungan Pengadilan Negeri Martapura </p></li>
 
-                            <li<p style="text-align:justify">Nota Persetujuan Ketua Pengadilan Kabupaten Banjar untuk mendukung kelancaran pembuatan rekapitulasi data pelayanan pencatatan sipil.</p></li>
+                            <li<p style="text-align:justify">DIPA Pengadilan Negeri Martapura Nomor : SP DIPA-005.01.2.099230/{{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p></li>
                           </ol>
                     </td>
                 </tr>
             </table>
             <br>
-            <p style="text-align:center; margin:0px;">MEMERINTAHKAN :</p>
+            <p style="text-align:center; margin:0px;">MEMBERIKAN TUGAS :</p>
             <p>Kepada:</p>
                 @foreach($data->rincian_sppd as $d)
                     <table style="margin-left:100px; margin-bottom:15px;">
@@ -124,24 +128,26 @@
                         </tr>
                     </table>
                 @endforeach
-                      <br>
                       <table>
                 <tr>
                     <td>Dasar :</td>
                     <td>
-                        <p style="text-align: justify;">Perjalanan dinas luar daerah untuk mendukung kelancaran pembuatan rekapitulasi data pelayanan disdukcapil kabupaten kota  pada tanggal {{carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y')}} sampai {{carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y')}}.</p>  
+                        <p style="text-align: justify;">Perjalanan dinas luar daerah untuk mendukung kelancaran pembuatan rekapitulasi data Pengadilan Negeri Martapura Nomor 005.01.2.099230/2020   pada tanggal {{carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y')}} sampai {{carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y')}}.</p>
+                        <p>Demikian surat tugas ini dibuat untuk dilaksanakan dengan penuh rasa tanggung jawab.</p>  
                     </td>
                 </tr>
             </table>
                       <br>
+                      <br>
+                      <br>
                       <div class="ttd">
                          <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($tgl)->translatedFormat('d F Y')}}</p>
                        <h6 style="margin:0px;">Mengetahui</h6>
-                      <h5 style="margin:0px;">Ketua Pengadilan</h5>
+                      <h5 style="margin:0px;">Plh. Sekretaris Pengadilan Negeri Martapura,</h5>
                       <br>
                       <br>
-                      <h5 style="text-decoration:underline; margin:0px;">MAKMURIN KUSUMASTUTI, S.H,M.H.</h5>
-                      <h5 style="margin:0px;">NIP. 19690306 199103 2 004</h5>
+                      <br>
+                      <h5 style=" margin:0px;">BUTET SARMA, SE</h5>
                       </div>
                     </div>
              </div>

@@ -120,6 +120,20 @@
                         <label for="exampleDropdownFormEmail1">NIP</label>
                         <input type="text" name="NIP" class="form-control" id="nip" placeholder="nip">
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Tempat lahir</label>
+                                <input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir" placeholder="tempat_lahir">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Tanggal lahir</label>
+                                <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" placeholder="tanggal_lahir">
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">golongan</label>
                         <select name="golongan_id" id="zona" class="form-control">
