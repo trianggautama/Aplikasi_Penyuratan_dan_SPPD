@@ -83,7 +83,6 @@
                             <a class="dropdown-item" href="{{Route('anggaranSPPDIndex')}}">Anggaran SPPD</a>
                             <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDIndex')}}">Berkas SPPD</a>
-                            <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">
@@ -95,6 +94,7 @@
                             <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Laporan Hasil SPPD</a>
                             <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Anggaran</a>
                             <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran SPPD</a>
+                            <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
                             <a class="dropdown-item" href="{{Route('suratMasukFilter')}}">Laporan Surat Masuk</a>
                             <a class="dropdown-item" href="{{Route('suratKeluarFilter')}}">Laporan Surat Keluar </a>
                             <a class="dropdown-item" href="{{Route('suratDisposisiFilter')}}">Laporan Surat Dsiposisi </a>
