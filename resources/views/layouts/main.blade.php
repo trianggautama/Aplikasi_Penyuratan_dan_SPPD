@@ -82,7 +82,7 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDIndex')}}">Berkas SPPD</a>
-                            <a class="dropdown-item" href="{{Route('LaporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
+                            <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
                         </div>
                     </li>
                 </ul>

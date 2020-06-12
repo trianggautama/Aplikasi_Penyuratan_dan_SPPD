@@ -3,15 +3,16 @@
 @section('content')
 <!-- Main Content -->
 <div class="hk-pg-wrapper">
-    <!-- Container --> 
+    <!-- Container -->
     <div class="container mt-xl-50 mt-sm-30 mt-15">
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Laporan SPPD</h2>
             </div>
-            <div class="d-flex"> 
-            <a href="{{Route('SPPDFilterWaktu')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+            <div class="d-flex">
+                <a href="{{Route('SPPDFilterWaktu')}}"
+                    class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak
                     </span></a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
@@ -45,16 +46,18 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Bandung</td>
-                                                    <td>1 juni 2020</td>
-                                                    <td>5 Juni 2020
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->sppd->kategori->kota->nama_kota}}</td>
+                                                    <td>{{carbon\carbon::parse($d->sppd->tanggal_berangkat)->translatedFormat('d F Y')}}
                                                     </td>
-                                                    <td>menghadiri Rapat</td>
-                                                    <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, eveniet tempore aspernatur quam velit quisquam provident. Placeat, veniam consequatur sequi culpa perferendis incidunt dolores sapiente dolor ipsa ducimus sed! Placeat.</td>
+                                                    <td>{{carbon\carbon::parse($d->sppd->tanggal_kembali)->translatedFormat('d F Y')}}
+                                                    </td>
+                                                    <td>{{$d->sppd->maksud_tujuan}}</td>
+                                                    <td>{{$d->isi}}</td>
                                                     <td>
-                                                        <a href="{{Route('LaporanSPPDEdit')}}"
+                                                        <a href="{{Route('laporanSPPDEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  m-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -62,6 +65,7 @@
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -102,17 +106,22 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('SPPDCreate')}}" method="POST">
+                <form action="{{Route('laporanSPPDCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">SPPD</label>
                         <select name="sppd_id" id="sppd_id" class="form-control">
-                            <option value="">-- Pilih  SPPD --</option>
+                            <option value="">-- Pilih SPPD --</option>
+                            @foreach ($sppd as $d)
+                            <option value="{{$d->id}}">{{$d->maksud_tujuan}}, {{$d->kategori->kota->nama_kota}},
+                                {{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
+                            </option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Maksud Tujuan</label>
-                       <textarea name="isi" id="isi" rows="10" class="tinymce"></textarea>
+                        <label for="exampleDropdownFormEmail1">Isi laporan</label>
+                        <textarea name="isi" id="isi" rows="10" class="tinymce"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
