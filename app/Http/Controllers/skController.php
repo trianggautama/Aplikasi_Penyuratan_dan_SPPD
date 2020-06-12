@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Agenda;
 use App\Jenis_surat;
 use App\Sk;
 use Illuminate\Http\Request;
@@ -11,8 +12,9 @@ class skController extends Controller
     public function index()
     {
         $data = Sk::orderBy('id', 'desc')->get();
+        $agenda = Agenda::orderBy('id', 'desc')->get();
         $jenis_surat = Jenis_surat::orderBy('id', 'desc')->get();
-        return view('admin.sk.index', compact('data', 'jenis_surat'));
+        return view('admin.sk.index', compact('data', 'jenis_surat','agenda'));
     }
 
     public function store(Request $request)

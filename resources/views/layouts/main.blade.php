@@ -91,7 +91,9 @@
                             Laporan
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Laporan Hasil SPPD</a>
+                            <a class="dropdown-item" href="{{Route('SPPDFilterWaktu')}}">Laporan SPPD</a>
+                            <a class="dropdown-item" href="{{Route('analisisSPPD')}}" target="_blank">Analisis SPPD</a>
+                            <a class="dropdown-item" href="{{Route('analisisSurat')}}" target="_blank">Analisis Surat</a>
                             <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Anggaran</a>
                             <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran SPPD</a>
                             <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
@@ -127,13 +129,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
                         data-dropdown-out="flipOutX">
-                        <a class="dropdown-item" href="profile.html"><i
-                                class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
-                        <a class="dropdown-item" href="#"><i
-                                class="dropdown-icon zmdi zmdi-settings"></i><span>Settings</span></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log
-                                out</span></a>
+                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log   out</span></a>
                     </div>
                 </li>
             </ul>

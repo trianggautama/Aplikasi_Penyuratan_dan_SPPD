@@ -121,6 +121,12 @@
                 <form action="{{Route('SPPDCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Anggaran</label>
+                        <select name="kategori_id" id="kategori_id" class="form-control">
+                            <option value="">-- Pilih  dari anggaran --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tujuan</label>
                         <select name="kategori_id" id="kategori_id" class="form-control">
                             <option value="">-- Pilih kategori SPPD --</option>
@@ -128,6 +134,10 @@
                             <option value="{{$d->id}}">{{$d->kota->nama_kota}}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Nama Tempat</label>
+                        <input type="text" name="tempat" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal Berangkat</label>

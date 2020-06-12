@@ -2,14 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin/index', 'adminController@index')->name('index');
+Route::get('/', 'adminController@index')->name('index');
 
 //User Route
 Route::get('/user/index', 'userController@index')->name('userIndex');
@@ -172,4 +168,5 @@ Route::post('/SPPD/filter/waktu', 'reportController@SPPDFilterWaktu')->name('SPP
 Route::post('/SPPD/filter/tujuan', 'reportController@SPPDFilterTujuan')->name('SPPDFilterTujuanCetak');
 Route::post('/SPPD/anggaran', 'reportController@SPPDAanggaran')->name('laporanAnggaranSPPDCetak');
 Route::get('Laporan/SPPD/cetak/{uuid}', 'reportController@laporanSPPD')->name('laporanSPPDCetak');
-
+Route::get('/sppd/analisis', 'reportController@analisisSPPD')->name('analisisSPPD'); 
+Route::get('/sppd/surat', 'reportController@analisisSurat')->name('analisisSurat'); 

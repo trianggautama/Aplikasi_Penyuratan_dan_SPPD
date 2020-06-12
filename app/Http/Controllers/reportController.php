@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Agenda;
 use App\Disposisi_surat;
 use App\Kategori;
 use App\Laporan_sppd;
+use App\Pegawai;
 use App\Peminjaman;
 use App\Sk;
 use App\Sppd;
@@ -166,5 +168,23 @@ class reportController extends Controller
             $pdf =PDF::loadView('formCetak.anggaranSPPD', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
             return $pdf->stream('Laporan SPPD .pdf');
+        }
+
+        //cetak Analisis SPPD
+        public function analisisSPPD(){
+            $data = Pegawai::all();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.analisisSPPD', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('Laporan Analisis SPPD.pdf');
+        }
+
+        //cetak Analisis SPPD
+        public function analisisSurat(){
+            $data =Agenda::all();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.analisisSurat', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('Laporan Analisis Surat.pdf');
         }
 }

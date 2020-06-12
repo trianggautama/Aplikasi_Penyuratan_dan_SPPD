@@ -106,6 +106,15 @@
                 <form action="{{Route('skCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Nomor Agenda</label>
+                        <select name="agenda_id" id="agenda_id" class="form-control">
+                            <option value="">-- Pilih Nomor Agenda --</option>
+                            @foreach($agenda as $d)
+                            <option value="{{$d->id}}">{{$d->no_agenda}} - {{$d->keterangan}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal Register</label>
                         <input type="date" class="form-control" name="tanggal_register">
                     </div>

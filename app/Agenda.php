@@ -14,4 +14,9 @@ class Agenda extends Model
         return $this->hasMany(Surat_masuk::class);
     }
 
+    public function surat_keluar()
+    {
+        return $this->hasMany(Surat_keluar::class);
+    }
+
 }

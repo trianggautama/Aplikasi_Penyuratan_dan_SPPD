@@ -23,4 +23,9 @@ class Pegawai extends Model
     {
         return $this->BelongsTo(Unit_kerja::class);
     }
+
+    public function rincian_sppd()
+    {
+        return $this->hasMany(Rincian_sppd::class);
+    }
 }

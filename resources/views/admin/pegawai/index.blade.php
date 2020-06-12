@@ -56,15 +56,10 @@
                                                     <td>{{$d->unit_kerja->unit}}</td>
                                                     <td>{{$d->bidang}}</td>
                                                     <td>
-                                                        <!-- <a class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></a> -->
                                                         <a href="{{Route('pegawaiEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <!-- <a href="{{Route('pegawaiDestroy',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  "><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></a> -->
                                                             <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->nama}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
