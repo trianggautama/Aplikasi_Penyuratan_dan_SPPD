@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,51 +16,58 @@
 </head>
 
 <body>
-    
-   
-	<!-- HK Wrapper -->
-	<div class="hk-wrapper">
+
+
+    <!-- HK Wrapper -->
+    <div class="hk-wrapper">
 
         <!-- Main Content -->
         <div class="hk-pg-wrapper hk-auth-wrapper">
             <header class="d-flex justify-content-between align-items-center">
-				<a class="d-flex font-24 font-weight-500 auth-brand" href="#">
+                <a class="d-flex font-24 font-weight-500 auth-brand" href="#">
                     Aplikasi Penyuratan dan SPPD
                 </a>
             </header>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-5 pa-0">
-                        <div class="auth-cover-img overlay-wrap" >
+                        <div class="auth-cover-img overlay-wrap">
                             <img class="mt-100" src="{{asset('admin/dist/img/bg.png')}}" alt="" width="800px">
                         </div>
                     </div>
-					<div class="col-xl-7 pa-0">
+                    <div class="col-xl-7 pa-0">
                         <div class="auth-form-wrap py-xl-0 py-50">
                             <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-xs-100">
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
                                     <h1 class="display-5 mb-10">Selamat Datang : )</h1>
                                     <p class="mb-30">Silahkan Login untuk mengakses aplikasi</p>
                                     <div class="form-group">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror                                    
+                                        <input id="username" type="username"
+                                            class="form-control @error('username') is-invalid @enderror" name="username"
+                                            value="{{ old('username') }}" required autocomplete="username" autofocus
+                                            placeholder="username">
+                                        @error('username')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
-                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
-                                           <div class="input-group-append">
-                                                <span class="input-group-text"><span class="feather-icon"><i data-feather="eye-off"></i></span></span>
+                                            <input id="password" type="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                name="password" required autocomplete="current-password"
+                                                placeholder="Password">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><span class="feather-icon"><i
+                                                            data-feather="eye-off"></i></span></span>
                                             </div>
                                             @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror 
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -76,7 +82,7 @@
         <!-- /Main Content -->
 
     </div>
-	<!-- /HK Wrapper -->
+    <!-- /HK Wrapper -->
 
     <!-- jQuery -->
     <script src="{{asset('admin/vendors/jquery/dist/jquery.min.js')}}"></script>
