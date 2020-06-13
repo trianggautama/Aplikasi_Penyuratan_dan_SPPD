@@ -37,7 +37,6 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nomor Surat</th>
-                                                    <th>Jenis Surat</th>
                                                     <th>Tujuan Disposisi</th>
                                                     <th>Isi Disposisi</th>
                                                     <th>Sifat</th>
@@ -50,7 +49,6 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->surat_masuk->nomor_surat}}</td>
-                                                    <td>{{$d->surat_masuk->jenis_surat->jenis_surat}}</td>
                                                     <td>{{$d->pegawai->nama}}</td>
                                                     <td>{{$d->isi}}</td>
                                                     <td>{{$d->sifat}}</td>
@@ -74,7 +72,6 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nomor Surat</th>
-                                                    <th>Jenis Surat</th>
                                                     <th>Tujuan Disposisi</th>
                                                     <th>Isi Disposisi</th>
                                                     <th>Sifat</th>

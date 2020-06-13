@@ -91,11 +91,12 @@
                             Laporan
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <a class="dropdown-item" href="{{Route('SPPDFilterWaktu')}}">Laporan SPPD</a>
+                            <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan SPPD</a>
+                            <a class="dropdown-item" href="{{Route('SPPDFilterWaktu')}}">Laporan Data SPPD</a>
                             <a class="dropdown-item" href="{{Route('analisisSPPD')}}" target="_blank">Analisis SPPD</a>
                             <a class="dropdown-item" href="{{Route('analisisSurat')}}" target="_blank">Analisis
                                 Surat</a>
-                            <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Anggaran</a>
+                            <a class="dropdown-item" href="{{Route('anggaranSPPDfilter')}}">Laporan Anggaran</a>
                             <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran
                                 SPPD</a>
                             <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>

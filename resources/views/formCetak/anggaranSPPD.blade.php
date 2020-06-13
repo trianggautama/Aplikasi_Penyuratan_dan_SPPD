@@ -136,13 +136,13 @@
                         <td>{{carbon\carbon::parse($d->tanggal_kembali)->translatedFormat('d F Y')}}
                         </td>
                         <td>{{$d->maksud_tujuan}}</td>
-                        <td>{{$d->jumlah}} Orang</td>
-                        <td>@currency($d->jumlah * $d->kategori->besar_pagu),-</td>
+                        <td>{{$d->rincian_sppd->count()}} Orang</td>
+                        <td>@currency($d->jumlah),-</td>
                     </tr>
                     @endforeach
                     <tr>
                         <td colspan="7">Total</td>
-                        <td colspan="1"></td>
+                        <td colspan="1">@currency($data->sum('jumlah')),-</td>
                     </tr>
                 </tbody>
             </table>

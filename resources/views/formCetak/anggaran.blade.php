@@ -23,6 +23,7 @@
         text-align: center;
       }
       td{
+        text-align: center;
       }
       br{
           margin-bottom: 5px !important;
@@ -68,15 +69,9 @@
      .text-right{
          text-align:right;
      }
-     .text-center{
-         text-align:center;
-     }
      .isi{
          padding:10px;
      }
-     @page { 
-         size: 215 mm 330 mm ; 
-        }
     </style>
 </head>
 <body>
@@ -93,41 +88,42 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">LAPORAN HASIL PERJALNAAN DINAS</h4>
-            <table>
-                <tr>
-                    <td width="10%" class="text-center">I</td>
-                    <td style="padding:10px;">
-                        <b>Maksud Perjalanan Dinas</b>
-                        <p>{{$data->sppd->maksud_tujuan}}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">II</td>
-                    <td style="padding:10px;">    
-                        <b>Waktu dan Tempat Pelaksanaan</b>
-                        <p>1. Waktu &nbsp;&nbsp;: {{carbon\carbon::parse($data->sppd->tanggal_berangkat)->translatedFormat('d F Y')}} sampai {{carbon\carbon::parse($data->sppd->tanggal_kepulangan)->translatedFormat('d F Y')}} <br>
-                           2. Tempat  : {{$data->sppd->tempat}}
-                    </p> 
-                    </td>
-                </tr>
-                <tr>
-                    <td width="10%" class="text-center">III</td>
-                    <td style="padding:10px;">
-                        <b>Laporan Hasil Perjalanan Dinas</b> <br>
-                        <p>{!! $data->isi !!}</p>
-                    </td>
-                </tr>
-            </table>
+            <h4 style="text-align:center;">LAPORAN ANGGARAN</h4>
+            <table id="datable_1" class="table table-hover w-100 display pb-30">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Tahun Anggaran</th>
+                                                    <th>Besar Anggaran</th>
+                                                    <th>Serapan Anggaran</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>{{$data->nama_anggaran}}</td>
+                                                    <td>@currency($data->besaran_anggaran)</td>
+                                                    <td>@currency($data->sppd->sum('jumlah'))</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3">Sisa Pagu</td>
+                                                    @php
+                                                        $sisa = $data->besaran_anggaran - $data->sppd->sum('jumlah');
+                                                    @endphp
+                                                    <td>@currency($sisa)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                       <br>
                       <br>
                       <div class="ttd">
                          <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($tgl)->translatedFormat('d F Y')}}</p>
-                      <h5 style="margin:0px;">{{$data->sppd->rincian_sppd->first()->pegawai->jabatan->jabatan}}</h5>
+                       <h6 style="margin:0px;">Mengetahui</h6>
+                      <h5 style="margin:0px;">Ketua Pengadilan</h5>
                       <br>
                       <br>
-                      <h5 style="text-decoration:underline; margin:0px;">{{$data->sppd->rincian_sppd->first()->pegawai->nama}}</h5>
-                      <h5 style="margin:0px;">NIP. {{$data->sppd->rincian_sppd->first()->pegawai->NIP}}</h5>
+                      <h5 style="text-decoration:underline; margin:0px;">MAKMURIN KUSUMASTUTI, S.H,M.H.</h5>
+                      <h5 style="margin:0px;">NIP. 19690306 199103 2 004</h5>
                       </div>
                     </div>
              </div>

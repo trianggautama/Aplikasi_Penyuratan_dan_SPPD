@@ -188,6 +188,13 @@
                                 <td >{{$loop->iteration - 1}}. </td>
                                 <td >{{$loop->iteration - 1}}.</td>
                             </tr>
+                        @else
+                        <tr>
+                                <td style="border:none"></td>
+                                <td>-</td>
+                                <td >-</td>
+                                <td >-</td>
+                            </tr>
                         @endif
                     @endforeach
                 <tr>
@@ -200,7 +207,7 @@
                     <td  colspan="2">
                         <p>DIPA Th. Anggaran </p>
                         <p style="margin:5px;">a.Pengadilan Negeri Kabupaten Banjar</p>
-                        <p style="margin:5px;">b. DPPA SKPD Tahun Anggaran {{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p>
+                        <p style="margin:5px;">b. {{$data->anggaran->nama_anggaran}}</p>
                     </td>
                 </tr>
                 <tr>

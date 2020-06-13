@@ -46,6 +46,10 @@
                                                     <p>{{$data->kategori->kota->nama_kota}}</p>
                                                 </div>
                                                 <div class="form-group">
+                                                    <h5 for="exampleDropdownFormEmail1">Tempat</h5>
+                                                    <p>{{$data->tempat}}</p>
+                                                </div>
+                                                <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Transportasi</h5>
                                                     <p>{{$data->kategori->transportasi->nama_transportasi}}</p>
                                                 </div>

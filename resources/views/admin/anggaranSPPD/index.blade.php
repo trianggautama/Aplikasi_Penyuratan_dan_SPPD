@@ -36,7 +36,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Tahun Anggaran</th>
+                                                    <th> Anggaran</th>
+                                                    <th>Tahun</th>
                                                     <th>Besar Anggaran</th>
                                                     <th>Aksi</th>
                                                 </tr>
@@ -46,6 +47,7 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->nama_anggaran}}</td>
+                                                    <td>{{$d->tahun}}</td>
                                                     <td>@currency($d->besaran_anggaran)</td>
                                                     <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
@@ -54,7 +56,7 @@
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
 
-                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->tahun}}')"> <i
                                                                 class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -64,6 +66,7 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Tahun Anggaran</th>
+                                                    <th>Tahun</th>
                                                     <th>Besaran Anggaran</th>
                                                     <th>Aksi</th>
                                                 </tr>
@@ -102,6 +105,10 @@
                         <label for="exampleDropdownFormEmail1">Anggaran</label>
                         <input type="text" name="nama_anggaran" class="form-control" id="nama_anggaran"
                             placeholder="nama_anggaran">
+                    </div>
+                    <div class="form-group"> 
+                        <label for="exampleDropdownFormEmail1">Tahun Anggaran</label>
+                        <input type="number" class="form-control"  name="tahun" value="{{carbon\carbon::now()->translatedFormat('Y')}}">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Besaran Anggaran</label>

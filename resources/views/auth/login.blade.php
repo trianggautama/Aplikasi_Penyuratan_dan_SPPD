@@ -23,18 +23,11 @@
 
         <!-- Main Content -->
         <div class="hk-pg-wrapper hk-auth-wrapper">
-<<<<<<< HEAD
             <header class="d-flex align-items-center">
             <img src="{{asset('logo.png')}}" alt="" width="40px" height="40px">
             <a class="navbar-brand text-green" href="{{Route('index')}}">
                 Aplikasi Penyuratan dan SPPD
             </a>
-=======
-            <header class="d-flex justify-content-between align-items-center">
-                <a class="d-flex font-24 font-weight-500 auth-brand" href="#">
-                    Aplikasi Penyuratan dan SPPD
-                </a>
->>>>>>> a6f9230cb0f8925f0bdf27551a63a9e59e5f4884
             </header>
             <div class="container-fluid">
                 <div class="row">

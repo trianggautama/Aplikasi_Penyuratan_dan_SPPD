@@ -125,6 +125,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/anggaranSPPD/edit/{uuid}', 'anggaranSPPDController@edit')->name('anggaranSPPDEdit');
     Route::put('/anggaranSPPD/edit/{uuid}', 'anggaranSPPDController@update')->name('anggaranSPPDUpdate');
     Route::get('/anggaranSPPD/delete/{uuid}', 'anggaranSPPDController@destroy')->name('anggaranSPPDDestroy');
+    Route::get('/anggaranSPPD/filter', 'anggaranSPPDController@filter')->name('anggaranSPPDfilter');
+
 
 //Ketegori SPPD
     Route::get('/kategoriSPPD/index', 'kategoriSPPDController@index')->name('kategoriSPPDIndex');
@@ -171,4 +173,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('Laporan/SPPD/cetak/{uuid}', 'reportController@laporanSPPD')->name('laporanSPPDCetak');
     Route::get('/sppd/analisis', 'reportController@analisisSPPD')->name('analisisSPPD');
     Route::get('/sppd/surat', 'reportController@analisisSurat')->name('analisisSurat');
+    Route::post('/anggaranSPPD/filter', 'reportController@anggaranFilter')->name('anggaranSPPDfilterCetak');
+
 });

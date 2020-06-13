@@ -22,4 +22,9 @@ class Sppd extends Model
     {
         return $this->hasMany(Rincian_sppd::class);
     }
+
+    public function anggaran()
+    {
+        return $this->belongsTo(Anggaran::class);
+    }
 }

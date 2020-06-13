@@ -38,7 +38,6 @@
                                                     <th>No</th>
                                                     <th>Nomor Agenda</th>
                                                     <th>Nomor Surat</th>
-                                                    <th>Jenis Surat</th>
                                                     <th>Tanggal Surat</th>
                                                     <th>tanggal Terima</th>
                                                     <th>Asal Surat</th>
@@ -51,7 +50,6 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->agenda->no_agenda}}</td>
                                                     <td>{{$d->nomor_surat}}</td>
-                                                    <td>{{$d->jenis_surat->jenis_surat}}</td>
                                                     <td>{{carbon\carbon::parse($d->tanggal_surat)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{carbon\carbon::parse($d->tanggal_terima)->translatedFormat('d F Y')}}
@@ -76,7 +74,6 @@
                                                     <th>No</th>
                                                     <th>Nomor Agenda</th>
                                                     <th>Nomor Surat</th>
-                                                    <th>Jenis Surat</th>
                                                     <th>Tanggal Surat</th>
                                                     <th>tanggal Terima</th>
                                                     <th>Asal Surat</th>
@@ -126,15 +123,6 @@
                         <label for="exampleDropdownFormEmail1">Nomor Surat</label>
                         <input type="text" class="form-control" id="nomor_surat" name="nomor_surat"
                             placeholder="Nomor Surat">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Jenis Surat</label>
-                        <select name="jenis_surat_id" id="jenis_surat_id" class="form-control">
-                            <option value="">-- Pilih Jenis Surat --</option>
-                            @foreach($jenis_surat as $d)
-                            <option value="{{$d->id}}">{{$d->jenis_surat}}</option>
-                            @endforeach
-                        </select>
                     </div>
                     <div class="row">
                         <div class="col-md-6">

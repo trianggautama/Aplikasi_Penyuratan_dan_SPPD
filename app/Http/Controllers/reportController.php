@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Agenda;
+use App\Anggaran;
 use App\Disposisi_surat;
 use App\Kategori;
 use App\Laporan_sppd;
@@ -158,7 +159,7 @@ class reportController extends Controller
             $data = Sppd::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
             $data = $data->map(function ($item) {
                 $jumlah = $item->rincian_sppd->count();
-                $item['jumlah'] = $jumlah;
+                $item['jumlah_orang'] = $jumlah;
     
                 return $item;
             });
@@ -186,5 +187,21 @@ class reportController extends Controller
             $pdf =PDF::loadView('formCetak.analisisSurat', ['data'=>$data,'tgl'=>$tgl]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('Laporan Analisis Surat.pdf');
+        }
+
+        //cetak laporan data SPPD
+        public function anggaranFilter(Request $request){
+            $data = Anggaran::where('tahun', [$request->tahun])->first();
+            $sppd = Sppd::where('anggaran_id',$data->id)->get();
+            $sppd = $sppd->map(function ($item) {
+                $jumlah = $item->rincian_sppd->count();
+                $item['jumlah_orang'] = $jumlah;
+    
+                return $item;
+            });
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.anggaran', ['data'=>$data,'tgl'=>$tgl,'sppd'=>$sppd]);
+            $pdf->setPaper('a4', 'landscape');
+            return $pdf->stream('Laporan Anggaran .pdf');
         }
 }

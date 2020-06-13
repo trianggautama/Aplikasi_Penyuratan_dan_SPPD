@@ -42,4 +42,9 @@ class anggaranSPPDController extends Controller
         return redirect()->back()->withSuccess('Data Berhasil dihapus');
     }
 
+    public function filter()
+    {
+        return view('admin.anggaranSPPD.filter');
+    }
+
 }

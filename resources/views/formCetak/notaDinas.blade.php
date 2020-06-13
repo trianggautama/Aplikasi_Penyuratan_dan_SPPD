@@ -99,12 +99,12 @@
         <div class="isi">
         <hr style="margin-top:0px;">
         <br>
-        <p>&nbsp; &nbsp; Dalam rangka untuk menyampaikan hasil laporan {{$data->maksud_tujuan}}, maka kami berencana akan melakukan perjalanan dinas ke {{$data->kategori->kota->nama_kota}}</p>
+        <p>&nbsp; &nbsp; Dalam rangka untuk menyampaikan hasil laporan {{$data->maksud_tujuan}}, maka kami berencana akan melakukan perjalanan dinas ke {{$data->kategori->kota->nama_kota}} lebih tepatnya {{$data->tempat}}</p>
         <p style="text-align:justify;"> &nbsp; &nbsp;Berkenaan dengan hal tersebut diatas, maka kami berencana untuk menugaskan 
         @foreach($data->rincian_sppd as $d)
         {{$d->pegawai->jabatan->jabatan}} ({{$d->pegawai->nama}}), &nbsp;
         @endforeach
-        untuk melaksanakan kegiatan dimaksud pada tanggal {{carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y')}} {{carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y')}} dengan menggunakan Dana yang bersumber dari DPPA-SKPD Belanja langsung Pengadilan Negeri Kabupaten Banjar TA. {{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p>            
+        untuk melaksanakan kegiatan dimaksud pada tanggal {{carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y')}} {{carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y')}} dengan menggunakan Dana yang bersumber dari {{$data->anggaran->nama_anggaran}}</p>            
         <p style="text-align:justify;"> &nbsp; &nbsp;Selanjutnya kami mohon arahan dan keputusan Bapak,bila bapak berkenan terlampir disampaikan SPT dan SPPD atas nama yang bersangkutan.</p>
         <p>&nbsp; &nbsp;	Demikian disampaikan,atas perkenan Bapak diucapkan terima kasih.</p>
         <br>
