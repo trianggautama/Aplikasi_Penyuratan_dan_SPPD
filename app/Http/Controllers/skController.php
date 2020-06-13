@@ -14,7 +14,7 @@ class skController extends Controller
         $data = Sk::orderBy('id', 'desc')->get();
         $agenda = Agenda::orderBy('id', 'desc')->get();
         $jenis_surat = Jenis_surat::orderBy('id', 'desc')->get();
-        return view('admin.sk.index', compact('data', 'jenis_surat','agenda'));
+        return view('admin.sk.index', compact('data', 'jenis_surat', 'agenda'));
     }
 
     public function store(Request $request)
@@ -28,8 +28,9 @@ class skController extends Controller
     {
         $data = Sk::where('uuid', $uuid)->first();
         $jenis_surat = Jenis_surat::orderBy('id', 'desc')->get();
+        $agenda = Agenda::orderBy('id', 'desc')->get();
 
-        return view('admin.sk.edit', compact('data', 'jenis_surat'));
+        return view('admin.sk.edit', compact('data', 'jenis_surat', 'agenda'));
     }
 
     public function update(Request $request, $uuid)
@@ -48,7 +49,7 @@ class skController extends Controller
         return redirect()->route('skIndex');
     }
     public function filter()
-    {     
+    {
         return view('admin.sk.filter');
     }
 }

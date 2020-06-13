@@ -42,26 +42,29 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>DPA 2020</td>
-                                                    <td>Rp.50.000.000</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->nama_anggaran}}</td>
+                                                    <td>@currency($d->besaran_anggaran)</td>
                                                     <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
-                                                        <a href="{{Route('anggaranSPPDEdit')}}"
-                                                            class="btn btn-sm btn-primary  "><span
-                                                                class="icon-label"><i class="fa fa-edit"></i>
+                                                        <a href="{{Route('anggaranSPPDEdit',['uuid' => $d->uuid])}}"
+                                                            class="btn btn-sm btn-primary  "><span class="icon-label"><i
+                                                                    class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                        
-                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i
+                                                                class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Kode Golongan</th>
-                                                    <th>Nama Golongan</th>
+                                                    <th>Tahun Anggaran</th>
+                                                    <th>Besaran Anggaran</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </tfoot>
@@ -93,17 +96,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="{{Route('anggaranSPPDCreate')}}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Anggaran</label>
-                        <input type="text" name="kode_golongan" class="form-control" id="kode_golongan"
-                            placeholder="kode_golongan">
+                        <input type="text" name="nama_anggaran" class="form-control" id="nama_anggaran"
+                            placeholder="nama_anggaran">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Besaran Anggaran</label>
-                        <input type="text" name="golongan" class="form-control" id="nama_golongan"
-                            placeholder="nama golongan">
+                        <input type="text" name="besaran_anggaran" class="form-control" id="besaran_anggaran"
+                            placeholder="besaran_anggaran">
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

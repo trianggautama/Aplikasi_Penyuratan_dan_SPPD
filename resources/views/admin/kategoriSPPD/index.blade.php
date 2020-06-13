@@ -46,7 +46,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->kota->nama_kota}}</td>
                                                     <td>{{$d->transportasi->nama_transportasi}}</td>
-                                                    <td>Rp.{{$d->besar_pagu}} / Hari</td>
+                                                    <td>@currency($d->besar_pagu) / Hari</td>
                                                     <td>
                                                         @if($d->kota->zona == 1)
                                                         Luar Kecamatan Dalam Daerah
@@ -61,8 +61,9 @@
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->kota->nama_kota}}')"> <i
-                                                                class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-danger"
+                                                            onclick="Hapus('{{$d->uuid}}','{{$d->kota->nama_kota}}')">
+                                                            <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach

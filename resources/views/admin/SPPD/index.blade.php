@@ -3,18 +3,20 @@
 @section('content')
 <!-- Main Content -->
 <div class="hk-pg-wrapper">
-    <!-- Container --> 
+    <!-- Container -->
     <div class="container mt-xl-50 mt-sm-30 mt-15">
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman SPPD</h2>
             </div>
-            <div class="d-flex"> 
-            <a href="{{Route('SPPDFilterTujuan')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+            <div class="d-flex">
+                <a href="{{Route('SPPDFilterTujuan')}}"
+                    class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Filter Tujuan
                     </span></a>
-            <a href="{{Route('SPPDFilterWaktu')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                <a href="{{Route('SPPDFilterWaktu')}}"
+                    class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Filter Waktu
                     </span></a>
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
@@ -60,12 +62,12 @@
                                                     <td>{{carbon\carbon::parse($d->tanggal_kembali)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{$d->maksud_tujuan}}</td>
-                                                    <td>{{$d->jumlah}} Orang</td>
-                                                    <td>@currency($d->jumlah * $d->kategori->besar_pagu),-</td>
+                                                    <td>{{$d->jumlah_orang}} Orang</td>
+                                                    <td>@currency($d->jumlah),-</td>
                                                     <td>
                                                         <a href="{{Route('SPPDShow',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-info m-1"><span
-                                                                class="icon-label"><i class="fa fa-info-circle"></i>
+                                                            class="btn btn-sm btn-info m-1"><span class="icon-label"><i
+                                                                    class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <a href="{{Route('SPPDEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  m-1"><span
@@ -122,8 +124,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Anggaran</label>
-                        <select name="kategori_id" id="kategori_id" class="form-control">
-                            <option value="">-- Pilih  dari anggaran --</option>
+                        <select name="anggaran_id" id="anggaran_id" class="form-control">
+                            <option value="">-- Pilih Anggaran --</option>
+                            @foreach ($anggaran as $d)
+                            <option value="{{$d->id}}">{{$d->nama_anggaran}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
