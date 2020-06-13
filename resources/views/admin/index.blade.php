@@ -20,19 +20,6 @@
 						<div class="hk-row">
 							<div class="col-sm-12">
 								<div class="card-group hk-dash-type-2">
-									<div class="card card-sm">
-										<div class="card-body">
-											<div class="d-flex justify-content-between mb-5">
-												<div>
-													<span class="d-block font-15 text-dark font-weight-500">Surat Masuk</span>
-												</div>
-											</div>
-											<div>
-												<span class="d-block display-4 text-dark mb-5">78</span>
-												<small class="d-block text-success">Buah Surat</small>
-											</div>
-										</div>
-									</div>
 								
 									<div class="card card-sm">
 										<div class="card-body">
@@ -42,12 +29,24 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">45</span></span>
+												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$suratKeluar->count()}}</span></span>
 												<small class="d-block text-success">buah surat</small>
 											</div>
 										</div>
 									</div>
-								
+									<div class="card card-sm">
+										<div class="card-body">
+											<div class="d-flex justify-content-between mb-5">
+												<div>
+													<span class="d-block font-15 text-dark font-weight-500">Surat Masuk</span>
+												</div>
+											</div>
+											<div>
+												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$suratMasuk->count()}}</span></span>
+												<small class="d-block text-success">buah surat</small>
+											</div>
+										</div>
+									</div>
 									<div class="card card-sm">
 										<div class="card-body">
 											<div class="d-flex justify-content-between mb-5">
@@ -56,7 +55,7 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5">73</span>
+												<span class="d-block display-4 text-dark mb-5">{{$sppd->count()}}</span>
 												<small class="d-block text-success">Berkas SPPD</small>
 											</div>
 										</div>
@@ -71,7 +70,7 @@
 
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5">35</span>
+												<span class="d-block display-4 text-dark mb-5">{{$disposisi->count()}}</span>
 												<small class="d-block text-success">Disposisi</small>
 											</div>
 										</div>
@@ -86,11 +85,11 @@
 										<div class="card-body">
 											<div class="d-flex justify-content-between mb-5">
 												<div>
-													<span class="d-block font-15 text-dark font-weight-500">Surat Permohonan</span>
+													<span class="d-block font-15 text-dark font-weight-500">Peminjaman</span>
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5">60</span>
+												<span class="d-block display-4 text-dark mb-5">{{$peminjaman->count()}}</span>
 												<small class="d-block text-success">Buah Surat</small>
 											</div>
 										</div>
@@ -100,12 +99,12 @@
 										<div class="card-body">
 											<div class="d-flex justify-content-between mb-5">
 												<div>
-													<span class="d-block font-15 text-dark font-weight-500">Surat Peminjaman</span>
+													<span class="d-block font-15 text-dark font-weight-500">Pegawai</span>
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">14</span></span>
-												<small class="d-block text-success">Buah Surat</small>
+												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$pegawai->count()}}</span></span>
+												<small class="d-block text-success">pegawai</small>
 											</div>
 										</div>
 									</div>
@@ -118,7 +117,7 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5">11</span>
+												<span class="d-block display-4 text-dark mb-5">{{$sk->count()}}</span>
 												<small class="d-block text-success">Pengajuan SK</small>
 											</div>
 										</div>
