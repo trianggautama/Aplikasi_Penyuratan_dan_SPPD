@@ -23,7 +23,7 @@ class reportController extends Controller
     public function suratMasuk(Request $request){
         $data = Surat_masuk::whereBetween('tanggal_terima', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
         $tgl_mulai = $request->tanggal_mulai;
-        $tgl_selesai = $request->tanggal_selesai;
+        $tgl_selesai = $request->tanggal_akhir;
         $tgl= Carbon::now()->format('d-m-Y');
         $pdf =PDF::loadView('formCetak.suratMasuk', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
         $pdf->setPaper('a4', 'landscape');
@@ -34,7 +34,7 @@ class reportController extends Controller
         public function suratKeluar(Request $request){
             $data = Surat_keluar::whereBetween('tanggal_kirim', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
             $tgl_mulai = $request->tanggal_mulai;
-            $tgl_selesai = $request->tanggal_selesai;
+            $tgl_selesai = $request->tanggal_akhir; 
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.suratKeluar', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
@@ -45,7 +45,7 @@ class reportController extends Controller
         public function suratDisposisi(Request $request){
             $data = Disposisi_surat::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
             $tgl_mulai = $request->tanggal_mulai;
-            $tgl_selesai = $request->tanggal_selesai;
+            $tgl_selesai = $request->tanggal_akhir;
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.suratDisposisi', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
@@ -56,7 +56,7 @@ class reportController extends Controller
         public function peminjaman(Request $request){
             $data = Peminjaman::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
             $tgl_mulai = $request->tanggal_mulai;
-            $tgl_selesai = $request->tanggal_selesai;
+            $tgl_selesai = $request->tanggal_akhir;
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.peminjaman', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
@@ -67,7 +67,7 @@ class reportController extends Controller
         public function sk(Request $request){
             $data = Sk::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
             $tgl_mulai = $request->tanggal_mulai;
-            $tgl_selesai = $request->tanggal_selesai;
+            $tgl_selesai = $request->tanggal_akhir;
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.sk', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
@@ -129,7 +129,7 @@ class reportController extends Controller
                 return $item;
             });
             $tgl_mulai = $request->tanggal_mulai;
-            $tgl_selesai = $request->tanggal_selesai;
+            $tgl_selesai = $request->tanggal_akhir;
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.dataSPPD', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');
@@ -147,7 +147,7 @@ class reportController extends Controller
                 return $item;
             });
             $tgl_mulai = $request->tanggal_mulai;
-            $tgl_selesai = $request->tanggal_selesai;
+            $tgl_selesai = $request->tanggal_akhir;
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.dataSPPDTujuan', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai,'tujuan'=>$tujuan]);
             $pdf->setPaper('a4', 'landscape');
@@ -164,7 +164,7 @@ class reportController extends Controller
                 return $item;
             });
             $tgl_mulai = $request->tanggal_mulai;
-            $tgl_selesai = $request->tanggal_selesai;
+            $tgl_selesai = $request->tanggal_akhir;
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.anggaranSPPD', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
             $pdf->setPaper('a4', 'landscape');

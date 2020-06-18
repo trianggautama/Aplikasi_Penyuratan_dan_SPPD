@@ -95,7 +95,6 @@
                                                     <th>No</th>
                                                     <th>Nomor Agenda</th>
                                                     <th>Nomor Surat</th>
-                                                    <th>Jenis Surat</th>
                                                     <th>Tanggal Surat</th>
                                                     <th>tanggal Terima</th>
                                                     <th>Asal Surat</th>
@@ -107,7 +106,6 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->agenda->no_agenda}}</td>
                                                     <td>{{$d->nomor_surat}}</td>
-                                                    <td>{{$d->jenis_surat->jenis_surat}}</td>
                                                     <td>{{carbon\carbon::parse($d->tanggal_surat)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{carbon\carbon::parse($d->tanggal_terima)->translatedFormat('d F Y')}}
