@@ -112,7 +112,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nomor Agenda</label>
-                        <select name="agenda_id" id="agenda_id" class="form-control">
+                        <select name="agenda_id" id="agenda_id" class="form-control" required>
                             <option value="">-- Pilih Nomor Agenda --</option>
                             @foreach($agenda as $d)
                             <option value="{{$d->id}}">{{$d->no_agenda}} - {{$d->keterangan}}</option>
@@ -122,7 +122,7 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nomor Surat</label>
                         <input type="text" class="form-control" id="nomor_surat" name="nomor_surat"
-                            placeholder="Nomor Surat">
+                            placeholder="Nomor Surat" required>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
