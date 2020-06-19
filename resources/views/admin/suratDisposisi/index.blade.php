@@ -111,7 +111,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nomor Surat</label>
-                        <select name="surat_masuk_id" id="surat_masuk_id" class="form-control">
+                        <select name="surat_masuk_id" id="surat_masuk_id" class="form-control" required>
                             <option value="">-- Pilih dari surat Masuk --</option>
                             @foreach ($surat_masuk as $d)
                             <option value="{{$d->id}}">{{$d->nomor_surat}} - {{$d->asal_surat}}</option>
@@ -120,7 +120,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tujuan Disposisi</label>
-                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                        <select name="pegawai_id" id="pegawai_id" class="form-control" required>
                             <option value="">-- Pilih dari pegawai --</option>
                             @foreach ($pegawai as $d)
                             <option value="{{$d->id}}">{{$d->jabatan->jabatan}} - {{$d->nama}}</option>
@@ -129,11 +129,11 @@
                     </div> 
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Isi Disposisi</label>
-                        <input type="text" class="form-control" name="isi" placeholder="Isi disposisi">
+                        <input type="text" class="form-control" name="isi" placeholder="Isi disposisi" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Sifat</label>
-                        <select name="sifat" id="sifat" class="form-control">
+                        <select name="sifat" id="sifat" class="form-control" required>
                             <option value="">-- pilih sifat --</option>
                             <option value="Biasa">Biasa</option>
                             <option value="Mendesak">Mendesak</option>
@@ -141,11 +141,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Batas Waktu</label>
-                        <input type="date" class="form-control" name="batas_waktu">
+                        <input type="date" class="form-control" name="batas_waktu" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Catatan</label>
-                        <textarea name="catatan" id="catatan" class="form-control"></textarea>
+                        <textarea name="catatan" id="catatan" class="form-control" required></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

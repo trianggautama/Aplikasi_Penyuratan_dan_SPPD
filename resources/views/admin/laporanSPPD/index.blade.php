@@ -107,7 +107,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">SPPD</label>
-                        <select name="sppd_id" id="sppd_id" class="form-control">
+                        <select name="sppd_id" id="sppd_id" class="form-control" required>
                             <option value="">-- Pilih SPPD --</option>
                             @foreach ($sppd as $d)
                             <option value="{{$d->id}}">{{$d->maksud_tujuan}}, {{$d->kategori->kota->nama_kota}},
@@ -118,7 +118,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Isi laporan</label>
-                        <textarea name="isi" id="isi" rows="10" class="tinymce"></textarea>
+                        <textarea name="isi" id="isi" rows="10" class="tinymce" required></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

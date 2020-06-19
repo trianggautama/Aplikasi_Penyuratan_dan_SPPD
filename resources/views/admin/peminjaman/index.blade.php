@@ -111,11 +111,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nomor Surat</label>
-                        <input type="text" class="form-control" name="nomor_surat" placeholder="Nomor Surat">
+                        <input type="text" class="form-control" name="nomor_surat" placeholder="Nomor Surat" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Peminjam</label>
-                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                        <select name="pegawai_id" id="pegawai_id" class="form-control" required>
                             <option value="">-- Pilih pegawai --</option>
                             @foreach ($pegawai as $d)
                             <option value="{{$d->id}}">{{$d->NIP}} - {{$d->nama}}</option>
@@ -124,15 +124,15 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal Pinjam</label>
-                        <input type="date" class="form-control" name="tanggal_pinjam">
+                        <input type="date" class="form-control" name="tanggal_pinjam" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal Kembali</label>
-                        <input type="date" class="form-control" name="tanggal_kembali">
+                        <input type="date" class="form-control" name="tanggal_kembali" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Keterangan</label>
-                        <textarea name="keterangan" id="keterangan" class="form-control"></textarea>
+                        <textarea name="keterangan" id="keterangan" class="form-control" required></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

@@ -104,16 +104,16 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Anggaran</label>
                         <input type="text" name="nama_anggaran" class="form-control" id="nama_anggaran"
-                            placeholder="nama_anggaran">
+                            placeholder="nama_anggaran" required>
                     </div>
                     <div class="form-group"> 
                         <label for="exampleDropdownFormEmail1">Tahun Anggaran</label>
-                        <input type="number" class="form-control"  name="tahun" value="{{carbon\carbon::now()->translatedFormat('Y')}}">
+                        <input type="number" class="form-control"  name="tahun" value="{{carbon\carbon::now()->translatedFormat('Y')}}" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Besaran Anggaran</label>
                         <input type="text" name="besaran_anggaran" class="form-control" id="besaran_anggaran"
-                            placeholder="besaran_anggaran">
+                            placeholder="besaran_anggaran" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

@@ -110,7 +110,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Pilih Tujuan</label>
-                        <select name="kota_id" id="kota_id" class="form-control">
+                        <select name="kota_id" id="kota_id" class="form-control" required>
                             <option value="">-- Pilih tujuan --</option>
                             @foreach ($kota as $d)
                             <option value="{{$d->id}}">{{$d->nama_kota}}</option>
@@ -119,7 +119,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Transport</label>
-                        <select name="transportasi_id" id="transportasi_id" class="form-control">
+                        <select name="transportasi_id" id="transportasi_id" class="form-control"required >
                             <option value="">--Pilih jenis transportasi --</option>
                             @foreach ($transportasi as $d)
                             <option value="{{$d->id}}">{{$d->nama_transportasi}}</option>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">besaran Pagu / hari</label>
-                        <input type="text" name="besar_pagu" class="form-control">
+                        <input type="text" name="besar_pagu" class="form-control" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

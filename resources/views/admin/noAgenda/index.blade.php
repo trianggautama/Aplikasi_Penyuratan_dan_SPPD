@@ -102,12 +102,12 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nomor Agenda</label>
-                        <input type="text" name="no_agenda" class="form-control" id="no_agenda" placeholder="no_agenda">
+                        <input type="text" name="no_agenda" class="form-control" id="no_agenda" placeholder="no_agenda" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">keterangan</label>
                         <input type="text" name="keterangan" class="form-control" id="keterangan"
-                            placeholder="keterangan">
+                            placeholder="keterangan" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

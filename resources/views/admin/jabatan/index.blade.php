@@ -103,12 +103,12 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Kode jabatan</label>
                         <input type="text" name="kode_jabatan" class="form-control" id="kode_jabatan"
-                            placeholder="kode_jabatan">
+                            placeholder="kode_jabatan" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama jabatan</label>
                         <input type="text" name="jabatan" class="form-control" id="nama_jabatan"
-                            placeholder="nama_jabatan">
+                            placeholder="nama_jabatan" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

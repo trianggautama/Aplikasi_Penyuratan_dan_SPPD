@@ -105,11 +105,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama Kota</label>
-                        <input type="text" name="nama_kota" class="form-control" id="nama_kota" placeholder="nama_kota">
+                        <input type="text" name="nama_kota" class="form-control" id="nama_kota" placeholder="nama_kota" required >
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Zona</label>
-                        <select name="zona" id="zona" class="form-control">
+                        <select name="zona" id="zona" class="form-control" required >
                             <option value="">-- Pilih Zona --</option>
                             <option value="1"> Luar Kecamatan Dalam Daerah </option>
                             <option value="2"> Luar Kota Dalam Provinsi </option>

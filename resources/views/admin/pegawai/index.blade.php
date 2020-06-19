@@ -109,29 +109,29 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama</label>
-                        <input type="text" name="nama" class="form-control" id="nama" placeholder="nama">
+                        <input type="text" name="nama" class="form-control" id="nama" placeholder="nama" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">NIP</label>
-                        <input type="text" name="NIP" class="form-control" id="nip" placeholder="nip">
+                        <input type="text" name="NIP" class="form-control" id="nip" placeholder="nip" required>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">Tempat lahir</label>
-                                <input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir" placeholder="tempat_lahir">
+                                <input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir" placeholder="tempat_lahir" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">Tanggal lahir</label>
-                                <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" placeholder="tanggal_lahir">
+                                <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" placeholder="tanggal_lahir" required>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">golongan</label>
-                        <select name="golongan_id" id="zona" class="form-control">
+                        <select name="golongan_id" id="zona" class="form-control" required>
                             <option value="">-- Pilih golongan --</option>
                             @foreach($golongan as $d)
                             <option value="{{$d->id}}">{{$d->golongan}}</option>
@@ -140,7 +140,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">jabatan</label>
-                        <select name="jabatan_id" class="form-control">
+                        <select name="jabatan_id" class="form-control" required>
                             <option value="">-- Pilih jabatan --</option>
                             @foreach($jabatan as $d)
                             <option value="{{$d->id}}">{{$d->jabatan}}</option>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Unit Kerja</label>
-                        <select name="unit_kerja_id" class="form-control">
+                        <select name="unit_kerja_id" class="form-control" required>
                             <option value="">-- Pilih Unit Kerja --</option>
                             @foreach($unit_kerja as $d)
                             <option value="{{$d->id}}">{{$d->unit}}</option>
@@ -158,7 +158,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormPassword1">Bidang</label>
-                        <input type="text" class="form-control" id="bidang" name="bidang" placeholder="Bidang">
+                        <input type="text" class="form-control" id="bidang" name="bidang" placeholder="Bidang" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

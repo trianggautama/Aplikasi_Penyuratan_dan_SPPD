@@ -109,7 +109,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Jenis Transportasi</label>
-                        <select name="jenis_transportasi" id="jenis_transportasi" class="form-control">
+                        <select name="jenis_transportasi" id="jenis_transportasi" class="form-control" required>
                             <option value="">-- Pilih Jenis Transportasi --</option>
                             <option value="1">Darat</option>
                             <option value="2">Laut</option>
@@ -119,7 +119,7 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama Transportasi</label>
                         <input type="text" class="form-control" id="nama_transportasi" name="nama_transportasi"
-                            placeholder="Nama Transportasi">
+                            placeholder="Nama Transportasi" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

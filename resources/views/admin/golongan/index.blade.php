@@ -104,12 +104,12 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Kode Golongan</label>
                         <input type="text" name="kode_golongan" class="form-control" id="kode_golongan"
-                            placeholder="kode_golongan">
+                            placeholder="kode_golongan" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama Golongan</label>
                         <input type="text" name="golongan" class="form-control" id="nama_golongan"
-                            placeholder="nama golongan">
+                            placeholder="nama golongan"required >
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

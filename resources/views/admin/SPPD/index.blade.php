@@ -124,7 +124,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Anggaran</label>
-                        <select name="anggaran_id" id="anggaran_id" class="form-control">
+                        <select name="anggaran_id" id="anggaran_id" class="form-control" required>
                             <option value="">-- Pilih Anggaran --</option>
                             @foreach ($anggaran as $d)
                             <option value="{{$d->id}}">{{$d->nama_anggaran}}</option>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tujuan</label>
-                        <select name="kategori_id" id="kategori_id" class="form-control">
+                        <select name="kategori_id" id="kategori_id" class="form-control"required >
                             <option value="">-- Pilih kategori SPPD --</option>
                             @foreach ($kategori as $d)
                             <option value="{{$d->id}}">{{$d->kota->nama_kota}}</option>
@@ -142,19 +142,19 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama Tempat</label>
-                        <input type="text" name="tempat" class="form-control">
+                        <input type="text" name="tempat" class="form-control"required >
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal Berangkat</label>
-                        <input type="date" name="tanggal_berangkat" class="form-control">
+                        <input type="date" name="tanggal_berangkat" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal kepulangan</label>
-                        <input type="date" name="tanggal_kepulangan" class="form-control">
+                        <input type="date" name="tanggal_kepulangan" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Maksud Tujuan</label>
-                        <input type="text" name="maksud_tujuan" class="form-control">
+                        <input type="text" name="maksud_tujuan" class="form-control"required >
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

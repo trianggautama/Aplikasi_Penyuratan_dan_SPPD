@@ -102,11 +102,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Kode unit</label>
-                        <input type="text" name="kode_unit" class="form-control" id="kode_unit" placeholder="kode_unit">
+                        <input type="text" name="kode_unit" class="form-control" id="kode_unit" placeholder="kode_unit" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama unit</label>
-                        <input type="text" name="unit" class="form-control" id="nama_unit" placeholder="nama_unit">
+                        <input type="text" name="unit" class="form-control" id="nama_unit" placeholder="nama_unit"required >
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

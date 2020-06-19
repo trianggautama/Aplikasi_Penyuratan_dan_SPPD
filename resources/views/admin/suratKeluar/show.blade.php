@@ -37,10 +37,6 @@
                                                 <p>{{$data->nomor_surat}}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1"><b>Jenis Surat</b></label>
-                                                <p>{{$data->jenis_surat->jenis_surat}}</p>
-                                            </div>
-                                            <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1"><b>Tanggal Kirim</b></label>
                                                 <p>{{$data->tanggal_kirim}}</p>
                                             </div>

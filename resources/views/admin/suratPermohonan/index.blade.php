@@ -97,7 +97,7 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Permohonan</label>
                         <input type="text" class="form-control" name="jenis_surat" id="permohonan"
-                            placeholder="Permohonan">
+                            placeholder="Permohonan" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
