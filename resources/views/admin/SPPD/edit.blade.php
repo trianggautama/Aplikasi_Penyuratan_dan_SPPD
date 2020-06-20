@@ -36,7 +36,7 @@
                                                         {{$d->kota->nama_kota}}</option>
                                                     @endforeach
                                                 </select>
-                                            </div>
+                                            </div> 
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tanggal Berangkat</label>
                                                 <input type="date" name="tanggal_berangkat"

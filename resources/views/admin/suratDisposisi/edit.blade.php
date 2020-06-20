@@ -62,10 +62,9 @@
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Sifat</label>
                                                 <select name="sifat" id="sifat" class="form-control">
-                                                    <option value="">-- ini kdatau apa isinya --</option>
-                                                    <option value="Contoh sifat"
-                                                        {{$data->sifat == 'Contoh sifat' ? 'selected' : ''}}>Contoh
-                                                        sifat</option>
+                                                    <option value="">-- pilih sifat --</option>
+                                                    <option value="Biasa" {{$data->sifat == 'Biasa' ? 'selected' : ''}}>Biasa</option>
+                                                    <option value="Mendesak" {{$data->sifat == 'Mendesak' ? 'selected' : ''}}>Mendesak</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">

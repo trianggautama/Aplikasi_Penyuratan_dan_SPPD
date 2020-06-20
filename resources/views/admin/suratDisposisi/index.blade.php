@@ -130,7 +130,7 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Isi Disposisi</label>
                         <input type="text" class="form-control" name="isi" placeholder="Isi disposisi" required>
-                    </div>
+                    </div> 
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Sifat</label>
                         <select name="sifat" id="sifat" class="form-control" required>
