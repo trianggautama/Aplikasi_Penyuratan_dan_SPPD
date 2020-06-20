@@ -16,13 +16,15 @@ class CreateDisposisiSuratsTable extends Migration
         Schema::create('disposisi_surats', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->foreignId('surat_masuk_id')->onDelete('restrict');
-            $table->foreignId('pegawai_id')->onDelete('restrict');
+            $table->unsignedBigInteger('surat_masuk_id');
+            $table->unsignedBigInteger('pegawai_id');
             $table->string('sifat', 50);
             $table->date('batas_waktu');
             $table->string('isi');
             $table->text('catatan');
             $table->timestamps();
+            $table->foreign('surat_masuk_id')->references('id')->on('surat_masuks')->onDelete('cascade');
+            $table->foreign('pegawai_id')->references('id')->on('pegawais')->onDelete('cascade');
         });
     }
 

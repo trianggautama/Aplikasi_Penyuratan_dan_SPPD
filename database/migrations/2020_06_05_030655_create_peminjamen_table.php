@@ -16,12 +16,13 @@ class CreatePeminjamenTable extends Migration
         Schema::create('peminjamen', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->foreignId('pegawai_id')->onDelete('cascade');
+            $table->unsignedBigInteger('pegawai_id');
             $table->string('nomor_surat', 50);
             $table->date('tanggal_pinjam');
             $table->date('tanggal_kembali');
             $table->text('keterangan');
             $table->timestamps();
+            $table->foreign('pegawai_id')->references('id')->on('pegawais')->onDelete('cascade');
         });
     }
 

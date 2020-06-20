@@ -16,9 +16,10 @@ class CreateLaporanSppdsTable extends Migration
         Schema::create('laporan_sppds', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->foreignId('sppd_id')->onDelete('cascade');
+            $table->unsignedBigInteger('sppd_id');
             $table->text('isi');
             $table->timestamps();
+            $table->foreign('sppd_id')->references('id')->on('sppds')->onDelete('cascade');
         });
     }
 
