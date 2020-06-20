@@ -16,13 +16,14 @@ class CreateSuratKeluarsTable extends Migration
         Schema::create('surat_keluars', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->foreignId('agenda_id')->onDelete('cascade');
+            $table->unsignedBigInteger('agenda_id');
             $table->string('nomor_surat', 50);
             $table->date('tanggal_kirim');
             $table->string('tujuan', 50);
             $table->text('isi');
             $table->string('file', 50)->nullable();
             $table->timestamps();
+            $table->foreign('agenda_id')->references('id')->on('agendas')->onDelete('cascade');
         });
     }
 

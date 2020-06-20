@@ -16,9 +16,11 @@ class CreateRincianSppdsTable extends Migration
         Schema::create('rincian_sppds', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->foreignId('sppd_id')->onDelete('cascade');
-            $table->foreignId('pegawai_id')->onDelete('cascade');
+            $table->unsignedBigInteger('sppd_id');
+            $table->unsignedBigInteger('pegawai_id');
             $table->timestamps();
+            $table->foreign('sppd_id')->references('id')->on('sppds')->onDelete('cascade');
+            $table->foreign('pegawai_id')->references('id')->on('pegawais')->onDelete('cascade');
         });
     }
 
