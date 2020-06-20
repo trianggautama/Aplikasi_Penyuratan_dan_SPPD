@@ -156,7 +156,7 @@ class reportController extends Controller
 
         //cetak laporan data SPPD
         public function SPPDAanggaran(Request $request){
-            $data = Sppd::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
+            $data = Sppd::whereBetween('tanggal_berangkat', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
             $data = $data->map(function ($item) {
                 $jumlah = $item->rincian_sppd->count();
                 $item['jumlah_orang'] = $jumlah;
