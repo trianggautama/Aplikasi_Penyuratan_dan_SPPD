@@ -11,7 +11,7 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Transportasi Edit</h2>
             </div>
             <div class="d-flex">
-                <a href="{{Route('suratMasukIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15"
+                <a href="{{Route('transportasiIndex')}}" class="btn btn-sm btn-dark btn-wth-icon icon-wthot-bg mb-15"
                     id="tambah"><span class="icon-label"><i class="fa fa-arrow-left"></i> </span><span
                         class="btn-text">Kembali</span></a>
             </div>

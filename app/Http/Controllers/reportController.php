@@ -54,7 +54,7 @@ class reportController extends Controller
 
         //cetak laporan Peminjaman
         public function peminjaman(Request $request){
-            $data = Peminjaman::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
+            $data = Peminjaman::whereBetween('tanggal_pinjam', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
             $tgl_mulai = $request->tanggal_mulai;
             $tgl_selesai = $request->tanggal_akhir;
             $tgl= Carbon::now()->format('d-m-Y');
@@ -121,7 +121,7 @@ class reportController extends Controller
 
         //cetak laporan data SPPD
         public function SPPDFilterWaktu(Request $request){
-            $data = Sppd::whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
+            $data = Sppd::whereBetween('tanggal_berangkat', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
             $data = $data->map(function ($item) {
                 $jumlah = $item->rincian_sppd->count();
                 $item['jumlah'] = $jumlah;
