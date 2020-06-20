@@ -118,7 +118,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Isi laporan</label>
-                        <textarea name="isi" id="isi" rows="10" class="tinymce" required></textarea>
+                        <textarea name="isi" id="isi" rows="10" class="tinymce" ></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
