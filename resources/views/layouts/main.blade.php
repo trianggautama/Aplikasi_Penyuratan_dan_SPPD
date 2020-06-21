@@ -91,7 +91,6 @@
                             Laporan
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDFilterWaktu')}}">Laporan Data SPPD</a>
                             <a class="dropdown-item" href="{{Route('analisisSPPD')}}" target="_blank">Analisis SPPD</a>
                             <a class="dropdown-item" href="{{Route('analisisSurat')}}" target="_blank">Analisis
