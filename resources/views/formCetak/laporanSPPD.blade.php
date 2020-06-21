@@ -93,7 +93,7 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">LAPORAN HASIL PERJALNAAN DINAS</h4>
+            <h4 style="text-align:center;">LAPORAN HASIL PERJALANAN DINAS</h4>
             <table>
                 <tr>
                     <td width="10%" class="text-center">I</td>
