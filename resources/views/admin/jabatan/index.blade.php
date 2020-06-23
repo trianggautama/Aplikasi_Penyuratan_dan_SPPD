@@ -62,14 +62,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Kode jabatan</th>
-                                                    <th>Nama jabatan</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

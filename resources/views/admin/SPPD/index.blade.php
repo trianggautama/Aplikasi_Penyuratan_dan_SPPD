@@ -79,19 +79,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Tujuan</th>
-                                                    <th>Transportasi</th>
-                                                    <th>Tanggal Berangkat</th>
-                                                    <th>Tanggal Kepulangan</th>
-                                                    <th>Maksud Tujuan</th>
-                                                    <th>Jumlah Orang</th>
-                                                    <th>Jumlah Biaya</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

@@ -63,14 +63,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Kode Golongan</th>
-                                                    <th>Nama Golongan</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

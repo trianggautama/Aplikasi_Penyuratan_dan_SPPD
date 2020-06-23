@@ -68,16 +68,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Tujuan</th>
-                                                    <th>Transportasi</th>
-                                                    <th>Besar Pagu</th>
-                                                    <th>Status</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

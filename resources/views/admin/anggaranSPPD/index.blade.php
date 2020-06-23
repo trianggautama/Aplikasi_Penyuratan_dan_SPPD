@@ -62,15 +62,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Tahun Anggaran</th>
-                                                    <th>Tahun</th>
-                                                    <th>Besaran Anggaran</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

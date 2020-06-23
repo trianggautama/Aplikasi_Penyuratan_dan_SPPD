@@ -68,17 +68,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Nomor Surat</th>
-                                                    <th>Tujuan Disposisi</th>
-                                                    <th>Isi Disposisi</th>
-                                                    <th>Sifat</th>
-                                                    <th>Batas Waktu</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

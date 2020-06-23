@@ -69,17 +69,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Nomor Agenda</th>
-                                                    <th>Nomor Surat</th>
-                                                    <th>Tanggal Surat</th>
-                                                    <th>tanggal Terima</th>
-                                                    <th>Asal Surat</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

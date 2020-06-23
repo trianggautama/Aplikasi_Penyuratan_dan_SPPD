@@ -65,18 +65,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Nama</th>
-                                                    <th>NIP</th>
-                                                    <th>Golongan</th>
-                                                    <th>Jabatan</th>
-                                                    <th>Unit Kerja</th>
-                                                    <th>Bidang</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

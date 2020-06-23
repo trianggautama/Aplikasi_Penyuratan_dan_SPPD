@@ -51,14 +51,29 @@
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
-                            <a class="dropdown-item" href="{{Route('pegawaiIndex')}}">Pegawai</a>
-                            <a class="dropdown-item" href="{{Route('golonganIndex')}}">Golongan</a>
-                            <a class="dropdown-item" href="{{Route('jabatanIndex')}}">Jabatan</a>
-                            <a class="dropdown-item" href="{{Route('unitIndex')}}">Unit Kerja</a>
-                            <a class="dropdown-item" href="{{Route('kotaIndex')}}">Kota</a>
-                            <a class="dropdown-item" href="{{Route('transportasiIndex')}}">Transportasi</a>
-                            <a class="dropdown-item" href="{{Route('agendaIndex')}}">Nomor Agenda</a>
-                            <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Surat</a>
+                            <div class="sub-dropdown-menu show-on-hover">
+                                <a href="#" class="dropdown-toggle dropdown-item">Pegawai</a>
+                                <div class="dropdown-menu open-right-side">
+                                    <a class="dropdown-item" href="{{Route('pegawaiIndex')}}">Data Pegawai</a> 
+                                    <a class="dropdown-item" href="{{Route('golonganIndex')}}">Golongan</a>
+                                    <a class="dropdown-item" href="{{Route('jabatanIndex')}}">Jabatan</a>
+                                    <a class="dropdown-item" href="{{Route('unitIndex')}}">Unit Kerja</a>
+                                </div>
+                            </div>
+                            <div class="sub-dropdown-menu show-on-hover">
+                                <a href="#" class="dropdown-toggle dropdown-item">SPPD</a>
+                                <div class="dropdown-menu open-right-side">
+                                    <a class="dropdown-item" href="{{Route('kotaIndex')}}">Kota</a>
+                                    <a class="dropdown-item" href="{{Route('transportasiIndex')}}">Transportasi</a>
+                                </div>
+                            </div>
+                            <div class="sub-dropdown-menu show-on-hover">
+                                <a href="#" class="dropdown-toggle dropdown-item">Surat</a>
+                                <div class="dropdown-menu open-right-side">
+                                    <a class="dropdown-item" href="{{Route('agendaIndex')}}">Nomor Agenda</a>
+                                    <a class="dropdown-item" href="{{Route('suratPermohonanIndex')}}">Jenis Surat</a>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">

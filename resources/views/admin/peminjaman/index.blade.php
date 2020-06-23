@@ -67,18 +67,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Nomor Surat</th>
-                                                    <th>Peminjam</th>
-                                                    <th>Tanggal Pinjam</th>
-                                                    <th>Tanggal Kembali</th>
-                                                    <th>Lama Pinjam</th>
-                                                    <th>Keterangan</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

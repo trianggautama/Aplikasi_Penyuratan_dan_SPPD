@@ -64,17 +64,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Tanggal Register</th>
-                                                    <th>Nomor Register</th>
-                                                    <th>Jenis SK</th>
-                                                    <th>Pemohon</th>
-                                                    <th>Identitas</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>
