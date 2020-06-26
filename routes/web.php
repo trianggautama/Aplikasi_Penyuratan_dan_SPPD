@@ -109,7 +109,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
     Route::get('/peminjaman/filter', 'peminjamanController@filter')->name('peminjamanFilter');
 
-//SK
+//SK (sk)
     Route::get('/sk/index', 'skController@index')->name('skIndex');
     Route::get('/sk/detail', 'skController@show')->name('skShow');
     Route::post('/sk/index/create', 'skController@store')->name('skCreate');
