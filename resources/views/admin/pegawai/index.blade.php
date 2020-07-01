@@ -11,7 +11,7 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Pegawai</h2>
             </div>
             <div class="d-flex">
-            <a href="{{Route('pegawaiCetak')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+            <a href="{{Route('pegawaiCetak')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15" target="_blank"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
                     </span></a>
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
