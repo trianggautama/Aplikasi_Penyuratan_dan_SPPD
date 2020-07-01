@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Data Peminjaman</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Data Peminjaman Surat Masuk</h2>
             </div>
             <div class="d-flex">
                 <a href="{{Route('peminjamanFilter')}}" class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span

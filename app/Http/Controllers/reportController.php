@@ -208,4 +208,13 @@ class reportController extends Controller
                 return redirect()->route('anggaranSPPDfilter')->with('warning', 'Data Anggaran Tidak Ada');
             }
         }
+
+        //cetak Pegawai
+        public function pegawai(){
+            $data =Pegawai::latest()->get();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.pegawai', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('Laporan Pegawai.pdf');
+        }
 }
