@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item">SPPD</a>
+                                <a href="#" class="dropdown-toggle dropdown-item">Transport</a>
                                 <div class="dropdown-menu open-right-side">
                                     <a class="dropdown-item" href="{{Route('kotaIndex')}}">Kota</a>
                                     <a class="dropdown-item" href="{{Route('transportasiIndex')}}">Transportasi</a>

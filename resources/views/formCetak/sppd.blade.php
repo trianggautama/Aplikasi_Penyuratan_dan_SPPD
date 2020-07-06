@@ -224,7 +224,7 @@
                       <br>
                       <br>
                       <div class="ttd">
-                         <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($tgl)->translatedFormat('d F Y')}}</p>
+                         <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}</p>
                        <h6 style="margin:0px;">Mengetahui</h6>
                       <h5 style="margin:0px;">PEJABAT PEMBUAT KOMITMEN	PENGADILAN NEGERI MARTAPURA</h5>
                       <br>

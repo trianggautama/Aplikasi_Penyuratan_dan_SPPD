@@ -100,7 +100,7 @@
                     <td>  <ol>
                             <li<p style="text-align:justify; margin-bottom:5px;">Bahwa dalam rangka tertib administrasi Pelaksanaan Anggaran Pendapatan dan Belanja Negara tahun anggaran {{carbon\carbon::parse($tgl)->translatedFormat('Y')}} di lingkungan Pengadilan Negeri Martapura </p></li>
 
-                            <li<p style="text-align:justify">DIPA Pengadilan Negeri Martapura Nomor : SP DIPA-005.01.2.099230/{{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p></li>
+                            <li<p style="text-align:justify">DIPA Pengadilan Negeri Martapura Nomor : {{$data->anggaran->nama_anggaran}}/{{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p></li>
                           </ol>
                     </td>
                 </tr>
@@ -130,8 +130,7 @@
                 @endforeach
                       <table>
                 <tr>
-                    <td>Dasar :</td>
-                    <td>
+                    <td colspan="2">
                         <p style="text-align: justify;">Perjalanan dinas luar daerah untuk mendukung kelancaran pembuatan rekapitulasi data Pengadilan Negeri Martapura Nomor 005.01.2.099230/2020   pada tanggal {{carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y')}} sampai {{carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y')}}.</p>
                         <p>Demikian surat tugas ini dibuat untuk dilaksanakan dengan penuh rasa tanggung jawab.</p>  
                     </td>
@@ -141,7 +140,7 @@
                       <br>
                       <br>
                       <div class="ttd">
-                         <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($tgl)->translatedFormat('d F Y')}}</p>
+                         <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}</p>
                        <h6 style="margin:0px;">Mengetahui</h6>
                       <h5 style="margin:0px;">Plh. Sekretaris Pengadilan Negeri Martapura,</h5>
                       <br>

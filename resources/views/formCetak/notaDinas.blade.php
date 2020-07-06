@@ -89,7 +89,7 @@
                     </tr>
                     <tr>
                         <td>Tanggal</td>
-                        <td>: {{carbon\carbon::parse($tgl)->translatedFormat('d F Y')}}</td>
+                        <td>: {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}</td>
                     </tr>
                 </table>
             </div>
@@ -109,7 +109,7 @@
         <p>&nbsp; &nbsp;	Demikian disampaikan,atas perkenan Bapak diucapkan terima kasih.</p>
         <br>
                       <div class="ttd">
-                         <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($tgl)->translatedFormat('d F Y')}}</p>
+                         <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}</p>
                        <h6 style="margin:0px;">Mengetahui</h6>
                       <h5 style="margin:0px;">Ketua Pengadilan</h5>
                       <br>
