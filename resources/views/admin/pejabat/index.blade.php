@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Nomor Agenda</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Pejabat Penandatanganan</h2>
             </div>
             <div class="d-flex">
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
@@ -33,31 +33,31 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nomor Agenda</th>
-                                                    <th>Keterangan</th>
+                                                    <th>Penandatanganan SPPD</th>
+                                                    <th>Penandatanganan ST</th>
+                                                    <th>Penandatanganan NT</th>
+                                                    <th>Penandatanganan Pengguna Anggaran</th>
+                                                    <th>Penandatanganan Bendahara</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->no_agenda}}</td>
-                                                    <td>{{$d->keterangan}}</td>
+                                                    <td>1</td>
+                                                    <td>Nama Pejabat A</td>
+                                                    <td>Nama Pejabat B</td>
+                                                    <td>Nama Pejabat C</td>
+                                                    <td>Nama Pejabat D</td>
+                                                    <td>Nama Bendahara A</td>
                                                     <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
-                                                        <a href="{{Route('agendaEdit',['uuid' => $d->uuid])}}"
+                                                        <a href="{{Route('pejabatEdit','bcdjsbh')}}"
                                                             class="btn btn-sm btn-primary  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <!-- <a href="{{Route('agendaDestroy',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  "><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></a> -->
-                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->no_agenda}}')"> <i class="fa fa-trash"></i></button>
+                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
-                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -87,34 +87,52 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('agendaCreate')}}" method="POST">
+                <form action="{{Route('pejabatCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Kode Surat</label>
-                        <select name="kode_surat" id="kode_surat" class="form-control">
-                            <option value="Skep">Surat Keputusan (SKep)</option>
-                            <option value="SKet">Surat Keterangan (SKet)</option>
-                            <option value="SEd">Surat Edaran (SEd)</option>
-                            <option value="ST">Surat Tugas (ST)</option>
-                            <option value="SP">Surat Peringatan (SP)</option>
-                            <option value="SIK">Surat Izin kegiatan (SIK)</option>
-                            <option value="SPn">Surat Perjanjian (SPn)</option>
-                            <option value="Und">Surat Undangan (Und)</option>
-                            <option value="Nd">Nota Dinas (Nd)</option>
-                            <option value="Peng">Surat Pengumuman (Peng)</option>
-                            <option value="sTap">Surat Ketetapan (sTap)</option>
-                            <option value="SPer">Surat Perintah (SPer)</option>
-                            <option value="L">Surat Lain - lain (L)</option>
+                        <label for="exampleDropdownFormEmail1">Penandatanganan SPPD</label>
+                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                            <option value="">-- Pilih Pegawai --</option>
+                            @foreach ($pegawai as $d)
+                            <option value="{{$d->id}}">{{$d->nama}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Nomor Agenda</label>
-                        <input type="text" name="no_agenda" class="form-control" id="no_agenda" placeholder="no_agenda" required>
+                        <label for="exampleDropdownFormEmail1">Penandatangan ST</label>
+                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                            <option value="">-- Pilih Pegawai --</option>
+                            @foreach ($pegawai as $d)
+                            <option value="{{$d->id}}">{{$d->nama}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">keterangan</label>
-                        <input type="text" name="keterangan" class="form-control" id="keterangan"
-                            placeholder="keterangan" required>
+                        <label for="exampleDropdownFormEmail1">Penandatanganan NT</label>
+                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                            <option value="">-- Pilih Pegawai --</option>
+                            @foreach ($pegawai as $d)
+                            <option value="{{$d->id}}">{{$d->nama}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Penandatanganan Pengguna Anggaran</label>
+                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                            <option value="">-- Pilih Pegawai --</option>
+                            @foreach ($pegawai as $d)
+                            <option value="{{$d->id}}">{{$d->nama}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Penandatanganan Bendahara</label>
+                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                            <option value="">-- Pilih Pegawai --</option>
+                            @foreach ($pegawai as $d)
+                            <option value="{{$d->id}}">{{$d->nama}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
@@ -129,14 +147,14 @@
 @section('scripts')
 <script>
     $("#tambah").click(function(){
-        $('#status').text('Tambah Data');
-        $('#exampleModalForms').modal('show');
-    });
+            $('#status').text('Tambah Data');
+            $('#exampleModalForms').modal('show');
+        });
 
-    function Hapus(uuid, no_agenda) {
+        function Hapus(uuid, nama_kota) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Unit '" + no_agenda ,        
+			text: " Menghapus Data Kota '" + nama_kota ,        
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -145,7 +163,7 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("agendaDestroy",'')}}';
+				url = '{{route("kotaDestroy",'')}}';
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})

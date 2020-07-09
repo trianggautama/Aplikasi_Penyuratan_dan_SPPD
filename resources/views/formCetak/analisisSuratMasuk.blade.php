@@ -88,33 +88,26 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">ANALISIS SKPD</h4>
+            <h4 style="text-align:center;">ANALISIS SURAT Masuk</h4>
             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama</th>
-                                                    <th>NIP</th>
-                                                    <th>Golongan</th>
-                                                    <th>Jabatan</th>
-                                                    <th>SPPD</th>
+                                                    <th>Nomor Agenda</th>
+                                                    <th>Keterangan</th>
+                                                    <th>Surat Masuk</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->nama}}</td>
-                                                    <td>{{$d->NIP}}</td>
-                                                    <td>{{$d->golongan->golongan}}</td>
-                                                    <td>{{$d->jabatan->jabatan}}</td>
-                                                    <td>
-                                                       {{$d->sppd}} SPPD
-                                                    </td>
+                                                    <td>{{$d->no_agenda}}</td>
+                                                    <td>{{$d->keterangan}}</td>
+                                                    <td>{{$d->surat_masuk}} Surat</td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                           </tfoot>
                                         </table>
                       <br>
                       <br>

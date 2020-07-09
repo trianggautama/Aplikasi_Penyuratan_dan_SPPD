@@ -98,7 +98,7 @@
 <!-- Modal forms-->
 <div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="status">Modal title</h5>
@@ -109,39 +109,65 @@
             <div class="modal-body">
                 <form action="{{Route('SPPDCreate')}}" method="POST">
                     @csrf
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Anggaran</label>
-                        <select name="anggaran_id" id="anggaran_id" class="form-control" required>
-                            <option value="">-- Pilih Anggaran --</option>
-                            @foreach ($anggaran as $d)
-                            <option value="{{$d->id}}">{{$d->nama_anggaran}}</option>
-                            @endforeach
-                        </select>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Nomor Surat Tugas</label>
+                                <input type="text" name="no_surat_tugas" class="form-control"required >
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Nomor Nota Dinas</label>
+                                <input type="text" name="no_nota_dinas" class="form-control"required >
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Tujuan</label>
-                        <select name="kategori_id" id="kategori_id" class="form-control"required >
-                            <option value="">-- Pilih kategori SPPD --</option>
-                            @foreach ($kategori as $d)
-                            <option value="{{$d->id}}">{{$d->kota->nama_kota}}</option>
-                            @endforeach
-                        </select>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-group">
+                            <label for="exampleDropdownFormEmail1">Berangkat Dari</label>
+                            <select name="kategori_id" id="kategori_id" class="form-control"required >
+                                <option value="">-- Pilih Kota --</option>
+                                @foreach ($kota as $d)
+                                <option value="{{$d->id}}">{{$d->nama_kota}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Tujuan</label>
+                                <select name="kategori_id" id="kategori_id" class="form-control"required >
+                                    <option value="">-- Pilih Kota --</option>
+                                    @foreach ($kota as $d)
+                                    <option value="{{$d->id}}">{{$d->nama_kota}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama Tempat</label>
                         <input type="text" name="tempat" class="form-control"required >
                     </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Tanggal Berangkat</label>
-                        <input type="date" name="tanggal_berangkat" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Tanggal kepulangan</label>
-                        <input type="date" name="tanggal_kepulangan" class="form-control" required>
+                    <div class="row">
+                        <div class="col-md">
+                        <div class="form-group">
+                            <label for="exampleDropdownFormEmail1">Tanggal Berangkat</label>
+                            <input type="date" name="tanggal_berangkat" class="form-control" required>
+                        </div>
+                        </div>
+                        <div class="col-md">
+                        <div class="form-group">
+                            <label for="exampleDropdownFormEmail1">Tanggal kepulangan</label>
+                            <input type="date" name="tanggal_kepulangan" class="form-control" required>
+                        </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Maksud Tujuan</label>
-                        <input type="text" name="maksud_tujuan" class="form-control"required >
+                        <textarea name="" id="" class="form-control"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

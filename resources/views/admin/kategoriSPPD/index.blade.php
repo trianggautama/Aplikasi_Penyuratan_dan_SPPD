@@ -33,40 +33,32 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Tujuan</th>
-                                                    <th>Transportasi</th>
+                                                    <th>Kode Biaya</th>
+                                                    <th>Golongan</th>
+                                                    <th>Uraian</th>
                                                     <th>Besar Pagu</th>
-                                                    <th>Status</th>
+                                                    <th>Jenis</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->kota->nama_kota}}</td>
-                                                    <td>{{$d->transportasi->nama_transportasi}}</td>
-                                                    <td>@currency($d->besar_pagu) / Hari</td>
+                                                    <td>1</td>
+                                                    <td>NJ001</td>
+                                                    <td>III/d</td>
+                                                    <td>Biaya Transport</td>
+                                                    <td>@currency(1000000)</td>
+                                                    <td>Dalam Daerah</td>
                                                     <td>
-                                                        @if($d->kota->zona == 1)
-                                                        Luar Kecamatan Dalam Daerah
-                                                        @elseif($d->kota->zona == 2)
-                                                        Luar Kota Dalam Provinsi
-                                                        @else
-                                                        Luar Kota luar Provinsi
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
+                                                        <a href="{{Route('kategoriSPPDEdit','xnkjanxj')}}"
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-danger"
-                                                            onclick="Hapus('{{$d->uuid}}','{{$d->kota->nama_kota}}')">
+                                                            onclick="Hapus('')">
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
-                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -99,26 +91,33 @@
                 <form action="{{Route('kategoriSPPDCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Pilih Tujuan</label>
-                        <select name="kota_id" id="kota_id" class="form-control" required>
-                            <option value="">-- Pilih tujuan --</option>
-                            @foreach ($kota as $d)
-                            <option value="{{$d->id}}">{{$d->nama_kota}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Transport</label>
-                        <select name="transportasi_id" id="transportasi_id" class="form-control"required >
-                            <option value="">--Pilih jenis transportasi --</option>
-                            @foreach ($transportasi as $d)
-                            <option value="{{$d->id}}">{{$d->nama_transportasi}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">besaran Pagu / hari</label>
+                        <label for="exampleDropdownFormEmail1">Kode Biaya</label>
                         <input type="text" name="besar_pagu" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">uraian</label>
+                        <textarea name="uraian" id="" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Pilih Golongan</label>
+                        <select name="kota_id" id="kota_id" class="form-control" required>
+                            <option value="">-- Pilih Golongan --</option>
+                            @foreach ($golongan as $d)
+                            <option value="{{$d->id}}">{{$d->kode_golongan}} - {{$d->golongan}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
+                        <input type="text" name="besar_pagu" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Jenis SPPD</label>
+                        <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
+                            <option value="">-- Pilih Jenis SPPD --</option>
+                            <option value="1">Dalam Derah</option>
+                            <option value="1">Luar Derah</option>
+                        </select>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

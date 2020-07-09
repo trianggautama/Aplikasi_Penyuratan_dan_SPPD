@@ -61,10 +61,11 @@
                                 </div>
                             </div>
                             <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item">Transport</a>
+                                <a href="#" class="dropdown-toggle dropdown-item">Inputan SPPD</a>
                                 <div class="dropdown-menu open-right-side">
                                     <a class="dropdown-item" href="{{Route('kotaIndex')}}">Kota</a>
                                     <a class="dropdown-item" href="{{Route('transportasiIndex')}}">Transportasi</a>
+                                    <a class="dropdown-item" href="{{Route('pejabatIndex')}}">Pejabat penandatangan SPPD</a>
                                 </div>
                             </div>
                             <div class="sub-dropdown-menu show-on-hover">
@@ -95,8 +96,8 @@
                             SPPD
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <a class="dropdown-item" href="{{Route('anggaranSPPDIndex')}}">Anggaran SPPD</a>
-                            <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori SPPD</a>
+                            <!-- <a class="dropdown-item" href="{{Route('anggaranSPPDIndex')}}">Anggaran SPPD</a> -->
+                            <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori Anggaran SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDIndex')}}">Berkas SPPD</a>
                         </div>
                     </li>
@@ -108,8 +109,8 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('SPPDFilterWaktu')}}">Laporan Data SPPD</a>
                             <a class="dropdown-item" href="{{Route('analisisSPPD')}}" target="_blank">Analisis SPPD</a>
-                            <a class="dropdown-item" href="{{Route('analisisSurat')}}" target="_blank">Analisis
-                                Surat</a>
+                            <a class="dropdown-item" href="{{Route('analisisSuratMasuk')}}" target="_blank">Analisis Surat Masuk</a>
+                            <a class="dropdown-item" href="{{Route('analisisSuratKeluar')}}" target="_blank">Analisis Surat Keluar</a>
                             <a class="dropdown-item" href="{{Route('anggaranSPPDfilter')}}">Laporan Anggaran</a>
                             <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran
                                 SPPD</a>

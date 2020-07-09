@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Golongan;
-use App\Kategori;
-use App\Kota;
-use App\Transportasi;
+use App\Pegawai;
 use Illuminate\Http\Request;
 
-class kategoriSPPDController extends Controller
+class pejabatController extends Controller
 {
     public function index()
     {
-        $data = Kategori::orderBy('id', 'desc')->get();
-        $golongan = Golongan::latest()->get();
-        return view('admin.kategoriSPPD.index', compact('data', 'golongan'));
+        $pegawai = Pegawai::latest()->get();
+        return view('admin.pejabat.index',compact('pegawai'));
     }
 
     public function store(Request $request)

@@ -88,14 +88,13 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">ANALISIS SURAT</h4>
+            <h4 style="text-align:center;">ANALISIS SURAT Keluar</h4>
             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nomor Agenda</th>
                                                     <th>Keterangan</th>
-                                                    <th>Surat Masuk</th>
                                                     <th>Surat Keluar</th>
                                                 </tr>
                                             </thead>
@@ -105,8 +104,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->no_agenda}}</td>
                                                     <td>{{$d->keterangan}}</td>
-                                                    <td>{{$d->surat_masuk->count()}} Surat</td>
-                                                    <td>{{$d->surat_keluar->count()}} Surat</td>
+                                                    <td>{{$d->surat_keluar}} Surat</td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

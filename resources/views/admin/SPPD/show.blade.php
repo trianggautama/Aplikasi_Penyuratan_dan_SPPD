@@ -109,6 +109,7 @@
                                     <td>{{$d->pegawai->golongan->golongan}}</td>
                                     <td>{{$d->pegawai->jabatan->jabatan}}</td>
                                     <td>
+                                        <a href="{{Route('rincianAnggaran','hshh')}}" class="btn btn-sm btn-primary m-1 text-white" > <i class="fa fa-dollar"></i> Anggaran Ril</a>
                                         <button class="btn btn-sm btn-danger m-1" onclick="Hapus('{{$d->uuid}}','{{$d->pegawai->nama}}')"> <i
                                                 class="fa fa-trash"></i></button>
                                     </td>

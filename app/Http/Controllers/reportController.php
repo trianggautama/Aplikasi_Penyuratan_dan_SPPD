@@ -173,20 +173,39 @@ class reportController extends Controller
 
         //cetak Analisis SPPD
         public function analisisSPPD(){
-            $data = Pegawai::all();
+            $data = Pegawai::all()->map(function($item){
+                $item->sppd = $item->rincian_sppd->count();
+                return $item;
+            })->sortByDesc('sppd');
             $tgl= Carbon::now()->format('d-m-Y');
             $pdf =PDF::loadView('formCetak.analisisSPPD', ['data'=>$data,'tgl'=>$tgl]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('Laporan Analisis SPPD.pdf');
         }
 
-        //cetak Analisis SPPD
-        public function analisisSurat(){
-            $data =Agenda::all();
+        //cetak Analisis Surat Masuk
+        public function analisisSuratMasuk(){
+            $data =Agenda::all()->map(function($item){
+                $item->surat_masuk = $item->surat_masuk->count();
+                return $item;
+            })->sortByDesc('surat_masuk');
             $tgl= Carbon::now()->format('d-m-Y');
-            $pdf =PDF::loadView('formCetak.analisisSurat', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf =PDF::loadView('formCetak.analisisSuratMasuk', ['data'=>$data,'tgl'=>$tgl]);
             $pdf->setPaper('a4', 'portrait');
-            return $pdf->stream('Laporan Analisis Surat.pdf');
+            return $pdf->stream('Laporan Analisis Surat Masuk.pdf');
+        }
+
+
+        //cetak Analisis Surat Keluar
+        public function analisisSuratKeluar(){
+            $data =Agenda::all()->map(function($item){
+                $item->surat_keluar = $item->surat_keluar->count();
+                return $item;
+            })->sortByDesc('surat_keluar');
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.analisisSuratKeluar', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('Laporan Analisis Surat Keluar.pdf');
         }
 
         //cetak laporan data SPPD

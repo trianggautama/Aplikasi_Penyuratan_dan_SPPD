@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Anggaran;
 use App\Kategori;
+use App\Kota;
 use App\Pegawai;
 use App\Rincian_sppd;
 use App\Sppd;
@@ -20,9 +21,9 @@ class SPPDController extends Controller
 
             return $item;
         });
-        $kategori = Kategori::orderBy('id', 'desc')->get();
+        $kota = Kota::orderBy('id', 'desc')->get();
         $anggaran = Anggaran::orderBy('id', 'desc')->get();
-        return view('admin.SPPD.index', compact('data', 'kategori', 'anggaran'));
+        return view('admin.SPPD.index', compact('data', 'kota', 'anggaran'));
     }
 
     public function store(Request $request)
@@ -103,5 +104,17 @@ class SPPDController extends Controller
     {
 
         return view('admin.SPPD.filterAnggaran');
+    }
+
+    public function anggaranDetail()
+    {
+        
+        return view('admin.SPPD.anggaranDetail');
+    }
+
+    public function anggaranEdit()
+    {
+        
+        return view('admin.SPPD.anggaranEdit');
     }
 }

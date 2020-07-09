@@ -27,6 +27,24 @@
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Kode Surat</label>
+                                                <select name="kode_surat" id="kode_surat" class="form-control">
+                                                    <option value="Skep">Surat Keputusan (SKep)</option>
+                                                    <option value="SKet">Surat Keterangan (SKet)</option>
+                                                    <option value="SEd">Surat Edaran (SEd)</option>
+                                                    <option value="ST">Surat Tugas (ST)</option>
+                                                    <option value="SP">Surat Peringatan (SP)</option>
+                                                    <option value="SIK">Surat Izin kegiatan (SIK)</option>
+                                                    <option value="SPn">Surat Perjanjian (SPn)</option>
+                                                    <option value="Und">Surat Undangan (Und)</option>
+                                                    <option value="Nd">Nota Dinas (Nd)</option>
+                                                    <option value="Peng">Surat Pengumuman (Peng)</option>
+                                                    <option value="sTap">Surat Ketetapan (sTap)</option>
+                                                    <option value="SPer">Surat Perintah (SPer)</option>
+                                                    <option value="L">Surat Lain - lain (L)</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Nomor Agenda</label>
                                                 <input type="text" name="no_agenda" value="{{$data->no_agenda}}"
                                                     class="form-control" id="no_agenda" placeholder="no_agenda">
