@@ -10,7 +10,7 @@ class Anggaran extends Model
     use Uuid;
 
     protected $fillable = [ 
-        'nama_anggaran', 'besaran_anggaran','tahun',
+        'nama_anggaran','tahun',
     ];
 
 

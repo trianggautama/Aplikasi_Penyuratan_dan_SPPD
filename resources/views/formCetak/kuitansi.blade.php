@@ -144,7 +144,7 @@
             </tr>
         </table>
         @php
-            $total_harga = $data->rincian_sppd->count() * $data->kategori->besar_pagu;
+            $total_harga = $data->rincian_sppd->sum('total_anggaran');
         @endphp
         <p>Rp. {{$total_harga}},-</p>
         <br>

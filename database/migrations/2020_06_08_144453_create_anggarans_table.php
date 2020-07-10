@@ -18,7 +18,7 @@ class CreateAnggaransTable extends Migration
             $table->string('uuid', 36);
             $table->string('nama_anggaran', 50);
             $table->string('tahun', 50);
-            $table->string('besaran_anggaran', 36);
+            $table->string('besaran_anggaran', 36)->default(0);
             $table->timestamps();
         });
     }

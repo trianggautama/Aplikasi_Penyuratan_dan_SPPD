@@ -78,7 +78,8 @@ class reportController extends Controller
         public function notaDinas($uuid){
             $data = Sppd::where('uuid',$uuid)->first();
             $tgl= Carbon::now()->format('d-m-Y');
-            $pdf =PDF::loadView('formCetak.notaDinas', ['data'=>$data,'tgl'=>$tgl]);
+            $anggaran = Anggaran::latest()->first();
+            $pdf =PDF::loadView('formCetak.notaDinas', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('Nota Dinas SK .pdf');
         }
@@ -87,7 +88,8 @@ class reportController extends Controller
         public function suratTugas($uuid){
             $data = Sppd::where('uuid',$uuid)->first();
             $tgl= Carbon::now()->format('d-m-Y');
-            $pdf =PDF::loadView('formCetak.suratTugas', ['data'=>$data,'tgl'=>$tgl]);
+            $anggaran = Anggaran::latest()->first();
+            $pdf =PDF::loadView('formCetak.suratTugas', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('Surat Tugas .pdf');
         }
@@ -96,7 +98,8 @@ class reportController extends Controller
         public function SPPD($uuid){
             $data = Sppd::where('uuid',$uuid)->first();
             $tgl= Carbon::now()->format('d-m-Y');
-            $pdf =PDF::loadView('formCetak.sppd', ['data'=>$data,'tgl'=>$tgl]);
+            $anggaran = Anggaran::latest()->first();
+            $pdf =PDF::loadView('formCetak.sppd', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('SPPD.pdf');
         }

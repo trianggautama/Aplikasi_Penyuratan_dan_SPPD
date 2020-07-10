@@ -8,9 +8,13 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Rincian Anggaran Nama Pegawai</h2>
+                <h4 class="hk-pg-title font-weight-600 mb-10">Rincian Anggaran Riil ( {{$rincian->pegawai->nama}})</h4>
             </div>
             <div class="d-flex">
+            <a href="#"
+                    class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Rincian Anggaran Riil 
+                    </span></a>
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
@@ -77,7 +81,7 @@
 <div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
+        <div class="modal-content"> 
             <div class="modal-header">
                 <h5 class="modal-title" id="status">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

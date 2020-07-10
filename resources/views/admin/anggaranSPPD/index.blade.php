@@ -38,7 +38,6 @@
                                                     <th>No</th>
                                                     <th> Anggaran</th>
                                                     <th>Tahun</th>
-                                                    <th>Besar Anggaran</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -48,7 +47,6 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->nama_anggaran}}</td>
                                                     <td>{{$d->tahun}}</td>
-                                                    <td>@currency($d->besaran_anggaran)</td>
                                                     <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
                                                         <a href="{{Route('anggaranSPPDEdit',['uuid' => $d->uuid])}}"
@@ -100,11 +98,6 @@
                     <div class="form-group"> 
                         <label for="exampleDropdownFormEmail1">Tahun Anggaran</label>
                         <input type="number" class="form-control"  name="tahun" value="{{carbon\carbon::now()->translatedFormat('Y')}}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Besaran Anggaran</label>
-                        <input type="text" name="besaran_anggaran" class="form-control" id="besaran_anggaran"
-                            placeholder="besaran_anggaran" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

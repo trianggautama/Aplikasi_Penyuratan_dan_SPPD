@@ -89,7 +89,7 @@
     <div class="container">
         <div class="isi">
             <h3 style="text-align:center; text-decoration:underline;margin:0px;">SURAT TUGAS</h3>
-            <h3 style="text-align:center; margin:0px;">Nomor  W15.U3/&nbsp;&nbsp;&nbsp;&nbsp;/UM.03.02/III/{{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p>
+            <h3 style="text-align:center; margin:0px;">Nomor  W15.U3/{{$data->no_surat_tugas}}/UM.03.02/{{carbon\carbon::parse($data->created_at)->translatedFormat('m')}}/{{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p>
             <br>
             <br>
             <p style="text-align:center; margin:0px;">SEKRETARIS  PENGADILAN NEGERI MARTAPURA KELAS IB</p>
@@ -100,7 +100,7 @@
                     <td>  <ol>
                             <li<p style="text-align:justify; margin-bottom:5px;">Bahwa dalam rangka tertib administrasi Pelaksanaan Anggaran Pendapatan dan Belanja Negara tahun anggaran {{carbon\carbon::parse($tgl)->translatedFormat('Y')}} di lingkungan Pengadilan Negeri Martapura </p></li>
 
-                            <li<p style="text-align:justify">DIPA Pengadilan Negeri Martapura Nomor : {{$data->anggaran->nama_anggaran}}/{{carbon\carbon::parse($tgl)->translatedFormat('Y')}}</p></li>
+                            <li<p style="text-align:justify">DIPA Pengadilan Negeri Martapura Nomor : {{$anggaran->nama_anggaran}}/{{$anggaran->tahun}}</p></li>
                           </ol>
                     </td>
                 </tr>

@@ -96,7 +96,7 @@
                             SPPD
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <!-- <a class="dropdown-item" href="{{Route('anggaranSPPDIndex')}}">Anggaran SPPD</a> -->
+                            <a class="dropdown-item" href="{{Route('anggaranSPPDIndex')}}">Anggaran SPPD</a>
                             <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori Anggaran SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDIndex')}}">Berkas SPPD</a>
                         </div>

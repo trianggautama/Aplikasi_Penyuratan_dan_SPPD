@@ -143,7 +143,7 @@
                 <tr>
                     <td class="text-center">5</td>
                     <td>Alat angkut yang dipergunakan</td>
-                    <td colspan="2"> {{$data->kategori->transportasi->nama_transportasi}}</td>
+                    <td colspan="2"> {{$data->transportasi->nama_transportasi}}</td>
                 </tr>
                 <tr>
                     <td class="text-center">6</td>
@@ -152,8 +152,8 @@
                         <p style="margin:5px;">b.Tujuan Berangkat</p>
                     </td>
                     <td colspan="2">
-                        <p style="margin:5px;">a. Martapura  (Kal – Sel )</p>
-                        <p style="margin:5px;">b. {{$data->kategori->kota->nama_kota}}</p>
+                        <p style="margin:5px;">a. {{$data->berangkat->nama_kota}}</p>
+                        <p style="margin:5px;">b. {{$data->tujuan->nama_kota}}</p>
                     </td>
                 </tr>
                 <tr>
@@ -207,7 +207,7 @@
                     <td  colspan="2">
                         <p>DIPA Th. Anggaran </p>
                         <p style="margin:5px;">a.Pengadilan Negeri Kabupaten Banjar</p>
-                        <p style="margin:5px;">b. {{$data->anggaran->nama_anggaran}}</p>
+                        <p style="margin:5px;">b. {{$anggaran->nama_anggaran}}/ {{$anggaran->tahun}}</p>
                     </td>
                 </tr>
                 <tr>
