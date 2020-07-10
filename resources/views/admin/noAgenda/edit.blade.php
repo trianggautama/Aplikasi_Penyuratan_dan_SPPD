@@ -29,19 +29,51 @@
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Kode Surat</label>
                                                 <select name="kode_surat" id="kode_surat" class="form-control">
-                                                    <option value="Skep">Surat Keputusan (SKep)</option>
-                                                    <option value="SKet">Surat Keterangan (SKet)</option>
-                                                    <option value="SEd">Surat Edaran (SEd)</option>
-                                                    <option value="ST">Surat Tugas (ST)</option>
-                                                    <option value="SP">Surat Peringatan (SP)</option>
-                                                    <option value="SIK">Surat Izin kegiatan (SIK)</option>
-                                                    <option value="SPn">Surat Perjanjian (SPn)</option>
-                                                    <option value="Und">Surat Undangan (Und)</option>
-                                                    <option value="Nd">Nota Dinas (Nd)</option>
-                                                    <option value="Peng">Surat Pengumuman (Peng)</option>
-                                                    <option value="sTap">Surat Ketetapan (sTap)</option>
-                                                    <option value="SPer">Surat Perintah (SPer)</option>
-                                                    <option value="L">Surat Lain - lain (L)</option>
+                                                    <option value="Surat Keputusan (SKep)"
+                                                        {{$data->kode_surat == 'Surat Keputusan (SKep)' ? 'selected' : ''}}>
+                                                        Surat Keputusan (SKep)
+                                                    </option>
+                                                    <option value="Surat Keterangan (SKet)"
+                                                        {{$data->kode_surat == 'Surat Keterangan (SKet)' ? 'selected' : ''}}>
+                                                        Surat Keterangan (SKet)
+                                                    </option>
+                                                    <option value="Surat Edaran (SEd)"
+                                                        {{$data->kode_surat == 'Surat Edaran (SEd)' ? 'selected' : ''}}>
+                                                        Surat Edaran (SEd)</option>
+                                                    <option value="Surat Tugas (ST)"
+                                                        {{$data->kode_surat == 'Surat Tugas (ST)' ? 'selected' : ''}}>
+                                                        Surat Tugas (ST)</option>
+                                                    <option value="Surat Peringatan (SP)"
+                                                        {{$data->kode_surat == 'Surat Peringatan (SP)' ? 'selected' : ''}}>
+                                                        Surat Peringatan (SP)</option>
+                                                    <option value="Surat Izin kegiatan (SIK)"
+                                                        {{$data->kode_surat == 'Surat Izin kegiatan (SIK)' ? 'selected' : ''}}>
+                                                        Surat Izin kegiatan (SIK)
+                                                    </option>
+                                                    <option value="Surat Perjanjian (SPn)"
+                                                        {{$data->kode_surat == 'Surat Perjanjian (SPn)' ? 'selected' : ''}}>
+                                                        Surat Perjanjian (SPn)
+                                                    </option>
+                                                    <option value="Surat Undangan (Und)"
+                                                        {{$data->kode_surat == 'Surat Undangan (Und)' ? 'selected' : ''}}>
+                                                        Surat Undangan (Und)</option>
+                                                    <option value="Nota Dinas (Nd)"
+                                                        {{$data->kode_surat == 'Nota Dinas (Nd)' ? 'selected' : ''}}>
+                                                        Nota Dinas (Nd)</option>
+                                                    <option value="Surat Pengumuman (Peng)"
+                                                        {{$data->kode_surat == 'Surat Pengumuman (Peng)' ? 'selected' : ''}}>
+                                                        Surat Pengumuman (Peng)
+                                                    </option>
+                                                    <option value="Surat Ketetapan (sTap)"
+                                                        {{$data->kode_surat == 'Surat Ketetapan (sTap)' ? 'selected' : ''}}>
+                                                        Surat Ketetapan (sTap)
+                                                    </option>
+                                                    <option value="Surat Perintah (SPer)"
+                                                        {{$data->kode_surat == 'Surat Perintah (SPer)' ? 'selected' : ''}}>
+                                                        Surat Perintah (SPer)</option>
+                                                    <option value="Surat Lain - lain (L)"
+                                                        {{$data->kode_surat == 'Surat Lain - lain (L)' ? 'selected' : ''}}>
+                                                        Surat Lain - lain (L)</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">

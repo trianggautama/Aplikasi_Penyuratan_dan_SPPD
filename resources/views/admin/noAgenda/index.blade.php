@@ -33,6 +33,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
+                                                    <th>Kode Surat</th>
                                                     <th>Nomor Agenda</th>
                                                     <th>Keterangan</th>
                                                     <th>Aksi</th>
@@ -42,19 +43,22 @@
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->kode_surat}}</td>
                                                     <td>{{$d->no_agenda}}</td>
                                                     <td>{{$d->keterangan}}</td>
                                                     <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
                                                         <a href="{{Route('agendaEdit',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-primary  "><span
-                                                                class="icon-label"><i class="fa fa-edit"></i>
+                                                            class="btn btn-sm btn-primary  "><span class="icon-label"><i
+                                                                    class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <!-- <a href="{{Route('agendaDestroy',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  "><span
                                                                 class="icon-label"><i class="fa fa-trash"></i>
                                                             </span><span class="btn-text"> </span></a> -->
-                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->no_agenda}}')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-danger"
+                                                            onclick="Hapus('{{$d->uuid}}','{{$d->no_agenda}}')"> <i
+                                                                class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -109,7 +113,8 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nomor Agenda</label>
-                        <input type="text" name="no_agenda" class="form-control" id="no_agenda" placeholder="no_agenda" required>
+                        <input type="text" name="no_agenda" class="form-control" id="no_agenda" placeholder="no_agenda"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">keterangan</label>

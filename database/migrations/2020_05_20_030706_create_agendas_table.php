@@ -16,6 +16,7 @@ class CreateAgendasTable extends Migration
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
+            $table->string('kode_surat', 50);
             $table->string('no_agenda', 30);
             $table->string('keterangan', 100);
             $table->timestamps();

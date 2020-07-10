@@ -16,6 +16,7 @@ class agendaController extends Controller
     public function store(Request $request)
     {
         $data = new agenda;
+        $data->kode_surat = $request->kode_surat;
         $data->no_agenda = $request->no_agenda;
         $data->keterangan = $request->keterangan;
 
@@ -33,6 +34,7 @@ class agendaController extends Controller
     public function update(Request $request, $uuid)
     {
         $data = agenda::where('uuid', $uuid)->first();
+        $data->kode_surat = $request->kode_surat;
         $data->no_agenda = $request->no_agenda;
         $data->keterangan = $request->keterangan;
 
