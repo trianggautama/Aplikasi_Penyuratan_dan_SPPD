@@ -33,16 +33,16 @@ class pejabatController extends Controller
 
     public function update(Request $request, $uuid)
     {
-        $data = Kategori::where('uuid', $uuid)->first();
+        $data = Pejabat::where('uuid', $uuid)->first();
         $data->fill($request->all())->save();
 
-        return redirect()->route('kategoriSPPDIndex')->with('success', 'Data berhasil diubah');
+        return redirect()->route('pejabatIndex')->with('success', 'Data berhasil diubah');
     }
 
     public function destroy($uuid)
     {
-        $data = Kategori::where('uuid', $uuid)->first()->delete();
+        $data = Pejabat::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->route('kategoriSPPDIndex')->with('success', 'Data berhasil dihapus');
+        return redirect()->route('pejabatIndex')->with('success', 'Data berhasil dihapus');
     }
 }
