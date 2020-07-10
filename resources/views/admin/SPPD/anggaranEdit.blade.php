@@ -27,20 +27,18 @@
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Tiket</label>
-                                                <input type="text" class="form-control" name="tanggal_register">
+                                                <label for="exampleDropdownFormEmail1">Anggaran</label>
+                                                <select name="anggaran_id" id="anggaran_id" class="form-control">
+                                                    <option value="">-- pilihan keperluan --</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Penginapan</label>
+                                                <label for="exampleDropdownFormEmail1">Besaran</label>
                                                 <input type="text" class="form-control" name="nomor_register" >
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Uang Harian</label>
-                                                <input type="text" class="form-control" name="pemohon">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">total</label>
-                                                <input type="text" class="form-control" name="pemohon">
+                                                <label for="exampleDropdownFormEmail1">Catatan</label>
+                                                <textarea name="catatan" id="" class="form-control"></textarea>
                                             </div>
                                             <hr>
                                             <div class="text-right">
