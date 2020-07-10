@@ -42,22 +42,25 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Nama Pejabat A</td>
-                                                    <td>Nama Pejabat B</td>
-                                                    <td>Nama Pejabat C</td>
-                                                    <td>Nama Pejabat D</td>
-                                                    <td>Nama Bendahara A</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->sppd->nama}}</td>
+                                                    <td>{{$d->st->nama}}</td>
+                                                    <td>{{$d->nt->nama}}</td>
+                                                    <td>{{$d->anggaran->nama}}</td>
+                                                    <td>{{$d->bendahara->nama}}</td>
                                                     <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
                                                         <a href="{{Route('pejabatEdit','bcdjsbh')}}"
-                                                            class="btn btn-sm btn-primary  "><span
-                                                                class="icon-label"><i class="fa fa-edit"></i>
+                                                            class="btn btn-sm btn-primary  "><span class="icon-label"><i
+                                                                    class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i
+                                                                class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -91,7 +94,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Penandatanganan SPPD</label>
-                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                        <select name="sppd_id" id="sppd_id" class="form-control">
                             <option value="">-- Pilih Pegawai --</option>
                             @foreach ($pegawai as $d)
                             <option value="{{$d->id}}">{{$d->nama}}</option>
@@ -100,7 +103,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Penandatangan ST</label>
-                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                        <select name="st_id" id="st_id" class="form-control">
                             <option value="">-- Pilih Pegawai --</option>
                             @foreach ($pegawai as $d)
                             <option value="{{$d->id}}">{{$d->nama}}</option>
@@ -109,7 +112,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Penandatanganan NT</label>
-                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                        <select name="nt_id" id="nt_id" class="form-control">
                             <option value="">-- Pilih Pegawai --</option>
                             @foreach ($pegawai as $d)
                             <option value="{{$d->id}}">{{$d->nama}}</option>
@@ -118,7 +121,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Penandatanganan Pengguna Anggaran</label>
-                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                        <select name="anggaran_id" id="anggaran_id" class="form-control">
                             <option value="">-- Pilih Pegawai --</option>
                             @foreach ($pegawai as $d)
                             <option value="{{$d->id}}">{{$d->nama}}</option>
@@ -127,7 +130,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Penandatanganan Bendahara</label>
-                        <select name="pegawai_id" id="pegawai_id" class="form-control">
+                        <select name="bendahara_id" id="bendahara_id" class="form-control">
                             <option value="">-- Pilih Pegawai --</option>
                             @foreach ($pegawai as $d)
                             <option value="{{$d->id}}">{{$d->nama}}</option>

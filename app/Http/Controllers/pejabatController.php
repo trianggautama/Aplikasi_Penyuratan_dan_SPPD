@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pegawai;
+use App\Pejabat;
 use Illuminate\Http\Request;
 
 class pejabatController extends Controller
@@ -10,22 +11,23 @@ class pejabatController extends Controller
     public function index()
     {
         $pegawai = Pegawai::latest()->get();
-        return view('admin.pejabat.index',compact('pegawai'));
+        $data = Pejabat::latest()->get();
+        return view('admin.pejabat.index', compact('pegawai', 'data'));
     }
 
     public function store(Request $request)
     {
-        $data = Kategori::create($request->all());
+        $data = Pejabat::create($request->all());
 
-        return redirect()->route('kategoriSPPDIndex')->with('success', 'Data berhasil disimpan');
+        return redirect()->route('pejabatIndex')->with('success', 'Data berhasil disimpan');
     }
 
     public function edit($uuid)
     {
-        $data = Kategori::where('uuid', $uuid)->first();
-        $kota = Kota::orderBy('nama_kota', 'asc')->get();
-        $transportasi = Transportasi::orderBy('id', 'desc')->get();
-        return view('admin.kategoriSPPD.edit', compact('data', 'kota', 'transportasi'));
+        $pegawai = Pegawai::latest()->get();
+
+        $data = Pejabat::where('uuid', $uuid)->first();
+        return view('admin.pejabat.edit', compact('data', 'pegawai'));
 
     }
 
