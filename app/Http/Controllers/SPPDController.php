@@ -123,13 +123,18 @@ class SPPDController extends Controller
 
     public function anggaranDetailCreate(Request $req)
     {
-        $data = Anggaran_detail::create($req->all());
-        $rincian = Rincian_sppd::findOrFail($req->rincian_sppd_id);
-        $jumlah = $rincian->anggaran_detail->sum('besaran');
-        $rincian->total_anggaran = $jumlah;
-        $rincian->update();
+        $kategori = Kategori::findOrFail($req->kategori_id);
+        if ($req->besaran > $kategori->besar_pagu) {
+            return back()->withWarning('Besaran melebihi anggaran');
+        } else {
+            $data = Anggaran_detail::create($req->all());
+            $rincian = Rincian_sppd::findOrFail($req->rincian_sppd_id);
+            $jumlah = $rincian->anggaran_detail->sum('besaran');
+            $rincian->total_anggaran = $jumlah;
+            $rincian->update();
 
-        return back()->withSuccess('Data berhasil disimpan');
+            return back()->withSuccess('Data berhasil disimpan');
+        }
     }
 
     public function anggaranEdit($uuid)
