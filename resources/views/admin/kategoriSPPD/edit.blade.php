@@ -28,31 +28,43 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Kode Biaya</label>
-                                                <input type="text" name="besar_pagu" class="form-control" required>
+                                                <input type="text" value="{{$data->kode_biaya}}" name="kode_biaya"
+                                                    class="form-control" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">uraian</label>
-                                                <textarea name="uraian" id="" class="form-control"></textarea>
+                                                <textarea name="uraian" id=""
+                                                    class="form-control">{{$data->uraian}}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pilih Golongan</label>
-                                                <select name="kota_id" id="kota_id" class="form-control" required>
+                                                <select name="golongan_id" id="golongan_id" class="form-control"
+                                                    required>
                                                     <option value="">-- Pilih Golongan --</option>
                                                     @foreach ($golongan as $d)
-                                                    <option value="{{$d->id}}">{{$d->kode_golongan}} - {{$d->golongan}}</option>
+                                                    <option value="{{$d->id}}" {{$d->id == $data->golongan_id ? 'selected' : 
+                                                        ''}}>
+                                                        {{$d->kode_golongan}} - {{$d->golongan}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
-                                                <input type="text" name="besar_pagu" class="form-control" required>
+                                                <input type="text" value="{{$data->besar_pagu}}" name="besar_pagu"
+                                                    class="form-control" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Jenis SPPD</label>
                                                 <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
                                                     <option value="">-- Pilih Jenis SPPD --</option>
-                                                    <option value="1">Dalam Derah</option>
-                                                    <option value="1">Luar Derah</option>
+                                                    <option value="Dalam Derah"
+                                                        {{$data->jenis_sppd == 'Dalam Daerah' ? 'selected' : '' }}>Dalam
+                                                        Daerah
+                                                    </option>
+                                                    <option value="Luar Dera"
+                                                        {{$data->jenis_sppd == 'Luar Daerah' ? 'selected' : '' }}>Luar
+                                                        Daerah</option>
                                                 </select>
                                             </div>
                                             <hr>

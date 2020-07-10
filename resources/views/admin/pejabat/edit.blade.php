@@ -31,7 +31,9 @@
                                                 <select name="sppd_id" id="sppd_id" class="form-control">
                                                     <option value="">-- Pilih Pegawai --</option>
                                                     @foreach ($pegawai as $d)
-                                                    <option value="{{$d->id}}">{{$d->nama}}</option>
+                                                    <option value="{{$d->id}}"
+                                                        {{$data->sppd_id == $d->id ? 'selected' : ''}}>{{$d->nama}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -40,7 +42,9 @@
                                                 <select name="st_id" id="st_id" class="form-control">
                                                     <option value="">-- Pilih Pegawai --</option>
                                                     @foreach ($pegawai as $d)
-                                                    <option value="{{$d->id}}">{{$d->nama}}</option>
+                                                    <option value="{{$d->id}}"
+                                                        {{$data->st_id == $d->id ? 'selected' : ''}}>{{$d->nama}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -49,16 +53,21 @@
                                                 <select name="nt_id" id="nt_id" class="form-control">
                                                     <option value="">-- Pilih Pegawai --</option>
                                                     @foreach ($pegawai as $d)
-                                                    <option value="{{$d->id}}">{{$d->nama}}</option>
+                                                    <option value="{{$d->id}}"
+                                                        {{$data->nt_id == $d->id ? 'selected' : ''}}>{{$d->nama}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Penandatanganan Pengguna Anggaran</label>
+                                                <label for="exampleDropdownFormEmail1">Penandatanganan Pengguna
+                                                    Anggaran</label>
                                                 <select name="anggaran_id" id="anggaran_id" class="form-control">
                                                     <option value="">-- Pilih Pegawai --</option>
                                                     @foreach ($pegawai as $d)
-                                                    <option value="{{$d->id}}">{{$d->nama}}</option>
+                                                    <option value="{{$d->id}}"
+                                                        {{$data->anggaran_id == $d->id ? 'selected' : ''}}>{{$d->nama}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -67,7 +76,9 @@
                                                 <select name="bendahara_id" id="bendahara_id" class="form-control">
                                                     <option value="">-- Pilih Pegawai --</option>
                                                     @foreach ($pegawai as $d)
-                                                    <option value="{{$d->id}}">{{$d->nama}}</option>
+                                                    <option value="{{$d->id}}"
+                                                        {{$data->bendahara_id == $d->id ? 'selected' : ''}}>{{$d->nama}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>

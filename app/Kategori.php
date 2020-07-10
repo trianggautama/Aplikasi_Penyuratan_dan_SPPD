@@ -9,18 +9,13 @@ class Kategori extends Model
 {
     use Uuid;
 
-    protected $fillable = [
-        'kota_id', 'transportasi_id', 'besar_pagu',
+    protected $guarded = [
+
     ];
 
-    public function kota()
+    public function golongan()
     {
-        return $this->belongsTo(Kota::class);
-    }
-
-    public function transportasi()
-    {
-        return $this->belongsTo(Transportasi::class);
+        return $this->belongsTo(Golongan::class);
     }
 
 }

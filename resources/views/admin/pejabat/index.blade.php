@@ -52,7 +52,7 @@
                                                     <td>{{$d->bendahara->nama}}</td>
                                                     <td>
                                                         <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
-                                                        <a href="{{Route('pejabatEdit','bcdjsbh')}}"
+                                                        <a href="{{Route('pejabatEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>

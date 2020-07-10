@@ -16,12 +16,13 @@ class CreateKategorisTable extends Migration
         Schema::create('kategoris', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->unsignedBigInteger('kota_id');
-            $table->unsignedBigInteger('transportasi_id');
+            $table->string('kode_biaya', 50);
+            $table->text('uraian');
+            $table->unsignedBigInteger('golongan_id');
             $table->string('besar_pagu', 50);
+            $table->string('jenis_sppd', 50);
             $table->timestamps();
-            $table->foreign('kota_id')->references('id')->on('kotas')->onDelete('cascade');
-            $table->foreign('transportasi_id')->references('id')->on('transportasis')->onDelete('cascade');
+            $table->foreign('golongan_id')->references('id')->on('golongans')->onDelete('cascade');
         });
     }
 

@@ -42,23 +42,24 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>NJ001</td>
-                                                    <td>III/d</td>
-                                                    <td>Biaya Transport</td>
-                                                    <td>@currency(1000000)</td>
-                                                    <td>Dalam Daerah</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->kode_biaya}}</td>
+                                                    <td>{{$d->golongan->golongan}}</td>
+                                                    <td>{{$d->uraian}}</td>
+                                                    <td>@currency($d->besar_pagu)</td>
+                                                    <td>{{$d->jenis_sppd}}</td>
                                                     <td>
-                                                        <a href="{{Route('kategoriSPPDEdit','xnkjanxj')}}"
+                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger"
-                                                            onclick="Hapus('')">
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('')">
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -92,7 +93,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Kode Biaya</label>
-                        <input type="text" name="besar_pagu" class="form-control" required>
+                        <input type="text" name="kode_biaya" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">uraian</label>
@@ -100,7 +101,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Pilih Golongan</label>
-                        <select name="kota_id" id="kota_id" class="form-control" required>
+                        <select name="golongan_id" id="golongan_id" class="form-control" required>
                             <option value="">-- Pilih Golongan --</option>
                             @foreach ($golongan as $d)
                             <option value="{{$d->id}}">{{$d->kode_golongan}} - {{$d->golongan}}</option>
@@ -115,8 +116,8 @@
                         <label for="exampleDropdownFormEmail1">Jenis SPPD</label>
                         <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
                             <option value="">-- Pilih Jenis SPPD --</option>
-                            <option value="1">Dalam Derah</option>
-                            <option value="1">Luar Derah</option>
+                            <option value="Dalam Daerah">Dalam Daerah</option>
+                            <option value="Luar Daerah">Luar Daerah</option>
                         </select>
                     </div>
                     <div class="text-right">
