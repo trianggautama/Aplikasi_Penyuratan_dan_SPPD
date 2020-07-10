@@ -30,20 +30,10 @@
                                     <div class="table-wrap">
                                         <div class="row">
                                             <div class="col-6">
+
                                                 <div class="form-group">
-                                                    <h5 for="exampleDropdownFormEmail1">Kategori</h5>
-                                
-                                                    @if($data->kategori->kota->zona == 1)
-                                                        Luar Kecamatan Dalam Daerah
-                                                    @elseif($data->kategori->kota->zona == 2)
-                                                        Luar Kota Dalam Provinsi
-                                                    @else
-                                                        Luar Kota luar Provinsi
-                                                    @endif
-                                                </div>
-                                                <div class="form-group">
-                                                    <h5 for="exampleDropdownFormEmail1">tujuan</h5>
-                                                    <p>{{$data->kategori->kota->nama_kota}}</p>
+                                                    <h5 for="exampleDropdownFormEmail1">Tujuan</h5>
+                                                    <p>{{$data->berangkat->nama_kota}} - {{$data->tujuan->nama_kota}}</p>
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Tempat</h5>
@@ -51,7 +41,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Transportasi</h5>
-                                                    <p>{{$data->kategori->transportasi->nama_transportasi}}</p>
+                                                    <p>{{$data->transportasi->nama_transportasi}}</p>
                                                 </div>
                                             </div>
                                             <div class="col-6">

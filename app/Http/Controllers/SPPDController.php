@@ -71,8 +71,9 @@ class SPPDController extends Controller
     {
         $data = Sppd::where('uuid', $uuid)->first();
         $kategori = Kategori::orderBy('id', 'desc')->get();
-        $anggaran = Anggaran::orderBy('id', 'desc')->get();
-        return view('admin.SPPD.edit', compact('data', 'kategori', 'anggaran'));
+        $kota = Kota::orderBy('id', 'desc')->get();
+        $transportasi = Transportasi::orderBy('id', 'desc')->get();
+        return view('admin.SPPD.edit', compact('data', 'kategori', 'kota','transportasi'));
     }
 
     public function update(Request $request, $uuid)

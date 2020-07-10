@@ -29,7 +29,7 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$suratKeluar->count()}}</span></span>
+												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$suratKeluar}}</span></span>
 												<small class="d-block text-success">buah surat</small>
 											</div>
 										</div>
@@ -42,7 +42,7 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$suratMasuk->count()}}</span></span>
+												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$suratMasuk}}</span></span>
 												<small class="d-block text-success">buah surat</small>
 											</div>
 										</div>
@@ -55,7 +55,7 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5">{{$sppd->count()}}</span>
+												<span class="d-block display-4 text-dark mb-5">{{$sppd}}</span>
 												<small class="d-block text-success">Berkas SPPD</small>
 											</div>
 										</div>
@@ -70,7 +70,7 @@
 
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5">{{$disposisi->count()}}</span>
+												<span class="d-block display-4 text-dark mb-5">{{$disposisi}}</span>
 												<small class="d-block text-success">Disposisi</small>
 											</div>
 										</div>
@@ -89,7 +89,7 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5">{{$peminjaman->count()}}</span>
+												<span class="d-block display-4 text-dark mb-5">{{$peminjaman}}</span>
 												<small class="d-block text-success">Buah Surat</small>
 											</div>
 										</div>
@@ -103,7 +103,7 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$pegawai->count()}}</span></span>
+												<span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$pegawai}}</span></span>
 												<small class="d-block text-success">pegawai</small>
 											</div>
 										</div>
@@ -117,7 +117,7 @@
 												</div>
 											</div>
 											<div>
-												<span class="d-block display-4 text-dark mb-5">{{$sk->count()}}</span>
+												<span class="d-block display-4 text-dark mb-5">{{$sk}}</span>
 												<small class="d-block text-success">Pengajuan SK</small>
 											</div>
 										</div>

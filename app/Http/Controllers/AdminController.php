@@ -15,13 +15,13 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $suratMasuk  = Surat_masuk::all();
-        $suratKeluar = Surat_keluar::all();
-        $sppd        = Sppd::all();
-        $disposisi   = Disposisi_surat::all();
-        $pegawai     = Pegawai::all();
-        $peminjaman  = Peminjaman::all();
-        $sk          = Sk::all();
+        $suratMasuk  = Surat_masuk::count();
+        $suratKeluar = Surat_keluar::count();
+        $sppd        = Sppd::count();
+        $disposisi   = Disposisi_surat::count();
+        $pegawai     = Pegawai::count();
+        $peminjaman  = Peminjaman::count();
+        $sk          = Sk::count();
         return view('admin.index',compact('suratMasuk','suratKeluar','sppd','disposisi','pegawai','peminjaman','sk'));
     }
 }
