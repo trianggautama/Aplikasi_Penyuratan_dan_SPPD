@@ -10,7 +10,6 @@ use App\Rincian_sppd;
 use App\Sppd;
 use App\Transportasi;
 use Illuminate\Http\Request;
-use Illuminate\Mail\Transport\Transport;
 
 class SPPDController extends Controller
 {

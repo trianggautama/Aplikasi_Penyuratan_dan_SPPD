@@ -27,32 +27,33 @@
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Pilih Tujuan</label>
-                                                <select name="kota_id" id="kota_id" class="form-control">
-                                                    <option value="">-- Pilih tujuan --</option>
-                                                    @foreach ($kota as $d)
-                                                    <option value="{{$d->id}}"
-                                                        {{$d->id == $data->kota_id ? 'selected' : ''}}>{{$d->nama_kota}}
-                                                    </option>
+                                                <label for="exampleDropdownFormEmail1">Kode Biaya</label>
+                                                <input type="text" name="besar_pagu" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">uraian</label>
+                                                <textarea name="uraian" id="" class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Pilih Golongan</label>
+                                                <select name="kota_id" id="kota_id" class="form-control" required>
+                                                    <option value="">-- Pilih Golongan --</option>
+                                                    @foreach ($golongan as $d)
+                                                    <option value="{{$d->id}}">{{$d->kode_golongan}} - {{$d->golongan}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Transport</label>
-                                                <select name="transportasi_id" id="transportasi_id"
-                                                    class="form-control">
-                                                    <option value="">--Pilih jenis transportasi --</option>
-                                                    @foreach ($transportasi as $d)
-                                                    <option value="{{$d->id}}"
-                                                        {{$d->id == $data->transportasi_id ? 'selected' : ''}}>
-                                                        {{$d->nama_transportasi}}</option>
-                                                    @endforeach
-                                                </select>
+                                                <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
+                                                <input type="text" name="besar_pagu" class="form-control" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">besaran Pagu / hari</label>
-                                                <input type="text" value="{{$data->besar_pagu}}" name="besar_pagu"
-                                                    class="form-control">
+                                                <label for="exampleDropdownFormEmail1">Jenis SPPD</label>
+                                                <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
+                                                    <option value="">-- Pilih Jenis SPPD --</option>
+                                                    <option value="1">Dalam Derah</option>
+                                                    <option value="1">Luar Derah</option>
+                                                </select>
                                             </div>
                                             <hr>
                                             <div class="text-right">
