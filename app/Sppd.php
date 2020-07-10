@@ -9,22 +9,31 @@ class Sppd extends Model
 {
     use Uuid;
 
-    protected $fillable = [
-        'kategori_id', 'anggaran_id', 'tempat', 'tanggal_berangkat', 'tanggal_kepulangan', 'maksud_tujuan',
+    // protected $fillable = [
+    //     'kategori_id', 'anggaran_id', 'tempat', 'tanggal_berangkat', 'tanggal_kepulangan', 'maksud_tujuan',
+    // ];
+
+    protected $guarded = [
+
     ];
 
-    public function kategori()
+    public function berangkat()
     {
-        return $this->belongsTo(Kategori::class);
+        return $this->belongsTo('App\Kota', 'berangkat_id');
+    }
+
+    public function tujuan()
+    {
+        return $this->belongsTo('App\Kota', 'tujuan_id');
+    }
+
+    public function transportasi()
+    {
+        return $this->belongsTo('App\Transportasi', 'transportasi_id');
     }
 
     public function rincian_sppd()
     {
-        return $this->hasMany(Rincian_sppd::class);
-    }
-
-    public function anggaran()
-    {
-        return $this->belongsTo(Anggaran::class);
+        return $this->hasMany('App\Rincian_sppd');
     }
 }

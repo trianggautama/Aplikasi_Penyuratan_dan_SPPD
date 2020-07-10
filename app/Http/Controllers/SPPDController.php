@@ -25,7 +25,7 @@ class SPPDController extends Controller
         $kota = Kota::orderBy('id', 'desc')->get();
         $anggaran = Anggaran::orderBy('id', 'desc')->get();
         $transportasi = Transportasi::latest()->get();
-        return view('admin.SPPD.index', compact('data', 'kota', 'anggaran','transportasi'));
+        return view('admin.SPPD.index', compact('data', 'kota', 'anggaran', 'transportasi'));
     }
 
     public function store(Request $request)
@@ -110,13 +110,13 @@ class SPPDController extends Controller
 
     public function anggaranDetail()
     {
-        
+
         return view('admin.SPPD.anggaranDetail');
     }
 
     public function anggaranEdit()
     {
-        
+
         return view('admin.SPPD.anggaranEdit');
     }
 }

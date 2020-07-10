@@ -16,16 +16,20 @@ class CreateSppdsTable extends Migration
         Schema::create('sppds', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->unsignedBigInteger('kategori_id');
-            $table->unsignedBigInteger('anggaran_id');
+            $table->unsignedBigInteger('berangkat_id');
+            $table->unsignedBigInteger('tujuan_id');
+            $table->unsignedBigInteger('transportasi_id');
+            $table->string('no_surat_tugas', 100);
+            $table->string('no_nota_dinas', 100);
             $table->string('tempat', 100);
             $table->date('tanggal_berangkat');
             $table->date('tanggal_kepulangan');
             $table->string('maksud_tujuan', 100);
             $table->string('jumlah')->nullable();
             $table->timestamps();
-            $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade');
-            $table->foreign('anggaran_id')->references('id')->on('anggarans')->onDelete('cascade');
+            $table->foreign('berangkat_id')->references('id')->on('kotas')->onDelete('cascade');
+            $table->foreign('tujuan_id')->references('id')->on('kotas')->onDelete('cascade');
+            $table->foreign('transportasi_id')->references('id')->on('transportasis')->onDelete('cascade');
 
         });
     }
