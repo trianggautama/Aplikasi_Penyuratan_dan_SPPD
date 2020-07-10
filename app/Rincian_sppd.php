@@ -23,4 +23,9 @@ class Rincian_sppd extends Model
         return $this->belongsTo(Pegawai::class);
     }
 
+    public function anggaran_detail()
+    {
+        return $this->hasMany(Anggaran_detail::class);
+    }
+
 }

@@ -28,17 +28,24 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Anggaran</label>
-                                                <select name="anggaran_id" id="anggaran_id" class="form-control">
+                                                <select name="kategori_id" id="kategori_id" class="form-control">
                                                     <option value="">-- pilihan keperluan --</option>
+                                                    @foreach($kategori as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->kategori_id ? 'selected' : ''}}>
+                                                        {{$d->uraian}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Besaran</label>
-                                                <input type="text" class="form-control" name="nomor_register" >
+                                                <input type="text" class="form-control" name="besaran"
+                                                    value="{{$data->besaran}}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Catatan</label>
-                                                <textarea name="catatan" id="" class="form-control"></textarea>
+                                                <textarea name="catatan" id=""
+                                                    class="form-control">{{$data->catatan}}</textarea>
                                             </div>
                                             <hr>
                                             <div class="text-right">

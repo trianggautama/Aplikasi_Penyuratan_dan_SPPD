@@ -154,11 +154,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/SPPD/delete/{uuid}', 'SPPDController@destroy')->name('SPPDDestroy');
     Route::get('/SPPD/filter/waktu', 'SPPDController@filterWaktu')->name('SPPDFilterWaktu');
     Route::get('/SPPD/filter/tujuan', 'SPPDController@filterTujuan')->name('SPPDFilterTujuan');
-    Route::get('/SPPD/anggaran', 'SPPDController@SPPDAanggaran')->name('laporanAnggaranSPPD'); 
+    Route::get('/SPPD/anggaran', 'SPPDController@SPPDAanggaran')->name('laporanAnggaranSPPD');
     Route::get('/SPPD/anggaran/detail/{uuid}', 'SPPDController@anggaranDetail')->name('rincianAnggaran');
+    Route::post('/SPPD/anggaran/detail/create', 'SPPDController@anggaranDetailCreate')->name('anggaranDetailCreate');
     Route::get('/SPPD/anggaran/edit/{uuid}', 'SPPDController@anggaranEdit')->name('rincianAnggaranEdit');
-
-
+    Route::put('/SPPD/anggaran/edit/{uuid}', 'SPPDController@anggaranUpdate')->name('rincianAnggaranUpdate');
+    Route::get('/SPPD/anggaran/delete/{uuid}', 'SPPDController@anggaranDestroy')->name('rincianAnggaranDestroy');
 
 // Laporan SPPD
     Route::get('Laporan/SPPD/index', 'laporanSPPDController@index')->name('laporanSPPDIndex');

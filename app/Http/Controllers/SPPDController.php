@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Anggaran;
+use App\Anggaran_detail;
 use App\Kategori;
 use App\Kota;
 use App\Pegawai;
@@ -18,7 +19,9 @@ class SPPDController extends Controller
         $sppd = Sppd::orderBy('id', 'desc')->get();
         $data = $sppd->map(function ($item) {
             $jumlah = $item->rincian_sppd->count();
+            $total = $item->rincian_sppd->sum('total_anggaran');
             $item['jumlah_orang'] = $jumlah;
+            $item['total'] = $total;
 
             return $item;
         });
@@ -46,7 +49,7 @@ class SPPDController extends Controller
         $data = Rincian_sppd::create($request->all());
         $sppd = Sppd::findOrFail($request->sppd_id);
         $jumlah = $sppd->rincian_sppd->count();
-        $besar_pagu = $sppd->kategori->besar_pagu;
+        $besar_pagu = $sppd->besar_pagu;
         $sppd->jumlah = $jumlah * $besar_pagu;
         $sppd->update();
 
@@ -58,7 +61,7 @@ class SPPDController extends Controller
     {
         $data = Rincian_sppd::where('uuid', $uuid)->first();
         $sppd = Sppd::findOrFail($data->sppd_id);
-        $besar_pagu = $sppd->kategori->besar_pagu;
+        $besar_pagu = $sppd->besar_pagu;
         $sppd->jumlah = $sppd->jumlah - $besar_pagu;
         $sppd->update();
 
@@ -73,7 +76,7 @@ class SPPDController extends Controller
         $kategori = Kategori::orderBy('id', 'desc')->get();
         $kota = Kota::orderBy('id', 'desc')->get();
         $transportasi = Transportasi::orderBy('id', 'desc')->get();
-        return view('admin.SPPD.edit', compact('data', 'kategori', 'kota','transportasi'));
+        return view('admin.SPPD.edit', compact('data', 'kategori', 'kota', 'transportasi'));
     }
 
     public function update(Request $request, $uuid)
@@ -109,15 +112,58 @@ class SPPDController extends Controller
         return view('admin.SPPD.filterAnggaran');
     }
 
-    public function anggaranDetail()
+    public function anggaranDetail($uuid)
     {
+        $rincian = Rincian_sppd::where('uuid', $uuid)->first();
+        $kategori = Kategori::where('golongan_id', $rincian->pegawai->golongan->id)->get();
+        $data = Anggaran_detail::where('rincian_sppd_id', $rincian->id)->get();
 
-        return view('admin.SPPD.anggaranDetail');
+        return view('admin.SPPD.anggaranDetail', compact('rincian', 'kategori', 'data'));
     }
 
-    public function anggaranEdit()
+    public function anggaranDetailCreate(Request $req)
     {
+        $data = Anggaran_detail::create($req->all());
+        $rincian = Rincian_sppd::findOrFail($req->rincian_sppd_id);
+        $jumlah = $rincian->anggaran_detail->sum('besaran');
+        $rincian->total_anggaran = $jumlah;
+        $rincian->update();
 
-        return view('admin.SPPD.anggaranEdit');
+        return back()->withSuccess('Data berhasil disimpan');
     }
+
+    public function anggaranEdit($uuid)
+    {
+        $data = Anggaran_detail::where('uuid', $uuid)->first();
+        $kategori = Kategori::where('golongan_id', $data->rincian_sppd->pegawai->golongan->id)->get();
+        return view('admin.SPPD.anggaranEdit', compact('data', 'kategori'));
+    }
+
+    public function anggaranUpdate(Request $req, $uuid)
+    {
+        $data = Anggaran_detail::where('uuid', $uuid)->first();
+        $data->fill($req->all())->save();
+
+        $rincian = Rincian_sppd::findOrFail($data->rincian_sppd_id);
+        $jumlah = $rincian->anggaran_detail->sum('besaran');
+        $rincian->total_anggaran = $jumlah;
+        $rincian->update();
+
+        return redirect()->route('rincianAnggaran', ['uuid' => $rincian->uuid])->withSuccess('Data berhasil diubah');
+    }
+
+    public function anggaranDestroy(Request $req, $uuid)
+    {
+        $data = Anggaran_detail::where('uuid', $uuid)->first();
+
+        $rincian = Rincian_sppd::findOrFail($data->rincian_sppd_id);
+
+        $besar_pagu = $rincian->besaran;
+        $rincian->total_anggaran = $sppd->total_anggaran - $besar_pagu;
+
+        $data->delete();
+
+        return redirect()->route('rincianAnggaran', ['uuid' => $rincian->uuid])->withSuccess('Data berhasil diubah');
+    }
+
 }

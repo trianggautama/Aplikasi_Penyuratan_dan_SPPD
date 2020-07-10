@@ -64,7 +64,7 @@
                                                     </td>
                                                     <td>{{$d->maksud_tujuan}}</td>
                                                     <td>{{$d->jumlah_orang}} Orang</td>
-                                                    <td>@currency($d->jumlah),-</td>
+                                                    <td>@currency($d->total),-</td>
                                                     <td>
                                                         <a href="{{Route('SPPDShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-info m-1"><span class="icon-label"><i

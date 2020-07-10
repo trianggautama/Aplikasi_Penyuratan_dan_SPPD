@@ -40,19 +40,22 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Biaya Transport</td>
-                                                    <td>Rp.3.500.000</td>
-                                                    <td>Tiket PP</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->kategori->uraian}}</td>
+                                                    <td>@currency($d->besaran)</td>
+                                                    <td>{{$d->catatan}}</td>
                                                     <td>
-                                                        <a href="{{Route('rincianAnggaranEdit','nxjsnn')}}"
-                                                            class="btn btn-sm btn-info  "><span
-                                                                class="icon-label"><i class="fa fa-edit"></i>
+                                                        <a href="{{Route('rincianAnggaranEdit',['uuid' => $d->uuid])}}"
+                                                            class="btn btn-sm btn-info  "><span class="icon-label"><i
+                                                                    class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i
+                                                                class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -82,17 +85,21 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('skCreate')}}" method="POST">
+                <form action="{{Route('anggaranDetailCreate')}}" method="POST">
                     @csrf
+                    <input type="hidden" name="rincian_sppd_id" value="{{$rincian->id}}">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Anggaran</label>
-                        <select name="anggaran_id" id="anggaran_id" class="form-control">
+                        <select name="kategori_id" id="kategori_id" class="form-control">
                             <option value="">-- pilihan keperluan --</option>
+                            @foreach($kategori as $d)
+                            <option value="{{$d->id}}">{{$d->uraian}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Besaran</label>
-                        <input type="text" class="form-control" name="nomor_register" >
+                        <input type="text" class="form-control" name="besaran">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Catatan</label>

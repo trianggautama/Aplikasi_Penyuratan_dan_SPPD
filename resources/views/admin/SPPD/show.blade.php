@@ -11,10 +11,22 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman SPPD</h2>
             </div>
             <div class="d-flex">
-                <a href="{{Route('notaDinasCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Nota Dinas  </span></a>
-                <a href="{{Route('suratTugasCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Surat Tugas  </span></a>
-                <a href="{{Route('sppdCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Berkas SPPD  </span></a>
-                <a href="{{Route('kuitansiCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" target="_blank"><span class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak Kuitansi SPPD </span></a>
+                <a href="{{Route('notaDinasCetak',['uuid'=>$data->uuid])}}"
+                    class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Nota Dinas
+                    </span></a>
+                <a href="{{Route('suratTugasCetak',['uuid'=>$data->uuid])}}"
+                    class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Surat Tugas
+                    </span></a>
+                <a href="{{Route('sppdCetak',['uuid'=>$data->uuid])}}"
+                    class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Berkas SPPD
+                    </span></a>
+                <a href="{{Route('kuitansiCetak',['uuid'=>$data->uuid])}}"
+                    class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" target="_blank"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak Kuitansi SPPD
+                    </span></a>
             </div>
         </div>
         <div class="row">
@@ -33,7 +45,8 @@
 
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Tujuan</h5>
-                                                    <p>{{$data->berangkat->nama_kota}} - {{$data->tujuan->nama_kota}}</p>
+                                                    <p>{{$data->berangkat->nama_kota}} - {{$data->tujuan->nama_kota}}
+                                                    </p>
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Tempat</h5>
@@ -47,11 +60,13 @@
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Tanggal Berangkat</h5>
-                                                    <p>{{carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y')}}</p>
+                                                    <p>{{carbon\carbon::parse($data->tanggal_berangkat)->translatedFormat('d F Y')}}
+                                                    </p>
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Tanggal Kepulangan</h5>
-                                                    <p>{{carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y')}}</p>
+                                                    <p>{{carbon\carbon::parse($data->tanggal_kepulangan)->translatedFormat('d F Y')}}
+                                                    </p>
                                                 </div>
                                                 <div class="form-group">
                                                     <h5 for="exampleDropdownFormEmail1">Maksud Keberangkatan</h5>
@@ -97,10 +112,13 @@
                                     <td>{{$d->pegawai->nama}}</td>
                                     <td>{{$d->pegawai->golongan->golongan}}</td>
                                     <td>{{$d->pegawai->jabatan->jabatan}}</td>
-                                    <td>Rp. 2500.000</td>
+                                    <td>@currency($d->total_anggaran)</td>
                                     <td>
-                                        <a href="{{Route('rincianAnggaran','hshh')}}" class="btn btn-sm btn-primary m-1 text-white" > <i class="fa fa-dollar"></i> Anggaran Ril</a>
-                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('{{$d->uuid}}','{{$d->pegawai->nama}}')"> <i
+                                        <a href="{{Route('rincianAnggaran',['uuid' => $d->uuid])}}"
+                                            class="btn btn-sm btn-primary m-1 text-white"> <i class="fa fa-dollar"></i>
+                                            Anggaran Ril</a>
+                                        <button class="btn btn-sm btn-danger m-1"
+                                            onclick="Hapus('{{$d->uuid}}','{{$d->pegawai->nama}}')"> <i
                                                 class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
