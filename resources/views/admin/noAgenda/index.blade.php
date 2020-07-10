@@ -92,19 +92,19 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Kode Surat</label>
                         <select name="kode_surat" id="kode_surat" class="form-control">
-                            <option value="Skep">Surat Keputusan (SKep)</option>
-                            <option value="SKet">Surat Keterangan (SKet)</option>
-                            <option value="SEd">Surat Edaran (SEd)</option>
-                            <option value="ST">Surat Tugas (ST)</option>
-                            <option value="SP">Surat Peringatan (SP)</option>
-                            <option value="SIK">Surat Izin kegiatan (SIK)</option>
-                            <option value="SPn">Surat Perjanjian (SPn)</option>
-                            <option value="Und">Surat Undangan (Und)</option>
-                            <option value="Nd">Nota Dinas (Nd)</option>
-                            <option value="Peng">Surat Pengumuman (Peng)</option>
-                            <option value="sTap">Surat Ketetapan (sTap)</option>
-                            <option value="SPer">Surat Perintah (SPer)</option>
-                            <option value="L">Surat Lain - lain (L)</option>
+                            <option value="Surat Keputusan">Surat Keputusan (SKep)</option>
+                            <option value="Surat Keterangan">Surat Keterangan (SKet)</option>
+                            <option value="Surat Edaran">Surat Edaran (SEd)</option>
+                            <option value="Surat Tugas">Surat Tugas (ST)</option>
+                            <option value="Surat Peringatan">Surat Peringatan (SP)</option>
+                            <option value="Surat Izin kegiatan">Surat Izin kegiatan (SIK)</option>
+                            <option value="Surat Perjanjian">Surat Perjanjian (SPn)</option>
+                            <option value="Surat Undangan">Surat Undangan (Und)</option>
+                            <option value="Nota Dinas">Nota Dinas (Nd)</option>
+                            <option value="Surat Pengumuman">Surat Pengumuman (Peng)</option>
+                            <option value="Surat Ketetapan">Surat Ketetapan (sTap)</option>
+                            <option value="Surat Perintah">Surat Perintah (SPer)</option>
+                            <option value="Surat Lain - lain">Surat Lain - lain (L)</option>
                         </select>
                     </div>
                     <div class="form-group">
