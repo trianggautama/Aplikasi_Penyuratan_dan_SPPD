@@ -94,9 +94,9 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>NIP</th>
                                     <th>Golongan </th>
                                     <th>Jabatan</th>
+                                    <th>Total Anggaran</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -105,9 +105,9 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$d->pegawai->nama}}</td>
-                                    <td>{{$d->pegawai->NIP}}</td>
                                     <td>{{$d->pegawai->golongan->golongan}}</td>
                                     <td>{{$d->pegawai->jabatan->jabatan}}</td>
+                                    <td>Rp. 2500.000</td>
                                     <td>
                                         <a href="{{Route('rincianAnggaran','hshh')}}" class="btn btn-sm btn-primary m-1 text-white" > <i class="fa fa-dollar"></i> Anggaran Ril</a>
                                         <button class="btn btn-sm btn-danger m-1" onclick="Hapus('{{$d->uuid}}','{{$d->pegawai->nama}}')"> <i

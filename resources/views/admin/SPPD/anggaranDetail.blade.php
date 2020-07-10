@@ -33,20 +33,18 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>tiket</th>
-                                                    <th>Penginapan</th>
-                                                    <th>Uang Harian</th>
-                                                    <th>total</th>
+                                                    <th>Keperluan</th>
+                                                    <th>Besaran</th>
+                                                    <th>Catatan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Rp.3.000.000</td>
-                                                    <td>Rp.2.750.000</td>
-                                                    <td>Rp.500.000</td>
-                                                    <td>Rp.6.250.000</td>
+                                                    <td>Biaya Transport</td>
+                                                    <td>Rp.3.500.000</td>
+                                                    <td>Tiket PP</td>
                                                     <td>
                                                         <a href="{{Route('rincianAnggaranEdit','nxjsnn')}}"
                                                             class="btn btn-sm btn-info  "><span
@@ -87,20 +85,18 @@
                 <form action="{{Route('skCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Tiket</label>
-                        <input type="text" class="form-control" name="tanggal_register">
+                        <label for="exampleDropdownFormEmail1">Anggaran</label>
+                        <select name="anggaran_id" id="anggaran_id" class="form-control">
+                            <option value="">-- pilihan keperluan --</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Penginapan</label>
+                        <label for="exampleDropdownFormEmail1">Besaran</label>
                         <input type="text" class="form-control" name="nomor_register" >
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Uang Harian</label>
-                        <input type="text" class="form-control" name="pemohon">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">total</label>
-                        <input type="text" class="form-control" name="pemohon">
+                        <label for="exampleDropdownFormEmail1">Catatan</label>
+                        <textarea name="catatan" id="" class="form-control"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
