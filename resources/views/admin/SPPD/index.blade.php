@@ -148,6 +148,15 @@
                         </div>
                     </div>
                     <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Transportasi</label>
+                                <select name="kategori_id" id="kategori_id" class="form-control"required >
+                                    <option value="">-- Pilih Transportasi --</option>
+                                    @foreach ($transportasi as $d)
+                                    <option value="{{$d->id}}">{{$d->nama_transportasi}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama Tempat</label>
                         <input type="text" name="tempat" class="form-control"required >
                     </div>

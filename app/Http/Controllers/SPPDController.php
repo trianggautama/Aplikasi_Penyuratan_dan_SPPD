@@ -8,7 +8,9 @@ use App\Kota;
 use App\Pegawai;
 use App\Rincian_sppd;
 use App\Sppd;
+use App\Transportasi;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Transport\Transport;
 
 class SPPDController extends Controller
 {
@@ -23,7 +25,8 @@ class SPPDController extends Controller
         });
         $kota = Kota::orderBy('id', 'desc')->get();
         $anggaran = Anggaran::orderBy('id', 'desc')->get();
-        return view('admin.SPPD.index', compact('data', 'kota', 'anggaran'));
+        $transportasi = Transportasi::latest()->get();
+        return view('admin.SPPD.index', compact('data', 'kota', 'anggaran','transportasi'));
     }
 
     public function store(Request $request)
