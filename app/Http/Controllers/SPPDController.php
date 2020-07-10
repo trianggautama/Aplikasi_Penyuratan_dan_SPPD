@@ -147,14 +147,19 @@ class SPPDController extends Controller
     public function anggaranUpdate(Request $req, $uuid)
     {
         $data = Anggaran_detail::where('uuid', $uuid)->first();
-        $data->fill($req->all())->save();
+        $kategori = Kategori::findOrFail($req->kategori_id);
+        if ($req->besaran > $kategori->besar_pagu) {
+            return back()->withWarning('Besaran melebihi anggaran');
+        } else {
+            $data->fill($req->all())->save();
 
-        $rincian = Rincian_sppd::findOrFail($data->rincian_sppd_id);
-        $jumlah = $rincian->anggaran_detail->sum('besaran');
-        $rincian->total_anggaran = $jumlah;
-        $rincian->update();
+            $rincian = Rincian_sppd::findOrFail($data->rincian_sppd_id);
+            $jumlah = $rincian->anggaran_detail->sum('besaran');
+            $rincian->total_anggaran = $jumlah;
+            $rincian->update();
 
-        return redirect()->route('rincianAnggaran', ['uuid' => $rincian->uuid])->withSuccess('Data berhasil diubah');
+            return redirect()->route('rincianAnggaran', ['uuid' => $rincian->uuid])->withSuccess('Data berhasil diubah');
+        }
     }
 
     public function anggaranDestroy(Request $req, $uuid)
