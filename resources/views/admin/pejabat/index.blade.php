@@ -56,7 +56,7 @@
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('')"> <i
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}')"> <i
                                                                 class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -154,10 +154,10 @@
             $('#exampleModalForms').modal('show');
         });
 
-        function Hapus(uuid, nama_kota) {
+        function Hapus(uuid) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Kota '" + nama_kota ,        
+			text: " Menghapus Data Pejabat '" ,        
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -166,7 +166,7 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("kotaDestroy",'')}}';
+				url = '{{route("pejabatDestroy",'')}}';
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})
