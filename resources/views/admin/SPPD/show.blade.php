@@ -116,7 +116,7 @@
                                     <td>
                                         <a href="{{Route('rincianAnggaran',['uuid' => $d->uuid])}}"
                                             class="btn btn-sm btn-primary m-1 text-white"> <i class="fa fa-dollar"></i>
-                                            Anggaran Ril</a>
+                                            Anggaran Riil</a>
                                         <button class="btn btn-sm btn-danger m-1"
                                             onclick="Hapus('{{$d->uuid}}','{{$d->pegawai->nama}}')"> <i
                                                 class="fa fa-trash"></i></button>

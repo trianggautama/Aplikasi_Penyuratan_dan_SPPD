@@ -100,7 +100,7 @@
                     <th>Catatan</th>
                     <th>Besaran Riil</th>
                </tr>
-                @foreach($data->anggaran_detail as $d)
+                @foreach($data->anggaran_detail as $d)s
                 <tr>
                     <td width="50%">{{$d->kategori->uraian}}</td>
                     <td width="30%">{{$d->catatan}}</td>
