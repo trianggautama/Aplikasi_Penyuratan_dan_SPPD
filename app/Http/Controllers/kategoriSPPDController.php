@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Anggaran;
 use App\Golongan;
 use App\Kategori;
 use App\Kota;

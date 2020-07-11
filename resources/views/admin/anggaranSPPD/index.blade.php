@@ -128,7 +128,7 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("golonganDestroy",'')}}';
+				url = '{{route("anggaranSPPDDestroy",'')}}'; 
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})

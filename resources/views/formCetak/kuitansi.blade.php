@@ -151,7 +151,7 @@
         <br>
         <table class="text-center">
             <tr>
-                <td>Pengguna Anggaran</td>
+                <td></td>
                 <td>Bendahara Pengeluaran</td>
                 <td>Yang Menerima,</td>
             </tr>
@@ -160,25 +160,22 @@
                     <br>
                     <br>
                     <br> 
-                    Drs. H. Ardiansyah 
-                    <br> 
-                    NIP. 19590508 198403 1 009
                 </td>
                 <td>
                     <br>
                     <br>
                     <br>
-                    Nana Rosalina
+                    {{$pejabat->bendahara->nama}}
                     <br>
-                    NIP. 19810220 200901 2 007
+                    NIP. {{$pejabat->bendahara->NIP}}
                 </td>
                 <td>
                     <br>
                     <br>
                     <br>
-                    Hj. Katerina S.Sos. MAP
+                    {{$data->rincian_sppd->first()->pegawai->nama}}
                     <br>
-                    NIP. 1964331 1987022003
+                    NIP. {{$data->rincian_sppd->first()->pegawai->NIP}}
                 </td>
             </tr>
         </table>
@@ -187,7 +184,7 @@
         <table class="text-center">
             <tr>
                 <td>
-                Mengetahui : <br> Pejabat Pelaksana Teknis Kegiatan
+                Mengetahui : <br> {{$pejabat->st->jabatan->jabatan}}
                 </td>
             </tr>
             <tr>
@@ -195,9 +192,9 @@
                     <br>
                     <br>
                     <br>
-                    Drs. Musyridyansyah, M. Si
+                    {{$pejabat->st->nama}}
                     <br>
-                    NIP. 19730208 199302 1 001
+                    NIP. {{$pejabat->st->NIP}}
                 </td>
             </tr>
         </table>

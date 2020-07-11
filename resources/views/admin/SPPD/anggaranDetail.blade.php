@@ -11,7 +11,7 @@
                 <h4 class="hk-pg-title font-weight-600 mb-10">Rincian Anggaran Riil ( {{$rincian->pegawai->nama}})</h4>
             </div>
             <div class="d-flex">
-            <a href="#"
+            <a href="{{Route('anggaranDetailCetak',['uuid'=>$rincian->uuid])}}"
                     class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Rincian Anggaran Riil 
                     </span></a>
@@ -97,7 +97,7 @@
                         <select name="kategori_id" id="kategori_id" class="form-control">
                             <option value="">-- pilihan keperluan --</option>
                             @foreach($kategori as $d)
-                            <option value="{{$d->id}}">{{$d->uraian}}</option>
+                            <option value="{{$d->id}}">{{$d->uraian}} - {{$d->golongan->kode_golongan}}</option>
                             @endforeach
                         </select>
                     </div>

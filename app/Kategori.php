@@ -18,4 +18,9 @@ class Kategori extends Model
         return $this->belongsTo(Golongan::class);
     }
 
+    public function anggaran()
+    {
+        return $this->belongsTo(Anggaran::class);
+    }
+
 }

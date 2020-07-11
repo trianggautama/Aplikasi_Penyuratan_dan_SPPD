@@ -111,11 +111,11 @@
                       <div class="ttd">
                          <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}</p>
                        <h6 style="margin:0px;">Mengetahui</h6>
-                      <h5 style="margin:0px;">Ketua Pengadilan</h5>
+                      <h5 style="margin:0px;">{{$pejabat->nt->jabatan->jabatan}}</h5>
                       <br>
                       <br>
-                      <h5 style="text-decoration:underline; margin:0px;">MAKMURIN KUSUMASTUTI, S.H,M.H.</h5>
-                      <h5 style="margin:0px;">NIP. 19690306 199103 2 004</h5>
+                      <h5 style="text-decoration:underline; margin:0px;">{{$pejabat->nt->nama}}</h5>
+                      <h5 style="margin:0px;">NIP. {{$pejabat->nt->NIP}}</h5>
                       </div>
                       <br>
                       <br>

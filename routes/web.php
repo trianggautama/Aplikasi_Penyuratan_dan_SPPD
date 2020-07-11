@@ -188,5 +188,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/sppd/suratKeluar', 'reportController@analisisSuratKeluar')->name('analisisSuratKeluar');
     Route::post('/anggaranSPPD/filter', 'reportController@anggaranFilter')->name('anggaranSPPDfilterCetak');
     Route::get('/pegawai/cetak', 'reportController@pegawai')->name('pegawaiCetak');
+    Route::get('/anggaran/detail/cetak/{uuid}', 'reportController@anggaranDetail')->name('anggaranDetailCetak');
 
 });

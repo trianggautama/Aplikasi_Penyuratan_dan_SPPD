@@ -115,7 +115,7 @@
                 <tr >
                     <td width="5%" class="text-center">1</td>
                     <td width="45%">Pejabat Pembuat Kometmen  </td>
-                    <td colspan="2"> Kepala Pengadilan Negeri Kabupaten Banjar </td>
+                    <td colspan="2"> {{$pejabat->sppd->jabatan->jabatan}}</td>
                 </tr>
                 <tr>
                     <td class="text-center">2</td>
@@ -223,15 +223,27 @@
             <br><br>     
                       <br>
                       <br>
-                      <div class="ttd">
-                         <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}</p>
-                       <h6 style="margin:0px;">Mengetahui</h6>
-                      <h5 style="margin:0px;">PEJABAT PEMBUAT KOMITMEN	PENGADILAN NEGERI MARTAPURA</h5>
-                      <br>
-                      <br>
-                      <h5 style="text-decoration:underline; margin:0px;">H. AKHMAD SYIRAJUDDIN, SE</h5>
-                      <h5 style="margin:0px;">  NIP.19701025 199103 1 001</h5>
-                      </div>
+                      <table style="border:none;">
+                          <tr style="border:none;">
+                              <td style="text-align:center; border:none;" width="50%">
+                                <h5 style="margin:0px;">PEMBUAT KOMITMEN PENGADILAN NEGERI MARTAPURA</h5>
+                                <br>
+                                <br>
+                                <br>
+                                <h5 style="text-decoration:underline; margin:0px;">{{$data->rincian_sppd->first()->pegawai->nama}}</h5>
+                                <h5 style="margin:0px;">  NIP.{{$data->rincian_sppd->first()->pegawai->NIP}}</h5>
+                              </td>
+                              <td style="text-align:center; border:none;">
+                                <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}</p>
+                                <h6 style="margin:0px;">Mengetahui</h6>
+                                <h5 style="margin:0px;">{{$pejabat->sppd->jabatan->jabatan}}</h5>
+                                <br>
+                                <br>
+                                <h5 style="text-decoration:underline; margin:0px;">{{$pejabat->sppd->nama}}</h5>
+                                <h5 style="margin:0px;">  NIP.{{$pejabat->sppd->NIP}}</h5>
+                              </td>
+                          </tr>
+                      </table>
                     </div>
              </div>
          </body>

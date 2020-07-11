@@ -93,6 +93,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
+                                                    <th>Kode Surat</th>
                                                     <th>Nomor Agenda</th>
                                                     <th>Keterangan</th>
                                                     <th>Surat Masuk</th>
@@ -102,6 +103,7 @@
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->kode_surat}}</td>
                                                     <td>{{$d->no_agenda}}</td>
                                                     <td>{{$d->keterangan}}</td>
                                                     <td>{{$d->surat_masuk}} Surat</td>

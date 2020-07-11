@@ -105,8 +105,8 @@
                                                 @foreach ($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->kategori->kota->nama_kota}}</td>
-                                                    <td>{{$d->kategori->transportasi->nama_transportasi}}</td>
+                                                    <td>{{$d->berangkat->nama_kota}} - {{$d->tujuan->nama_kota}}</td> 
+                                                    <td>{{$d->transportasi->nama_transportasi}}</td>
                                                     <td>{{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{carbon\carbon::parse($d->tanggal_kembali)->translatedFormat('d F Y')}}

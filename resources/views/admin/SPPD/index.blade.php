@@ -11,10 +11,6 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman SPPD</h2>
             </div>
             <div class="d-flex">
-                <a href="{{Route('SPPDFilterTujuan')}}"
-                    class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
-                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Filter Tujuan
-                    </span></a>
                 <a href="{{Route('SPPDFilterWaktu')}}"
                     class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Filter Waktu
@@ -74,7 +70,7 @@
                                                             class="btn btn-sm btn-primary  m-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('')">
+                                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('{{$d->uuid}}')">
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -165,13 +161,13 @@
                         <div class="col-md">
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">Tanggal Berangkat</label>
-                                <input type="date" name="tanggal_berangkat" class="form-control" required>
+                                <input type="date" min="{{carbon\carbon::now()->translatedFormat('Y-m-d')}}" name="tanggal_berangkat" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">Tanggal kepulangan</label>
-                                <input type="date" name="tanggal_kepulangan" class="form-control" required>
+                                <input type="date" min="{{carbon\carbon::now()->translatedFormat('Y-m-d')}}" name="tanggal_kepulangan" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -196,10 +192,10 @@
             $('#exampleModalForms').modal('show');
         });
 
-        function Hapus(uuid, nama_kota) {
+        function Hapus(uuid) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Kota '" + nama_kota ,        
+			text: " Menghapus Data SPPD " ,        
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -208,7 +204,7 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("kotaDestroy",'')}}';
+				url = '{{route("SPPDDestroy",'')}}';
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})

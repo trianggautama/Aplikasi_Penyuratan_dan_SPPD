@@ -23,7 +23,6 @@
         text-align: center;
       }
       td{
-        text-align: center;
       }
       br{
           margin-bottom: 5px !important;
@@ -88,40 +87,33 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">ANALISIS SURAT Keluar</h4>
-            <table id="datable_1" class="table table-hover w-100 display pb-30">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Kode Surat</th>
-                                                    <th>Nomor Agenda</th>
-                                                    <th>Keterangan</th>
-                                                    <th>Surat Keluar</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach($data as $d)
-                                                <tr>
-                                                    <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->kode_surat}}</td>
-                                                    <td>{{$d->no_agenda}}</td>
-                                                    <td>{{$d->keterangan}}</td>
-                                                    <td>{{$d->surat_keluar}} Surat</td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
+            <h4 style="text-align:center;">RINCIAN ANGGARAN RIIL</h4>
+            <p style="margin:0px;">Nomor SPPD: {{$data->sppd->id}}</p> 
+            <p style="margin:0px;">Pegawai: {{$data->pegawai->nama}}/ {{$data->pegawai->NIP}}</p>
+            <p style="margin:0px;">Tujuan: {{$data->sppd->berangkat->nama_kota}}- {{$data->sppd->tujuan->nama_kota}}</p>
+            <p style="margin:0px;">Tanggal: {{carbon\carbon::parse($data->sppd->tanggal_berangkat)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($data->sppd->tanggal_kembali)->translatedFormat('d F Y')}}</p>
+            <br>
+            <br>
+            <table>
+               <tr>
+                    <th>Keperluan</th>
+                    <th>Catatan</th>
+                    <th>Besaran Riil</th>
+               </tr>
+                @foreach($data->anggaran_detail as $d)
+                <tr>
+                    <td width="50%">{{$d->kategori->uraian}}</td>
+                    <td width="30%">{{$d->catatan}}</td>
+                    <td width="20%">@currency($d->besaran)</td>
+                </tr>
+                @endforeach
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td>@currency($data->anggaran_detail->sum('besaran'))</td>
+                </tr>
+            </table>
                       <br>
                       <br>
-                      <div class="ttd">
-                         <p style="margin:6px;"> Martapura, {{carbon\carbon::parse($tgl)->translatedFormat('d F Y')}}</p>
-                       <h6 style="margin:0px;">Mengetahui</h6>
-                      <h5 style="margin:0px;">Ketua Pengadilan</h5>
-                      <br>
-                      <br>
-                      <h5 style="text-decoration:underline; margin:0px;">MAKMURIN KUSUMASTUTI, S.H,M.H.</h5>
-                      <h5 style="margin:0px;">NIP. 19690306 199103 2 004</h5>
-                      </div>
                     </div>
              </div>
          </body>

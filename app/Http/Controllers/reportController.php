@@ -8,7 +8,9 @@ use App\Disposisi_surat;
 use App\Kategori;
 use App\Laporan_sppd;
 use App\Pegawai;
+use App\Pejabat;
 use App\Peminjaman;
+use App\Rincian_sppd;
 use App\Sk;
 use App\Sppd;
 use App\Surat_keluar;
@@ -79,7 +81,8 @@ class reportController extends Controller
             $data = Sppd::where('uuid',$uuid)->first();
             $tgl= Carbon::now()->format('d-m-Y');
             $anggaran = Anggaran::latest()->first();
-            $pdf =PDF::loadView('formCetak.notaDinas', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran]);
+            $pejabat = Pejabat::latest()->first();
+            $pdf =PDF::loadView('formCetak.notaDinas', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran,'pejabat'=>$pejabat]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('Nota Dinas SK .pdf');
         }
@@ -89,7 +92,8 @@ class reportController extends Controller
             $data = Sppd::where('uuid',$uuid)->first();
             $tgl= Carbon::now()->format('d-m-Y');
             $anggaran = Anggaran::latest()->first();
-            $pdf =PDF::loadView('formCetak.suratTugas', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran]);
+            $pejabat = Pejabat::latest()->first();
+            $pdf =PDF::loadView('formCetak.suratTugas', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran,'pejabat'=>$pejabat]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('Surat Tugas .pdf');
         }
@@ -99,16 +103,18 @@ class reportController extends Controller
             $data = Sppd::where('uuid',$uuid)->first();
             $tgl= Carbon::now()->format('d-m-Y');
             $anggaran = Anggaran::latest()->first();
-            $pdf =PDF::loadView('formCetak.sppd', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran]);
+            $pejabat = Pejabat::latest()->first();
+            $pdf =PDF::loadView('formCetak.sppd', ['data'=>$data,'tgl'=>$tgl,'anggaran'=>$anggaran,'pejabat'=>$pejabat]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('SPPD.pdf');
         }
 
-        //cetak SPPD
+        //cetak KUITANSI
         public function kuitansi($uuid){
             $data = Sppd::where('uuid',$uuid)->first();
             $tgl= Carbon::now()->format('d-m-Y');
-            $pdf =PDF::loadView('formCetak.kuitansi', ['data'=>$data,'tgl'=>$tgl]);
+            $pejabat = Pejabat::latest()->first();
+            $pdf =PDF::loadView('formCetak.kuitansi', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('kuitansi.pdf');
         }
@@ -238,5 +244,14 @@ class reportController extends Controller
             $pdf =PDF::loadView('formCetak.pegawai', ['data'=>$data,'tgl'=>$tgl]);
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('Laporan Pegawai.pdf');
+        }
+
+        //cetak Rincian Anggaran
+        public function anggaranDetail($uuid){
+            $data =Rincian_sppd::where('uuid',$uuid)->first();
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.rincianAnggaran', ['data'=>$data,'tgl'=>$tgl]);
+            $pdf->setPaper('a4', 'portrait');
+            return $pdf->stream('Laporan Rincian Anggaran.pdf');
         }
 }
