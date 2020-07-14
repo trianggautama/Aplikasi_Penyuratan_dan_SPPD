@@ -44,7 +44,7 @@
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->sppd->kategori->kota->nama_kota}}</td>
+                                                    <td>{{$d->sppd->tujuan->nama_kota}}</td>
                                                     <td>{{carbon\carbon::parse($d->sppd->tanggal_berangkat)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{carbon\carbon::parse($d->sppd->tanggal_kembali)->translatedFormat('d F Y')}}
@@ -100,7 +100,7 @@
                         <select name="sppd_id" id="sppd_id" class="form-control" required>
                             <option value="">-- Pilih SPPD --</option>
                             @foreach ($sppd as $d)
-                            <option value="{{$d->id}}">{{$d->maksud_tujuan}}, {{$d->kategori->kota->nama_kota}},
+                            <option value="{{$d->id}}">{{$d->maksud_tujuan}}, {{$d->tujuan->nama_kota}},
                                 {{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
                             </option>
                             @endforeach
