@@ -98,7 +98,6 @@
                                                     <th>Uraian</th>
                                                     <th>Besar Pagu</th>
                                                     <th>Jenis</th>
-                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -110,14 +109,6 @@
                                                     <td>{{$d->uraian}}</td>
                                                     <td>@currency($d->besar_pagu)</td>
                                                     <td>{{$d->jenis_sppd}}</td>
-                                                    <td>
-                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-primary  "><span class="icon-label"><i
-                                                                    class="fa fa-edit"></i>
-                                                            </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}')">
-                                                            <i class="fa fa-trash"></i></button>
-                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
