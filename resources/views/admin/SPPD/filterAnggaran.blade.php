@@ -25,7 +25,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
-                                        <form action="" method="POST" enctype="multipart/form-data" target="_blank">
+                                        <form action="{{Route('pengeluaranSPPDCetak')}}" method="POST" enctype="multipart/form-data" target="_blank">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-6">

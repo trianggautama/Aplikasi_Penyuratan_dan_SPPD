@@ -245,4 +245,23 @@ class reportController extends Controller
             $pdf->setPaper('a4', 'portrait');
             return $pdf->stream('Laporan Rincian Anggaran.pdf');
         }
+
+        //cetak laporan data SPPD
+        public function pengeluaranSPPD(Request $request){
+            $data = Sppd::whereBetween('tanggal_berangkat', [$request->tanggal_mulai, $request->tanggal_akhir])->get();
+            $data = $data->map(function ($item) {
+                $jumlah = $item->rincian_sppd->count();
+                $total = $item->rincian_sppd->sum('total_anggaran');
+                $item['jumlah_orang'] = $jumlah;
+                $item['total'] = $total;
+
+            return $item;
+            });
+            $tgl_mulai = $request->tanggal_mulai;
+            $tgl_selesai = $request->tanggal_akhir;
+            $tgl= Carbon::now()->format('d-m-Y');
+            $pdf =PDF::loadView('formCetak.pengeluaranSPPD', ['data'=>$data,'tgl'=>$tgl,'tgl_mulai'=>$tgl_mulai,'tgl_selesai'=>$tgl_selesai]);
+            $pdf->setPaper('a4', 'landscape');
+            return $pdf->stream('Laporan Pengeluaran SPPD .pdf');
+        }
 }
