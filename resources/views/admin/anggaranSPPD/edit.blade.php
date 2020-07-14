@@ -32,12 +32,12 @@
                                                     id="nama_anggaran" value="{{$data->nama_anggaran}}"
                                                     placeholder="nama_anggaran">
                                             </div>
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Besaran Anggaran</label>
                                                 <input type="text" name="besaran_anggaran" class="form-control"
                                                     id="besaran_anggaran" value="{{$data->besaran_anggaran}}"
                                                     placeholder="besaran_anggaran">
-                                            </div>
+                                            </div> -->
                                             <hr>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>

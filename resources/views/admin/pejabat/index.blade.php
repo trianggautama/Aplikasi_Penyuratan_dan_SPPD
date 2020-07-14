@@ -11,9 +11,11 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Pejabat Penandatanganan</h2>
             </div>
             <div class="d-flex">
+            @if($data->isEmpty())
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
+            @endif
             </div>
         </div>
         <!-- /Title -->
