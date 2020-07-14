@@ -91,7 +91,7 @@
             <p style="margin:0px;">Nomor SPPD: {{$data->sppd->id}}</p> 
             <p style="margin:0px;">Pegawai: {{$data->pegawai->nama}}/ {{$data->pegawai->NIP}}</p>
             <p style="margin:0px;">Tujuan: {{$data->sppd->berangkat->nama_kota}}- {{$data->sppd->tujuan->nama_kota}}</p>
-            <p style="margin:0px;">Tanggal: {{carbon\carbon::parse($data->sppd->tanggal_berangkat)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($data->sppd->tanggal_kembali)->translatedFormat('d F Y')}}</p>
+            <p style="margin:0px;">Tanggal: {{carbon\carbon::parse($data->sppd->tanggal_berangkat)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($data->sppd->tanggal_kepulangan)->translatedFormat('d F Y')}}</p>
             <br>
             <br>
             <table>

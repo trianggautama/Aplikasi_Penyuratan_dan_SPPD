@@ -109,7 +109,7 @@
                                                     <td>{{$d->transportasi->nama_transportasi}}</td>
                                                     <td>{{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
                                                     </td>
-                                                    <td>{{carbon\carbon::parse($d->tanggal_kembali)->translatedFormat('d F Y')}}
+                                                    <td>{{carbon\carbon::parse($d->tanggal_kepulangan)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>{{$d->maksud_tujuan}}</td>
                                                     <td>{{$d->jumlah}} Orang</td>
