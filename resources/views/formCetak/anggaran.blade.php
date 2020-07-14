@@ -93,25 +93,33 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Tahun Anggaran</th>
-                                                    <th>Besar Anggaran</th>
-                                                    <th>Serapan Anggaran</th>
+                                                    <th>Kode Biaya</th>
+                                                    <th>Golongan</th>
+                                                    <th>Uraian</th>
+                                                    <th>Besar Pagu</th>
+                                                    <th>Jenis</th>
+                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>{{$data->nama_anggaran}}</td>
-                                                    <td>@currency($data->besaran_anggaran)</td>
-                                                    <td>@currency($data->sppd->sum('jumlah'))</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->kode_biaya}}</td>
+                                                    <td>{{$d->golongan->golongan}}</td>
+                                                    <td>{{$d->uraian}}</td>
+                                                    <td>@currency($d->besar_pagu)</td>
+                                                    <td>{{$d->jenis_sppd}}</td>
+                                                    <td>
+                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
+                                                            class="btn btn-sm btn-primary  "><span class="icon-label"><i
+                                                                    class="fa fa-edit"></i>
+                                                            </span><span class="btn-text"> </span></a>
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}')">
+                                                            <i class="fa fa-trash"></i></button>
+                                                    </td>
                                                 </tr>
-                                                <tr>
-                                                    <td colspan="3">Sisa Pagu</td>
-                                                    @php
-                                                        $sisa = $data->besaran_anggaran - $data->sppd->sum('jumlah');
-                                                    @endphp
-                                                    <td>@currency($sisa)</td>
-                                                </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                       <br>

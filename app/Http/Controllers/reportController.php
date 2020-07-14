@@ -218,23 +218,14 @@ class reportController extends Controller
         }
 
         //cetak laporan data SPPD
-        public function anggaranFilter(Request $request){ 
-            $data = Anggaran::where('tahun', [$request->tahun])->first();
-            if($data){
-                $sppd = Sppd::where('anggaran_id',$data->id)->get();
-                $sppd = $sppd->map(function ($item) {
-                    $jumlah = $item->rincian_sppd->count();
-                    $item['jumlah_orang'] = $jumlah;
-        
-                    return $item;
-                });
+        public function anggaranSPPD(Request $request){ 
+
+                $data = Kategori::orderBy('id', 'desc')->get();
+
                 $tgl= Carbon::now()->format('d-m-Y');
-                $pdf =PDF::loadView('formCetak.anggaran', ['data'=>$data,'tgl'=>$tgl,'sppd'=>$sppd]);
+                $pdf =PDF::loadView('formCetak.anggaran', ['data'=>$data,'tgl'=>$tgl]);
                 $pdf->setPaper('a4', 'landscape');
                 return $pdf->stream('Laporan Anggaran .pdf');
-            }else{
-                return redirect()->route('anggaranSPPDfilter')->with('warning', 'Data Anggaran Tidak Ada');
-            }
         }
 
         //cetak Pegawai

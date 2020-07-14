@@ -125,7 +125,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/anggaranSPPD/edit/{uuid}', 'anggaranSPPDController@edit')->name('anggaranSPPDEdit');
     Route::put('/anggaranSPPD/edit/{uuid}', 'anggaranSPPDController@update')->name('anggaranSPPDUpdate');
     Route::get('/anggaranSPPD/delete/{uuid}', 'anggaranSPPDController@destroy')->name('anggaranSPPDDestroy');
-    Route::get('/anggaranSPPD/filter', 'anggaranSPPDController@filter')->name('anggaranSPPDfilter');
+    Route::get('/anggaranSPPD/cetak', 'reportController@anggaranSPPD')->name('anggaranSPPD');
 
 //Ketegori SPPD
     Route::get('/pejabat/index', 'pejabatController@index')->name('pejabatIndex');
@@ -181,7 +181,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/kuitansi/cetak/{uuid}', 'reportController@kuitansi')->name('kuitansiCetak');
     Route::post('/SPPD/filter/waktu', 'reportController@SPPDFilterWaktu')->name('SPPDFilterWaktuCetak');
     Route::post('/SPPD/filter/tujuan', 'reportController@SPPDFilterTujuan')->name('SPPDFilterTujuanCetak');
-    Route::post('/SPPD/anggaran', 'reportController@SPPDAanggaran')->name('laporanAnggaranSPPDCetak');
     Route::get('Laporan/SPPD/cetak/{uuid}', 'reportController@laporanSPPD')->name('laporanSPPDCetak');
     Route::get('/sppd/analisis', 'reportController@analisisSPPD')->name('analisisSPPD');
     Route::get('/sppd/suratMasuk', 'reportController@analisisSuratMasuk')->name('analisisSuratMasuk');
