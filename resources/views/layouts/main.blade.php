@@ -63,7 +63,7 @@
                             <div class="sub-dropdown-menu show-on-hover">
                                 <a href="#" class="dropdown-toggle dropdown-item">Inputan SPPD</a>
                                 <div class="dropdown-menu open-right-side">
-                                    <a class="dropdown-item" href="{{Route('kotaIndex')}}">Kota</a>
+                                    <a class="dropdown-item" href="{{Route('kotaIndex')}}">Provinsi</a>
                                     <a class="dropdown-item" href="{{Route('transportasiIndex')}}">Transportasi</a>
                                     <a class="dropdown-item" href="{{Route('pejabatIndex')}}">Pejabat penandatangan SPPD</a>
                                 </div>
@@ -93,12 +93,35 @@
                     <li class="nav-item dropdown show-on-hover active">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
+                            Anggaran Harian
+                        </a>
+                        <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <a class="dropdown-item" href="{{Route('paguHarianIndex')}}">Pagu Harian</a>
+                            <a class="dropdown-item" href="{{Route('paguRepresentasiIndex')}}">Pagu  Representasi</a>
+                            <a class="dropdown-item" href="{{Route('paguPenginapanIndex')}}">Pagu Penginapan</a>
+                            <a class="dropdown-item" href="{{Route('paguTiketPesawatIndex')}}">Pagu Tiket Pesawat</a>
+                            <a class="dropdown-item" href="{{Route('paguTaksiIndex')}}">Pagu Taksi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown show-on-hover active">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             SPPD
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('anggaranSPPDIndex')}}">Anggaran SPPD</a>
                             <a class="dropdown-item" href="{{Route('kategoriSPPDIndex')}}">Kategori Anggaran SPPD</a>
                             <a class="dropdown-item" href="{{Route('SPPDIndex')}}">Berkas SPPD</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown show-on-hover active">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Surat Pembatalan
+                        </a>
+                        <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <a class="dropdown-item" href="{{Route('pembatalanSPPDIndex')}}">Pembatalan SPPD</a>
+                            <a class="dropdown-item" href="{{Route('pembatalanRincianSPPDIndex')}}">Pembatalan Rincian SPPD</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">

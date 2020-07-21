@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Kota</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Surat Pembatalan SPPD</h2>
             </div>
             <div class="d-flex">
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
@@ -33,34 +33,35 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama Provinsi</th>
-                                                    <th>Zona</th>
+                                                    <th>No Surat Pembatalan</th>
+                                                    <th>Nomor Surat Tugas SPPD</th>
+                                                    <th>Pejabat </th>
+                                                    <th>Alasan pembatalan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->nama_kota}}</td>
-                                                    <td>@if($d->zona == 1)
-                                                        Luar Kecamatan Dalam Daerah
-                                                        @elseif($d->zona == 2)
-                                                        Luar Kota Dalam Provinsi
-                                                        @else
-                                                        Luar Kota luar Provinsi
-                                                        @endif
+                                                    <td>1</td>
+                                                    <td>121/jbcjsb/12</td>
+                                                    <td> 1212/313
                                                     </td>
+                                                    <td> Nama Pejabat
+                                                    </td>
+                                                    <td>Anggaran Tidak Tersedia</td>
                                                     <td>
-                                                        <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
-                                                        <a href="{{Route('kotaEdit',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-primary  "><span
+                                                        <a href="{{Route('pembatalanSPPDCetak','nkjsnjnj')}}"
+                                                            class="btn btn-sm btn-success  m-1" target="_blank"><span
+                                                                class="icon-label"><i class="fa fa-print"></i>
+                                                            </span><span class="btn-text"> </span></a>
+                                                        <a href="{{Route('pembatalanSPPDEdit','knjnj')}}"
+                                                            class="btn btn-sm btn-primary  m-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->nama_kota}}')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus()">
+                                                            <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
-                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -81,7 +82,7 @@
 <!-- Modal forms-->
 <div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="status">Modal title</h5>
@@ -90,20 +91,35 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('kotaCreate')}}" method="POST">
+                <form action="{{Route('laporanSPPDCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Nama Kota</label>
-                        <input type="text" name="nama_kota" class="form-control" id="nama_kota" placeholder="nama_kota" required >
+                        <label for="exampleDropdownFormEmail1">Nomor Surat Pembatalan SPPD</label>
+                       <input type="text" name="no_surat_pembatalan" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Zona</label>
-                        <select name="zona" id="zona" class="form-control" required >
-                            <option value="">-- Pilih Zona --</option>
-                            <option value="1"> Luar Kecamatan Dalam Daerah </option>
-                            <option value="2"> Luar Kota Dalam Provinsi </option>
-                            <option value="3"> Luar Kota luar Provinsi </option>
+                        <label for="exampleDropdownFormEmail1">SPPD</label>
+                        <select name="sppd_id" id="sppd_id" class="form-control" required>
+                            <option value="">-- Pilih SPPD --</option>
+                            @foreach ($sppd as $d)
+                            <option value="{{$d->id}}">Nomor SPT :{{$d->no_surat_tugas}} ,-  {{$d->tujuan->nama_kota}},
+                                {{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
+                            </option>
+                            @endforeach
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Pejabat Pembuat Keputusan</label>
+                        <select name="sppd_id" id="sppd_id" class="form-control" required>
+                            <option value="">-- Pilih Pegawai --</option>
+                            @foreach ($pegawai as $d)
+                            <option value="{{$d->id}}">{{$d->nama}} </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Alasan Pembatalan</label>
+                        <textarea name="alasan" id="alasan" rows="10" class="tinymce" ></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
@@ -122,10 +138,10 @@
             $('#exampleModalForms').modal('show');
         });
 
-        function Hapus(uuid, nama_kota) {
+        function Hapus(uuid) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Kota '" + nama_kota ,        
+			text: " Menghapus Data Laporan SPPD" ,        
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -134,7 +150,7 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("kotaDestroy",'')}}';
+				url = '{{route("laporanSPPDDestroy",'')}}';
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})

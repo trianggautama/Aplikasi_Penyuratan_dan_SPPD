@@ -169,6 +169,32 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('Laporan/SPPD/edit/{uuid}', 'laporanSPPDController@update')->name('laporanSPPDUpdate');
     Route::get('Laporan/SPPD/delete/{uuid}', 'laporanSPPDController@destroy')->name('laporanSPPDDestroy');
 
+
+// Pembatalan SPPD
+    Route::get('pembatalan/SPPD/index', 'pembatalanSPPDController@index')->name('pembatalanSPPDIndex');
+// Route::get('pembatalan/SPPD/detail/{uuid}', 'pembatalanSPPDController@show')->name('pembatalanSPPDShow');
+    Route::post('pembatalan/SPPD/index/create', 'pembatalanSPPDController@store')->name('pembatalanSPPDCreate');
+    Route::get('pembatalan/SPPD/edit/{uuid}', 'pembatalanSPPDController@edit')->name('pembatalanSPPDEdit');
+    Route::put('pembatalan/SPPD/edit/{uuid}', 'pembatalanSPPDController@update')->name('pembatalanSPPDUpdate');
+    Route::get('pembatalan/SPPD/delete/{uuid}', 'pembatalanSPPDController@destroy')->name('pembatalanSPPDDestroy');
+
+
+// Pembatalan SPPD
+    Route::get('pembatalan/RincianSPPD/index', 'pembatalanRincianSPPDController@index')->name('pembatalanRincianSPPDIndex');
+    Route::get('pembatalan/RincianSPPD/detail/{uuid}', 'pembatalanRincianSPPDController@show')->name('pembatalanRincianSPPDShow');
+    Route::post('pembatalan/RincianSPPD/index/create', 'pembatalanRincianSPPDController@store')->name('pembatalanRincianSPPDCreate');
+    Route::get('pembatalan/RincianSPPD/edit/{uuid}', 'pembatalanRincianSPPDController@edit')->name('pembatalanRincianSPPDEdit');
+    Route::put('pembatalan/RincianSPPD/edit/{uuid}', 'pembatalanRincianSPPDController@update')->name('pembatalanRincianSPPDUpdate');
+    Route::get('pembatalan/RincianSPPD/delete/{uuid}', 'pembatalanRincianSPPDController@destroy')->name('pembatalanRincianSPPDDestroy');
+
+// Pagu SPPD
+    Route::get('pagu/harian/index', 'anggaranSPPDController@paguHarian')->name('paguHarianIndex'); 
+    Route::get('pagu/representasi/index', 'anggaranSPPDController@paguRepresentasi')->name('paguRepresentasiIndex'); 
+    Route::get('pagu/penginapan/index', 'anggaranSPPDController@paguPenginapan')->name('paguPenginapanIndex'); 
+    Route::get('pagu/tiket/index', 'anggaranSPPDController@paguTiketPesawat')->name('paguTiketPesawatIndex'); 
+    Route::get('pagu/taksi/index', 'anggaranSPPDController@paguTaksi')->name('paguTaksiIndex'); 
+
+
 //cetak data
     Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
     Route::post('/suratKeluar/filter', 'reportController@suratKeluar')->name('suratKeluarFilterCetak');
@@ -189,5 +215,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/SPPD/filter/anggaran', 'reportController@pengeluaranSPPD')->name('pengeluaranSPPDCetak');
     Route::get('/pegawai/cetak', 'reportController@pegawai')->name('pegawaiCetak');
     Route::get('/anggaran/detail/cetak/{uuid}', 'reportController@anggaranDetail')->name('anggaranDetailCetak');
+    Route::get('pembatalan/SPPD/cetak/{uuid}', 'reportController@pembatalanSPPD')->name('pembatalanSPPDCetak');
+    Route::get('pembatalan/rincianSPPD/cetak/{uuid}', 'reportController@pembatalanRincianSPPD')->name('pembatalanRincianSPPDCetak');
 
 });

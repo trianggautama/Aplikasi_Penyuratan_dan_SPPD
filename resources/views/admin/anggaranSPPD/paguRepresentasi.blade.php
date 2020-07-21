@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Kota</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Pagu Representasi SPPD</h2>
             </div>
             <div class="d-flex">
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
@@ -33,8 +33,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama Provinsi</th>
-                                                    <th>Zona</th>
+                                                    <th>Kode Biaya</th>
+                                                    <th>Golongan</th>
+                                                    <th>Uraian</th>
+                                                    <th>Besar Pagu</th>
+                                                    <th>Jenis</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -42,22 +45,18 @@
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->nama_kota}}</td>
-                                                    <td>@if($d->zona == 1)
-                                                        Luar Kecamatan Dalam Daerah
-                                                        @elseif($d->zona == 2)
-                                                        Luar Kota Dalam Provinsi
-                                                        @else
-                                                        Luar Kota luar Provinsi
-                                                        @endif
-                                                    </td>
+                                                    <td>{{$d->kode_biaya}}</td>
+                                                    <td>{{$d->golongan->golongan}}</td>
+                                                    <td>{{$d->uraian}}</td>
+                                                    <td>@currency($d->besar_pagu)</td>
+                                                    <td>{{$d->jenis_sppd}}</td>
                                                     <td>
-                                                        <!-- <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button> -->
-                                                        <a href="{{Route('kotaEdit',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-primary  "><span
-                                                                class="icon-label"><i class="fa fa-edit"></i>
+                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
+                                                            class="btn btn-sm btn-primary  "><span class="icon-label"><i
+                                                                    class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}','{{$d->nama_kota}}')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}')">
+                                                            <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -90,19 +89,37 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('kotaCreate')}}" method="POST">
+                <form action="{{Route('kategoriSPPDCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Nama Kota</label>
-                        <input type="text" name="nama_kota" class="form-control" id="nama_kota" placeholder="nama_kota" required >
+                        <label for="exampleDropdownFormEmail1">Kode Biaya</label>
+                        <input type="text" name="kode_biaya" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Zona</label>
-                        <select name="zona" id="zona" class="form-control" required >
-                            <option value="">-- Pilih Zona --</option>
-                            <option value="1"> Luar Kecamatan Dalam Daerah </option>
-                            <option value="2"> Luar Kota Dalam Provinsi </option>
-                            <option value="3"> Luar Kota luar Provinsi </option>
+                        <label for="exampleDropdownFormEmail1">uraian</label>
+                        <select name="uraian" id="uraian" class="form-control">
+                            <option value="Pagu Representasi">Pagu Representasi SPPD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Pilih Golongan</label>
+                        <select name="golongan_id" id="golongan_id" class="form-control" required>
+                            <option value="">-- Pilih Golongan --</option>
+                            @foreach ($golongan as $d)
+                            <option value="{{$d->id}}">{{$d->kode_golongan}} - {{$d->golongan}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
+                        <input type="text" name="besar_pagu" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Jenis SPPD</label>
+                        <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
+                            <option value="">-- Pilih Jenis SPPD --</option>
+                            <option value="Dalam Daerah">Dalam Daerah</option>
+                            <option value="Luar Daerah">Luar Daerah</option>
                         </select>
                     </div>
                     <div class="text-right">
@@ -122,19 +139,19 @@
             $('#exampleModalForms').modal('show');
         });
 
-        function Hapus(uuid, nama_kota) {
+        function Hapus(uuid) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Kota '" + nama_kota ,        
+			text: " Menghapus Data Kategori Anggaran SPPD ",        
 			icon: 'warning',
 			showCancelButton: true,
-			confirmButtonColor: '#3085d6',
+			confirmButtonColor: '#3085d6', 
 			cancelButtonColor: '#d33',
 			confirmButtonText: 'Hapus',
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("kotaDestroy",'')}}';
+				url = '{{route("kategoriSPPDDestroy",'')}}';
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})
