@@ -53,7 +53,7 @@
                                                     <td>@currency($d->besar_pagu)</td>
                                                     <td>{{$d->jenis_sppd}}</td>
                                                     <td>
-                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
+                                                        <a href="{{Route('paguPenginapanEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -100,7 +100,10 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Provinsi</label>
                         <select name="uraian" id="uraian" class="form-control">
-                            <option value="Pagu Harian">Pilih Dari tabel Kota</option>
+                            <option value="Pagu Harian">-- Pilih Kota --</option>
+                            @foreach($kota as $k)
+                            <option value="{{$k->id}}">{{$k->nama_kota}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
@@ -121,14 +124,6 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
                         <input type="text" name="besar_pagu" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Jenis SPPD</label>
-                        <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
-                            <option value="">-- Pilih Jenis SPPD --</option>
-                            <option value="Dalam Daerah">Dalam Daerah</option>
-                            <option value="Luar Daerah">Luar Daerah</option>
-                        </select>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>

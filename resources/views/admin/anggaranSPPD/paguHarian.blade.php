@@ -49,7 +49,7 @@
                                                     <td>@currency($d->besar_pagu)</td>
                                                     <td>{{$d->jenis_sppd}}</td>
                                                     <td>
-                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
+                                                        <a href="{{Route('paguHarianEdit',['uuid' => $d->uuid])}}" 
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -96,7 +96,10 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Provinsi</label>
                         <select name="uraian" id="uraian" class="form-control">
-                            <option value="Pagu Harian">Pilih Dari tabel Kota</option>
+                            <option value="Pagu Harian">-- Pilih Kota --</option>
+                            @foreach($kota as $k)
+                                <option value="{{$k->id}}">{{$k->nama_kota}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">

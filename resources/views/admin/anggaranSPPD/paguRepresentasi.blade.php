@@ -51,7 +51,7 @@
                                                     <td>@currency($d->besar_pagu)</td>
                                                     <td>{{$d->jenis_sppd}}</td>
                                                     <td>
-                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
+                                                        <a href="{{Route('paguRepresentasiEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>

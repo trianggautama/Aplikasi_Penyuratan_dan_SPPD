@@ -34,10 +34,9 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Kode Biaya</th>
-                                                    <th>Golongan</th>
-                                                    <th>Uraian</th>
+                                                    <th>Tujuan</th>
+                                                    <th>Kelas</th>
                                                     <th>Besar Pagu</th>
-                                                    <th>Jenis</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -46,12 +45,11 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->kode_biaya}}</td>
-                                                    <td>{{$d->golongan->golongan}}</td>
-                                                    <td>{{$d->uraian}}</td>
+                                                    <td>Nama Provinsi</td>
+                                                    <td>Bisnis</td>
                                                     <td>@currency($d->besar_pagu)</td>
-                                                    <td>{{$d->jenis_sppd}}</td>
                                                     <td>
-                                                        <a href="{{Route('kategoriSPPDEdit',['uuid' => $d->uuid])}}"
+                                                        <a href="{{Route('paguTiketPesawatEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -98,7 +96,10 @@
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">Tujuan</label>
                                 <select name="uraian" id="uraian" class="form-control">
-                                    <option value="Pagu Tiket Pesawat">Pilih Dari Nama Kota</option>
+                                    <option value="Pagu Tiket Pesawat">Pilih tujuan</option>
+                                    @foreach($kota as $k)
+                                    <option value="{{$k->id}}">{{$k->nama_kota}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                     <div class="form-group">
@@ -112,15 +113,6 @@
                         <select name="uraian" id="uraian" class="form-control">
                             <option value="Ekonomi">Ekonomi</option>
                             <option value="bisnis">bisnis</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Pilih Golongan</label>
-                        <select name="golongan_id" id="golongan_id" class="form-control" required>
-                            <option value="">-- Pilih Golongan --</option>
-                            @foreach ($golongan as $d)
-                            <option value="{{$d->id}}">{{$d->kode_golongan}} - {{$d->golongan}}</option>
-                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">

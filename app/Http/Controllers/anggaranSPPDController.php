@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Anggaran;
 use App\Golongan;
 use App\Kategori;
+use App\Kota;
 use Illuminate\Http\Request;
 
 class anggaranSPPDController extends Controller
@@ -18,8 +19,15 @@ class anggaranSPPDController extends Controller
     public function paguHarian()
     {
         $data = Kategori::orderBy('id', 'desc')->get();
-        $golongan = Golongan::latest()->get();
-        return view('admin.anggaranSPPD.paguHarian', compact('data','golongan'));
+        $kota = Kota::latest()->get();
+        return view('admin.anggaranSPPD.paguHarian ', compact('data','kota'));
+    }
+
+    public function paguHarianEdit($uuid)
+    {
+        $data = Kategori::where('uuid', $uuid)->first();
+        $kota = Kota::latest()->get();
+        return view('admin.anggaranSPPD.paguHarianEdit', compact('data','kota'));
     }
 
     public function paguRepresentasi()
@@ -29,24 +37,55 @@ class anggaranSPPDController extends Controller
         return view('admin.anggaranSPPD.paguRepresentasi', compact('data','golongan'));
     }
 
+    public function paguRepresentasiEdit($uuid)
+    {
+        $data = Kategori::where('uuid',$uuid)->first();
+        $golongan = Golongan::latest()->get();
+        return view('admin.anggaranSPPD.paguRepresentasiEdit', compact('data','golongan'));
+    }
+
     public function paguPenginapan()
     {
         $data = Kategori::orderBy('id', 'desc')->get();
         $golongan = Golongan::latest()->get();
-        return view('admin.anggaranSPPD.paguPenginapan', compact('data','golongan'));
+        $kota = Kota::latest()->get();
+        return view('admin.anggaranSPPD.paguPenginapan', compact('data','golongan','kota'));
+    }
+
+    public function paguPenginapanEdit($uuid)
+    {
+        $data = Kategori::where('uuid',$uuid)->get();
+        $golongan = Golongan::latest()->get();
+        $kota = Kota::latest()->get();
+        return view('admin.anggaranSPPD.paguPenginapanEdit', compact('data','golongan','kota'));
     }
 
     public function paguTiketPesawat()
     {
         $data = Kategori::orderBy('id', 'desc')->get();
-        $golongan = Golongan::latest()->get();
-        return view('admin.anggaranSPPD.paguTiketPesawat', compact('data','golongan'));
+        $kota = Kota::latest()->get();
+        return view('admin.anggaranSPPD.paguTiketPesawat', compact('data','kota'));
+    }
+
+    public function paguTiketPesawatEdit($uuid)
+    {
+        $data = Kategori::where('uuid', $uuid)->first();
+        $kota = Kota::latest()->get();
+        return view('admin.anggaranSPPD.paguTiketPesawatEdit', compact('data','kota'));
     }
 
     public function paguTaksi()
     {
         $data = Kategori::orderBy('id', 'desc')->get();
-        return view('admin.anggaranSPPD.paguTaksi', compact('data'));
+        $kota = Kota::latest()->get();
+        return view('admin.anggaranSPPD.paguTaksi', compact('data','kota'));
+    }
+
+    public function paguTaksiEdit($uuid)
+    {
+        $data = Kategori::where('uuid', $uuid)->first();
+        $kota = Kota::latest()->get();
+        return view('admin.anggaranSPPD.paguTaksiEdit', compact('data','kota'));
     }
 
     public function store(Request $req)

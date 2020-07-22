@@ -189,10 +189,16 @@ Route::group(['middleware' => ['auth']], function () {
 
 // Pagu SPPD
     Route::get('pagu/harian/index', 'anggaranSPPDController@paguHarian')->name('paguHarianIndex'); 
-    Route::get('pagu/representasi/index', 'anggaranSPPDController@paguRepresentasi')->name('paguRepresentasiIndex'); 
+    Route::get('pagu/harian/edit/{uuid}', 'anggaranSPPDController@paguHarianEdit')->name('paguHarianEdit'); 
+    Route::get('pagu/representasi/index', 'anggaranSPPDController@paguRepresentasi')->name('paguRepresentasiIndex');
+    Route::get('pagu/representasi/edit/{uuid}', 'anggaranSPPDController@paguRepresentasiEdit')->name('paguRepresentasiEdit');  
     Route::get('pagu/penginapan/index', 'anggaranSPPDController@paguPenginapan')->name('paguPenginapanIndex'); 
+    Route::get('pagu/penginapan/edit/{uuid}', 'anggaranSPPDController@paguPenginapanEdit')->name('paguPenginapanEdit'); 
     Route::get('pagu/tiket/index', 'anggaranSPPDController@paguTiketPesawat')->name('paguTiketPesawatIndex'); 
+    Route::get('pagu/tiket/edit/{uuid}', 'anggaranSPPDController@paguTiketPesawatEdit')->name('paguTiketPesawatEdit'); 
     Route::get('pagu/taksi/index', 'anggaranSPPDController@paguTaksi')->name('paguTaksiIndex'); 
+    Route::get('pagu/taksi/edit/{uuid}', 'anggaranSPPDController@paguTaksiEdit')->name('paguTaksiEdit'); 
+
 
 
 //cetak data
