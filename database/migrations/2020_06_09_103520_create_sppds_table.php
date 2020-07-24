@@ -26,6 +26,7 @@ class CreateSppdsTable extends Migration
             $table->date('tanggal_kepulangan');
             $table->string('maksud_tujuan', 100);
             $table->string('jumlah')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
             $table->foreign('berangkat_id')->references('id')->on('kotas')->onDelete('cascade');
             $table->foreign('tujuan_id')->references('id')->on('kotas')->onDelete('cascade');
