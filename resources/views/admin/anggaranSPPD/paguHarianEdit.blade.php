@@ -27,37 +27,43 @@
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Kode Biaya</label>
-                        <input type="text" name="kode_biaya" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Provinsi</label>
-                        <select name="uraian" id="uraian" class="form-control">
-                            <option value="Pagu Harian">-- Pilih Kota --</option>
-                            @foreach($kota as $k)
-                                <option value="{{$k->id}}">{{$k->nama_kota}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">uraian</label>
-                        <select name="uraian" id="uraian" class="form-control">
-                            <option value="Pagu Harian">Pagu Harian SPPD</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
-                        <input type="text" name="besar_pagu" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Jenis SPPD</label>
-                        <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
-                            <option value="">-- Pilih Jenis SPPD --</option>
-                            <option value="Dalam Daerah">Dalam Daerah Lebih dari 8 jam</option>
-                            <option value="Luar Daerah">Luar Daerah</option>
-                            <option value="Diklat">Diklat</option>
-                        </select>
-                    </div>
+                                                <label for="exampleDropdownFormEmail1">Kode Biaya</label>
+                                                <input type="text" value="{{$data->kode_biaya}}" name="kode_biaya"
+                                                    class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Provinsi</label>
+                                                <select name="kota_id" id="kota_id" class="form-control">
+                                                    <option value="">-- pilih provinsi --</option>
+                                                    @foreach($kota as $k)
+                                                    <option value="{{$k->id}}"
+                                                        {{$k->id == $data->kota_id ? 'selected' : ''}}>{{$k->nama_kota}}
+                                                    </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
+                                                <input type="text" value="{{$data->besar_pagu}}" name="besar_pagu"
+                                                    class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Jenis SPPD</label>
+                                                <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
+                                                    <option value="">-- Pilih Jenis SPPD --</option>
+                                                    <option value="Dalam Daerah"
+                                                        {{$data->jenis_sppd == 'Dalam Daerah' ? 'selected' : ''}}>Dalam
+                                                        Daerah Lebih
+                                                        dari 8 jam</option>
+                                                    <option value="Luar Daerah"
+                                                        {{$data->jenis_sppd == 'Luar Daerah' ? 'selected' : ''}}>Luar
+                                                        Daerah
+                                                    </option>
+                                                    <option value="Diklat"
+                                                        {{$data->jenis_sppd == 'Diklat' ? 'selected' : ''}}>Diklat
+                                                    </option>
+                                                </select>
+                                            </div>
                                             <hr>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
