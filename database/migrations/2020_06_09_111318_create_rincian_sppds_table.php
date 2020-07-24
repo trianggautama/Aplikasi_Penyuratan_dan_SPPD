@@ -19,6 +19,7 @@ class CreateRincianSppdsTable extends Migration
             $table->unsignedBigInteger('sppd_id');
             $table->unsignedBigInteger('pegawai_id');
             $table->string('total_anggaran', 100)->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
             $table->foreign('sppd_id')->references('id')->on('sppds')->onDelete('cascade');
             $table->foreign('pegawai_id')->references('id')->on('pegawais')->onDelete('cascade');
