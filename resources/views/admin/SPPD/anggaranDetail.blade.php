@@ -11,9 +11,10 @@
                 <h4 class="hk-pg-title font-weight-600 mb-10">Rincian Anggaran Riil ( {{$rincian->pegawai->nama}})</h4>
             </div>
             <div class="d-flex">
-            <a href="{{Route('anggaranDetailCetak',['uuid'=>$rincian->uuid])}}"
+                <a href="{{Route('anggaranDetailCetak',['uuid'=>$rincian->uuid])}}"
                     class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span
-                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Rincian Anggaran Riil 
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Rincian Anggaran
+                        Riil
                     </span></a>
                 <button class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
@@ -48,12 +49,32 @@
                                             <tbody>
                                                 @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    @if(!$d->harian)
                                                     <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->harian->besar_pagu)</td>
+                                                    @endif
+                                                    @if(!$d->representasi)
                                                     <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->representasi->besar_pagu)</td>
+                                                    @endif
+                                                    @if(!$d->penginapan)
                                                     <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->penginapan->besar_pagu)</td>
+                                                    @endif
+                                                    @if(!$d->tiket)
                                                     <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->tiket->besar_pagu)</td>
+                                                    @endif
+                                                    @if(!$d->taksi)
                                                     <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->taksi->besar_pagu)</td>
+                                                    @endif
                                                     <td>
                                                         <a href="{{Route('rincianAnggaranEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-info  "><span class="icon-label"><i
@@ -85,7 +106,7 @@
 <div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content"> 
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="status">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -98,46 +119,46 @@
                     <input type="hidden" name="rincian_sppd_id" value="{{$rincian->id}}">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">pagu Harian</label>
-                        <select name="kategori_id" id="kategori_id" class="form-control">
+                        <select name="harian_id" id="harian_id" class="form-control">
                             <option value="">-- pilih pagu harian --</option>
-                            @foreach($kategori as $d)
-                            <option value="{{$d->id}}">{{$d->uraian}} - {{$d->golongan->kode_golongan}}</option>
+                            @foreach($harian as $d)
+                            <option value="{{$d->id}}">{{$d->kode_biaya}} - {{$d->kategori}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Pagu Representasi</label>
-                        <select name="kategori_id" id="kategori_id" class="form-control">
+                        <select name="representasi_id" id="representasi_id" class="form-control">
                             <option value="">-- pilih pagu Representasi --</option>
-                            @foreach($kategori as $d)
-                            <option value="{{$d->id}}">{{$d->uraian}} - {{$d->golongan->kode_golongan}}</option>
+                            @foreach($representasi as $d)
+                            <option value="{{$d->id}}">{{$d->kategori}} - {{$d->golongan->kode_golongan}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">pagu Penginapan</label>
-                        <select name="kategori_id" id="kategori_id" class="form-control">
+                        <select name="penginapan_id" id="penginapan_id" class="form-control">
                             <option value="">-- pilih pagu penginapan --</option>
-                            @foreach($kategori as $d)
-                            <option value="{{$d->id}}">{{$d->uraian}} - {{$d->golongan->kode_golongan}}</option>
+                            @foreach($penginapan as $d)
+                            <option value="{{$d->id}}">{{$d->kategori}} - {{$d->golongan->kode_golongan}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">pagu tiket Pesawat</label>
-                        <select name="kategori_id" id="kategori_id" class="form-control">
+                        <select name="tiket_id" id="tiket_id" class="form-control">
                             <option value="">-- pilih pagu tiket pesawat --</option>
-                            @foreach($kategori as $d)
-                            <option value="{{$d->id}}">{{$d->uraian}} - {{$d->golongan->kode_golongan}}</option>
+                            @foreach($tiket as $d)
+                            <option value="{{$d->id}}">{{$d->kode_biaya}} - {{$d->kategori}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">pagu Taksi</label>
-                        <select name="kategori_id" id="kategori_id" class="form-control">
+                        <select name="taksi_id" id="taksi_id" class="form-control">
                             <option value="">-- pilih pagu Taksi --</option>
-                            @foreach($kategori as $d)
-                            <option value="{{$d->id}}">{{$d->uraian}} - {{$d->golongan->kode_golongan}}</option>
+                            @foreach($taksi as $d)
+                            <option value="{{$d->id}}">{{$d->kode_biaya}} - {{$d->kategori}}</option>
                             @endforeach
                         </select>
                     </div>
