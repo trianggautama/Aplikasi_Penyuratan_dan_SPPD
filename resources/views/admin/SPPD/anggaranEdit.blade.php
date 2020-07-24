@@ -27,20 +27,68 @@
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Anggaran</label>
-                                                <select name="kategori_id" id="kategori_id" class="form-control">
-                                                    <option value="">-- pilihan keperluan --</option>
-                                                    @foreach($kategori as $d)
+                                                <label for="exampleDropdownFormEmail1">pagu Harian</label>
+                                                <select name="harian_id" id="harian_id" class="form-control">
+                                                    <option value="">-- pilih pagu harian --</option>
+                                                    @foreach($harian as $d)
                                                     <option value="{{$d->id}}"
-                                                        {{$d->id == $data->kategori_id ? 'selected' : ''}}>
-                                                        {{$d->uraian}}</option>
+                                                        {{$d->id == $data->harian_id ? 'selected' : ''}}>
+                                                        {{$d->kode_biaya}} -
+                                                        {{$d->kategori}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Besaran</label>
-                                                <input type="text" class="form-control" name="besaran"
-                                                    value="{{$data->besaran}}">
+                                                <label for="exampleDropdownFormEmail1">Pagu Representasi</label>
+                                                <select name="representasi_id" id="representasi_id"
+                                                    class="form-control">
+                                                    <option value="">-- pilih pagu Representasi --</option>
+                                                    @foreach($representasi as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->representasi_id ? 'selected' : ''}}>
+                                                        {{$d->kategori}} -
+                                                        {{$d->golongan->kode_golongan}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">pagu Penginapan</label>
+                                                <select name="penginapan_id" id="penginapan_id" class="form-control">
+                                                    <option value="">-- pilih pagu penginapan --</option>
+                                                    @foreach($penginapan as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->penginapan_id ? 'selected' : ''}}>
+                                                        {{$d->kategori}} -
+                                                        {{$d->golongan->kode_golongan}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">pagu tiket Pesawat</label>
+                                                <select name="tiket_id" id="tiket_id" class="form-control">
+                                                    <option value="">-- pilih pagu tiket pesawat --</option>
+                                                    @foreach($tiket as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->tiket_id ? 'selected' : ''}}>
+                                                        {{$d->kode_biaya}} -
+                                                        {{$d->kategori}}
+                                                    </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">pagu Taksi</label>
+                                                <select name="taksi_id" id="taksi_id" class="form-control">
+                                                    <option value="">-- pilih pagu Taksi --</option>
+                                                    @foreach($taksi as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->taksi_id ? 'selected' : ''}}>
+                                                        {{$d->kode_biaya}} -
+                                                        {{$d->kategori}}
+                                                    </option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Catatan</label>
