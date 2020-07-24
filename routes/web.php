@@ -169,7 +169,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('Laporan/SPPD/edit/{uuid}', 'laporanSPPDController@update')->name('laporanSPPDUpdate');
     Route::get('Laporan/SPPD/delete/{uuid}', 'laporanSPPDController@destroy')->name('laporanSPPDDestroy');
 
-
 // Pembatalan SPPD
     Route::get('pembatalan/SPPD/index', 'pembatalanSPPDController@index')->name('pembatalanSPPDIndex');
 // Route::get('pembatalan/SPPD/detail/{uuid}', 'pembatalanSPPDController@show')->name('pembatalanSPPDShow');
@@ -177,7 +176,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('pembatalan/SPPD/edit/{uuid}', 'pembatalanSPPDController@edit')->name('pembatalanSPPDEdit');
     Route::put('pembatalan/SPPD/edit/{uuid}', 'pembatalanSPPDController@update')->name('pembatalanSPPDUpdate');
     Route::get('pembatalan/SPPD/delete/{uuid}', 'pembatalanSPPDController@destroy')->name('pembatalanSPPDDestroy');
-
 
 // Pembatalan SPPD
     Route::get('pembatalan/RincianSPPD/index', 'pembatalanRincianSPPDController@index')->name('pembatalanRincianSPPDIndex');
@@ -188,18 +186,21 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('pembatalan/RincianSPPD/delete/{uuid}', 'pembatalanRincianSPPDController@destroy')->name('pembatalanRincianSPPDDestroy');
 
 // Pagu SPPD
-    Route::get('pagu/harian/index', 'anggaranSPPDController@paguHarian')->name('paguHarianIndex'); 
-    Route::get('pagu/harian/edit/{uuid}', 'anggaranSPPDController@paguHarianEdit')->name('paguHarianEdit'); 
+    Route::get('pagu/harian/index', 'anggaranSPPDController@paguHarian')->name('paguHarianIndex');
+    Route::get('pagu/harian/edit/{uuid}', 'anggaranSPPDController@paguHarianEdit')->name('paguHarianEdit');
+    Route::put('pagu/harian/edit/{uuid}', 'kategoriSPPDController@update')->name('paguHarianUpdate');
     Route::get('pagu/representasi/index', 'anggaranSPPDController@paguRepresentasi')->name('paguRepresentasiIndex');
-    Route::get('pagu/representasi/edit/{uuid}', 'anggaranSPPDController@paguRepresentasiEdit')->name('paguRepresentasiEdit');  
-    Route::get('pagu/penginapan/index', 'anggaranSPPDController@paguPenginapan')->name('paguPenginapanIndex'); 
-    Route::get('pagu/penginapan/edit/{uuid}', 'anggaranSPPDController@paguPenginapanEdit')->name('paguPenginapanEdit'); 
-    Route::get('pagu/tiket/index', 'anggaranSPPDController@paguTiketPesawat')->name('paguTiketPesawatIndex'); 
-    Route::get('pagu/tiket/edit/{uuid}', 'anggaranSPPDController@paguTiketPesawatEdit')->name('paguTiketPesawatEdit'); 
-    Route::get('pagu/taksi/index', 'anggaranSPPDController@paguTaksi')->name('paguTaksiIndex'); 
-    Route::get('pagu/taksi/edit/{uuid}', 'anggaranSPPDController@paguTaksiEdit')->name('paguTaksiEdit'); 
-
-
+    Route::get('pagu/representasi/edit/{uuid}', 'anggaranSPPDController@paguRepresentasiEdit')->name('paguRepresentasiEdit');
+    Route::put('pagu/representasi/edit/{uuid}', 'kategoriSPPDController@update')->name('paguRepresentasiUpdate');
+    Route::get('pagu/penginapan/index', 'anggaranSPPDController@paguPenginapan')->name('paguPenginapanIndex');
+    Route::get('pagu/penginapan/edit/{uuid}', 'anggaranSPPDController@paguPenginapanEdit')->name('paguPenginapanEdit');
+    Route::put('pagu/penginapan/edit/{uuid}', 'kategoriSPPDController@update')->name('paguPenginapanUpdate');
+    Route::get('pagu/tiket/index', 'anggaranSPPDController@paguTiketPesawat')->name('paguTiketPesawatIndex');
+    Route::get('pagu/tiket/edit/{uuid}', 'anggaranSPPDController@paguTiketPesawatEdit')->name('paguTiketPesawatEdit');
+    Route::put('pagu/tiket/edit/{uuid}', 'kategoriSPPDController@update')->name('paguTiketPesawatUpdate');
+    Route::get('pagu/taksi/index', 'anggaranSPPDController@paguTaksi')->name('paguTaksiIndex');
+    Route::get('pagu/taksi/edit/{uuid}', 'anggaranSPPDController@paguTaksiEdit')->name('paguTaksiEdit');
+    Route::put('pagu/taksi/edit/{uuid}', 'kategoriSPPDController@update')->name('paguTaksiUpdate');
 
 //cetak data
     Route::post('/suratMasuk/filter', 'reportController@suratMasuk')->name('suratMasukFilterCetak');
