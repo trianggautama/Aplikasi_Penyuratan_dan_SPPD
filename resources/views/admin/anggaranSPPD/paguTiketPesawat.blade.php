@@ -45,7 +45,7 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->kode_biaya}}</td>
-                                                    <td>Nama Provinsi</td>
+                                                    <td>{{$d->kota->nama_kota}}</td>
                                                     <td>Bisnis</td>
                                                     <td>@currency($d->besar_pagu)</td>
                                                     <td>
@@ -53,7 +53,8 @@
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}')">
+                                                        <button class="btn btn-sm btn-danger"
+                                                            onclick="Hapus('{{$d->uuid}}')">
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -93,24 +94,24 @@
                         <label for="exampleDropdownFormEmail1">Kode Biaya</label>
                         <input type="text" name="kode_biaya" class="form-control" required>
                     </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Tujuan</label>
-                                <select name="uraian" id="uraian" class="form-control">
-                                    <option value="Pagu Tiket Pesawat">Pilih tujuan</option>
-                                    @foreach($kota as $k)
-                                    <option value="{{$k->id}}">{{$k->nama_kota}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Tujuan</label>
+                        <select name="kota_id" id="kota_id" class="form-control">
+                            <option value="">Pilih tujuan</option>
+                            @foreach($kota as $k)
+                            <option value="{{$k->id}}">{{$k->nama_kota}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">uraian</label>
-                        <select name="uraian" id="uraian" class="form-control">
+                        <select name="kategori" id="kategori" class="form-control">
                             <option value="Pagu Tiket Pesawat">Pagu Tiket Pesawat SPPD</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Kelas</label>
-                        <select name="uraian" id="uraian" class="form-control">
+                        <select name="kelas" id="kelas" class="form-control">
                             <option value="Ekonomi">Ekonomi</option>
                             <option value="bisnis">bisnis</option>
                         </select>
@@ -118,14 +119,6 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
                         <input type="text" name="besar_pagu" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Kelas</label>
-                        <select name="jenis_sppd" id="jenis_sppd" class="form-control" required>
-                            <option value="">-- Pilih Kelas --</option>
-                            <option value="Ekonomi">Ekonomi</option>
-                            <option value="Bisnis">Bisnis</option>
-                        </select>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
