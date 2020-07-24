@@ -29,32 +29,33 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
-                                    <table id="datable_1" class="table table-hover w-100 display pb-30">
+                                        <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
                                                     <th>No Surat Pembatalan</th>
                                                     <th>Nomor Surat Tugas SPPD</th>
+                                                    <th>Pegawai</th>
                                                     <th>Pejabat </th>
                                                     <th>Alasan pembatalan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($sppd->pembatalan_rincian_sppd as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>121/jbcjsb/12</td>
-                                                    <td> 1212/313
-                                                    </td>
-                                                    <td> Nama Pejabat
-                                                    </td>
-                                                    <td>Anggaran Tidak Tersedia</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->no_surat}}</td>
+                                                    <td>{{$d->sppd->no_surat_tugas}}</td>
+                                                    <td>{{$d->rincian_sppd->pegawai->nama}}</td>
+                                                    <td>{{$d->pegawai->nama}}</td>
+                                                    <td>{!!$d->alasan!!}</td>
                                                     <td>
                                                         <a href="{{Route('pembatalanRincianSPPDCetak','nkjsnjnj')}}"
                                                             class="btn btn-sm btn-success  m-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-print"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('pembatalanRincianSPPDEdit','knjnj')}}"
+                                                        <a href="{{Route('pembatalanRincianSPPDEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  m-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -62,6 +63,7 @@
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -92,24 +94,25 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('laporanSPPDCreate')}}" method="POST">
+                <form action="{{Route('pembatalanRincianSPPDCreate')}}" method="POST">
                     @csrf
+                    <input type="text" name="sppd_id" value="{{$sppd->id}}" id="sppd_id">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nomor Surat Pembatalan SPPD</label>
-                       <input type="text" name="no_surat_pembatalan" class="form-control">
+                        <input type="text" name="no_surat" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">pegawai </label>
-                        <select name="sppd_id" id="sppd_id" class="form-control" required>
+                        <select name="rincian_sppd_id" id="rincian_sppd_id" class="form-control" required>
                             <option value="">-- Pilih Pegawai --</option>
                             @foreach ($rincianSppd as $d)
-                            <option value="{{$d->id}}">{{$d->pegawai->nama}}  </option>
+                            <option value="{{$d->id}}">{{$d->pegawai->nama}} </option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Pejabat Pembuat Keputusan</label>
-                        <select name="sppd_id" id="sppd_id" class="form-control" required>
+                        <select name="pegawai_id" id="pegawai_id" class="form-control" required>
                             <option value="">-- Pilih Pegawai --</option>
                             @foreach ($pegawai as $d)
                             <option value="{{$d->id}}">{{$d->nama}} </option>
@@ -118,7 +121,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Alasan Pembatalan</label>
-                        <textarea name="alasan" id="alasan" rows="10" class="tinymce" ></textarea>
+                        <textarea name="alasan" id="alasan" rows="10" class="tinymce"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Tambah Data</button>
@@ -132,7 +135,7 @@
 @endsection
 @section('scripts')
 <script>
-     $("#tambah").click(function(){
+    $("#tambah").click(function(){
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
