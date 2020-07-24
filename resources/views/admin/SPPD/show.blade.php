@@ -106,7 +106,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data->rincian_sppd as $d)
+                                @foreach ($rincian_sppd as $d)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$d->pegawai->nama}}</td>
