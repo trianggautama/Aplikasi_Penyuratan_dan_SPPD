@@ -5,12 +5,15 @@
 <div class="hk-pg-wrapper">
     <!-- Container -->
     <div class="container mt-xl-50 mt-sm-30 mt-15">
-        <!-- Title -->
+        <!-- Title --> 
         <div class="hk-pg-header align-items-top">
             <div>
                 <h4 class="hk-pg-title font-weight-600 mb-10">Rincian Anggaran Riil ( {{$rincian->pegawai->nama}})</h4>
             </div>
             <div class="d-flex">
+            <a href="{{Route('SPPDShow',['uuid' => $rincian->sppd->uuid])}}"
+                    class="btn btn-sm btn-secondary btn-wth-icon icon-wthot-bg mb-15 mr-5"><span
+                        class="icon-label"><i class="fa fa-arrow-left"></i> </span><span class="btn-text">kembali </span></a>
                 <a href="{{Route('anggaranDetailCetak',['uuid'=>$rincian->uuid])}}"
                     class="btn btn-sm btn-success btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Rincian Anggaran
@@ -122,7 +125,7 @@
                         <select name="harian_id" id="harian_id" class="form-control">
                             <option value="">-- pilih pagu harian --</option>
                             @foreach($harian as $d)
-                            <option value="{{$d->id}}">{{$d->kode_biaya}} - {{$d->kategori}}</option>
+                            <option value="{{$d->id}}">{{$d->kode_biaya}} - {{$d->kategori}} {{$d->kota->nama_kota}}- @currency($d->besar_pagu)</option>
                             @endforeach
                         </select>
                     </div>
@@ -131,7 +134,7 @@
                         <select name="representasi_id" id="representasi_id" class="form-control">
                             <option value="">-- pilih pagu Representasi --</option>
                             @foreach($representasi as $d)
-                            <option value="{{$d->id}}">{{$d->kategori}} - {{$d->golongan->kode_golongan}}</option>
+                            <option value="{{$d->id}}">{{$d->kategori}} - Golongan {{$d->golongan->kode_golongan}} - @currency($d->besar_pagu) </option>
                             @endforeach
                         </select>
                     </div>
@@ -140,7 +143,7 @@
                         <select name="penginapan_id" id="penginapan_id" class="form-control">
                             <option value="">-- pilih pagu penginapan --</option>
                             @foreach($penginapan as $d)
-                            <option value="{{$d->id}}">{{$d->kategori}} - {{$d->golongan->kode_golongan}}</option>
+                            <option value="{{$d->id}}">{{$d->kategori}} {{$d->kota->nama_kota}} - Golongan {{$d->golongan->kode_golongan}} - @currency($d->besar_pagu)</option>
                             @endforeach
                         </select>
                     </div>
@@ -149,7 +152,7 @@
                         <select name="tiket_id" id="tiket_id" class="form-control">
                             <option value="">-- pilih pagu tiket pesawat --</option>
                             @foreach($tiket as $d)
-                            <option value="{{$d->id}}">{{$d->kode_biaya}} - {{$d->kategori}}</option>
+                            <option value="{{$d->id}}">{{$d->kode_biaya}}. {{$d->kategori}} tujuan {{$d->kota->nama_kota}} @currency($d->besar_pagu)</option>
                             @endforeach
                         </select>
                     </div>
@@ -158,7 +161,7 @@
                         <select name="taksi_id" id="taksi_id" class="form-control">
                             <option value="">-- pilih pagu Taksi --</option>
                             @foreach($taksi as $d)
-                            <option value="{{$d->id}}">{{$d->kode_biaya}} - {{$d->kategori}}</option>
+                            <option value="{{$d->id}}">{{$d->kode_biaya}}. {{$d->kategori}} Daerah {{$d->kota->nama_kota}} - @currency($d->besar_pagu)</option>
                             @endforeach
                         </select>
                     </div>

@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10"> Anggaran Ril (Nama Pegawai) Edit</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10"> Anggaran Riil Edit</h2>
             </div>
         </div>
         <!-- /Title -->

@@ -96,7 +96,7 @@
             <div class="modal-body">
                 <form action="{{Route('pembatalanRincianSPPDCreate')}}" method="POST">
                     @csrf
-                    <input type="text" name="sppd_id" value="{{$sppd->id}}" id="sppd_id">
+                    <input type="hidden" name="sppd_id" value="{{$sppd->id}}" id="sppd_id">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nomor Surat Pembatalan SPPD</label>
                         <input type="text" name="no_surat" class="form-control">

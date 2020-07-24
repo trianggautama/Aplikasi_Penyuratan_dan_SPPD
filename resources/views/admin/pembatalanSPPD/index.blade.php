@@ -35,6 +35,7 @@
                                                     <th>No</th>
                                                     <th>No Surat Pembatalan</th>
                                                     <th>Nomor Surat Tugas SPPD</th>
+                                                    <th>tujuan</th>
                                                     <th>Pejabat </th>
                                                     <th>Alasan pembatalan</th>
                                                     <th>Aksi</th>
@@ -46,6 +47,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->no_surat}}</td>
                                                     <td>{{$d->sppd->no_surat_tugas}}</td>
+                                                    <td>{{$d->sppd->berangkat->nama_kota}} - {{$d->sppd->tujuan->nama_kota}}</td>
                                                     <td>{{$d->pegawai->nama}}</td>
                                                     <td>{!!$d->alasan!!}</td>
                                                     <td>

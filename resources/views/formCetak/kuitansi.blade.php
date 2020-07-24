@@ -146,7 +146,7 @@
         @php
             $total_harga = $data->rincian_sppd->sum('total_anggaran');
         @endphp
-        <p>Rp. {{$total_harga}},-</p>
+        <p>@currency($total_harga)</p>
         <br>
         <br>
         <table class="text-center">

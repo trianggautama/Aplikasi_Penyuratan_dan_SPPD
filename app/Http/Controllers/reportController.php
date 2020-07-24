@@ -9,6 +9,7 @@ use App\Kategori;
 use App\Laporan_sppd;
 use App\Pegawai;
 use App\Pejabat;
+use App\Pembatalan_sppd;
 use App\Peminjaman;
 use App\Rincian_sppd;
 use App\Sk;
@@ -264,4 +265,13 @@ class reportController extends Controller
             $pdf->setPaper('a4', 'landscape');
             return $pdf->stream('Laporan Pengeluaran SPPD .pdf');
         }
+
+        //cetak Pembatalan SPPD
+            public function pembatalanSPPD($uuid){
+                $data = Pembatalan_sppd::where('uuid',$uuid)->first();
+                $tgl= Carbon::now()->format('d-m-Y');
+                $pdf =PDF::loadView('formCetak.pembatalanSPPD', ['data'=>$data,'tgl'=>$tgl]);
+                $pdf->setPaper('a4', 'portrait');
+                return $pdf->stream('Laporan Pembatalan SPPD.pdf');
+            }
 }
