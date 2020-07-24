@@ -28,20 +28,24 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Kode Biaya</label>
-                                                <input type="text" name="kode_biaya" class="form-control" required>
+                                                <input type="text" value="{{$data->kode_biaya}}" name="kode_biaya"
+                                                    class="form-control" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Provinsi</label>
-                                                <select name="uraian" id="uraian" class="form-control">
+                                                <select name="kota_id" id="kota_id" class="form-control">
                                                     <option value="">-- pilih provinsi --</option>
                                                     @foreach($kota as $k)
-                                                    <option value="{{$k->id}}">{{$k->nama_kota}}</option>
+                                                    <option value="{{$k->id}}"
+                                                        {{$k->id == $data->kota_id ? 'selected' : ''}}>{{$k->nama_kota}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
-                                            </div> 
+                                            </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
-                                                <input type="text" name="besar_pagu" class="form-control" required>
+                                                <input type="text" value="{{$data->besar_pagu}}" name="besar_pagu"
+                                                    class="form-control" required>
                                             </div>
                                             <hr>
                                             <div class="text-right">
