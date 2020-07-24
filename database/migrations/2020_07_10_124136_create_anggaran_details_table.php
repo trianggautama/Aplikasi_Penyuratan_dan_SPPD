@@ -16,11 +16,19 @@ class CreateAnggaranDetailsTable extends Migration
         Schema::create('anggaran_details', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->unsignedBigInteger('kategori_id');
+            $table->unsignedBigInteger('harian_id')->nullable();
+            $table->unsignedBigInteger('representasi_id')->nullable();
+            $table->unsignedBigInteger('penginapan_id')->nullable();
+            $table->unsignedBigInteger('tiket_id')->nullable();
+            $table->unsignedBigInteger('taksi_id')->nullable();
             $table->unsignedBigInteger('rincian_sppd_id');
-            $table->string('besaran', 50);
+            $table->string('total_anggaran')->nullable();
             $table->string('catatan', 100);
-            $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade');
+            $table->foreign('harian_id')->references('id')->on('kategoris')->onDelete('cascade');
+            $table->foreign('representasi_id')->references('id')->on('kategoris')->onDelete('cascade');
+            $table->foreign('penginapan_id')->references('id')->on('kategoris')->onDelete('cascade');
+            $table->foreign('tiket_id')->references('id')->on('kategoris')->onDelete('cascade');
+            $table->foreign('taksi_id')->references('id')->on('kategoris')->onDelete('cascade');
             $table->foreign('rincian_sppd_id')->references('id')->on('rincian_sppds')->onDelete('cascade');
             $table->timestamps();
         });
