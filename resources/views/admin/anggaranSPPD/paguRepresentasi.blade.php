@@ -47,7 +47,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->kode_biaya}}</td>
                                                     <td>{{$d->golongan->golongan}}</td>
-                                                    <td>{{$d->uraian}}</td>
+                                                    <td>{{$d->kategori}}</td>
                                                     <td>@currency($d->besar_pagu)</td>
                                                     <td>{{$d->jenis_sppd}}</td>
                                                     <td>
@@ -55,7 +55,8 @@
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}')">
+                                                        <button class="btn btn-sm btn-danger"
+                                                            onclick="Hapus('{{$d->uuid}}')">
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -97,7 +98,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">uraian</label>
-                        <select name="uraian" id="uraian" class="form-control">
+                        <select name="kategori" id="kategori" class="form-control">
                             <option value="Pagu Representasi">Pagu Representasi SPPD</option>
                         </select>
                     </div>
