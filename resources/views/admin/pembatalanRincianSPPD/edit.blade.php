@@ -27,30 +27,33 @@
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Nomor Surat Pembatalan SPPD</label>
-                                            <input type="text" name="no_surat_pembatalan" class="form-control">
+                                                <label for="exampleDropdownFormEmail1">Nomor Surat Pembatalan
+                                                    SPPD</label>
+                                                <input type="text" name="no_surat" value="{{$data->no_surat}}"
+                                                    class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">pegawai </label>
-                                                <select name="sppd_id" id="sppd_id" class="form-control" required>
-                                                    <option value="">-- Pilih Pegawai --</option>
-                                                    @foreach ($rincianSppd as $d)
-                                                    <option value="{{$d->id}}">{{$d->pegawai->nama}}  </option>
-                                                    @endforeach
-                                                </select>
+                                                <label for="exampleDropdownFormEmail1">Nama Pegawai Yang
+                                                    Dibatalkan</label>
+                                                <input type="text" name="no_surat"
+                                                    value="{{$data->rincian_sppd->pegawai->nama}}" class="form-control"
+                                                    readonly>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pejabat Pembuat Keputusan</label>
-                                                <select name="sppd_id" id="sppd_id" class="form-control" required>
+                                                <select name="pegawai_id" id="pegawai_id" class="form-control" required>
                                                     <option value="">-- Pilih Pegawai --</option>
                                                     @foreach ($pegawai as $d)
-                                                    <option value="{{$d->id}}">{{$d->nama}} </option>
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->pegawai_id ? 'selected' : ''}}>
+                                                        {{$d->nama}} </option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Alasan Pembatalan</label>
-                                                <textarea name="alasan" id="alasan" rows="10" class="tinymce" ></textarea>
+                                                <textarea name="alasan" id="alasan" rows="10"
+                                                    class="tinymce">{{$data->alasan}}</textarea>
                                             </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
