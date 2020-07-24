@@ -27,15 +27,20 @@
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Nomor Surat Pembatalan SPPD</label>
-                                            <input type="text" name="no_surat_pembatalan" class="form-control">
+                                                <label for="exampleDropdownFormEmail1">Nomor Surat Pembatalan
+                                                    SPPD</label>
+                                                <input type="text" name="no_surat" value="{{$data->no_surat}}"
+                                                    class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">SPPD</label>
                                                 <select name="sppd_id" id="sppd_id" class="form-control" required>
                                                     <option value="">-- Pilih SPPD --</option>
                                                     @foreach ($sppd as $d)
-                                                    <option value="{{$d->id}}">Nomor SPT :{{$d->no_surat_tugas}} ,-  {{$d->tujuan->nama_kota}},
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->sppd_id ? 'selected' : ''}}>Nomor SPT
+                                                        :{{$d->no_surat_tugas}} ,-
+                                                        {{$d->tujuan->nama_kota}},
                                                         {{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
                                                     </option>
                                                     @endforeach
@@ -43,16 +48,19 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pejabat Pembuat Keputusan</label>
-                                                <select name="sppd_id" id="sppd_id" class="form-control" required>
+                                                <select name="pegawai_id" id="pegawai_id" class="form-control" required>
                                                     <option value="">-- Pilih Pegawai --</option>
                                                     @foreach ($pegawai as $d)
-                                                    <option value="{{$d->id}}">{{$d->nama}} </option>
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->pegawai_id ? 'selected' : ''}}>{{$d->nama}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Alasan Pembatalan</label>
-                                                <textarea name="alasan" id="alasan" rows="10" class="tinymce" ></textarea>
+                                                <textarea name="alasan" id="alasan" rows="10"
+                                                    class="tinymce">{{$data->alasan}}</textarea>
                                             </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
