@@ -17,11 +17,14 @@ class CreateKategorisTable extends Migration
             $table->id();
             $table->string('uuid', 36);
             $table->string('kode_biaya', 50);
-            $table->text('uraian');
-            $table->unsignedBigInteger('golongan_id');
+            $table->unsignedBigInteger('kota_id')->nullable();
+            $table->unsignedBigInteger('golongan_id')->nullable();
+            $table->string('kategori', 50);
             $table->string('besar_pagu', 50);
-            $table->string('jenis_sppd', 50);
+            $table->string('jenis_sppd', 50)->nullable();
+            $table->string('kelas', 50)->nullable();
             $table->timestamps();
+            $table->foreign('kota_id')->references('id')->on('kotas')->onDelete('cascade');
             $table->foreign('golongan_id')->references('id')->on('golongans')->onDelete('cascade');
         });
     }
