@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Anggaran;
 use App\Golongan;
 use App\Kategori;
-use App\Kota;
-use App\Transportasi;
 use Illuminate\Http\Request;
 
 class kategoriSPPDController extends Controller
 {
     public function index()
     {
-        $data = Kategori::orderBy('id', 'desc')->get();
+        $data = Kategori::where('')->orderBy('id', 'desc')->get();
         $golongan = Golongan::latest()->get();
         return view('admin.kategoriSPPD.index', compact('data', 'golongan'));
     }
@@ -21,8 +18,8 @@ class kategoriSPPDController extends Controller
     public function store(Request $request)
     {
         $data = Kategori::create($request->all());
+        return back()->withSuccess('Data berhasil disimpan');
 
-        return redirect()->route('kategoriSPPDIndex')->with('success', 'Data berhasil disimpan');
     }
 
     public function edit($uuid)
@@ -38,7 +35,27 @@ class kategoriSPPDController extends Controller
         $data = Kategori::where('uuid', $uuid)->first();
         $data->fill($request->all())->save();
 
-        return redirect()->route('kategoriSPPDIndex')->with('success', 'Data berhasil diubah');
+        if ($data->kategori == 'Pagu Harian') {
+
+            return redirect()->route('paguHarianIndex')->with('success', 'Data berhasil disimpan');
+
+        } elseif ($data->kategori == 'Pagu Representasi') {
+
+            return redirect()->route('paguRepresentasiIndex')->with('success', 'Data berhasil disimpan');
+
+        } elseif ($data->kategori == 'Pagu Penginapan') {
+
+            return redirect()->route('paguPenginapanIndex')->with('success', 'Data berhasil disimpan');
+
+        } elseif ($data->kategori == 'Pagu Tiket Pesawat') {
+
+            return redirect()->route('paguTiketPesawatIndex')->with('success', 'Data berhasil disimpan');
+
+        } else {
+
+            return redirect()->route('paguTaksiIndex')->with('success', 'Data berhasil disimpan');
+
+        }
     }
 
     public function destroy($uuid)
