@@ -36,7 +36,7 @@
                                                     <th>Kode Biaya</th>
                                                     <th>Nama Provinsi</th>
                                                     <th>Besar Pagu</th>
-                                                    <th>Jenis</th>
+                                                    <th>Uraian</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -45,15 +45,16 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->kode_biaya}}</td>
-                                                    <td>Nama Provinsi</td>
+                                                    <td>{{$d->kota->nama_kota}}</td>
                                                     <td>@currency($d->besar_pagu)</td>
-                                                    <td>{{$d->jenis_sppd}}</td>
+                                                    <td>{{$d->kategori}}</td>
                                                     <td>
                                                         <a href="{{Route('paguTaksiEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i
                                                                     class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger" onclick="Hapus('{{$d->uuid}}')">
+                                                        <button class="btn btn-sm btn-danger"
+                                                            onclick="Hapus('{{$d->uuid}}')">
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -94,14 +95,20 @@
                         <input type="text" name="kode_biaya" class="form-control" required>
                     </div>
                     <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Provinsi</label>
-                                                <select name="uraian" id="uraian" class="form-control">
-                                                    <option value="">-- pilih provinsi --</option>
-                                                    @foreach($kota as $k)
-                                                    <option value="{{$k->id}}">{{$k->nama_kota}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div> 
+                        <label for="exampleDropdownFormEmail1">uraian</label>
+                        <select name="kategori" id="kategori" class="form-control">
+                            <option value="Pagu Taksi">Pagu Taksi SPPD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Provinsi</label>
+                        <select name="kota_id" id="kota_id" class="form-control">
+                            <option value="">-- pilih provinsi --</option>
+                            @foreach($kota as $k)
+                            <option value="{{$k->id}}">{{$k->nama_kota}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Total besaran Pagu / hari</label>
                         <input type="text" name="besar_pagu" class="form-control" required>
