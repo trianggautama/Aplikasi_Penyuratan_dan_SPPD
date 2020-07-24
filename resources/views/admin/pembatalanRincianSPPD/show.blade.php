@@ -51,7 +51,7 @@
                                                     <td>{{$d->pegawai->nama}}</td>
                                                     <td>{!!$d->alasan!!}</td>
                                                     <td>
-                                                        <a href="{{Route('pembatalanRincianSPPDCetak','nkjsnjnj')}}"
+                                                        <a href="{{Route('pembatalanRincianSPPDCetak',['uuid'=>$d->uuid])}}"
                                                             class="btn btn-sm btn-success  m-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-print"></i>
                                                             </span><span class="btn-text"> </span></a>

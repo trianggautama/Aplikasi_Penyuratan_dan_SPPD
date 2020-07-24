@@ -116,6 +116,20 @@
             <br>
             <table>
                 <tr>
+                    <td width="25%">Nama pegawai</td>
+                    <td width="3%">:</td>
+                    <td>  
+                        {{$data->rincian_sppd->pegawai->nama}} / {{$data->rincian_sppd->pegawai->NIP}}
+                    </td>
+                </tr>
+                <tr>
+                    <td width="25%">Jabatan</td>
+                    <td width="3%">:</td>
+                    <td>  
+                        {{$data->rincian_sppd->pegawai->jabatan->jabatan}} 
+                    </td>
+                </tr>
+                <tr>
                     <td width="25%">nomor Surat Tugas</td>
                     <td width="3%">:</td>
                     <td>  
@@ -130,7 +144,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Tempat</td>
+                    <td>Tempat</td> 
                     <td>:</td>
                     <td>  
                         {{$data->sppd->tempat}}
@@ -141,6 +155,13 @@
                     <td>:</td>
                     <td>  
                         {{$data->sppd->maksud_tujuan}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total Anggaran Riil</td>
+                    <td>:</td>
+                    <td>  
+                        @currency($data->rincian_sppd->total_anggaran)
                     </td>
                 </tr>
             </table>
