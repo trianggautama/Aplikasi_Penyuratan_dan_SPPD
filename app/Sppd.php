@@ -36,4 +36,9 @@ class Sppd extends Model
     {
         return $this->hasMany('App\Rincian_sppd');
     }
+
+    public function pembatalan_rincian_sppd()
+    {
+        return $this->hasMany(Pembatalan_rincian_sppd::class);
+    }
 }
