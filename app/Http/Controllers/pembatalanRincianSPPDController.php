@@ -28,6 +28,7 @@ class pembatalanRincianSPPDController extends Controller
     {
         $data = Pembatalan_rincian_sppd::create($req->all());
         $rincianSppd = Rincian_sppd::findOrFail($req->rincian_sppd_id);
+        $rincianSppd->total_anggaran = 0;
         $rincianSppd->status = 0;
         $rincianSppd->update();
 
