@@ -23,4 +23,9 @@ class Kategori extends Model
         return $this->belongsTo(Anggaran::class);
     }
 
+    public function kota()
+    {
+        return $this->belongsTo(Kota::class);
+    }
+
 }
