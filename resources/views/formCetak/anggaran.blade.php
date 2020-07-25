@@ -88,16 +88,17 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">LAPORAN ANGGARAN</h4>
+            <h4 style="text-align:center;">LAPORAN ANGGARAN {{$data->first()->kategori}}</h4>
             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Kode Biaya</th>
                                                     <th>Golongan</th>
-                                                    <th>Uraian</th>
+                                                    <th>Tujuan</th>
                                                     <th>Besar Pagu</th>
-                                                    <th>Jenis</th>
+                                                    <th>Jenis SPPD</th>
+                                                    <th>Kelas</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -105,10 +106,11 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->kode_biaya}}</td>
-                                                    <td>{{$d->golongan->golongan}}</td>
-                                                    <td>{{$d->uraian}}</td>
+                                                    <td>@if($d->golongan_id){{$d->golongan->golongan}}@else - @endif</td> 
+                                                    <td>@if($d->kota_id){{$d->kota->nama_kota}}@else- @endif</td>
                                                     <td>@currency($d->besar_pagu)</td>
-                                                    <td>{{$d->jenis_sppd}}</td>
+                                                    <td>@if($d->jenis_sppd){{$d->jenis_sppd}}@else - @endif</td>
+                                                    <td>@if($d->kelas){{$d->kelas}}@else - @endif</td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

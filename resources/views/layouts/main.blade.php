@@ -134,14 +134,12 @@
                             <a class="dropdown-item" href="{{Route('analisisSPPD')}}" target="_blank">Analisis SPPD</a>
                             <a class="dropdown-item" href="{{Route('analisisSuratMasuk')}}" target="_blank">Analisis Surat Masuk</a>
                             <a class="dropdown-item" href="{{Route('analisisSuratKeluar')}}" target="_blank">Analisis Surat Keluar</a>
-                            <a class="dropdown-item" href="{{Route('anggaranSPPD')}} " target="_blank">Laporan Anggaran</a>
-                            <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran
-                                SPPD</a>
+                            <a class="dropdown-item" href="{{Route('anggaranSPPDFilter')}} ">Laporan Anggaran</a>
+                            <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran  SPPD</a>
                             <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
                             <a class="dropdown-item" href="{{Route('suratMasukFilter')}}">Laporan Surat Masuk</a>
                             <a class="dropdown-item" href="{{Route('suratKeluarFilter')}}">Laporan Surat Keluar </a>
-                            <a class="dropdown-item" href="{{Route('suratDisposisiFilter')}}">Laporan Surat Disposisi
-                            </a>
+                            <a class="dropdown-item" href="{{Route('suratDisposisiFilter')}}">Laporan Surat Disposisi</a>
                             <a class="dropdown-item" href="{{Route('peminjamanFilter')}}">Laporan Surat Peminjaman </a>
                             <a class="dropdown-item" href="{{Route('skFilter')}}">Laporan Registrasi SK </a>
                         </div>

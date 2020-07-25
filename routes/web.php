@@ -126,6 +126,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/anggaranSPPD/edit/{uuid}', 'anggaranSPPDController@update')->name('anggaranSPPDUpdate');
     Route::get('/anggaranSPPD/delete/{uuid}', 'anggaranSPPDController@destroy')->name('anggaranSPPDDestroy');
     Route::get('/anggaranSPPD/cetak', 'reportController@anggaranSPPD')->name('anggaranSPPD');
+    Route::get('/anggaranSPPD/filter', 'anggaranSPPDController@filter')->name('anggaranSPPDFilter');
 
 //Ketegori SPPD
     Route::get('/pejabat/index', 'pejabatController@index')->name('pejabatIndex');

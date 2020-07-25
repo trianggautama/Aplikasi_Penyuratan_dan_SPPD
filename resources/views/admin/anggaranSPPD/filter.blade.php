@@ -29,12 +29,19 @@
                                             @csrf
                                                 <div class="col-md-12">
                                                     <div class="form-group"> 
-                                                        <label for="exampleDropdownFormEmail1">Tahun Anggaran</label>
-                                                        <input type="number" class="form-control"  name="tahun" value="{{carbon\carbon::now()->translatedFormat('Y')}}">
+                                                        <label for="exampleDropdownFormEmail1">Jenis Pagu</label>
+                                                        <select name="uraian" id="" class="form-control">
+                                                            <option value="">-- pilih pagu --</option>
+                                                            <option value="Pagu Harian">Pagu Harian</option>
+                                                            <option value="Pagu Representasi">Pagu Representasi</option>
+                                                            <option value="Pagu Penginapan">Pagu Penginapan</option>
+                                                            <option value="Pagu Tiket Pesawat">Pagu Tiket Pesawat</option>
+                                                            <option value="Pagu Taksi">Pagu Taksi</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             <div class="text-right">
-                                            <a href="{{Route('suratKeluarIndex')}}" class="btn btn-default"id="tambah"><span class="icon-label"><i class="fa fa-arrow-left"></i> </span><span class="btn-text">Kembali</span></a>
+                                            <a href="{{Route('index')}}" class="btn btn-default"id="tambah"><span class="icon-label"><i class="fa fa-arrow-left"></i> </span><span class="btn-text">Kembali</span></a>
                                                 <button type="submit" class="btn btn-success"><i class="fa fa-print"></i>
                                                     Cetak Data</button>
                                             </div>

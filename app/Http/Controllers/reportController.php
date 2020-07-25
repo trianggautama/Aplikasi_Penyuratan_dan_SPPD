@@ -220,10 +220,9 @@ class reportController extends Controller
         }
 
         //cetak laporan data SPPD
-        public function anggaranSPPD(Request $request){ 
+        public function anggaranFilter(Request $request){ 
 
-                $data = Kategori::orderBy('id', 'desc')->get();
-
+            $data = Kategori::where('kategori', $request->uraian)->get();
                 $tgl= Carbon::now()->format('d-m-Y');
                 $pdf =PDF::loadView('formCetak.anggaran', ['data'=>$data,'tgl'=>$tgl]);
                 $pdf->setPaper('a4', 'landscape');
