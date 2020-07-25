@@ -134,7 +134,7 @@
                             <a class="dropdown-item" href="{{Route('analisisSPPD')}}" target="_blank">Analisis SPPD</a>
                             <a class="dropdown-item" href="{{Route('analisisSuratMasuk')}}" target="_blank">Analisis Surat Masuk</a>
                             <a class="dropdown-item" href="{{Route('analisisSuratKeluar')}}" target="_blank">Analisis Surat Keluar</a>
-                            <a class="dropdown-item" href="{{Route('anggaranSPPD')}} " target="_blank">Laporan Anggaran</a>
+                            <!-- <a class="dropdown-item" href="{{Route('anggaranSPPD')}} " target="_blank">Laporan Anggaran</a> -->
                             <a class="dropdown-item" href="{{Route('laporanAnggaranSPPD')}}">Laporan Pengeluaran
                                 SPPD</a>
                             <a class="dropdown-item" href="{{Route('laporanSPPDIndex')}}">Laporan Perjalanan Dinas </a>
