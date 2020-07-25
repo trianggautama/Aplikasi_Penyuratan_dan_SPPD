@@ -49,17 +49,6 @@
                                                     placeholder="Nomor Surat">
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Jenis Surat</label>
-                                                <select name="jenis_surat_id" id="jenis_surat_id" class="form-control">
-                                                    <option value="">-- Pilih Jenis Surat --</option>
-                                                    @foreach($jenis_surat as $d)
-                                                    <option value="{{$d->id}}"
-                                                        {{$d->id == $data->jenis_surat_id ? 'selected' : ''}}>
-                                                        {{$d->jenis_surat}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tanggal Kirim</label>
                                                 <input type="date" class="form-control" value="{{$data->tanggal_kirim}}"
                                                     name="tanggal_kirim">
