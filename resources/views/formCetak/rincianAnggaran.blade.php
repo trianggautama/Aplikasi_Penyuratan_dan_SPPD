@@ -135,11 +135,11 @@
                                                     <td>@currency($d->taksi->besar_pagu)</td>
                                                     @endif
                                                 </tr>
+                                                @endforeach
                                                 <tr>
-                                                    <td colspan="5">Total</td>
+                                                    <td colspan="5" style="text-align:center;">Total</td>
                                                     <td>@currency($d->rincian_sppd->total_anggaran) </td>
                                                 </tr>
-                                                @endforeach
                                             </tbody>
                                         </table>
                       <br>

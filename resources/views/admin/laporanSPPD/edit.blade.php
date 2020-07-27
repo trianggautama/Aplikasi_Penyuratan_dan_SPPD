@@ -34,7 +34,7 @@
                                                     <option value="{{$d->id}}"
                                                         {{$d->id == $data->sppd_id ? 'selected' : ''}}>
                                                         {{$d->maksud_tujuan}},
-                                                        {{$d->kategori->kota->nama_kota}},
+                                                        {{$d->tujuan->nama_kota}},
                                                         {{carbon\carbon::parse($d->tanggal_berangkat)->translatedFormat('d F Y')}}
                                                     </option>
                                                     @endforeach
