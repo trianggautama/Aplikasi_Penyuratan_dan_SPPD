@@ -88,17 +88,17 @@
     <hr style="margin-top:0px;">
     <div class="container">
         <div class="isi">
-            <h4 style="text-align:center;">LAPORAN ANGGARAN {{$data->first()->kategori}}</h4>
+            <h4 style="text-align:center; text-transform:uppercase;">LAPORAN ANGGARAN {{$data->first()->kategori}}</h4>
             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Kode Biaya</th>
-                                                    <th>Golongan</th>
-                                                    <th>Tujuan</th>
+                                                    @if($data->first()->kategori == 'Pagu Representasi'|| $data->first()->kategori == 'Pagu Penginapan')<th>Golongan</th>@endif
+                                                    @if($data->first()->kategori != 'Pagu Representasi')<th>Tujuan</th>@endif
                                                     <th>Besar Pagu</th>
-                                                    <th>Jenis SPPD</th>
-                                                    <th>Kelas</th>
+                                                    @if($data->first()->kategori == 'Pagu Harian' || $data->first()->kategori == 'Pagu Representasi')<th>Jenis SPDD</th>@endif
+                                                    @if($data->first()->kategori == 'Pagu Tiket Pesawat')<th>Kelas</th>@endif
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -106,11 +106,11 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->kode_biaya}}</td>
-                                                    <td>@if($d->golongan_id){{$d->golongan->golongan}}@else - @endif</td> 
-                                                    <td>@if($d->kota_id){{$d->kota->nama_kota}}@else- @endif</td>
+                                                    @if($d->golongan_id)<td>{{$d->golongan->golongan}}</td> @endif
+                                                    @if($d->kota_id)<td>{{$d->kota->nama_kota}}</td>@endif
                                                     <td>@currency($d->besar_pagu)</td>
-                                                    <td>@if($d->jenis_sppd){{$d->jenis_sppd}}@else - @endif</td>
-                                                    <td>@if($d->kelas){{$d->kelas}}@else - @endif</td>
+                                                    @if($d->jenis_sppd)<td>{{$d->jenis_sppd}}</td>@endif
+                                                    @if($d->kelas)<td>{{$d->kelas}}</td>@endif
                                                 </tr>
                                                 @endforeach
                                             </tbody>

@@ -94,24 +94,54 @@
             <p style="margin:0px;">Tanggal: {{carbon\carbon::parse($data->sppd->tanggal_berangkat)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($data->sppd->tanggal_kepulangan)->translatedFormat('d F Y')}}</p>
             <br>
             <br>
-            <table>
-               <tr>
-                    <th>Keperluan</th>
-                    <th>Catatan</th>
-                    <th>Besaran Riil</th>
-               </tr>
-                @foreach($data->anggaran_detail as $d)s
-                <tr>
-                    <td width="50%">{{$d->kategori->uraian}}</td>
-                    <td width="30%">{{$d->catatan}}</td>
-                    <td width="20%">@currency($d->besaran)</td>
-                </tr>
-                @endforeach
-                <tr>
-                    <td colspan="2">Total</td>
-                    <td>@currency($data->anggaran_detail->sum('besaran'))</td>
-                </tr>
-            </table>
+            <table id="datable_1" class="table table-hover w-100 display pb-30">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Pagu Harian</th>
+                                                    <th>Pagu Representasi</th>
+                                                    <th>Pagu Penginapan</th>
+                                                    <th>Pagu Tiket Pesawat</th>
+                                                    <th>Pagu Taksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($data->anggaran_detail as $d)
+                                                <tr>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    @if(!$d->harian)
+                                                    <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->harian->besar_pagu)</td>
+                                                    @endif
+                                                    @if(!$d->representasi)
+                                                    <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->representasi->besar_pagu)</td>
+                                                    @endif
+                                                    @if(!$d->penginapan)
+                                                    <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->penginapan->besar_pagu)</td>
+                                                    @endif
+                                                    @if(!$d->tiket)
+                                                    <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->tiket->besar_pagu)</td>
+                                                    @endif
+                                                    @if(!$d->taksi)
+                                                    <td>-</td>
+                                                    @else
+                                                    <td>@currency($d->taksi->besar_pagu)</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5">Total</td>
+                                                    <td>@currency($d->rincian_sppd->total_anggaran) </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                       <br>
                       <br>
                     </div>
