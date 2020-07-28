@@ -12,7 +12,7 @@ class pembatalanRincianSPPDController extends Controller
 {
     public function index()
     {
-        $sppd = Sppd::latest()->get();
+        $sppd = Sppd::where('status',1)->get();
         return view('admin.pembatalanRincianSPPD.index', compact('sppd'));
     }
 

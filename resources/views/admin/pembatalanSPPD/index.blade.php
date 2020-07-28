@@ -59,7 +59,7 @@
                                                             class="btn btn-sm btn-primary  m-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus()">
+                                                        <button class="btn btn-sm btn-danger m-1" onclick="Hapus('{{$d->uuid}}')">
                                                             <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -152,7 +152,7 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("laporanSPPDDestroy",'')}}';
+				url = '{{route("pembatalanSPPDDestroy",'')}}'; 
 				window.location.href =  url+'/'+uuid ;			
 			}
 		})
