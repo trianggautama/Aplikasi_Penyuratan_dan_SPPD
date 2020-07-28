@@ -38,7 +38,6 @@
                                                     <th>Golongan</th>
                                                     <th>Uraian</th>
                                                     <th>Besar Pagu</th>
-                                                    <th>Jenis</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -51,7 +50,6 @@
                                                     <td>{{$d->golongan->golongan}}</td>
                                                     <td>{{$d->kategori}}</td>
                                                     <td>@currency($d->besar_pagu)</td>
-                                                    <td>{{$d->jenis_sppd}}</td>
                                                     <td>
                                                         <a href="{{Route('paguPenginapanEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-primary  "><span class="icon-label"><i

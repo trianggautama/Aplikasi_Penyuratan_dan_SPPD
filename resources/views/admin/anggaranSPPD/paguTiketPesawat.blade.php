@@ -46,7 +46,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->kode_biaya}}</td>
                                                     <td>{{$d->kota->nama_kota}}</td>
-                                                    <td>Bisnis</td>
+                                                    <td>{{$d->kelas}}</td>
                                                     <td>@currency($d->besar_pagu)</td>
                                                     <td>
                                                         <a href="{{Route('paguTiketPesawatEdit',['uuid' => $d->uuid])}}"
@@ -113,7 +113,7 @@
                         <label for="exampleDropdownFormEmail1">Kelas</label>
                         <select name="kelas" id="kelas" class="form-control">
                             <option value="Ekonomi">Ekonomi</option>
-                            <option value="bisnis">bisnis</option>
+                            <option value="Bisnis">bisnis</option>
                         </select>
                     </div>
                     <div class="form-group">
